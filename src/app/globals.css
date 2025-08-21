@@ -1,26 +1,145 @@
 @import "tailwindcss";
 
+/* Theme Colors - Based on provided color palette */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary Colors */
+  --color-primary: #095797;
+  /* Accent Colors */
+  --color-accent: #9ac322;
+  /* Neutral Colors */
+  --color-white: #ffffff;
+  /* Blanc - Pure white */
+  --color-dark: #2f353a;
+  /* Gris Carbone - Dark gray for text */
+  --color-light: #f4f6f8;
+  /* Gris Perle - Light gray for backgrounds */
+
+  /* Semantic Color Mappings */
+  --color-background: var(--color-white);
+  --color-background-secondary: var(--color-light);
+  --color-text-primary: var(--color-dark);
+  --color-text-secondary: var(--color-primary);
+  --color-text-on-dark: var(--color-white);
+  --color-border: var(--color-light);
+  --color-shadow: rgba(9, 87, 151, 0.1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Base styles */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Minion Pro", var(--font-playfair), serif;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+}
+
+/* Utility classes for common theme usage */
+.theme-primary {
+  color: var(--color-primary);
+}
+
+.theme-primary-bg {
+  background-color: var(--color-primary);
+  color: var(--color-text-on-dark);
+}
+
+.theme-accent {
+  color: var(--color-accent);
+}
+
+.theme-accent-bg {
+  background-color: var(--color-accent);
+  color: var(--color-text-on-dark);
+}
+
+.theme-light-bg {
+  background-color: var(--color-background-secondary);
+}
+
+.theme-text-primary {
+  color: var(--color-text-primary);
+}
+
+.theme-text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.theme-border {
+  border-color: var(--color-border);
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-on-dark);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #074a7a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--color-shadow);
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: var(--color-text-on-dark);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-accent:hover {
+  background-color: #8ab31e;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(154, 195, 34, 0.3);
+}
+
+/* Card styles */
+.card {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px var(--color-shadow);
+}
+
+/* Section styles */
+.section-primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-on-dark);
+}
+
+.section-light {
+  background-color: var(--color-background-secondary);
+}
+
+/* Typography helpers */
+.heading-primary {
+  color: var(--color-primary);
+  font-weight: 700;
+  font-family: "Minion Pro", var(--font-playfair), serif;
+}
+
+.text-accent {
+  color: var(--color-accent);
+  font-weight: 600;
+  font-family: "Minion Pro", var(--font-playfair), serif;
+}
+
+/* Additional typography classes */
+.heading-secondary {
+  font-family: "Minion Pro", var(--font-playfair), serif;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.body-text {
+  font-family: "Minion Pro", var(--font-playfair), serif;
+  font-weight: 400;
+  line-height: 1.7;
 }
