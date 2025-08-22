@@ -241,7 +241,6 @@ export default function AboutSection() {
             className="relative w-full flex flex-col items-center mb-12"
           >
             <motion.div
-              ref={lastMarkerRef}
               className="absolute left-1/2 -translate-x-1/2 -top-8 z-10"
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
@@ -326,6 +325,92 @@ export default function AboutSection() {
                   ))}
                 </ul>
               </motion.article>
+            </div>
+          </motion.div>
+
+          {/* Nos Valeurs */}
+          <motion.div
+            key="nos-valeurs"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.28 }}
+            className="relative w-full flex flex-col items-center mb-12"
+          >
+            <motion.div
+              ref={lastMarkerRef}
+              className="absolute left-1/2 -translate-x-1/2 -top-8 z-10"
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
+                delay: 0.28,
+              }}
+            >
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <circle cx="16" cy="16" r="14" fill="#3b82f6" opacity="0.12" />
+                <circle cx="16" cy="16" r="8" fill="#3b82f6" opacity="0.25" />
+              </svg>
+            </motion.div>
+
+            <div className="w-full max-w-3xl bg-white/95 backdrop-blur-sm rounded-2xl shadow-md p-6 border border-blue-50">
+              <h3
+                className="text-2xl font-bold mb-2 text-center"
+                style={{ color: "var(--color-primary)" }}
+              >
+                Nos Valeurs
+              </h3>
+              <p className="text-gray-800 text-base md:text-lg mb-4 text-center">
+                Nos valeurs fondamentales guident chacune de nos actions et
+                définissent notre culture d&apos;entreprise.
+              </p>
+
+              <ul className="space-y-3">
+                {[
+                  {
+                    title: "Excellence",
+                    text: "Nous nous efforçons constamment d'atteindre l'excellence dans tous nos services et interactions.",
+                  },
+                  {
+                    title: "Leadership",
+                    text: "Nous cultivons un leadership éthique qui inspire confiance et respect.",
+                  },
+                  {
+                    title: "Intégrité",
+                    text: "Nous maintenons une intégrité inébranlable dans toutes nos actions.",
+                  },
+                  {
+                    title: "Engagement",
+                    text: "Nous nous engageons à surpasser les attentes en fournissant des services de qualité supérieure.",
+                  },
+                ].map((v, i) => (
+                  <motion.li
+                    key={v.title}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.4 }}
+                    transition={{ delay: i * 0.12 }}
+                    className="flex gap-4 items-start"
+                  >
+                    <span className="flex-shrink-0 mt-1 inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 text-white font-semibold">
+                      {i + 1}
+                    </span>
+                    <div>
+                      <h4
+                        className="text-lg font-semibold"
+                        style={{ color: "var(--color-primary)" }}
+                      >
+                        {v.title}
+                      </h4>
+                      <p className="text-gray-700 text-sm md:text-base">
+                        {v.text}
+                      </p>
+                    </div>
+                  </motion.li>
+                ))}
+              </ul>
             </div>
           </motion.div>
         </div>
