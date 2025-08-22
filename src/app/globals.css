@@ -33,10 +33,7 @@
   --color-text-on-dark: var(--color-white);
   --color-border: var(--color-light);
   --color-shadow: rgba(var(--color-primary-rgb), 0.1);
-  
-  /* Hover effects for consistency */
-  --color-primary-hover: #074a7a;
-  --color-accent-hover: #7a9b1b;
+
 }
 
 

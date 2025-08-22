@@ -48,17 +48,19 @@ const HeroSection: React.FC = () => {
         className="absolute inset-0 z-0"
       >
         <div className="absolute inset-0 bg-black/60 z-10"></div>
-        <motion.video
-          src="https://videos.pexels.com/video-files/8123971/8123971-hd_1920_1080_30fps.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 10 }}
-        />
+        {isVisible && (
+          <motion.video
+            src="https://videos.pexels.com/video-files/8123971/8123971-hd_1920_1080_30fps.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+            initial={{ scale: 1.1 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 10 }}
+          />
+        )}
       </motion.div>
 
              {/* Animated Background Elements */}
@@ -94,7 +96,7 @@ const HeroSection: React.FC = () => {
         variants={containerVariants}
         initial="hidden"
         animate={isVisible ? "visible" : "hidden"}
-  className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+  className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-10"
       >
         <motion.div variants={itemVariants} className="mb-6 sm:mb-8">
           <motion.h1
@@ -147,8 +149,8 @@ const HeroSection: React.FC = () => {
           className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center"
         >
                      <motion.div
-             whileHover={{ scale: 1.05 }}
-             whileTap={{ scale: 0.95 }}
+            //  whileHover={{ scale: 1.05 }}
+            //  whileTap={{ scale: 0.95 }}
              className="w-full sm:w-auto"
            >
              <Button 
@@ -167,14 +169,14 @@ const HeroSection: React.FC = () => {
            </motion.div>
            
            <motion.div
-             whileHover={{ scale: 1.05 }}
-             whileTap={{ scale: 0.95 }}
+            //  whileHover={{ scale: 1.05 }}
+            //  whileTap={{ scale: 0.95 }}
              className="w-full sm:w-auto"
            >
              <Button 
                size="lg" 
                variant="outline" 
-               className="w-full sm:w-auto border-2 border-[var(--color-white)] text-[var(--color-white)] hover:bg-[var(--color-white)] hover:text-[var(--color-dark)] backdrop-blur-sm bg-[var(--color-white)]/10"
+               className="min-w-[180px] w-full sm:w-auto border-2 border-[var(--color-white)] text-[var(--color-white)] hover:bg-[var(--color-white)] hover:text-black backdrop-blur-sm bg-[var(--color-white)]/10"
              >
                Découvrez nos expertises en conseil
              </Button>
@@ -207,26 +209,6 @@ const HeroSection: React.FC = () => {
             }}
           />
         </div>
-      </motion.div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1.2 }}
-      >
-        <motion.div
-          className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <motion.div
-            className="w-1 h-3 bg-white rounded-full mt-2"
-            animate={{ opacity: [1, 0, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          />
-        </motion.div>
       </motion.div>
     </section>
   );

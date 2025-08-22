@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Button from "../ui/Button";
 import { usePathname } from 'next/navigation';
 
@@ -49,9 +50,11 @@ const Header = () => {
         <nav className="flex items-center justify-between">
           {/* Logo - Left */}
           <Link href="/" className="flex items-center">
-            <img
+            <Image
               src="/Logos/Logo.png"
               alt="Orion Partners Logo"
+              width={160}
+              height={40}
               className="h-10 w-auto"
             />
           </Link>
