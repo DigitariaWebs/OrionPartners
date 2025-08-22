@@ -33,12 +33,16 @@
   --color-text-on-dark: var(--color-white);
   --color-border: var(--color-light);
   --color-shadow: rgba(var(--color-primary-rgb), 0.1);
+  
+  /* Hover effects for consistency */
+  --color-primary-hover: #074a7a;
+  --color-accent-hover: #7a9b1b;
 }
 
 
 /* Base styles */
 body {
-  font-family: "Minion Pro", var(--font-playfair), serif;
+  font-family: "Minion Pro", "Times New Roman", serif;
   background-color: var(--color-background);
   color: var(--color-text-primary);
   line-height: 1.6;

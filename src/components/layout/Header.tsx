@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Button from "../ui/Button";
 import { usePathname } from 'next/navigation';
 
 const Header = () => {
@@ -32,7 +33,7 @@ const Header = () => {
 
   return (
     <header
-      className={`sticky top-0 le   ft-0 right-0 z-50 transition-all duration-300 ${
+      className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? "bg-primary/95 backdrop-blur-md shadow-lg" : "bg-primary"
       }`}
       style={{
@@ -92,25 +93,11 @@ const Header = () => {
 
           {/* Contact Button - Right */}
           <div className="hidden md:block">
-            <Link
-              href="/contact"
-              className="px-4 py-2 text-sm font-medium rounded-md transition-all duration-300 hover:scale-105 hover:shadow-lg"
-              style={{
-                backgroundColor: "var(--color-accent)",
-                color: "var(--color-white)",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor =
-                  "var(--color-accent-hover)";
-                e.currentTarget.style.transform = "scale(1.05)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "var(--color-accent)";
-                e.currentTarget.style.transform = "scale(1)";
-              }}
-            >
-              Contactez-nous
-            </Link>
+              <Link href="/contact">
+                <Button variant="secondary" size="md" className="font-medium">
+                  Contactez-nous
+                </Button>
+              </Link>
           </div>
 
           {/* Mobile menu button */}
