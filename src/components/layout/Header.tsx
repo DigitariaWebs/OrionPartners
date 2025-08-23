@@ -55,7 +55,8 @@ const Header = () => {
               alt="Orion Partners Logo"
               width={160}
               height={40}
-              className="h-10 w-auto"
+              priority
+              style={{ width: 'auto', maxHeight: '2.5rem' }}
             />
           </Link>
 

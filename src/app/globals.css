@@ -1,5 +1,32 @@
 @import "tailwindcss";
 
+/* Load Minion Pro from local public fonts (assumes WOFF/WOFF2 files are in public/fonts/minion-pro/)
+   If your filenames differ, update the URLs below accordingly. */
+@font-face {
+  font-family: 'Minion Pro';
+  src: local('Minion Pro Regular'), local('MinionPro-Regular'),
+       url('/fonts/minion-pro/MinionPro-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Minion Pro';
+  src: local('Minion Pro Italic'), local('MinionPro-Italic'),
+       url('/fonts/minion-pro/MinionPro-It.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Minion Pro';
+  src: local('Minion Pro Bold'), local('MinionPro-Bold'),
+       url('/fonts/minion-pro/MinionPro-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Theme Colors - Based on provided color palette */
 :root {
   /* Logos, titres principaux, fonds de section, icônes, éléments de navigation principaux. C'est la couleur de l'identité et de la stabilité. */
@@ -39,7 +66,7 @@
 
 /* Base styles */
 body {
-  font-family: "Minion Pro", "Times New Roman", serif;
+  font-family: "Minion Pro", serif;
   background-color: var(--color-background);
   color: var(--color-text-primary);
   line-height: 1.6;

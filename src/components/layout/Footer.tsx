@@ -67,7 +67,7 @@ export default function Footer({ onServiceClick }: FooterProps) {
                 alt="Orion Partners Logo"
                 width={200}
                 height={80}
-                className="h-16 w-auto"
+                style={{ width: 'auto', maxHeight: '4rem' }}
               />
             </h3>
             <p
