@@ -39,7 +39,10 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-  <section className="relative overflow-hidden px-4" style={{ height: 'calc(100vh - 72px)' }}>
+    <section
+      className="relative overflow-hidden px-4"
+      style={{ height: "calc(100vh - 72px)" }}
+    >
       {/* Background Video with Parallax Effect */}
       <motion.div
         variants={imageVariants}
@@ -63,45 +66,49 @@ const HeroSection: React.FC = () => {
         )}
       </motion.div>
 
-             {/* Animated Background Elements */}
-       <div className="absolute inset-0 z-5">
-         <motion.div
-           className="absolute top-1/4 left-1/4 w-32 sm:w-64 h-32 sm:h-64 bg-[var(--color-primary)]/20 rounded-full blur-3xl"
-           animate={{
-             x: [0, 50, 0],
-             y: [0, -30, 0],
-           }}
-           transition={{
-             duration: 8,
-             repeat: Infinity,
-             ease: "easeInOut",
-           }}
-         />
-         <motion.div
-           className="absolute bottom-1/4 right-1/4 w-48 sm:w-96 h-48 sm:h-96 bg-[var(--color-accent)]/15 rounded-full blur-3xl"
-           animate={{
-             x: [0, -40, 0],
-             y: [0, 40, 0],
-           }}
-           transition={{
-             duration: 10,
-             repeat: Infinity,
-             ease: "easeInOut",
-           }}
-         />
-       </div>
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 z-5">
+        <motion.div
+          className="absolute top-1/4 left-1/4 w-32 sm:w-64 h-32 sm:h-64 bg-[var(--color-primary)]/20 rounded-full blur-3xl"
+          animate={{
+            x: [0, 50, 0],
+            y: [0, -30, 0],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 right-1/4 w-48 sm:w-96 h-48 sm:h-96 bg-[var(--color-accent)]/15 rounded-full blur-3xl"
+          animate={{
+            x: [0, -40, 0],
+            y: [0, 40, 0],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      </div>
 
       {/* Content */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate={isVisible ? "visible" : "hidden"}
-  className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-10"
+        className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-10"
       >
         <motion.div variants={itemVariants} className="mb-6 sm:mb-8">
           <motion.h1
-            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-[1.15]"
-            style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}
+            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.15]"
+            style={{
+              textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+              fontSize: "clamp(1.875rem, 6vw, 4.5rem)",
+              marginBottom: "1rem",
+            }}
           >
             <motion.span
               className="block"
@@ -133,14 +140,14 @@ const HeroSection: React.FC = () => {
         <motion.div variants={itemVariants} className="mb-8 sm:mb-12">
           <motion.p
             className="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed px-4"
-            style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}
+            style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5)" }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
           >
-            Nous nous distinguons par notre expertise reconnue, nos solutions adaptées à chaque secteur
-            et une approche qui combine vision stratégique, excellence opérationnelle et innovation
-            technologique.
+            Nous nous distinguons par notre expertise reconnue, nos solutions
+            adaptées à chaque secteur et une approche qui combine vision
+            stratégique, excellence opérationnelle et innovation technologique.
           </motion.p>
         </motion.div>
 
@@ -148,39 +155,39 @@ const HeroSection: React.FC = () => {
           variants={itemVariants}
           className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center"
         >
-                     <motion.div
+          <motion.div
             //  whileHover={{ scale: 1.05 }}
             //  whileTap={{ scale: 0.95 }}
-             className="w-full sm:w-auto"
-           >
-             <Button 
-               size="lg" 
-               variant="secondary"
-               className="w-full sm:w-auto shadow-xl"
-               onClick={() => {
-                 const contactSection = document.getElementById('contact');
-                 if (contactSection) {
-                   contactSection.scrollIntoView({ behavior: 'smooth' });
-                 }
-               }}
-             >
-               Contactez-nous
-             </Button>
-           </motion.div>
-           
-           <motion.div
+            className="w-full sm:w-auto"
+          >
+            <Button
+              size="lg"
+              variant="secondary"
+              className="w-full sm:w-auto shadow-xl"
+              onClick={() => {
+                const contactSection = document.getElementById("contact");
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+            >
+              Contactez-nous
+            </Button>
+          </motion.div>
+
+          <motion.div
             //  whileHover={{ scale: 1.05 }}
             //  whileTap={{ scale: 0.95 }}
-             className="w-full sm:w-auto"
-           >
-             <Button 
-               size="lg" 
-               variant="outline" 
-               className="min-w-[180px] w-full sm:w-auto border-2 border-[var(--color-white)] text-[var(--color-white)] hover:bg-[var(--color-white)] hover:text-black backdrop-blur-sm bg-[var(--color-white)]/10"
-             >
-               Découvrez nos expertises en conseil
-             </Button>
-           </motion.div>
+            className="w-full sm:w-auto"
+          >
+            <Button
+              size="lg"
+              variant="outline"
+              className="min-w-[180px] w-full sm:w-auto border-2 border-[var(--color-white)] text-[var(--color-white)] hover:bg-[var(--color-white)] hover:text-black backdrop-blur-sm bg-[var(--color-white)]/10"
+            >
+              Découvrez nos expertises en conseil
+            </Button>
+          </motion.div>
         </motion.div>
 
         {/* Floating Elements - Hidden on mobile */}
@@ -196,7 +203,7 @@ const HeroSection: React.FC = () => {
               ease: "linear",
             }}
           />
-          
+
           <motion.div
             className="absolute bottom-20 left-10 w-16 h-16 border border-white/20 rounded-full"
             animate={{

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import ModalProvider from "../components/providers/ModalProvider";
 
 export const metadata: Metadata = {
   title: "Orion Partner",
@@ -21,7 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <ModalProvider>{children}</ModalProvider>
+      </body>
     </html>
   );
 }
