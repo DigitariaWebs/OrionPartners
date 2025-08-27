@@ -4,6 +4,7 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Check } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useModal } from "../providers/ModalProvider";
 
 export type ServiceInfo = {
@@ -13,6 +14,7 @@ export type ServiceInfo = {
   pricing?: string;
   description: string;
   features?: string[];
+  pageLink?: string;
 };
 
 const SERVICE_DETAILS: ServiceInfo[] = [
@@ -29,6 +31,7 @@ const SERVICE_DETAILS: ServiceInfo[] = [
       "Conseil en Private Equity (Capital-Investissement)",
       "Gestion des Ressources humaines",
     ],
+    pageLink: "/services-conseils",
   },
   {
     id: "comptabilite-certification",
@@ -37,10 +40,8 @@ const SERVICE_DETAILS: ServiceInfo[] = [
     pricing: "Selon mission",
     description:
       "Une information financière fiable est le socle de toute décision. Nous garantissons la production de vos états financiers, nous certifions la sincérité de vos comptes et nous vous fournissons des tableaux de bord clairs pour piloter votre performance. Au-delà de l'obligation légale, nous transformons votre comptabilité en un véritable outil de gestion.",
-    features: [
-      "Calcul de Paie",
-      "Conformité Fiscale & Réglementaire",
-    ],
+    features: ["Calcul de Paie", "Conformité Fiscale & Réglementaire"],
+    pageLink: "/comptabilite-certification",
   },
   {
     id: "representation-accompagnement",
@@ -54,6 +55,7 @@ const SERVICE_DETAILS: ServiceInfo[] = [
       "Représentation lors d'événements",
       "Support opérationnel sur mesure",
     ],
+    pageLink: "/representation-accompagnement",
   },
   {
     id: "etudes-recherches",
@@ -67,6 +69,7 @@ const SERVICE_DETAILS: ServiceInfo[] = [
       "Science des Données & Analyse Prédictive",
       "Études de Marché & Veille Stratégique",
     ],
+    pageLink: "/etudes-recherches",
   },
 ];
 
@@ -76,9 +79,14 @@ interface ServiceModalProps {
   serviceId: string | null;
 }
 
-export default function ServiceModel({ isOpen, onClose, serviceId }: ServiceModalProps) {
+export default function ServiceModel({
+  isOpen,
+  onClose,
+  serviceId,
+}: ServiceModalProps) {
   const service = SERVICE_DETAILS.find((s) => s.id === serviceId);
   const { openModal } = useModal();
+  const router = useRouter();
 
   React.useEffect(() => {
     const handleEscKey = (event: KeyboardEvent) => {
@@ -221,15 +229,12 @@ export default function ServiceModel({ isOpen, onClose, serviceId }: ServiceModa
 
                   <button
                     onClick={() => {
-                      // secondary action: scroll to contact section as an alternative
                       onClose();
-                      setTimeout(
-                        () =>
-                          document
-                            .getElementById("contact")
-                            ?.scrollIntoView({ behavior: "smooth" }),
-                        120
-                      );
+                      setTimeout(() => {
+                        if (service?.pageLink) {
+                          router.push(service.pageLink);
+                        }
+                      }, 120);
                     }}
                     className="flex-1 px-4 py-3 rounded-xl border border-gray-200 text-gray-700 bg-white font-medium hover:bg-gray-50 cursor-pointer transition-colors duration-200"
                   >
