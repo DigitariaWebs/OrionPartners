@@ -236,7 +236,7 @@ const ContactModal: React.FC<FormModalProps> = ({ isOpen, onClose, formType, ser
                   onClick={onClose}
                   className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-4 backdrop-blur-sm hover:bg-white/30 transition-colors duration-200 cursor-pointer"
                 >
-                  {currentContent.icon}
+                  <X className="w-8 h-8 text-white" />
                 </button>
                 <h2 className="text-2xl lg:text-3xl font-bold">
                   {currentContent.title}

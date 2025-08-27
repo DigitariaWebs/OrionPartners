@@ -35,7 +35,6 @@ function AnimatedAccent({ className = "" }: { className?: string }) {
   );
 }
 
-
 const approach = [
   "Une approche sur-mesure pour chaque client",
   "L'obsession du résultat comme moteur",
@@ -82,6 +81,7 @@ export default function AboutSection() {
 
   return (
     <section
+      id="a-propos"
       className="relative w-full py-20 px-4 md:px-12 lg:px-24 bg-white overflow-hidden min-h-[100vh] flex flex-col justify-center"
       aria-labelledby="about-heading"
     >

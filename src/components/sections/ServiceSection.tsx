@@ -2,7 +2,7 @@
 
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
+import { useModal } from "../providers/ModalProvider";
 import { Briefcase, FileCheck2, Handshake, SearchCheck } from "lucide-react";
 
 /**
@@ -14,6 +14,7 @@ import { Briefcase, FileCheck2, Handshake, SearchCheck } from "lucide-react";
 
 const services = [
   {
+    id: "services-conseils",
     title: "Services-conseils",
     description:
       "Conseil stratégique, opérationnel et financier pour accompagner les entreprises à relever leurs défis complexes.",
@@ -22,6 +23,7 @@ const services = [
     gradient: "from-sky-600 via-sky-400 to-sky-700",
   },
   {
+    id: "comptabilite-certification",
     title: "Comptabilité & certification",
     description:
       "Gestion comptable rigoureuse, déclarations fiscales et reporting financier pour garantir votre conformité et optimiser votre performance.",
@@ -30,6 +32,7 @@ const services = [
     gradient: "from-emerald-600 via-emerald-400 to-emerald-700",
   },
   {
+    id: "representation-accompagnement",
     title: "Représentation & Accompagnement",
     description:
       "Facilitation de l'implantation et l'expansion des entreprises en République Démocratique du Congo.",
@@ -38,6 +41,7 @@ const services = [
     gradient: "from-indigo-600 via-indigo-400 to-indigo-700",
   },
   {
+    id: "etudes-recherches",
     title: "Études et recherches",
     description:
       "Analyses claires et pertinentes pour des décisions éclairées et la saisie des meilleures opportunités.",
@@ -80,8 +84,11 @@ function FullWidthVisual({ src, title }: { src: string; title: string }) {
 }
 
 export default function NosServicesSection() {
+  const { openModal } = useModal();
+
   return (
     <section
+      id="services"
       aria-labelledby="services-heading"
       className="relative w-full scroll-mt-24 bg-white"
     >
@@ -118,11 +125,13 @@ export default function NosServicesSection() {
           className="grid grid-cols-1 gap-12 sm:grid-cols-2"
         >
           {services.map((s) => (
-            <Link
+            <button
               key={s.title}
-              href="/contact"
+              onClick={() =>
+                openModal("service", { serviceId: s.id, serviceName: s.title })
+              }
               aria-label={`En savoir plus sur ${s.title}`}
-              className="group block"
+              className="group block text-left cursor-pointer"
             >
               <motion.article
                 variants={fadeInUp}
@@ -155,7 +164,7 @@ export default function NosServicesSection() {
                 </div>
                 {/* className on the article already has hover:shadow; we add group-hover:-translate-y-0.5 via tailwind if needed in CSS config. */}
               </motion.article>
-            </Link>
+            </button>
           ))}
         </motion.div>
       </div>

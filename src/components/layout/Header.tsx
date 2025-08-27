@@ -5,10 +5,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Button from "../ui/Button";
 import { usePathname } from 'next/navigation';
+import { useModal } from '../providers/ModalProvider';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+  const { openModal } = useModal();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,7 +58,7 @@ const Header = () => {
               width={160}
               height={40}
               priority
-              style={{ width: 'auto', maxHeight: '2.5rem' }}
+              style={{ width: "auto", maxHeight: "2.5rem" }}
             />
           </Link>
 
@@ -97,34 +99,28 @@ const Header = () => {
 
           {/* Contact Button - Right */}
           <div className="hidden md:block">
-              <Link href="/contact">
-                <Button variant="secondary" size="md" className="font-medium">
-                  Contactez-nous
-                </Button>
-              </Link>
+              <Button
+                variant="secondary"
+                size="md"
+                className="font-medium"
+                onClick={() => openModal("consultation")}
+              >
+                Contactez-nous
+              </Button>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <Link
-              href="/contact"
+            <button
+              onClick={() => openModal("consultation")}
               className="px-4 py-2 text-sm font-medium rounded-md transition-all duration-300 hover:scale-105 hover:shadow-lg"
               style={{
                 backgroundColor: "var(--color-accent)",
                 color: "var(--color-white)",
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor =
-                  "var(--color-accent-hover)";
-                e.currentTarget.style.transform = "scale(1.05)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "var(--color-accent)";
-                e.currentTarget.style.transform = "scale(1)";
-              }}
             >
               Contact
-            </Link>
+            </button>
           </div>
         </nav>
       </div>
