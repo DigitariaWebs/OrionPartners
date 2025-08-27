@@ -69,7 +69,7 @@ const SERVICE_DETAILS: ServiceInfo[] = [
       "Science des Données & Analyse Prédictive",
       "Études de Marché & Veille Stratégique",
     ],
-    pageLink: "/etudes-recherches",
+    pageLink: "/etudes-data-intelligence",
   },
 ];
 
