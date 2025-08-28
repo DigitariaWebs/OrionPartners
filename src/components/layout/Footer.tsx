@@ -2,49 +2,35 @@
 
 import React from 'react';
 import Image from 'next/image';
-
-interface FooterProps {
-  onServiceClick?: (serviceTitle: string) => void;
-}
+import Link from 'next/link';
 
 const serviceKeyToTitle = (key: string) => {
   const map: Record<string, string> = {
-    diagnostique: 'Diagnostique de Trésorerie',
-    gestion: 'Gestion de liquidité',
-    optimisation: 'Optimisation des coûts',
-    appels: "Appels d'offres",
-    administratifs: 'Services administratifs',
-    support: 'Support Client',
-    solutions: 'Solutions technologiques',
+    "services-conseils": "Services de conseil",
+    "comptabilite-certification": "Comptabilité & certification",
+    "representation-accompagnement": "Représentation & Support Opérationnel",
+    "etudes-recherches": "Études et recherches",
   };
   return map[key] || '';
 };
 
-export default function Footer({ onServiceClick }: FooterProps) {
-  const scrollToSection = (id: string) => {
-    if (typeof window === 'undefined') return;
-    const selector = id.startsWith('#') ? id : `#${id}`;
-    const el = document.querySelector(selector);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+const serviceKeyToUrl = (key: string) => {
+  const map: Record<string, string> = {
+    "services-conseils": "/services-conseils",
+    "comptabilite-certification": "/comptabilite-certification",
+    "representation-accompagnement": "/representation-accompagnement",
+    "etudes-recherches": "/etudes-data-intelligence",
   };
+  return map[key] || '/#services';
+};
 
-  const handleServiceClick = (key: string) => {
-    const title = serviceKeyToTitle(key);
-    // Always scroll to services area first
-    scrollToSection('#services');
-    if (title && onServiceClick) {
-      setTimeout(() => onServiceClick(title), 450);
-    }
-  };
+export default function Footer() {
 
   const services = [
-    "diagnostique",
-    "gestion",
-    "optimisation",
-    "appels",
-    "administratifs",
-    "support",
-    "solutions",
+    "services-conseils",
+    "comptabilite-certification",
+    "representation-accompagnement",
+    "etudes-recherches",
   ];
 
   return (
@@ -91,40 +77,79 @@ export default function Footer({ onServiceClick }: FooterProps) {
             </h4>
             <ul className="space-y-2">
               <li>
-                <button
-                  onClick={() => scrollToSection("#accueil")}
-                  className="transition duration-300 cursor-pointer"
+                <Link
+                  href="/#accueil"
+                  className="transition-all duration-300 cursor-pointer hover:scale-105 pb-1 hover:text-accent"
                   style={{ color: "rgba(var(--color-white-rgb), 0.9)" }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = "var(--color-accent)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = "rgba(var(--color-white-rgb), 0.9)";
+                  }}
                 >
                   Accueil
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection("#a-propos")}
-                  className="transition duration-300 cursor-pointer"
+                <Link
+                  href="/#services"
+                  className="transition-all duration-300 cursor-pointer hover:scale-105 pb-1 hover:text-accent"
                   style={{ color: "rgba(var(--color-white-rgb), 0.9)" }}
-                >
-                  À propos
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection("#services")}
-                  className="transition duration-300 cursor-pointer"
-                  style={{ color: "rgba(var(--color-white-rgb), 0.9)" }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = "var(--color-accent)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = "rgba(var(--color-white-rgb), 0.9)";
+                  }}
                 >
                   Services
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection("#contact")}
-                  className="transition duration-300 cursor-pointer"
+                <Link
+                  href="/notreequipe"
+                  className="transition-all duration-300 cursor-pointer hover:scale-105 pb-1 hover:text-accent"
                   style={{ color: "rgba(var(--color-white-rgb), 0.9)" }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = "var(--color-accent)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = "rgba(var(--color-white-rgb), 0.9)";
+                  }}
+                >
+                  Notre équipe
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/#a-propos"
+                  className="transition-all duration-300 cursor-pointer hover:scale-105 pb-1 hover:text-accent"
+                  style={{ color: "rgba(var(--color-white-rgb), 0.9)" }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = "var(--color-accent)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = "rgba(var(--color-white-rgb), 0.9)";
+                  }}
+                >
+                  À propos
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/#contact"
+                  className="transition-all duration-300 cursor-pointer hover:scale-105 pb-1 hover:text-accent"
+                  style={{ color: "rgba(var(--color-white-rgb), 0.9)" }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = "var(--color-accent)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = "rgba(var(--color-white-rgb), 0.9)";
+                  }}
                 >
                   Contact
-                </button>
+                </Link>
               </li>
             </ul>
           </div>
@@ -139,13 +164,19 @@ export default function Footer({ onServiceClick }: FooterProps) {
             <ul className="space-y-2">
               {services.map((k) => (
                 <li key={k}>
-                  <button
-                    onClick={() => handleServiceClick(k)}
-                    className="transition duration-300 cursor-pointer"
+                  <Link
+                    href={serviceKeyToUrl(k)}
+                    className="transition-all duration-300 cursor-pointer hover:scale-105 pb-1 hover:text-accent"
                     style={{ color: "rgba(var(--color-white-rgb), 0.9)" }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.color = "var(--color-accent)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.color = "rgba(var(--color-white-rgb), 0.9)";
+                    }}
                   >
                     {serviceKeyToTitle(k)}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
