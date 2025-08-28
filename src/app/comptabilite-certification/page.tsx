@@ -513,9 +513,6 @@ export default function ComptabiliteCertificationPage() {
               <h2 className="text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
                 Conformité Fiscale
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Maîtrisez le risque et optimisez votre position en RDC.
-              </p>
             </motion.div>
 
             <div className="grid lg:grid-cols-2 gap-12 items-stretch">

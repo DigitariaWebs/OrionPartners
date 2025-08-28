@@ -71,8 +71,10 @@ export default function EtudesDataIntelligencePage() {
               className="text-lg text-blue-100 mb-12 leading-relaxed max-w-3xl mx-auto"
               {...fadeInUp}
             >
-              Que ce soit pour l&apos;analyse de marché, étude de la demande ou l&apos;analyse des données,
-              OrionPartners vous accompagne dans la valorisation de votre patrimoine informationnel.
+              Découvrez comment vos données peuvent révéler des opportunités
+              cachées, anticiper les tendances du marché et prendre des
+              décisions stratégiques avec confiance grâce à notre expertise en
+              analyse de données.
             </motion.p>
 
             <motion.div
@@ -105,11 +107,13 @@ export default function EtudesDataIntelligencePage() {
               Business Intelligence (BI)
             </h2>
             <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              Nous concevons des tableaux de bord interactifs et des rapports sur mesure pour vous
-              permettre de visualiser vos performances en temps réel, de suivre vos indicateurs clés (KPIs) et
-              de piloter votre activité avec une précision inégalée. Notre expertise sur les plateformes leaders
-              du marché, telles que Microsoft Power BI, Qlik et Tableau, garantit des solutions puissantes et
-              parfaitement intégrées à votre environnement.
+              Nous concevons des tableaux de bord interactifs et des rapports
+              sur mesure pour vous permettre de visualiser vos performances en
+              temps réel, de suivre vos indicateurs clés (KPIs) et de piloter
+              votre activité avec une précision inégalée. Notre expertise sur
+              les plateformes leaders du marché, telles que Microsoft Power BI,
+              Qlik et Tableau, garantit des solutions puissantes et parfaitement
+              intégrées à votre environnement.
             </p>
           </motion.div>
 
@@ -123,19 +127,37 @@ export default function EtudesDataIntelligencePage() {
               <div className="w-16 h-16 bg-[#9ac322] rounded-2xl flex items-center justify-center mb-6">
                 <Users className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-6">Analyse du recrutement</h3>
+              <h3 className="text-2xl font-bold mb-6">
+                Analyse du recrutement
+              </h3>
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold text-[#9ac322] mb-2">⎯ The Client</h4>
-                  <p className="text-blue-100">Entreprise technologique en pleine croissance cherchant à optimiser ses processus de recrutement.</p>
+                  <h4 className="font-semibold text-[#9ac322] mb-2">
+                    ⎯ The Client
+                  </h4>
+                  <p className="text-blue-100">
+                    Entreprise technologique en pleine croissance cherchant à
+                    optimiser ses processus de recrutement.
+                  </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#9ac322] mb-2">⎯ Problème</h4>
-                  <p className="text-blue-100">Difficulté à analyser l&apos;efficacité des canaux de recrutement et à prévoir les besoins en personnel.</p>
+                  <h4 className="font-semibold text-[#9ac322] mb-2">
+                    ⎯ Problème
+                  </h4>
+                  <p className="text-blue-100">
+                    Difficulté à analyser l&apos;efficacité des canaux de
+                    recrutement et à prévoir les besoins en personnel.
+                  </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#9ac322] mb-2">⎯ Notre Solution</h4>
-                  <p className="text-blue-100">Développement d&apos;un tableau de bord Power BI intégrant les données RH, les performances des canaux et les prévisions de recrutement.</p>
+                  <h4 className="font-semibold text-[#9ac322] mb-2">
+                    ⎯ Notre Solution
+                  </h4>
+                  <p className="text-blue-100">
+                    Développement d&apos;un tableau de bord Power BI intégrant
+                    les données RH, les performances des canaux et les
+                    prévisions de recrutement.
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -151,16 +173,31 @@ export default function EtudesDataIntelligencePage() {
               <h3 className="text-2xl font-bold mb-6">Analyse Facturation</h3>
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold text-[#9ac322] mb-2">⎯ The Client</h4>
-                  <p className="text-blue-100">Société de services confrontée à des retards de paiement et une trésorerie tendue.</p>
+                  <h4 className="font-semibold text-[#9ac322] mb-2">
+                    ⎯ The Client
+                  </h4>
+                  <p className="text-blue-100">
+                    Société de services confrontée à des retards de paiement et
+                    une trésorerie tendue.
+                  </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#9ac322] mb-2">⎯ Problème</h4>
-                  <p className="text-blue-100">Manque de visibilité sur les délais de paiement et les risques de non-recouvrement.</p>
+                  <h4 className="font-semibold text-[#9ac322] mb-2">
+                    ⎯ Problème
+                  </h4>
+                  <p className="text-blue-100">
+                    Manque de visibilité sur les délais de paiement et les
+                    risques de non-recouvrement.
+                  </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#9ac322] mb-2">⎯ Notre Solution</h4>
-                  <p className="text-blue-100">Création d&apos;un système de suivi automatisé avec alertes prédictives sur les risques de retard.</p>
+                  <h4 className="font-semibold text-[#9ac322] mb-2">
+                    ⎯ Notre Solution
+                  </h4>
+                  <p className="text-blue-100">
+                    Création d&apos;un système de suivi automatisé avec alertes
+                    prédictives sur les risques de retard.
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -176,9 +213,10 @@ export default function EtudesDataIntelligencePage() {
               Science des Données & Analyse Prédictive
             </h2>
             <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed mb-8">
-              Allez au-delà des rapports : transformez vos données en avantage prédictif. Notre expertise en
-              science des données vous permet de débloquer la valeur cachée dans vos informations pour
-              prendre des décisions proactives.
+              Allez au-delà des rapports : transformez vos données en avantage
+              prédictif. Notre expertise en science des données vous permet de
+              débloquer la valeur cachée dans vos informations pour prendre des
+              décisions proactives.
             </p>
           </motion.div>
 
@@ -188,23 +226,38 @@ export default function EtudesDataIntelligencePage() {
                 <div className="w-16 h-16 bg-[#095797] rounded-2xl flex items-center justify-center mb-6">
                   <Brain className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-[#095797] mb-6">Nos Modèles Sur Mesure</h3>
+                <h3 className="text-2xl font-bold text-[#095797] mb-6">
+                  Nos Modèles Sur Mesure
+                </h3>
                 <ul className="space-y-4 text-gray-700">
                   <li className="flex items-start gap-3">
                     <TrendingUp className="w-6 h-6 text-[#9ac322] mt-1 flex-shrink-0" />
-                    <span>Anticiper les tendances du marché et les évolutions de la demande.</span>
+                    <span>
+                      Anticiper les tendances du marché et les évolutions de la
+                      demande.
+                    </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <Zap className="w-6 h-6 text-[#9ac322] mt-1 flex-shrink-0" />
-                    <span>Optimiser vos processus opérationnels, logistiques et marketing.</span>
+                    <span>
+                      Optimiser vos processus opérationnels, logistiques et
+                      marketing.
+                    </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <Target className="w-6 h-6 text-[#9ac322] mt-1 flex-shrink-0" />
-                    <span>Décrypter les comportements clients pour améliorer la rétention et la personnalisation.</span>
+                    <span>
+                      Décrypter les comportements clients pour améliorer la
+                      rétention et la personnalisation.
+                    </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <Lightbulb className="w-6 h-6 text-[#9ac322] mt-1 flex-shrink-0" />
-                    <span>Maîtriser les risques et identifier les nouvelles opportunités de croissance avec une longueur d&apos;avance.</span>
+                    <span>
+                      Maîtriser les risques et identifier les nouvelles
+                      opportunités de croissance avec une longueur
+                      d&apos;avance.
+                    </span>
                   </li>
                 </ul>
               </div>
@@ -215,20 +268,27 @@ export default function EtudesDataIntelligencePage() {
                 <div className="w-16 h-16 bg-[#9ac322] rounded-2xl flex items-center justify-center mb-6">
                   <BarChart3 className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-[#095797] mb-6">Avantages Concurrentiels</h3>
+                <h3 className="text-2xl font-bold text-[#095797] mb-6">
+                  Avantages Concurrentiels
+                </h3>
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Notre approche combine algorithmes avancés, machine learning et expertise métier pour
-                  transformer vos données en insights actionnables. Chaque modèle est calibré sur vos
-                  données spécifiques pour garantir une précision maximale.
+                  Notre approche combine algorithmes avancés, machine learning
+                  et expertise métier pour transformer vos données en insights
+                  actionnables. Chaque modèle est calibré sur vos données
+                  spécifiques pour garantir une précision maximale.
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center p-4 bg-[#095797]/10 rounded-xl">
                     <div className="text-2xl font-bold text-[#095797]">95%</div>
-                    <div className="text-sm text-gray-600">Précision prédictive</div>
+                    <div className="text-sm text-gray-600">
+                      Précision prédictive
+                    </div>
                   </div>
                   <div className="text-center p-4 bg-[#9ac322]/10 rounded-xl">
                     <div className="text-2xl font-bold text-[#9ac322]">30%</div>
-                    <div className="text-sm text-gray-600">Gain d&apos;efficacité</div>
+                    <div className="text-sm text-gray-600">
+                      Gain d&apos;efficacité
+                    </div>
                   </div>
                 </div>
               </div>
@@ -245,96 +305,124 @@ export default function EtudesDataIntelligencePage() {
               Études de Marché & Veille Stratégique
             </h2>
             <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              Nous menons des études qualitatives et quantitatives approfondies pour vous offrir une
-              compréhension à 360° de votre environnement : analyse de la concurrence, attentes des clients,
-              dynamiques de marché et opportunités de croissance.
+              Nous menons des études qualitatives et quantitatives approfondies
+              pour vous offrir une compréhension à 360° de votre environnement :
+              analyse de la concurrence, attentes des clients, dynamiques de
+              marché et opportunités de croissance.
             </p>
           </motion.div>
 
           {/* Market Study Examples */}
           <div className="space-y-16">
-            {/* Study 1: Transport Sector */}
+            {/* Study 1: Digital Commerce */}
             <motion.div
               className="bg-gradient-to-r from-[#095797]/5 to-[#0a5fa3]/5 rounded-3xl p-8 lg:p-12"
               {...fadeInUp}
             >
               <h3 className="text-3xl font-bold text-[#095797] mb-8">
-                Secteur de transport : conséquence économique des embouteillages pour les entreprises à Kinshasa
+                Étude du commerce numérique : transformation digitale du secteur
+                retail à Kinshasa
               </h3>
               <div className="grid lg:grid-cols-2 gap-8">
                 <div className="space-y-6">
                   <div>
-                    <h4 className="text-xl font-semibold text-[#095797] mb-3">Contexte</h4>
+                    <h4 className="text-xl font-semibold text-[#095797] mb-3">
+                      Contexte
+                    </h4>
                     <p className="text-gray-700 leading-relaxed">
-                      Kinshasa, capitale de la RDC, fait face à des problèmes de circulation chroniques
-                      impactant l&apos;activité économique des entreprises.
+                      Le secteur retail à Kinshasa connaît une transformation
+                      digitale rapide avec l&apos;essor des marketplaces et du
+                      e-commerce mobile.
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold text-[#095797] mb-3">Notre approche</h4>
+                    <h4 className="text-xl font-semibold text-[#095797] mb-3">
+                      Notre approche
+                    </h4>
                     <p className="text-gray-700 leading-relaxed">
-                      Analyse quantitative des temps de trajet, entretiens qualitatifs avec dirigeants
-                      d&apos;entreprises, modélisation économique des pertes.
+                      Analyse des données transactionnelles, enquêtes
+                      consommateurs, benchmarking des pratiques digitales
+                      locales et internationales.
                     </p>
                   </div>
                 </div>
                 <div className="space-y-6">
                   <div>
-                    <h4 className="text-xl font-semibold text-[#095797] mb-3">Nos résultats</h4>
+                    <h4 className="text-xl font-semibold text-[#095797] mb-3">
+                      Nos résultats
+                    </h4>
                     <p className="text-gray-700 leading-relaxed">
-                      Identification de pertes économiques de 15 milliards FCFA/an pour les entreprises
-                      du secteur tertiaire, cartographie des zones critiques.
+                      Croissance de 300% du e-commerce en 3 ans, identification
+                      des segments consommateurs les plus actifs (18-35 ans,
+                      classe moyenne urbaine).
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold text-[#095797] mb-3">La valeur pour notre client</h4>
+                    <h4 className="text-xl font-semibold text-[#095797] mb-3">
+                      La valeur pour notre client
+                    </h4>
                     <p className="text-gray-700 leading-relaxed">
-                      Arguments solides pour lobbying auprès des autorités, optimisation des stratégies
-                      logistiques et choix d&apos;implantation.
+                      Stratégies omnicanal optimisées, identification
+                      d&apos;opportunités d&apos;investissement dans la
+                      logistique digitale et le paiement mobile.
                     </p>
                   </div>
                 </div>
               </div>
             </motion.div>
 
-            {/* Study 2: Energy Sector */}
+            {/* Study 2: Consumer Insights */}
             <motion.div
               className="bg-gradient-to-r from-[#9ac322]/5 to-[#8ab01e]/5 rounded-3xl p-8 lg:p-12"
               {...fadeInUp}
             >
               <h3 className="text-3xl font-bold text-[#095797] mb-8">
-                Secteur de l&apos;énergie : conséquence économique coupure de l&apos;électricité pour les entreprises à Kinshasa
+                Étude comportement consommateur : évolution des préférences
+                générationnelles à Kinshasa
               </h3>
               <div className="grid lg:grid-cols-2 gap-8">
                 <div className="space-y-6">
                   <div>
-                    <h4 className="text-xl font-semibold text-[#095797] mb-3">Contexte</h4>
+                    <h4 className="text-xl font-semibold text-[#095797] mb-3">
+                      Contexte
+                    </h4>
                     <p className="text-gray-700 leading-relaxed">
-                      Les entreprises de Kinshasa subissent régulièrement des coupures d&apos;électricité
-                      affectant leur productivité et leurs coûts opérationnels.
+                      Les consommateurs kinois connaissent une évolution rapide
+                      de leurs comportements d&apos;achat influencés par la
+                      digitalisation et les changements socio-économiques.
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold text-[#095797] mb-3">Notre approche</h4>
+                    <h4 className="text-xl font-semibold text-[#095797] mb-3">
+                      Notre approche
+                    </h4>
                     <p className="text-gray-700 leading-relaxed">
-                      Enquête auprès de 200 entreprises, analyse des données de consommation électrique,
-                      modélisation des impacts économiques.
+                      Enquête quantitative auprès de 1500 consommateurs, analyse
+                      des données comportementales, segmentation par génération
+                      et pouvoir d&apos;achat.
                     </p>
                   </div>
                 </div>
                 <div className="space-y-6">
                   <div>
-                    <h4 className="text-xl font-semibold text-[#095797] mb-3">Nos résultats</h4>
+                    <h4 className="text-xl font-semibold text-[#095797] mb-3">
+                      Nos résultats
+                    </h4>
                     <p className="text-gray-700 leading-relaxed">
-                      Pertes estimées à 8 milliards FCFA/an, identification des secteurs les plus touchés
-                      (industrie manufacturière, services financiers).
+                      Segmentation claire : génération Z privilégie
+                      l&apos;expérience digitale (85% des achats mobiles),
+                      millennials recherchent qualité/prix, génération X reste
+                      fidèle aux circuits traditionnels.
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold text-[#095797] mb-3">La valeur pour notre client</h4>
+                    <h4 className="text-xl font-semibold text-[#095797] mb-3">
+                      La valeur pour notre client
+                    </h4>
                     <p className="text-gray-700 leading-relaxed">
-                      Justification d&apos;investissements dans des solutions énergétiques alternatives,
-                      négociation de contrats préférentiels avec fournisseurs d&apos;énergie.
+                      Adaptation des stratégies marketing, développement de
+                      produits ciblés, optimisation des canaux de distribution
+                      digitale et physique.
                     </p>
                   </div>
                 </div>
@@ -343,7 +431,6 @@ export default function EtudesDataIntelligencePage() {
           </div>
         </div>
       </section>
-
 
       <Footer />
     </div>

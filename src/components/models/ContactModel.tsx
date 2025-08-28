@@ -428,8 +428,8 @@ const ContactModal: React.FC<FormModalProps> = ({ isOpen, onClose, formType, ser
                           <option value="Comptabilité & certification">
                             Comptabilité & certification
                           </option>
-                          <option value="Représentation & Accompagnement">
-                            Représentation & Accompagnement
+                          <option value="Représentation & Support Opérationnel">
+                            Représentation & Support Opérationnel
                           </option>
                           <option value="Études et recherches">
                             Études et recherches

@@ -45,11 +45,11 @@ const SERVICE_DETAILS: ServiceInfo[] = [
   },
   {
     id: "representation-accompagnement",
-    title: "Représentation & Accompagnement",
+    title: "Représentation & Support Opérationnel",
     imageSrc: "/ServiceImages/RepresentationAccompagnement.png",
     pricing: "Sur demande",
     description:
-      "Nous représentons et accompagnons vos équipes lors d'événements, négociations ou démarches administratives afin d'assurer un suivi professionnel et discret.",
+      "Votre partenaire stratégique pour réussir en République Démocratique du Congo. La RDC offre un potentiel exceptionnel mais sa complexité administrative, réglementaire et culturelle nécessite une expertise locale. Sans partenaire sur le terrain, les projets s'exposent à des retards et surcoûts.\n\nNous sommes votre extension stratégique et opérationnelle en RDC. Notre mission : transformer la complexité locale en avantage compétitif grâce à notre équipe engagée à 100% pour votre succès.",
     features: [
       "Accompagnement terrain",
       "Représentation lors d'événements",

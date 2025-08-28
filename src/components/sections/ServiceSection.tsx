@@ -33,9 +33,9 @@ const services = [
   },
   {
     id: "representation-accompagnement",
-    title: "Représentation & Accompagnement",
+    title: "Représentation & Support Opérationnel",
     description:
-      "Facilitation de l'implantation et l'expansion des entreprises en République Démocratique du Congo.",
+      "Votre partenaire stratégique pour réussir en République Démocratique du Congo",
     icon: Handshake,
     image: "/ServiceImages/RepresentationAccompagnement.png",
     gradient: "from-indigo-600 via-indigo-400 to-indigo-700",

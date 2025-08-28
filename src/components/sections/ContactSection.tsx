@@ -1,5 +1,5 @@
 "use client";
-import { Phone, Smartphone, Mail, MapPin, Users } from "lucide-react";
+import { Phone, Smartphone, Mail, MapPin, Users, MessageCircle } from "lucide-react";
 import { useModal } from "../providers/ModalProvider";
 export default function ContactSection() {
   const { openModal } = useModal();
@@ -41,14 +41,16 @@ export default function ContactSection() {
             </h3>
             <div className="space-y-4">
               <a
-                href="tel:+243991222231"
+                href="https://wa.me/243991222231"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 rounded-2xl ring-1 ring-black/5 bg-white transition-all hover:-translate-y-0.5"
               >
                 <div
                   className="w-12 h-12 rounded-2xl grid place-items-center"
-                  style={{ background: "var(--color-primary)" }}
+                  style={{ background: "#25D366" }}
                 >
-                  <Smartphone
+                  <MessageCircle
                     className="w-6 h-6"
                     style={{ color: "var(--color-white)" }}
                   />
@@ -58,7 +60,7 @@ export default function ContactSection() {
                     className="font-semibold"
                     style={{ color: "var(--color-text-primary)" }}
                   >
-                    Téléphone
+                    WhatsApp
                   </h4>
                   <p
                     className="transition-colors"
