@@ -22,16 +22,18 @@ const Header = () => {
   }, []);
 
   const navigation = [
-    { name: 'Accueil', href: '/#accueil' },
-    { name: 'Services', href: '/#services' },
-    { name: 'Blog', href: '/#blog' },
-    { name: 'Notre équipe', href: '/notreequipe' },
-    { name: 'À propos', href: '/#a-propos' },
-    { name: 'Contact', href: '/#contact' },
+    { name: "Accueil", href: "/#accueil" },
+    { name: "Services", href: "/#services" },
+    { name: "Blog", href: "/blog" },
+    { name: "Notre équipe", href: "/notreequipe" },
+    { name: "À propos", href: "/#a-propos" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   const isActive = (path: string) => {
     if (path === '#accueil') return pathname === '/' || pathname === '/#accueil';
+    if (path === "/blog")
+      return pathname === "/blog" || pathname.startsWith("/blog/");
     return pathname.includes(path);
   };
 
