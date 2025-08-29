@@ -36,7 +36,7 @@ export default function NotreEquipePage() {
       name: "Gisèle Kabwende",
       title: "Avocate Associée",
       image:
-        "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face",
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
       description:
         "Mme. Gisèle est Consultante au sein de OrionPartners. Elle se spécialise dans l'accompagnement stratégique à l'intersection du droit public, du droit des affaires et des processus institutionnels. Sa mission est de sécuriser les opérations et les investissements de nos clients en transformant les complexités réglementaires et administratives congolaises en opportunités claires et maîtrisées.",
       expertise: "Droit public, Droit des affaires, Réforme institutionnelle",
@@ -47,8 +47,7 @@ export default function NotreEquipePage() {
     {
       name: "Ferdinand Ntambwe",
       title: "MA, Consultant",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+      image: "/NotreEquipe/FerdinandNtambwe.jpg",
       description:
         "Ferdinand est Consultant au sein de OrionPartners. Il se consacre à l'accompagnement des organisations publiques, communautaires et privées, en apportant des solutions rigoureuses et adaptées à leurs enjeux stratégiques et financiers.",
       expertise:
@@ -60,8 +59,7 @@ export default function NotreEquipePage() {
     {
       name: "Nonce Dede",
       title: "LLM, Consultant",
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+      image: "/NotreEquipe/NonceDede.jpg",
       description:
         "Nonce est Consultant au sein de OrionPartners, où il apporte une expertise juridique de premier plan sur les enjeux nationaux et transnationaux. Il se spécialise dans la sécurisation des opérations commerciales et des investissements.",
       expertise:
@@ -198,16 +196,17 @@ export default function NotreEquipePage() {
             {teamMembers.map((member, index) => (
               <motion.div
                 key={index}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group h-[500px] flex flex-col"
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group h-[600px] flex flex-col"
                 variants={fadeInUp}
               >
                 <div className="relative flex-shrink-0">
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-64 overflow-hidden">
                     <Image
                       src={member.image}
                       alt={member.name}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      style={{ objectPosition: 'center -70px' }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   </div>

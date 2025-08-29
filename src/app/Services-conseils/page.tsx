@@ -314,7 +314,7 @@ export default function ServicesConseilsPage() {
         </div>
       </section>
 
-      {/* Bloc 2: Accompagnement & Représentation */}
+      {/* Bloc 2: Représentation & Support Opérationnel */}
       <section className="py-24 lg:py-32 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
@@ -336,7 +336,7 @@ export default function ServicesConseilsPage() {
                 Expertise Locale
               </div>
               <h2 className="text-4xl lg:text-6xl font-bold text-[#095797] mb-6">
-                Accompagnement & Représentation
+                Représentation & Support Opérationnel
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 Votre partenaire de confiance pour une implantation et une
@@ -356,7 +356,7 @@ export default function ServicesConseilsPage() {
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full">
                     <Image
                       src="/ServiceImages/RepresentationAccompagnement.png"
-                      alt="Accompagnement & Représentation"
+                      alt="Représentation & Support Opérationnel"
                       width={700}
                       height={500}
                       className="w-full h-full object-cover"

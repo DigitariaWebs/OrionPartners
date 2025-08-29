@@ -3,7 +3,7 @@
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import { useModal } from "../providers/ModalProvider";
-import { Briefcase, FileCheck2, Handshake, SearchCheck } from "lucide-react";
+import { Briefcase, FileCheck2, SearchCheck } from "lucide-react";
 
 /**
  * Section: Nos Services
@@ -30,15 +30,6 @@ const services = [
     icon: FileCheck2,
     image: "/ServiceImages/ComptabiliteCertification.png",
     gradient: "from-emerald-600 via-emerald-400 to-emerald-700",
-  },
-  {
-    id: "representation-accompagnement",
-    title: "Représentation & Support Opérationnel",
-    description:
-      "Votre partenaire stratégique pour réussir en République Démocratique du Congo",
-    icon: Handshake,
-    image: "/ServiceImages/RepresentationAccompagnement.png",
-    gradient: "from-indigo-600 via-indigo-400 to-indigo-700",
   },
   {
     id: "etudes-recherches",
@@ -95,7 +86,7 @@ export default function NosServicesSection() {
       {/* Decorative top rule */}
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-black/10 to-transparent" />
 
-      <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
         {/* Title + Intro */}
         <motion.header
           initial="hidden"
@@ -122,7 +113,7 @@ export default function NosServicesSection() {
           whileInView="show"
           viewport={{ once: true, margin: "-60px" }}
           variants={staggerContainer}
-          className="grid grid-cols-1 gap-12 sm:grid-cols-2"
+          className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3"
         >
           {services.map((s) => (
             <button

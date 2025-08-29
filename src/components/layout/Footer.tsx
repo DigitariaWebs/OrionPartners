@@ -8,28 +8,24 @@ const serviceKeyToTitle = (key: string) => {
   const map: Record<string, string> = {
     "services-conseils": "Services de conseil",
     "comptabilite-certification": "Comptabilité & certification",
-    "representation-accompagnement": "Représentation & Support Opérationnel",
     "etudes-recherches": "Études et recherches",
   };
-  return map[key] || '';
+  return map[key] || "";
 };
 
 const serviceKeyToUrl = (key: string) => {
   const map: Record<string, string> = {
     "services-conseils": "/services-conseils",
     "comptabilite-certification": "/comptabilite-certification",
-    "representation-accompagnement": "/representation-accompagnement",
     "etudes-recherches": "/etudes-data-intelligence",
   };
-  return map[key] || '/#services';
+  return map[key] || "/#services";
 };
 
 export default function Footer() {
-
   const services = [
     "services-conseils",
     "comptabilite-certification",
-    "representation-accompagnement",
     "etudes-recherches",
   ];
 
@@ -53,7 +49,7 @@ export default function Footer() {
                 alt="Orion Partners Logo"
                 width={200}
                 height={80}
-                style={{ width: 'auto', maxHeight: '4rem' }}
+                style={{ width: "auto", maxHeight: "4rem" }}
               />
             </h3>
             <p
@@ -85,7 +81,8 @@ export default function Footer() {
                     e.currentTarget.style.color = "var(--color-accent)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color = "rgba(var(--color-white-rgb), 0.9)";
+                    e.currentTarget.style.color =
+                      "rgba(var(--color-white-rgb), 0.9)";
                   }}
                 >
                   Accueil
@@ -100,7 +97,8 @@ export default function Footer() {
                     e.currentTarget.style.color = "var(--color-accent)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color = "rgba(var(--color-white-rgb), 0.9)";
+                    e.currentTarget.style.color =
+                      "rgba(var(--color-white-rgb), 0.9)";
                   }}
                 >
                   Services
@@ -115,7 +113,8 @@ export default function Footer() {
                     e.currentTarget.style.color = "var(--color-accent)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color = "rgba(var(--color-white-rgb), 0.9)";
+                    e.currentTarget.style.color =
+                      "rgba(var(--color-white-rgb), 0.9)";
                   }}
                 >
                   Notre équipe
@@ -130,7 +129,8 @@ export default function Footer() {
                     e.currentTarget.style.color = "var(--color-accent)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color = "rgba(var(--color-white-rgb), 0.9)";
+                    e.currentTarget.style.color =
+                      "rgba(var(--color-white-rgb), 0.9)";
                   }}
                 >
                   À propos
@@ -145,7 +145,8 @@ export default function Footer() {
                     e.currentTarget.style.color = "var(--color-accent)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color = "rgba(var(--color-white-rgb), 0.9)";
+                    e.currentTarget.style.color =
+                      "rgba(var(--color-white-rgb), 0.9)";
                   }}
                 >
                   Contact
@@ -172,7 +173,8 @@ export default function Footer() {
                       e.currentTarget.style.color = "var(--color-accent)";
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.color = "rgba(var(--color-white-rgb), 0.9)";
+                      e.currentTarget.style.color =
+                        "rgba(var(--color-white-rgb), 0.9)";
                     }}
                   >
                     {serviceKeyToTitle(k)}
