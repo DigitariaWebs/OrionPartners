@@ -61,7 +61,7 @@ const Header = () => {
               width={160}
               height={40}
               priority
-              style={{ width: "auto", maxHeight: "2.5rem" }}
+              style={{ width: "auto", height: "auto", maxHeight: "2.5rem" }}
             />
           </Link>
 
@@ -102,14 +102,14 @@ const Header = () => {
 
           {/* Contact Button - Right */}
           <div className="hidden md:block">
-              <Button
-                variant="secondary"
-                size="md"
-                className="font-medium"
-                onClick={() => openModal("consultation")}
-              >
-                Contactez-nous
-              </Button>
+            <Button
+              variant="secondary"
+              size="md"
+              className="font-medium"
+              onClick={() => openModal("consultation")}
+            >
+              Contactez-nous
+            </Button>
           </div>
 
           {/* Mobile menu button */}

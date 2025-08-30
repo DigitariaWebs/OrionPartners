@@ -49,7 +49,7 @@ export default function Footer() {
                 alt="Orion Partners Logo"
                 width={200}
                 height={80}
-                style={{ width: "auto", maxHeight: "4rem" }}
+                style={{ width: "auto", height: "auto", maxHeight: "4rem" }}
               />
             </h3>
             <p

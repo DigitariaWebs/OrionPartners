@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   keywords: ["professional", "services", "solutions", "business"],
   authors: [{ name: "Orion Partner" }],
   robots: "index, follow",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export const viewport: Viewport = {
