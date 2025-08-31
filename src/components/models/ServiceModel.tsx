@@ -4,6 +4,7 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Check } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useModal } from "../providers/ModalProvider";
 
@@ -20,7 +21,7 @@ export type ServiceInfo = {
 const SERVICE_DETAILS: ServiceInfo[] = [
   {
     id: "services-conseils",
-    title: "Services-conseils",
+    title: "Services Conseils",
     imageSrc: "/ServiceImages/ServicesConseils.png",
     pricing: "Sur devis",
     description:
