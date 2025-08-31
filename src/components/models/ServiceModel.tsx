@@ -230,11 +230,9 @@ export default function ServiceModel({
                   <button
                     onClick={() => {
                       onClose();
-                      setTimeout(() => {
-                        if (service?.pageLink) {
-                          router.push(service.pageLink);
-                        }
-                      }, 120);
+                      if (service?.pageLink) {
+                        router.push(service.pageLink);
+                      }
                     }}
                     className="flex-1 px-4 py-3 rounded-xl border border-gray-200 text-gray-700 bg-white font-medium hover:bg-gray-50 cursor-pointer transition-colors duration-200"
                   >
