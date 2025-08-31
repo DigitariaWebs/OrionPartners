@@ -807,32 +807,24 @@ export default function ServicesConseilsPage() {
                   <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
                     {/* Tab Headers */}
                     <div className="flex border-b border-gray-200">
-                      <button
-                        className="flex-1 py-6 px-8 text-center font-semibold text-lg transition-all duration-300 relative overflow-hidden group cursor-pointer"
-                        onClick={() => {
-                          const tab1 =
-                            document.getElementById("tab-enterprises");
-                          const tab2 = document.getElementById("tab-investors");
-                          const btn1 =
-                            document.getElementById("btn-enterprises");
-                          const btn2 = document.getElementById("btn-investors");
+                        <button
+                          className="flex-1 py-6 px-8 text-center font-semibold text-lg transition-all duration-300 relative overflow-hidden group cursor-pointer"
+                          onClick={() => {
+                            const tab1 = document.getElementById("tab-enterprises");
+                            const tab2 = document.getElementById("tab-investors");
+                            const btn1 = document.getElementById("btn-enterprises");
+                            const btn2 = document.getElementById("btn-investors");
 
-                          if (tab1 && tab2 && btn1 && btn2) {
-                            tab1.classList.remove("hidden");
-                            tab2.classList.add("hidden");
-                            btn1.classList.add(
-                              "text-[#9ac322]",
-                              "bg-[#9ac322]/5"
-                            );
-                            btn1.classList.remove("text-gray-600");
-                            btn2.classList.remove(
-                              "text-[#095797]",
-                              "bg-[#095797]/5"
-                            );
-                            btn2.classList.add("text-gray-600");
-                          }
-                        }}
-                        id="btn-enterprises"
+                            if (tab1 && tab2 && btn1 && btn2) {
+                              tab1.classList.remove("hidden");
+                              tab2.classList.add("hidden");
+                              btn1.classList.add("text-[#9ac322]", "bg-[#9ac322]/5");
+                              btn1.classList.remove("text-gray-600");
+                              btn2.classList.remove("text-[#095797]", "bg-[#095797]/5");
+                              btn2.classList.add("text-gray-600");
+                            }
+                          }}
+                          id="btn-enterprises"
                       >
                         <div className="flex items-center justify-center gap-3">
                           <div className="w-10 h-10 bg-[#9ac322] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -848,25 +840,17 @@ export default function ServicesConseilsPage() {
                       <button
                         className="flex-1 py-6 px-8 text-center font-semibold text-lg transition-all duration-300 relative overflow-hidden group cursor-pointer"
                         onClick={() => {
-                          const tab1 =
-                            document.getElementById("tab-enterprises");
+                          const tab1 = document.getElementById("tab-enterprises");
                           const tab2 = document.getElementById("tab-investors");
-                          const btn1 =
-                            document.getElementById("btn-enterprises");
+                          const btn1 = document.getElementById("btn-enterprises");
                           const btn2 = document.getElementById("btn-investors");
 
                           if (tab1 && tab2 && btn1 && btn2) {
                             tab2.classList.remove("hidden");
                             tab1.classList.add("hidden");
-                            btn2.classList.add(
-                              "text-[#095797]",
-                              "bg-[#095797]/5"
-                            );
+                            btn2.classList.add("text-[#095797]", "bg-[#095797]/5");
                             btn2.classList.remove("text-gray-600");
-                            btn1.classList.remove(
-                              "text-[#9ac322]",
-                              "bg-[#9ac322]/5"
-                            );
+                            btn1.classList.remove("text-[#9ac322]", "bg-[#9ac322]/5");
                             btn1.classList.add("text-gray-600");
                           }
                         }}
