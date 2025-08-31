@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const serviceKeyToTitle = (key: string) => {
   const map: Record<string, string> = {
-    "services-conseils": "Services de conseil",
+    "servicesconseils": "Services de conseil",
     "comptabilite-certification": "Comptabilité & certification",
     "etudes-recherches": "Études et recherches",
   };
@@ -15,7 +15,7 @@ const serviceKeyToTitle = (key: string) => {
 
 const serviceKeyToUrl = (key: string) => {
   const map: Record<string, string> = {
-    "services-conseils": "/services-conseils",
+    "servicesconseils": "/servicesconseils",
     "comptabilite-certification": "/comptabilite-certification",
     "etudes-recherches": "/etudes-data-intelligence",
   };
@@ -24,7 +24,7 @@ const serviceKeyToUrl = (key: string) => {
 
 export default function Footer() {
   const services = [
-    "services-conseils",
+    "servicesconseils",
     "comptabilite-certification",
     "etudes-recherches",
   ];

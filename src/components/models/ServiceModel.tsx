@@ -20,7 +20,7 @@ export type ServiceInfo = {
 
 const SERVICE_DETAILS: ServiceInfo[] = [
   {
-    id: "services-conseils",
+    id: "servicesconseils",
     title: "Services Conseils",
     imageSrc: "/ServiceImages/ServicesConseils.png",
     pricing: "Sur devis",
@@ -32,7 +32,7 @@ const SERVICE_DETAILS: ServiceInfo[] = [
       "Conseil en Private Equity (Capital-Investissement)",
       "Gestion des Ressources humaines",
     ],
-    pageLink: "/services-conseils",
+    pageLink: "/servicesconseils",
   },
   {
     id: "comptabilite-certification",
