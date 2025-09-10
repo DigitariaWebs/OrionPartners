@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const serviceKeyToTitle = (key: string) => {
   const map: Record<string, string> = {
-    "servicesconseils": "Services de conseil",
+    "servicesconseils": "Services Conseils",
     "comptabilite-certification": "Comptabilité & certification",
     "etudes-recherches": "Études et recherches",
   };

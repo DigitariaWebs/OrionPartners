@@ -15,7 +15,7 @@ import { Briefcase, FileCheck2, SearchCheck } from "lucide-react";
 const services = [
   {
     id: "servicesconseils",
-    title: "Services-conseils",
+    title: "Services Conseils",
     description:
       "Conseil stratégique, opérationnel et financier pour accompagner les entreprises à relever leurs défis complexes.",
     icon: Briefcase,
