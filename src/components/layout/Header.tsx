@@ -56,7 +56,7 @@ const Header = () => {
     { name: "Services", href: "/#services", isDropdown: true },
     { name: "Blog", href: "/blog" },
     { name: "Notre équipe", href: "/notreequipe" },
-    { name: "À propos", href: "/#a-propos" },
+    { name: "À propos", href: "/a-propos" },
     { name: "Contact", href: "/#contact" },
   ];
 

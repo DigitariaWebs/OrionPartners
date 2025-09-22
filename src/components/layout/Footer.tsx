@@ -122,7 +122,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/#a-propos"
+                  href="/a-propos"
                   className="transition-all duration-300 cursor-pointer hover:scale-105 pb-1 hover:text-accent"
                   style={{ color: "rgba(var(--color-white-rgb), 0.9)" }}
                   onMouseEnter={(e) => {

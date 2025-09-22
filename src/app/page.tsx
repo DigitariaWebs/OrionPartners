@@ -1,6 +1,5 @@
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
-import AboutSection from "@/components/sections/AboutSection";
 import ContactSection from "@/components/sections/ContactSection";
 import HeroSection from "@/components/sections/HeroSection";
 import ServiceSection from "@/components/sections/ServiceSection";
@@ -11,9 +10,8 @@ export default function Home() {
     <div>
       <Header />
       <HeroSection />
-      <AboutSection />
-      <StateSection />
       <ServiceSection />
+      <StateSection />
       <ContactSection />
       <Footer />
     </div>

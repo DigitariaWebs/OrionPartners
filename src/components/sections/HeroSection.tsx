@@ -40,7 +40,7 @@ const HeroSection: React.FC = () => {
 
   return (
     <section
-      className="relative overflow-hidden px-4"
+      className="relative overflow-hidden px-4 flex items-center justify-start"
       style={{ height: "calc(100vh - 72px)" }}
     >
       {/* Background Video with Parallax Effect */}
@@ -50,7 +50,13 @@ const HeroSection: React.FC = () => {
         animate="visible"
         className="absolute inset-0 z-0"
       >
-        <div className="absolute inset-0 bg-black/60 z-10"></div>
+        <div
+          className="absolute inset-0 z-10"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%)",
+          }}
+        ></div>
         {isVisible && (
           <motion.video
             src="https://storage.googleapis.com/works23/OrionConseil/Skyscrapers%20and%20an%20avenue%20through%20New%20york%20city%20-%20Free%20Stock%20Video.mp4"
@@ -99,7 +105,7 @@ const HeroSection: React.FC = () => {
         variants={containerVariants}
         initial="hidden"
         animate={isVisible ? "visible" : "hidden"}
-        className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-10"
+        className="relative z-20 max-w-4xl px-12 sm:px-14 lg:px-16 text-left"
       >
         <motion.div variants={itemVariants} className="mb-6 sm:mb-8">
           <motion.h1
@@ -116,38 +122,22 @@ const HeroSection: React.FC = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Orion Conseil,
-            </motion.span>
-            <motion.span
-              className="block text-[var(--color-accent)] pb-1 leading-normal drop-shadow-sm"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              la transformation des défis complexes
-            </motion.span>
-            <motion.span
-              className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-2"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              en opportunités de croissance durable.
+              Orion Conseil
             </motion.span>
           </motion.h1>
         </motion.div>
 
+        <div className="w-30 h-1 bg-[var(--color-accent)] my-7"></div>
+
         <motion.div variants={itemVariants} className="mb-8 sm:mb-12">
           <motion.p
-            className="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed px-4"
+            className="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed"
             style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5)" }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
           >
-            Nous nous distinguons par notre expertise reconnue, nos solutions
-            adaptées à chaque secteur et une approche qui combine vision
-            stratégique, excellence opérationnelle et innovation technologique.
+            Au cœur de vos défis, au service de votre croissance.
           </motion.p>
         </motion.div>
 
@@ -189,33 +179,6 @@ const HeroSection: React.FC = () => {
             </Button>
           </motion.div>
         </motion.div>
-
-        {/* Floating Elements - Hidden on mobile */}
-        <div className="hidden sm:block">
-          <motion.div
-            className="absolute top-10 right-10 w-20 h-20 border border-white/20 rounded-full"
-            animate={{
-              rotate: 360,
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          />
-
-          <motion.div
-            className="absolute bottom-20 left-10 w-16 h-16 border border-white/20 rounded-full"
-            animate={{
-              rotate: -360,
-            }}
-            transition={{
-              duration: 15,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          />
-        </div>
       </motion.div>
     </section>
   );
