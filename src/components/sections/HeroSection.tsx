@@ -53,7 +53,7 @@ const HeroSection: React.FC = () => {
         <div className="absolute inset-0 bg-black/60 z-10"></div>
         {isVisible && (
           <motion.video
-            src="https://videos.pexels.com/video-files/8123971/8123971-hd_1920_1080_30fps.mp4"
+            src="https://storage.googleapis.com/works23/OrionConseil/Skyscrapers%20and%20an%20avenue%20through%20New%20york%20city%20-%20Free%20Stock%20Video.mp4"
             autoPlay
             loop
             muted
@@ -116,7 +116,7 @@ const HeroSection: React.FC = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              OrionPartners,
+              Orion Conseil,
             </motion.span>
             <motion.span
               className="block text-[var(--color-accent)] pb-1 leading-normal drop-shadow-sm"

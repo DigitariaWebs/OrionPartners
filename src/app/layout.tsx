@@ -3,10 +3,10 @@ import "./globals.css";
 import ModalProvider from "../components/providers/ModalProvider";
 
 export const metadata: Metadata = {
-  title: "Orion Partner",
+  title: "Orion Conseil",
   description: "Professional solutions and services",
   keywords: ["professional", "services", "solutions", "business"],
-  authors: [{ name: "Orion Partner" }],
+  authors: [{ name: "Orion Conseil" }],
   robots: "index, follow",
   icons: {
     icon: "/favicon.ico",

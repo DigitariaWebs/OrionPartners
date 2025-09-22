@@ -145,7 +145,7 @@ export default function AboutSection() {
                 className="text-2xl font-bold mb-2 text-center"
                 style={{ color: "var(--color-primary)" }}
               >
-                OrionPartners
+                Orion Conseil
               </h3>
               <p className="text-gray-700 text-lg text-justify">
                 Un cabinet de services-conseils en gestion d’entreprises et des

@@ -246,7 +246,7 @@ const ContactModal: React.FC<FormModalProps> = ({ isOpen, onClose, formType, ser
                 </p>
               </div>
               <div className="text-xs lg:text-sm opacity-70">
-                © {new Date().getFullYear()} Orion Partners.
+                © {new Date().getFullYear()} Orion Conseils.
               </div>
             </div>
 

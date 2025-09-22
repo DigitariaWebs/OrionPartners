@@ -45,8 +45,8 @@ export default function Footer() {
               style={{ color: "var(--color-text-on-dark)" }}
             >
               <Image
-                src="/Logos/Logo.png"
-                alt="Orion Partners Logo"
+                src="/Logos/LogoV2.png"
+                alt="Orion Conseil Logo"
                 width={200}
                 height={80}
                 style={{ width: "auto", height: "auto", maxHeight: "4rem" }}
@@ -58,7 +58,7 @@ export default function Footer() {
                 fontSize: "0.875rem",
               }}
             >
-              OrionPartners — cabinet de conseil accompagnant les entreprises et
+              Orion Conseil — cabinet de conseil accompagnant les entreprises et
               organisations sur leurs enjeux stratégiques, opérationnels et
               financiers.
             </p>
@@ -241,7 +241,7 @@ export default function Footer() {
         >
           <div className="flex items-center justify-between flex-wrap gap-2">
             <div>
-              &copy; {new Date().getFullYear()} OrionPartners. Tous droits
+              &copy; {new Date().getFullYear()} Orion Conseil. Tous droits
               réservés.
             </div>
             <div className="text-right">

@@ -52,6 +52,9 @@
   --color-light: #f4f6f8;
   --color-light-rgb: 244, 246, 248;
 
+  /* Hover color for dropdown items */
+  --color-dropdown-hover: #f4f6f8;
+
   /* Semantic Color Mappings */
   --color-background: var(--color-white);
   --color-background-secondary: var(--color-light);
