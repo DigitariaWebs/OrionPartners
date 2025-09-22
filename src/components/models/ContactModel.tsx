@@ -173,8 +173,8 @@ const ContactModal: React.FC<FormModalProps> = ({ isOpen, onClose, formType, ser
   const titles = {
     consultation: {
       icon: <X className="w-8 h-8 text-white" />,
-      title: "Parlons de vos besoins",
-      subtitle: "Un membre de notre équipe vous contactera.",
+      title: "Nous souhaitons vous entendre!",
+      subtitle: "Orion Conseil est prêt a mettre son expertise pour vous accompagner et vous proposer les meilleures solutions adapté a vos besoins. Parlons en!",
       formTitle: "Consultation gratuite",
       formSubtitle: "Prenons contact.",
     },
@@ -238,7 +238,7 @@ const ContactModal: React.FC<FormModalProps> = ({ isOpen, onClose, formType, ser
                 >
                   <X className="w-8 h-8 text-white" />
                 </button>
-                <h2 className="text-2xl lg:text-3xl font-bold">
+                <h2 className="text-xl lg:text-2xl font-bold">
                   {currentContent.title}
                 </h2>
                 <p className="mt-2 text-sm lg:text-base opacity-90">

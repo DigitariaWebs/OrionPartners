@@ -32,6 +32,7 @@
   /* Logos, titres principaux, fonds de section, icônes, éléments de navigation principaux. C'est la couleur de l'identité et de la stabilité. */
   --color-primary: #095797;
   --color-primary-rgb: 9, 87, 151;
+  --color-primary-hover: #06487a;
 
   /* Boutons d'action ("Call to Action"), chiffres clés, liens, éléments à mettre en valeur pour attirer l'œil. Symbolise le dynamisme et les résultats. */
   --color-accent: #9ac322;
