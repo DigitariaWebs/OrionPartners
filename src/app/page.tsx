@@ -4,6 +4,7 @@ import ContactSection from "@/components/sections/ContactSection";
 import HeroSection from "@/components/sections/HeroSection";
 import ServiceSection from "@/components/sections/ServiceSection";
 import StateSection from "@/components/sections/StateSection";
+import TestimonialSection from "@/components/sections/TestimonialSection";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <HeroSection />
       <ServiceSection />
       <StateSection />
+      <TestimonialSection />
       <ContactSection />
       <Footer />
     </div>

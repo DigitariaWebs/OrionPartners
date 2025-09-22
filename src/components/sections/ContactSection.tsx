@@ -11,12 +11,6 @@ export default function ContactSection() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14 md:mb-16">
-          <p
-            className="text-sm font-semibold"
-            style={{ color: "var(--color-accent)" }}
-          >
-            Parlons ensemble
-          </p>
           <h2
             className="mt-2 text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight"
             style={{ color: "var(--color-primary)" }}
@@ -96,7 +90,7 @@ export default function ContactSection() {
                 </div>
               </a>
               <a
-                href="mailto:contact@elitepartners-rdc.com"
+                href="mailto:contact@orionconseil.com"
                 className="flex items-center gap-4 p-4 rounded-2xl ring-1 ring-black/5 bg-white transition-all hover:-translate-y-0.5"
               >
                 <div
@@ -119,7 +113,7 @@ export default function ContactSection() {
                     className="transition-colors"
                     style={{ color: "rgba(var(--color-dark-rgb), 0.75)" }}
                   >
-                    contact@elitepartners-rdc.com
+                    contact@orionconseil.com
                   </p>
                 </div>
               </a>
