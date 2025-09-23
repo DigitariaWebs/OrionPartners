@@ -120,9 +120,7 @@ const Header = () => {
         isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-white"
       }`}
       style={{
-        backgroundColor: isScrolled
-          ? "rgba(255, 255, 255, 0.95)"
-          : "var(--color-white)",
+        backgroundColor: "var(--color-background-secondary)",
         boxShadow: isScrolled ? "0 10px 15px -3px rgba(0, 0, 0, 0.1)" : "none",
       }}
     >
@@ -186,7 +184,9 @@ const Header = () => {
                   {isServicesOpen && (
                     <div
                       className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-80 rounded-lg shadow-xl border border-gray-200 overflow-hidden z-50"
-                      style={{ backgroundColor: "var(--color-white)" }}
+                      style={{
+                        backgroundColor: "var(--color-background-secondary)",
+                      }}
                     >
                       {services.map((service, index) => (
                         <button
@@ -198,7 +198,8 @@ const Header = () => {
                               : ""
                           }`}
                           style={{
-                            backgroundColor: "var(--color-white)",
+                            backgroundColor:
+                              "var(--color-background-secondary)",
                           }}
                           onMouseEnter={(e) => {
                             e.currentTarget.style.backgroundColor =
@@ -206,7 +207,7 @@ const Header = () => {
                           }}
                           onMouseLeave={(e) => {
                             e.currentTarget.style.backgroundColor =
-                              "var(--color-white)";
+                              "var(--color-background-secondary)";
                           }}
                         >
                           <div
@@ -294,7 +295,7 @@ const Header = () => {
         <div
           ref={mobileMenuRef}
           className="md:hidden absolute top-full left-0 right-0 z-40"
-          style={{ backgroundColor: "var(--color-white)" }}
+          style={{ backgroundColor: "var(--color-background-secondary)" }}
         >
           <div className="border-t border-gray-200 shadow-lg">
             <div className="container mx-auto px-4 py-4 space-y-4">

@@ -24,7 +24,7 @@ type TeamMember = {
 
 const teamMembers: TeamMember[] = [
   {
-    name: "Gisèle Kabwende",
+    name: "Gisèle Kabwende, Avocate",
     title: "Avocate",
     subtitle: "Associée, Directrice du pôle Juridique & Fiscal",
     image:
@@ -42,7 +42,7 @@ const teamMembers: TeamMember[] = [
     slug: "gisele-kabwende",
   },
   {
-    name: "Ferdinand Ntambwe",
+    name: "Ferdinand Ntambwe, M.A.",
     title: "M.A.",
     subtitle: "Associé, Croissance & Marchés",
     image: "/NotreEquipe/FerdinandNtambwe.jpg",
@@ -76,7 +76,7 @@ const teamMembers: TeamMember[] = [
     slug: "jean-claude-gersone",
   },
   {
-    name: "Philippe Emmanuel",
+    name: "Philippe Emmanuel, MBA",
     title: "MBA",
     subtitle: "Consultant Senior en Développement d'Affaires",
     image:
@@ -93,7 +93,7 @@ const teamMembers: TeamMember[] = [
     slug: "philippe-emmanuel",
   },
   {
-    name: "Nonce Dede",
+    name: "Nonce Dede, LL.M.",
     title: "LL.M.",
     subtitle: "Consultant Senior, juridique",
     image: "/NotreEquipe/NonceDede.jpg",

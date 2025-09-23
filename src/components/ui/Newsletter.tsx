@@ -75,10 +75,10 @@ export default function Newsletter({ variant = 'footer', className = '' }: Newsl
 
   const isFooterVariant = variant === "footer";
   const textColor = isFooterVariant
-    ? "rgba(var(--color-white-rgb), 0.9)"
+    ? "rgba(0, 0, 0, 0.7)"
     : "var(--color-text-primary)";
   const headingColor = isFooterVariant
-    ? "var(--color-accent)"
+    ? "var(--color-primary)"
     : "var(--color-primary)";
 
   return (
@@ -106,7 +106,7 @@ export default function Newsletter({ variant = 'footer', className = '' }: Newsl
             disabled={isLoading}
             className={`w-full px-4 py-2 rounded-lg border-2 transition-all focus:outline-none focus:ring-2 ${
               isFooterVariant
-                ? "bg-white/10 border-white/20 text-white placeholder-white/60 focus:ring-[color:var(--color-accent)] focus:border-[color:var(--color-accent)]"
+                ? "bg-gray-50 border-gray-200 text-gray-900 placeholder-gray-500 focus:ring-[color:var(--color-primary)] focus:border-[color:var(--color-primary)]"
                 : "bg-gray-50 border-gray-200 text-gray-900 placeholder-gray-500 focus:ring-[color:var(--color-primary)] focus:border-[color:var(--color-primary)]"
             } ${isLoading ? "opacity-60 cursor-not-allowed" : ""}`}
           />
@@ -121,17 +121,17 @@ export default function Newsletter({ variant = 'footer', className = '' }: Newsl
               : "hover:transform hover:scale-[1.02] active:scale-[0.98]"
           }`}
           style={{
-            backgroundColor: "var(--color-accent)",
+            backgroundColor: "var(--color-primary)",
             color: "var(--color-white)",
           }}
           onMouseEnter={(e) => {
             if (!isLoading) {
               e.currentTarget.style.backgroundColor =
-                "var(--color-accent-hover)";
+                "var(--color-primary-hover)";
             }
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = "var(--color-accent)";
+            e.currentTarget.style.backgroundColor = "var(--color-primary)";
           }}
         >
           {isLoading ? (

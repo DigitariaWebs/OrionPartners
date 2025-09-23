@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Instagram, Facebook, Linkedin, Twitter } from "lucide-react";
 import Newsletter from "../ui/Newsletter";
 
 const serviceKeyToTitle = (key: string) => {
@@ -32,10 +33,10 @@ export default function Footer() {
 
   return (
     <footer
-      className="py-12"
+      className="py-12 border-t border-gray-200"
       style={{
-        backgroundColor: "var(--color-primary)",
-        color: "var(--color-text-on-dark)",
+        backgroundColor: "var(--color-background-secondary)",
+        color: "var(--color-dark)",
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,10 +44,10 @@ export default function Footer() {
           <div>
             <h3
               className="text-xl font-serif font-bold mb-4 flex items-center gap-3"
-              style={{ color: "var(--color-text-on-dark)" }}
+              style={{ color: "var(--color-dark)" }}
             >
               <Image
-                src="/Logos/LogoV2.png"
+                src="/Logos/Logo.png"
                 alt="Orion Conseil Logo"
                 width={200}
                 height={80}
@@ -55,7 +56,7 @@ export default function Footer() {
             </h3>
             <p
               style={{
-                color: "rgba(var(--color-white-rgb), 0.9)",
+                color: "rgba(0, 0, 0, 0.7)",
                 fontSize: "0.875rem",
               }}
             >
@@ -68,7 +69,7 @@ export default function Footer() {
           <div>
             <h4
               className="font-serif font-semibold mb-4"
-              style={{ color: "var(--color-accent)" }}
+              style={{ color: "var(--color-primary)" }}
             >
               Navigation
             </h4>
@@ -77,13 +78,12 @@ export default function Footer() {
                 <Link
                   href="/#accueil"
                   className="transition-all duration-300 cursor-pointer hover:scale-105 pb-1 hover:text-accent"
-                  style={{ color: "rgba(var(--color-white-rgb), 0.9)" }}
+                  style={{ color: "var(--color-dark)" }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = "var(--color-accent)";
+                    e.currentTarget.style.color = "var(--color-primary)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color =
-                      "rgba(var(--color-white-rgb), 0.9)";
+                    e.currentTarget.style.color = "var(--color-dark)";
                   }}
                 >
                   Accueil
@@ -93,13 +93,12 @@ export default function Footer() {
                 <Link
                   href="/#services"
                   className="transition-all duration-300 cursor-pointer hover:scale-105 pb-1 hover:text-accent"
-                  style={{ color: "rgba(var(--color-white-rgb), 0.9)" }}
+                  style={{ color: "var(--color-dark)" }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = "var(--color-accent)";
+                    e.currentTarget.style.color = "var(--color-primary)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color =
-                      "rgba(var(--color-white-rgb), 0.9)";
+                    e.currentTarget.style.color = "var(--color-dark)";
                   }}
                 >
                   Services
@@ -109,13 +108,12 @@ export default function Footer() {
                 <Link
                   href="/notreequipe"
                   className="transition-all duration-300 cursor-pointer hover:scale-105 pb-1 hover:text-accent"
-                  style={{ color: "rgba(var(--color-white-rgb), 0.9)" }}
+                  style={{ color: "var(--color-dark)" }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = "var(--color-accent)";
+                    e.currentTarget.style.color = "var(--color-primary)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color =
-                      "rgba(var(--color-white-rgb), 0.9)";
+                    e.currentTarget.style.color = "var(--color-dark)";
                   }}
                 >
                   Notre équipe
@@ -125,13 +123,12 @@ export default function Footer() {
                 <Link
                   href="/a-propos"
                   className="transition-all duration-300 cursor-pointer hover:scale-105 pb-1 hover:text-accent"
-                  style={{ color: "rgba(var(--color-white-rgb), 0.9)" }}
+                  style={{ color: "var(--color-dark)" }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = "var(--color-accent)";
+                    e.currentTarget.style.color = "var(--color-primary)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color =
-                      "rgba(var(--color-white-rgb), 0.9)";
+                    e.currentTarget.style.color = "var(--color-dark)";
                   }}
                 >
                   À propos
@@ -141,13 +138,12 @@ export default function Footer() {
                 <Link
                   href="/#contact"
                   className="transition-all duration-300 cursor-pointer hover:scale-105 pb-1 hover:text-accent"
-                  style={{ color: "rgba(var(--color-white-rgb), 0.9)" }}
+                  style={{ color: "var(--color-dark)" }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = "var(--color-accent)";
+                    e.currentTarget.style.color = "var(--color-primary)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color =
-                      "rgba(var(--color-white-rgb), 0.9)";
+                    e.currentTarget.style.color = "var(--color-dark)";
                   }}
                 >
                   Contact
@@ -159,7 +155,7 @@ export default function Footer() {
           <div>
             <h4
               className="font-serif font-semibold mb-4"
-              style={{ color: "var(--color-accent)" }}
+              style={{ color: "var(--color-primary)" }}
             >
               Nos services
             </h4>
@@ -169,13 +165,12 @@ export default function Footer() {
                   <Link
                     href={serviceKeyToUrl(k)}
                     className="transition-all duration-300 cursor-pointer hover:scale-105 pb-1 hover:text-accent"
-                    style={{ color: "rgba(var(--color-white-rgb), 0.9)" }}
+                    style={{ color: "var(--color-dark)" }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.color = "var(--color-accent)";
+                      e.currentTarget.style.color = "var(--color-primary)";
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.color =
-                        "rgba(var(--color-white-rgb), 0.9)";
+                      e.currentTarget.style.color = "var(--color-dark)";
                     }}
                   >
                     {serviceKeyToTitle(k)}
@@ -193,8 +188,8 @@ export default function Footer() {
         <div
           className="mt-12 pt-8 text-sm"
           style={{
-            borderTop: "1px solid rgba(var(--color-white-rgb), 0.12)",
-            color: "rgba(var(--color-white-rgb), 0.65)",
+            borderTop: "1px solid rgba(0, 0, 0, 0.12)",
+            color: "rgba(0, 0, 0, 0.65)",
           }}
         >
           <div className="flex items-center justify-between flex-wrap gap-2">
@@ -203,15 +198,68 @@ export default function Footer() {
               réservés.
             </div>
             <div className="text-right">
-              <a
-                href="/privacy"
-                style={{
-                  color: "rgba(var(--color-white-rgb), 0.65)",
-                  fontSize: "0.75rem",
-                }}
-              >
-                Politique de confidentialité
-              </a>
+              <div className="flex items-center justify-end gap-3">
+                <a
+                  href="https://www.instagram.com/orionconseil/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors duration-300"
+                  style={{ color: "rgba(0, 0, 0, 0.65)" }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = "var(--color-primary)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = "rgba(0, 0, 0, 0.65)";
+                  }}
+                >
+                  <Instagram size={18} />
+                </a>
+                <a
+                  href="https://twitter.com/OrionConseil"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors duration-300"
+                  style={{ color: "rgba(0, 0, 0, 0.65)" }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = "var(--color-primary)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = "rgba(0, 0, 0, 0.65)";
+                  }}
+                >
+                  <Twitter size={18} />
+                </a>
+                <a
+                  href="https://www.facebook.com/profile.php?id=61580314478373"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors duration-300"
+                  style={{ color: "rgba(0, 0, 0, 0.65)" }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = "var(--color-primary)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = "rgba(0, 0, 0, 0.65)";
+                  }}
+                >
+                  <Facebook size={18} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/orionconseil"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors duration-300"
+                  style={{ color: "rgba(0, 0, 0, 0.65)" }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = "var(--color-primary)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = "rgba(0, 0, 0, 0.65)";
+                  }}
+                >
+                  <Linkedin size={18} />
+                </a>
+              </div>
             </div>
           </div>
         </div>
