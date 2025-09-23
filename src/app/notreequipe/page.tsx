@@ -2,10 +2,9 @@
 
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
-import TeamModel, { TeamMember } from "@/components/models/TeamModel";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
 import {
   ArrowRight,
   Award,
@@ -15,9 +14,21 @@ import {
   Mail,
 } from "lucide-react";
 
-export default function NotreEquipePage() {
-  const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
+type TeamMember = {
+  name: string;
+  title: string;
+  subtitle: string;
+  image: string;
+  briefDescription: string;
+  description: string;
+  email: string;
+  expertise: string;
+  education: string;
+  experience: string;
+  slug: string;
+};
 
+export default function NotreEquipePage() {
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
     animate: { opacity: 1, y: 0 },
@@ -49,6 +60,7 @@ export default function NotreEquipePage() {
       education: "Licence en droit (Université de Kinshasa)",
       experience:
         "13 ans d'expérience en droit des affaires et fiscalité d'entreprise",
+      slug: "gisele-kabwende",
     },
     {
       name: "Ferdinand Ntambwe",
@@ -65,6 +77,7 @@ export default function NotreEquipePage() {
       education:
         "Licence en finance (Université Ibn Khaldoun), Maîtrise en finances publiques (Université Laval)",
       experience: "Plus de 5 ans d'expérience en développement d'affaires",
+      slug: "ferdinand-ntambwe",
     },
     {
       name: "Jean Claude Gersone",
@@ -81,6 +94,7 @@ export default function NotreEquipePage() {
       education:
         "Licence en économie (Université Pédagogique National), Maîtrise en gestion publique (ENA)",
       experience: "Plus de 5 ans d'expérience en performance et opérations",
+      slug: "jean-claude-gersone",
     },
     {
       name: "Philippe Emmanuel",
@@ -97,6 +111,7 @@ export default function NotreEquipePage() {
         "Développement d'affaires, Stratégie commerciale, Partenariats stratégiques",
       education: "MBA (Université Laval)",
       experience: "Plus de 10 ans d'expérience en développement d'affaires",
+      slug: "philippe-emmanuel",
     },
     {
       name: "Nonce Dede",
@@ -114,6 +129,7 @@ export default function NotreEquipePage() {
         "Maîtrise en droit international (Université de Montréal), Licence en Droit économique et social (Université de Kinshasa)",
       experience:
         "Plus de 4 ans d'expérience en droit international des affaires",
+      slug: "nonce-dede",
     },
     {
       name: "Elda Nsekey",
@@ -130,6 +146,7 @@ export default function NotreEquipePage() {
       education: "Licence en économie (Université de Kinshasa)",
       experience:
         "Spécialiste du secteur bancaire et des institutions financières",
+      slug: "elda-nsekey",
     },
     {
       name: "Corine Kasongo",
@@ -147,6 +164,7 @@ export default function NotreEquipePage() {
       education: "Licence en économie (Université de Kinshasa)",
       experience:
         "Spécialiste en transformation numérique et stratégie digitale",
+      slug: "corine-kasongo",
     },
     {
       name: "Gracia Matala",
@@ -162,6 +180,7 @@ export default function NotreEquipePage() {
       expertise: "Secteur de l'énergie, Gaz et pétrole, Analyse de marché",
       education: "Licence en Gaz et Pétrole",
       experience: "Spécialiste junior du secteur énergétique",
+      slug: "gracia-matala",
     },
     {
       name: "Renedi Mubutshu",
@@ -178,6 +197,7 @@ export default function NotreEquipePage() {
         "Analyse économique, Modélisation de données, Recherche de marché",
       education: "Licence en économie (Université de Kinshasa)",
       experience: "Spécialiste junior en analyse économique et quantitative",
+      slug: "renedi-mubutshu",
     },
   ];
 
@@ -329,13 +349,13 @@ export default function NotreEquipePage() {
                     </p>
                   </div>
 
-                  <button
-                    onClick={() => setSelectedMember(member)}
+                  <Link
+                    href={`/notreequipe/${member.slug}`}
                     className="w-full bg-[#095797] hover:bg-[#0a5fa3] text-white py-3 px-6 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
                   >
                     En savoir plus
                     <ChevronRight className="w-4 h-4 hover:translate-x-1 transition-transform" />
-                  </button>
+                  </Link>
                 </div>
               </motion.div>
             ))}
@@ -388,14 +408,6 @@ export default function NotreEquipePage() {
           </motion.div>
         </div>
       </section>
-
-      {/* Team Member Modal */}
-      <TeamModel
-        isOpen={!!selectedMember}
-        onClose={() => setSelectedMember(null)}
-        member={selectedMember}
-      />
-
       <Footer />
     </div>
   );
