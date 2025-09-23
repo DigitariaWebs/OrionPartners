@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Button from "../ui/Button";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useModal } from "../providers/ModalProvider";
 import { ChevronDown } from "lucide-react";
 
@@ -13,6 +13,7 @@ const Header = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [currentHash, setCurrentHash] = useState("");
   const pathname = usePathname();
+  const router = useRouter();
   const { openModal } = useModal();
   const servicesRef = useRef<HTMLDivElement>(null);
 
@@ -65,16 +66,19 @@ const Header = () => {
       id: "servicesconseils",
       name: "Services Conseils",
       description: "Conseil stratégique et opérationnel",
+      pageLink: "/servicesconseils",
     },
     {
       id: "comptabilite-certification",
       name: "Comptabilité & certification",
       description: "Gestion comptable et reporting financier",
+      pageLink: "/comptabilite-certification",
     },
     {
       id: "etudes-recherches",
       name: "Études et recherches",
       description: "Analyses et études de marché",
+      pageLink: "/etudes-data-intelligence",
     },
   ];
 
@@ -86,25 +90,9 @@ const Header = () => {
     return pathname.includes(path);
   };
 
-  const handleServiceClick = (serviceId: string, serviceName: string) => {
+  const handleServiceClick = (pageLink: string) => {
     setIsServicesOpen(false);
-
-    // If not on home page, navigate to home first
-    if (pathname !== "/") {
-      window.location.href = `/#services`;
-      return;
-    }
-
-    // Scroll to services section
-    const servicesSection = document.getElementById("services");
-    if (servicesSection) {
-      servicesSection.scrollIntoView({ behavior: "smooth" });
-
-      // After scrolling, open the modal
-      setTimeout(() => {
-        openModal("service", { serviceId, serviceName });
-      }, 800);
-    }
+    router.push(pageLink);
   };
 
   return (
@@ -184,9 +172,7 @@ const Header = () => {
                       {services.map((service, index) => (
                         <button
                           key={service.id}
-                          onClick={() =>
-                            handleServiceClick(service.id, service.name)
-                          }
+                          onClick={() => handleServiceClick(service.pageLink)}
                           className={`w-full text-left px-4 py-3 transition-colors duration-200 cursor-pointer ${
                             index !== services.length - 1
                               ? "border-b border-gray-100"

@@ -53,7 +53,7 @@ export default function ServicesConseilsPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#095797]/80 via-[#0a5fa3]/70 to-[#095797]/80"></div>
         </div>
 
-        <div className="relative container mx-auto px-6 py-24 lg:py-32">
+        <div className="relative container mx-auto px-6 py-32 lg:py-48">
           <motion.div className="text-center max-w-4xl mx-auto" {...stagger}>
             <motion.h1
               className="text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent"
@@ -130,7 +130,6 @@ export default function ServicesConseilsPage() {
                 {...slideInLeft}
               >
                 <div className="relative group h-full">
-                  <div className="absolute -inset-4 bg-gradient-to-r from-[#095797] to-[#9ac322] rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full">
                     <Image
                       src="/ServiceImages/ServicesConseils.png"
@@ -139,24 +138,6 @@ export default function ServicesConseilsPage() {
                       height={500}
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#095797]/30 via-transparent to-transparent"></div>
-
-                    {/* Floating Stats */}
-                    <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-[#9ac322] rounded-lg flex items-center justify-center">
-                          <Target className="w-5 h-5 text-white" />
-                        </div>
-                        <div>
-                          <div className="text-2xl font-bold text-[#095797]">
-                            100%
-                          </div>
-                          <div className="text-sm text-gray-600">
-                            Taux de réussite
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -181,21 +162,16 @@ export default function ServicesConseilsPage() {
                       </h3>
                       <div className="space-y-4 text-gray-700 pl-11">
                         <p className="leading-relaxed">
-                          <strong className="text-[#095797]">
-                            Naviguer sans une carte claire
-                          </strong>{" "}
-                          est le plus grand des risques. Dans un marché
-                          congolais dynamique, la stagnation guette les
-                          entreprises qui opèrent au jour le jour.
+                          Naviguer sans une carte claire est le plus grand des
+                          risques. Dans un marché congolais dynamique, la
+                          stagnation guette les entreprises qui opèrent au jour
+                          le jour.
                         </p>
                         <p className="leading-relaxed">
-                          La pression concurrentielle, l&#39;évolution rapide des
-                          attentes clients et le manque de recul stratégique
-                          transforment les opportunités en menaces.{" "}
-                          <strong className="text-[#095797]">
-                            Vous avez la vision, mais le chemin pour y parvenir
-                            reste flou.
-                          </strong>
+                          La pression concurrentielle, l&#39;évolution rapide
+                          des attentes clients et le manque de recul stratégique
+                          transforment les opportunités en menaces. Vous avez la
+                          vision, mais le chemin pour y parvenir reste flou.
                         </p>
                       </div>
                     </div>
@@ -203,7 +179,7 @@ export default function ServicesConseilsPage() {
                     {/* Solution Section */}
                     <div className="space-y-4">
                       <h3 className="text-2xl font-bold text-[#095797] flex items-center gap-3">
-                        <div className="w-8 h-8 bg-[#9ac322] rounded-lg flex items-center justify-center">
+                        <div className="w-8 h-8 bg-[#095797] rounded-lg flex items-center justify-center">
                           <span className="text-white text-sm font-bold">
                             ✓
                           </span>
@@ -212,11 +188,10 @@ export default function ServicesConseilsPage() {
                       </h3>
                       <div className="pl-11">
                         <p className="text-lg text-gray-700 leading-relaxed">
-                          <strong className="text-[#9ac322]">
-                            Nous transformons l&#39;incertitude en un plan d&#39;action.
-                          </strong>{" "}
-                          Nous ne vous donnons pas un rapport théorique, mais
-                          une feuille de route claire pour dominer votre marché.
+                          Nous transformons l&#39;incertitude en un plan
+                          d&#39;action. Nous ne vous donnons pas un rapport
+                          théorique, mais une feuille de route claire pour
+                          dominer votre marché.
                         </p>
                       </div>
                     </div>
@@ -239,15 +214,15 @@ export default function ServicesConseilsPage() {
               <div className="grid md:grid-cols-3 gap-8">
                 {/* Expertise 1 */}
                 <motion.div
-                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#9ac322]/30"
+                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#095797]/30"
                   whileHover={{ y: -5 }}
                   {...fadeInUp}
                 >
-                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#9ac322] rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
+                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#095797] rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
                     1
                   </div>
                   <div className="space-y-4">
-                    <h4 className="text-xl font-bold text-[#095797] group-hover:text-[#9ac322] transition-colors">
+                    <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
                       Diagnostic Précis
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
@@ -257,21 +232,21 @@ export default function ServicesConseilsPage() {
                     </p>
                   </div>
                   <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                    <Target className="w-16 h-16 text-[#095797]" />
+                    <Target className="w-16 h-16 text-gray-800" />
                   </div>
                 </motion.div>
 
                 {/* Expertise 2 */}
                 <motion.div
-                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#9ac322]/30"
+                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#095797]/30"
                   whileHover={{ y: -5 }}
                   {...fadeInUp}
                 >
-                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#9ac322] rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
+                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#095797] rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
                     2
                   </div>
                   <div className="space-y-4">
-                    <h4 className="text-xl font-bold text-[#095797] group-hover:text-[#9ac322] transition-colors">
+                    <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
                       Feuille de Route Actionnable
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
@@ -281,21 +256,21 @@ export default function ServicesConseilsPage() {
                     </p>
                   </div>
                   <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                    <TrendingUp className="w-16 h-16 text-[#095797]" />
+                    <TrendingUp className="w-16 h-16 text-gray-800" />
                   </div>
                 </motion.div>
 
                 {/* Expertise 3 */}
                 <motion.div
-                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#9ac322]/30"
+                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#095797]/30"
                   whileHover={{ y: -5 }}
                   {...fadeInUp}
                 >
-                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#9ac322] rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
+                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#095797] rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
                     3
                   </div>
                   <div className="space-y-4">
-                    <h4 className="text-xl font-bold text-[#095797] group-hover:text-[#9ac322] transition-colors">
+                    <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
                       Alignement de votre Équipe
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
@@ -305,7 +280,7 @@ export default function ServicesConseilsPage() {
                     </p>
                   </div>
                   <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                    <Users className="w-16 h-16 text-[#095797]" />
+                    <Users className="w-16 h-16 text-gray-800" />
                   </div>
                 </motion.div>
               </div>
@@ -352,7 +327,6 @@ export default function ServicesConseilsPage() {
                 {...slideInLeft}
               >
                 <div className="relative group h-full">
-                  <div className="absolute -inset-4 bg-gradient-to-r from-[#095797] to-[#9ac322] rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full">
                     <Image
                       src="/ServiceImages/RepresentationAccompagnement.png"
@@ -366,7 +340,7 @@ export default function ServicesConseilsPage() {
                     {/* Floating Stats */}
                     <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-[#9ac322] rounded-lg flex items-center justify-center">
+                        <div className="w-10 h-10 bg-[#095797] rounded-lg flex items-center justify-center">
                           <Users className="w-5 h-5 text-white" />
                         </div>
                         <div>
@@ -389,7 +363,7 @@ export default function ServicesConseilsPage() {
                 {...slideInRight}
               >
                 {/* Combined Challenge & Solution Section */}
-                <div className="bg-gradient-to-br from-[#095797]/5 to-[#9ac322]/5 p-8 rounded-2xl border border-[#095797]/20 shadow-lg">
+                <div className="bg-gradient-to-br from-[#095797]/5 to-[#095797]/5 p-8 rounded-2xl border border-[#095797]/20 shadow-lg">
                   <div className="space-y-8">
                     {/* Challenge Section */}
                     <div className="space-y-4">
@@ -403,23 +377,17 @@ export default function ServicesConseilsPage() {
                       </h3>
                       <div className="space-y-4 text-gray-700 pl-11">
                         <p className="leading-relaxed">
-                          <strong className="text-[#095797]">
-                            La complexité locale
-                          </strong>{" "}
-                          peut paralyser les projets les plus prometteurs. La
-                          RDC offre des opportunités uniques, mais la distance,
-                          les barrières culturelles et la complexité
-                          administrative transforment souvent l&#39;ambition en
-                          obstacle.
+                          La complexité locale peut paralyser les projets les
+                          plus prometteurs. La RDC offre des opportunités
+                          uniques, mais la distance, les barrières culturelles
+                          et la complexité administrative transforment souvent
+                          l&#39;ambition en obstacle.
                         </p>
                         <p className="leading-relaxed">
                           Pour un investisseur ou une entreprise sans ancrage
-                          local, le risque de retards, de surcoûts et d&#39;erreurs
-                          stratégiques est immense.{" "}
-                          <strong className="text-[#095797]">
-                            Vous avez la vision, mais le terrain reste un
-                            mystère.
-                          </strong>
+                          local, le risque de retards, de surcoûts et
+                          d&#39;erreurs stratégiques est immense. Vous avez la
+                          vision, mais le terrain reste un mystère.
                         </p>
                       </div>
                     </div>
@@ -427,7 +395,7 @@ export default function ServicesConseilsPage() {
                     {/* Solution Section */}
                     <div className="space-y-4">
                       <h3 className="text-2xl font-bold text-[#095797] flex items-center gap-3">
-                        <div className="w-8 h-8 bg-[#9ac322] rounded-lg flex items-center justify-center">
+                        <div className="w-8 h-8 bg-[#095797] rounded-lg flex items-center justify-center">
                           <span className="text-white text-sm font-bold">
                             ✓
                           </span>
@@ -436,12 +404,9 @@ export default function ServicesConseilsPage() {
                       </h3>
                       <div className="pl-11">
                         <p className="text-lg text-gray-700 leading-relaxed">
-                          <strong className="text-[#9ac322]">
-                            Nous sommes vos yeux, vos oreilles et votre bras
-                            droit sur le terrain.
-                          </strong>{" "}
-                          Nous transformons la complexité locale en votre
-                          avantage stratégique.
+                          Nous sommes vos yeux, vos oreilles et votre bras droit
+                          sur le terrain. Nous transformons la complexité locale
+                          en votre avantage stratégique.
                         </p>
                       </div>
                     </div>
@@ -464,15 +429,15 @@ export default function ServicesConseilsPage() {
               <div className="grid md:grid-cols-3 gap-8">
                 {/* Service 1 */}
                 <motion.div
-                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#9ac322]/30"
+                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#095797]/30"
                   whileHover={{ y: -5 }}
                   {...fadeInUp}
                 >
-                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#9ac322] rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
+                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#095797] rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
                     1
                   </div>
                   <div className="space-y-4">
-                    <h4 className="text-xl font-bold text-[#095797] group-hover:text-[#9ac322] transition-colors">
+                    <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
                       Facilitateur d&#39;Affaires
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
@@ -482,45 +447,45 @@ export default function ServicesConseilsPage() {
                     </p>
                   </div>
                   <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                    <Target className="w-16 h-16 text-[#095797]" />
+                    <Target className="w-16 h-16 text-gray-800" />
                   </div>
                 </motion.div>
 
                 {/* Service 2 */}
                 <motion.div
-                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#9ac322]/30"
+                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#095797]/30"
                   whileHover={{ y: -5 }}
                   {...fadeInUp}
                 >
-                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#9ac322] rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
+                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#095797] rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
                     2
                   </div>
                   <div className="space-y-4">
-                    <h4 className="text-xl font-bold text-[#095797] group-hover:text-[#9ac322] transition-colors">
+                    <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
                       Gestion de Projets Déléguée
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
                       Nous pilotons vos projets avec rigueur, en assurant le
-                      lien entre vos objectifs stratégiques et l&#39;exécution sur
-                      le terrain.
+                      lien entre vos objectifs stratégiques et l&#39;exécution
+                      sur le terrain.
                     </p>
                   </div>
                   <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                    <TrendingUp className="w-16 h-16 text-[#095797]" />
+                    <TrendingUp className="w-16 h-16 text-gray-800" />
                   </div>
                 </motion.div>
 
                 {/* Service 3 */}
                 <motion.div
-                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#9ac322]/30"
+                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#095797]/30"
                   whileHover={{ y: -5 }}
                   {...fadeInUp}
                 >
-                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#9ac322] rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
+                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#095797] rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
                     3
                   </div>
                   <div className="space-y-4">
-                    <h4 className="text-xl font-bold text-[#095797] group-hover:text-[#9ac322] transition-colors">
+                    <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
                       Défense de Vos Intérêts
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
@@ -529,7 +494,7 @@ export default function ServicesConseilsPage() {
                     </p>
                   </div>
                   <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                    <Users className="w-16 h-16 text-[#095797]" />
+                    <Users className="w-16 h-16 text-gray-800" />
                   </div>
                 </motion.div>
               </div>
@@ -575,7 +540,6 @@ export default function ServicesConseilsPage() {
                 {...slideInLeft}
               >
                 <div className="relative group h-full">
-                  <div className="absolute -inset-4 bg-gradient-to-r from-[#095797] to-[#9ac322] rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full">
                     <Image
                       src="/ServiceImages/ComptabiliteCertification.png"
@@ -584,22 +548,6 @@ export default function ServicesConseilsPage() {
                       height={500}
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#095797]/30 via-transparent to-transparent"></div>
-
-                    {/* Floating Stats */}
-                    <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-[#9ac322] rounded-lg flex items-center justify-center">
-                          <Target className="w-5 h-5 text-white" />
-                        </div>
-                        <div>
-                          <div className="text-2xl font-bold text-[#095797]">
-                            ROI
-                          </div>
-                          <div className="text-sm text-gray-600">Optimisé</div>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -610,7 +558,7 @@ export default function ServicesConseilsPage() {
                 {...slideInRight}
               >
                 {/* Combined Challenge & Solution Section */}
-                <div className="bg-gradient-to-br from-[#095797]/5 to-[#9ac322]/5 p-8 rounded-2xl border border-[#095797]/20 shadow-lg">
+                <div className="bg-gradient-to-br from-[#095797]/5 to-[#095797]/5 p-8 rounded-2xl border border-[#095797]/20 shadow-lg">
                   <div className="space-y-8">
                     {/* Challenge Section */}
                     <div className="space-y-4">
@@ -624,21 +572,15 @@ export default function ServicesConseilsPage() {
                       </h3>
                       <div className="space-y-4 text-gray-700 pl-11">
                         <p className="leading-relaxed">
-                          <strong className="text-[#095797]">
-                            Le paradoxe congolais
-                          </strong>{" "}
-                          freine le développement économique. Un potentiel
-                          immense mais un accès limité au capital transforme les
-                          opportunités en contraintes.
+                          Le paradoxe congolais freine le développement
+                          économique. Un potentiel immense mais un accès limité
+                          au capital transforme les opportunités en contraintes.
                         </p>
                         <p className="leading-relaxed">
                           Les sources de financement traditionnelles ne
                           suffisent plus à soutenir l&apos;innovation et la
-                          croissance structurelle.{" "}
-                          <strong className="text-[#095797]">
-                            Le capital intelligent reste inaccessible aux
-                            projets porteurs.
-                          </strong>
+                          croissance structurelle. Le capital intelligent reste
+                          inaccessible aux projets porteurs.
                         </p>
                       </div>
                     </div>
@@ -646,7 +588,7 @@ export default function ServicesConseilsPage() {
                     {/* Solution Section */}
                     <div className="space-y-4">
                       <h3 className="text-2xl font-bold text-[#095797] flex items-center gap-3">
-                        <div className="w-8 h-8 bg-[#9ac322] rounded-lg flex items-center justify-center">
+                        <div className="w-8 h-8 bg-[#095797] rounded-lg flex items-center justify-center">
                           <span className="text-white text-sm font-bold">
                             ✓
                           </span>
@@ -655,10 +597,8 @@ export default function ServicesConseilsPage() {
                       </h3>
                       <div className="pl-11">
                         <p className="text-lg text-gray-700 leading-relaxed">
-                          <strong className="text-[#9ac322]">
-                            Nous sommes le pont entre les opportunités
-                            d&#39;investissement et les capitaux intelligents.
-                          </strong>{" "}
+                          Nous sommes le pont entre les opportunités
+                          d&#39;investissement et les capitaux intelligents.{" "}
                           Notre conviction est que le Private Equity est le
                           levier stratégique pour transformer ce potentiel en
                           performance économique durable.
@@ -684,15 +624,15 @@ export default function ServicesConseilsPage() {
               <div className="grid md:grid-cols-3 gap-8">
                 {/* Service 1 */}
                 <motion.div
-                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#9ac322]/30"
+                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#095797]/30"
                   whileHover={{ y: -5 }}
                   {...fadeInUp}
                 >
-                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#9ac322] rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
+                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#095797] rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
                     1
                   </div>
                   <div className="space-y-4">
-                    <h4 className="text-xl font-bold text-[#095797] group-hover:text-[#9ac322] transition-colors">
+                    <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
                       Diagnostic Stratégique & Viabilité
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
@@ -702,21 +642,21 @@ export default function ServicesConseilsPage() {
                     </p>
                   </div>
                   <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                    <Target className="w-16 h-16 text-[#095797]" />
+                    <Target className="w-16 h-16 text-gray-800" />
                   </div>
                 </motion.div>
 
                 {/* Service 2 */}
                 <motion.div
-                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#9ac322]/30"
+                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#095797]/30"
                   whileHover={{ y: -5 }}
                   {...fadeInUp}
                 >
-                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#9ac322] rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
+                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#095797] rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
                     2
                   </div>
                   <div className="space-y-4">
-                    <h4 className="text-xl font-bold text-[#095797] group-hover:text-[#9ac322] transition-colors">
+                    <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
                       Due Diligence Intégrale
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
@@ -725,30 +665,30 @@ export default function ServicesConseilsPage() {
                     </p>
                   </div>
                   <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                    <TrendingUp className="w-16 h-16 text-[#095797]" />
+                    <TrendingUp className="w-16 h-16 text-gray-800" />
                   </div>
                 </motion.div>
 
                 {/* Service 3 */}
                 <motion.div
-                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#9ac322]/30"
+                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#095797]/30"
                   whileHover={{ y: -5 }}
                   {...fadeInUp}
                 >
-                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#9ac322] rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
+                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#095797] rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
                     3
                   </div>
                   <div className="space-y-4">
-                    <h4 className="text-xl font-bold text-[#095797] group-hover:text-[#9ac322] transition-colors">
+                    <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
                       Validation par le Marché & les Experts
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
-                      Confrontation de la thèse d&#39;investissement à la réalité du
-                      terrain pour maximiser les chances de succès.
+                      Confrontation de la thèse d&#39;investissement à la
+                      réalité du terrain pour maximiser les chances de succès.
                     </p>
                   </div>
                   <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                    <Users className="w-16 h-16 text-[#095797]" />
+                    <Users className="w-16 h-16 text-gray-800" />
                   </div>
                 </motion.div>
               </div>
@@ -761,19 +701,20 @@ export default function ServicesConseilsPage() {
                   </h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-8">
-                  <div className="bg-gradient-to-br from-[#9ac322]/10 to-[#9ac322]/5 p-6 rounded-2xl border border-[#9ac322]/20">
-                    <h4 className="text-lg font-bold text-[#095797] mb-3 flex items-center gap-2">
-                      <div className="w-6 h-6 bg-[#9ac322] rounded-lg flex items-center justify-center">
+                  <div className="bg-gradient-to-br from-[#095797]/10 to-[#095797]/5 p-6 rounded-2xl border border-[#095797]/20">
+                    <h4 className="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
+                      <div className="w-6 h-6 bg-[#095797] rounded-lg flex items-center justify-center">
                         <span className="text-white text-xs font-bold">E</span>
                       </div>
                       Pour les entrepreneurs
                     </h4>
                     <p className="text-gray-600">
-                      Nous transformons votre vision en projet &quot;investissable&quot;.
+                      Nous transformons votre vision en projet
+                      &quot;investissable&quot;.
                     </p>
                   </div>
                   <div className="bg-gradient-to-br from-[#095797]/10 to-[#095797]/5 p-6 rounded-2xl border border-[#095797]/20">
-                    <h4 className="text-lg font-bold text-[#095797] mb-3 flex items-center gap-2">
+                    <h4 className="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
                       <div className="w-6 h-6 bg-[#095797] rounded-lg flex items-center justify-center">
                         <span className="text-white text-xs font-bold">I</span>
                       </div>
@@ -790,7 +731,7 @@ export default function ServicesConseilsPage() {
               {/* Solutions sur Mesure Section - Tabbed Interface */}
               <motion.div className="mt-20" {...fadeInUp}>
                 <div className="text-center mb-16">
-                  <div className="inline-flex items-center gap-2 bg-[#095797]/10 text-[#095797] px-4 py-2 rounded-full text-sm font-medium mb-6">
+                  <div className="inline-flex items-center gap-2 bg-[#095797]/10 text-gray-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
                     <Target className="w-4 h-4" />
                     Solutions Interactives
                   </div>
@@ -807,50 +748,66 @@ export default function ServicesConseilsPage() {
                   <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
                     {/* Tab Headers */}
                     <div className="flex border-b border-gray-200">
-                        <button
-                          className="flex-1 py-6 px-8 text-center font-semibold text-lg transition-all duration-300 relative overflow-hidden group cursor-pointer"
-                          onClick={() => {
-                            const tab1 = document.getElementById("tab-enterprises");
-                            const tab2 = document.getElementById("tab-investors");
-                            const btn1 = document.getElementById("btn-enterprises");
-                            const btn2 = document.getElementById("btn-investors");
+                      <button
+                        className="flex-1 py-6 px-8 text-center font-semibold text-lg transition-all duration-300 relative overflow-hidden group cursor-pointer"
+                        onClick={() => {
+                          const tab1 =
+                            document.getElementById("tab-enterprises");
+                          const tab2 = document.getElementById("tab-investors");
+                          const btn1 =
+                            document.getElementById("btn-enterprises");
+                          const btn2 = document.getElementById("btn-investors");
 
-                            if (tab1 && tab2 && btn1 && btn2) {
-                              tab1.classList.remove("hidden");
-                              tab2.classList.add("hidden");
-                              btn1.classList.add("text-[#9ac322]", "bg-[#9ac322]/5");
-                              btn1.classList.remove("text-gray-600");
-                              btn2.classList.remove("text-[#095797]", "bg-[#095797]/5");
-                              btn2.classList.add("text-gray-600");
-                            }
-                          }}
-                          id="btn-enterprises"
+                          if (tab1 && tab2 && btn1 && btn2) {
+                            tab1.classList.remove("hidden");
+                            tab2.classList.add("hidden");
+                            btn1.classList.add(
+                              "text-gray-700",
+                              "bg-[#095797]/5"
+                            );
+                            btn1.classList.remove("text-gray-600");
+                            btn2.classList.remove(
+                              "text-gray-800",
+                              "bg-[#095797]/5"
+                            );
+                            btn2.classList.add("text-gray-600");
+                          }
+                        }}
+                        id="btn-enterprises"
                       >
                         <div className="flex items-center justify-center gap-3">
-                          <div className="w-10 h-10 bg-[#9ac322] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                          <div className="w-10 h-10 bg-[#095797] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
                             <span className="text-white text-sm font-bold">
                               E
                             </span>
                           </div>
                           <span>Pour les Entreprises</span>
                         </div>
-                        <div className="absolute bottom-0 left-0 w-full h-1 bg-[#9ac322] scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                        <div className="absolute bottom-0 left-0 w-full h-1 bg-[#095797] scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
                       </button>
 
                       <button
                         className="flex-1 py-6 px-8 text-center font-semibold text-lg transition-all duration-300 relative overflow-hidden group cursor-pointer"
                         onClick={() => {
-                          const tab1 = document.getElementById("tab-enterprises");
+                          const tab1 =
+                            document.getElementById("tab-enterprises");
                           const tab2 = document.getElementById("tab-investors");
-                          const btn1 = document.getElementById("btn-enterprises");
+                          const btn1 =
+                            document.getElementById("btn-enterprises");
                           const btn2 = document.getElementById("btn-investors");
 
                           if (tab1 && tab2 && btn1 && btn2) {
                             tab2.classList.remove("hidden");
                             tab1.classList.add("hidden");
-                            btn2.classList.add("text-[#095797]", "bg-[#095797]/5");
+                            btn2.classList.add(
+                              "text-gray-800",
+                              "bg-[#095797]/5"
+                            );
                             btn2.classList.remove("text-gray-600");
-                            btn1.classList.remove("text-[#9ac322]", "bg-[#9ac322]/5");
+                            btn1.classList.remove(
+                              "text-gray-700",
+                              "bg-[#095797]/5"
+                            );
                             btn1.classList.add("text-gray-600");
                           }
                         }}
@@ -873,7 +830,7 @@ export default function ServicesConseilsPage() {
                       {/* Enterprises Tab */}
                       <div id="tab-enterprises" className="space-y-8">
                         <div className="text-center mb-12">
-                          <h4 className="text-3xl font-bold text-[#095797] mb-4">
+                          <h4 className="text-3xl font-bold text-gray-800 mb-4">
                             Devenez une évidence pour les investisseurs
                           </h4>
                           <p className="text-lg text-gray-600">
@@ -884,7 +841,7 @@ export default function ServicesConseilsPage() {
                         {/* Interactive Timeline */}
                         <div className="relative">
                           {/* Timeline Line */}
-                          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#9ac322] to-[#9ac322]/30"></div>
+                          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#095797] to-[#095797]/30"></div>
 
                           <div className="space-y-12">
                             {/* Step 1 */}
@@ -895,17 +852,17 @@ export default function ServicesConseilsPage() {
                               transition={{ duration: 0.6 }}
                               viewport={{ once: true }}
                             >
-                              <div className="flex-shrink-0 w-16 h-16 bg-[#9ac322] rounded-2xl flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform shadow-lg">
+                              <div className="flex-shrink-0 w-16 h-16 bg-[#095797] rounded-2xl flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform shadow-lg">
                                 1
                               </div>
-                              <div className="flex-1 bg-gradient-to-r from-[#9ac322]/5 to-transparent rounded-2xl p-8 border-l-4 border-[#9ac322] group-hover:shadow-lg transition-shadow">
-                                <h5 className="text-2xl font-bold text-[#095797] mb-3 group-hover:text-[#9ac322] transition-colors">
+                              <div className="flex-1 bg-gradient-to-r from-[#095797]/5 to-transparent rounded-2xl p-8 border-l-4 border-[#095797] group-hover:shadow-lg transition-shadow">
+                                <h5 className="text-2xl font-bold text-[#095797] mb-3 group-hover:text-gray-700 transition-colors">
                                   Préparation Stratégique (Investment Readiness)
                                 </h5>
                                 <p className="text-gray-600 leading-relaxed text-lg">
                                   Nous forgeons avec vous un dossier
-                                  d&#39;investissement irréprochable : business plan
-                                  affûté, stratégie clarifiée et financials
+                                  d&#39;investissement irréprochable : business
+                                  plan affûté, stratégie clarifiée et financials
                                   fiabilisés pour capter l&#39;attention et la
                                   confiance.
                                 </p>
@@ -920,11 +877,11 @@ export default function ServicesConseilsPage() {
                               transition={{ duration: 0.6, delay: 0.2 }}
                               viewport={{ once: true }}
                             >
-                              <div className="flex-shrink-0 w-16 h-16 bg-[#9ac322] rounded-2xl flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform shadow-lg">
+                              <div className="flex-shrink-0 w-16 h-16 bg-[#095797] rounded-2xl flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform shadow-lg">
                                 2
                               </div>
-                              <div className="flex-1 bg-gradient-to-r from-[#9ac322]/5 to-transparent rounded-2xl p-8 border-l-4 border-[#9ac322] group-hover:shadow-lg transition-shadow">
-                                <h5 className="text-2xl font-bold text-[#095797] mb-3 group-hover:text-[#9ac322] transition-colors">
+                              <div className="flex-1 bg-gradient-to-r from-[#095797]/5 to-transparent rounded-2xl p-8 border-l-4 border-[#095797] group-hover:shadow-lg transition-shadow">
+                                <h5 className="text-2xl font-bold text-[#095797] mb-3 group-hover:text-gray-700 transition-colors">
                                   Valorisation & Modélisation
                                 </h5>
                                 <p className="text-gray-600 leading-relaxed text-lg">
@@ -944,11 +901,11 @@ export default function ServicesConseilsPage() {
                               transition={{ duration: 0.6, delay: 0.4 }}
                               viewport={{ once: true }}
                             >
-                              <div className="flex-shrink-0 w-16 h-16 bg-[#9ac322] rounded-2xl flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform shadow-lg">
+                              <div className="flex-shrink-0 w-16 h-16 bg-[#095797] rounded-2xl flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform shadow-lg">
                                 3
                               </div>
-                              <div className="flex-1 bg-gradient-to-r from-[#9ac322]/5 to-transparent rounded-2xl p-8 border-l-4 border-[#9ac322] group-hover:shadow-lg transition-shadow">
-                                <h5 className="text-2xl font-bold text-[#095797] mb-3 group-hover:text-[#9ac322] transition-colors">
+                              <div className="flex-1 bg-gradient-to-r from-[#095797]/5 to-transparent rounded-2xl p-8 border-l-4 border-[#095797] group-hover:shadow-lg transition-shadow">
+                                <h5 className="text-2xl font-bold text-[#095797] mb-3 group-hover:text-gray-700 transition-colors">
                                   Accès Stratégique au Capital
                                 </h5>
                                 <p className="text-gray-600 leading-relaxed text-lg">
@@ -966,12 +923,12 @@ export default function ServicesConseilsPage() {
                       {/* Investors Tab */}
                       <div id="tab-investors" className="space-y-8 hidden">
                         <div className="text-center mb-12">
-                          <h4 className="text-3xl font-bold text-[#095797] mb-4">
+                          <h4 className="text-3xl font-bold text-gray-800 mb-4">
                             Déployez votre capital avec confiance et impact
                           </h4>
                           <p className="text-lg text-gray-600">
-                            Un sourcing d&#39;opportunités d&#39;exception pour votre
-                            portefeuille
+                            Un sourcing d&#39;opportunités d&#39;exception pour
+                            votre portefeuille
                           </p>
                         </div>
 
@@ -990,7 +947,7 @@ export default function ServicesConseilsPage() {
                               viewport={{ once: true }}
                             >
                               <div className="flex-1 bg-gradient-to-l from-[#095797]/5 to-transparent rounded-2xl p-8 border-r-4 border-[#095797] group-hover:shadow-lg transition-shadow">
-                                <h5 className="text-2xl font-bold text-[#095797] mb-3 group-hover:text-[#9ac322] transition-colors">
+                                <h5 className="text-2xl font-bold text-[#095797] mb-3 group-hover:text-gray-700 transition-colors">
                                   Deal Flow Exclusif & Qualifié
                                 </h5>
                                 <p className="text-gray-600 leading-relaxed text-lg">
@@ -1014,14 +971,15 @@ export default function ServicesConseilsPage() {
                               viewport={{ once: true }}
                             >
                               <div className="flex-1 bg-gradient-to-l from-[#095797]/5 to-transparent rounded-2xl p-8 border-r-4 border-[#095797] group-hover:shadow-lg transition-shadow">
-                                <h5 className="text-2xl font-bold text-[#095797] mb-3 group-hover:text-[#9ac322] transition-colors">
+                                <h5 className="text-2xl font-bold text-[#095797] mb-3 group-hover:text-gray-700 transition-colors">
                                   Due Diligence à 360°
                                 </h5>
                                 <p className="text-gray-600 leading-relaxed text-lg">
-                                  Nous menons des audits d&#39;acquisition complets
-                                  (stratégiques, financiers, opérationnels) pour
-                                  transformer le risque en certitude et valider
-                                  chaque thèse d&#39;investissement.
+                                  Nous menons des audits d&#39;acquisition
+                                  complets (stratégiques, financiers,
+                                  opérationnels) pour transformer le risque en
+                                  certitude et valider chaque thèse
+                                  d&#39;investissement.
                                 </p>
                               </div>
                               <div className="flex-shrink-0 w-16 h-16 bg-[#095797] rounded-2xl flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform shadow-lg">
@@ -1038,7 +996,7 @@ export default function ServicesConseilsPage() {
                               viewport={{ once: true }}
                             >
                               <div className="flex-1 bg-gradient-to-l from-[#095797]/5 to-transparent rounded-2xl p-8 border-r-4 border-[#095797] group-hover:shadow-lg transition-shadow">
-                                <h5 className="text-2xl font-bold text-[#095797] mb-3 group-hover:text-[#9ac322] transition-colors">
+                                <h5 className="text-2xl font-bold text-[#095797] mb-3 group-hover:text-gray-700 transition-colors">
                                   Création de Valeur Active (Post-acquisition)
                                 </h5>
                                 <p className="text-gray-600 leading-relaxed text-lg">
