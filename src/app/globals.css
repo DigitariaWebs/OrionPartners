@@ -55,6 +55,9 @@
 
   /* Hover color for dropdown items */
   --color-dropdown-hover: #f4f6f8;
+  
+  /* Mobile menu hover color */
+  --color-mobile-menu-hover: #f4f6f8;
 
   /* Semantic Color Mappings */
   --color-background: var(--color-white);

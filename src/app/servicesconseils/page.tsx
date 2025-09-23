@@ -337,22 +337,7 @@ export default function ServicesConseilsPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#095797]/30 via-transparent to-transparent"></div>
 
-                    {/* Floating Stats */}
-                    <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-[#095797] rounded-lg flex items-center justify-center">
-                          <Users className="w-5 h-5 text-white" />
-                        </div>
-                        <div>
-                          <div className="text-2xl font-bold text-[#095797]">
-                            24/7
-                          </div>
-                          <div className="text-sm text-gray-600">
-                            Support terrain
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    
                   </div>
                 </div>
               </motion.div>

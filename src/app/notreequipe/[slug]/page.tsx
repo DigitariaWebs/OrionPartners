@@ -1,6 +1,5 @@
 "use client";
 
-import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -211,7 +210,7 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
           <motion.div className="py-4" {...fadeInUp}>
             <Link
               href="/notreequipe"
-              className="inline-flex items-center gap-2 text-[#095797] hover:text-[#9ac322] transition-colors cursor-pointer"
+              className="inline-flex items-center gap-2 text-[#095797] hover:text-[#0a5fa3] transition-colors cursor-pointer"
             >
               <ArrowLeft className="w-5 h-5" />
               <span>Retour à l&apos;équipe</span>
@@ -247,7 +246,7 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
 
                   <a
                     href={`mailto:${member.email}`}
-                    className="inline-flex items-center gap-3 bg-[#095797] hover:bg-[#9ac322] text-white px-6 py-3 rounded-xl font-medium transition-colors cursor-pointer"
+                    className="inline-flex items-center gap-3 bg-[#095797] hover:bg-[#0a5fa3] text-white px-6 py-3 rounded-xl font-medium transition-colors cursor-pointer"
                   >
                     <Mail className="w-5 h-5" />
                     <span>Contacter</span>

@@ -6,16 +6,19 @@ import Image from "next/image";
 import Button from "../ui/Button";
 import { usePathname, useRouter } from "next/navigation";
 import { useModal } from "../providers/ModalProvider";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const [currentHash, setCurrentHash] = useState("");
   const pathname = usePathname();
   const router = useRouter();
   const { openModal } = useModal();
   const servicesRef = useRef<HTMLDivElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,7 +40,7 @@ const Header = () => {
     };
   }, []);
 
-  // Handle clicking outside to close dropdown
+  // Handle clicking outside to close dropdown and mobile menu
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -45,6 +48,12 @@ const Header = () => {
         !servicesRef.current.contains(event.target as Node)
       ) {
         setIsServicesOpen(false);
+      }
+      if (
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target as Node)
+      ) {
+        setIsMobileMenuOpen(false);
       }
     };
 
@@ -95,6 +104,16 @@ const Header = () => {
     router.push(pageLink);
   };
 
+  const handleMobileNavClick = (href: string) => {
+    setIsMobileMenuOpen(false);
+    setIsMobileServicesOpen(false);
+    if (href.startsWith("/#")) {
+      router.push(href);
+    } else {
+      router.push(href);
+    }
+  };
+
   return (
     <header
       className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -107,7 +126,7 @@ const Header = () => {
         boxShadow: isScrolled ? "0 10px 15px -3px rgba(0, 0, 0, 0.1)" : "none",
       }}
     >
-      <div className="container mx-auto px-10 py-4">
+      <div className="container mx-auto px-4 md:px-10 py-4">
         <nav className="flex items-center justify-between">
           {/* Logo - Left */}
           <Link href="/" className="flex items-center">
@@ -117,7 +136,7 @@ const Header = () => {
               width={460}
               height={440}
               priority
-              className="w-auto h-15"
+              className="w-auto h-8 md:h-15"
             />
           </Link>
 
@@ -131,17 +150,17 @@ const Header = () => {
                     onClick={() => setIsServicesOpen(!isServicesOpen)}
                     className={`flex items-center gap-1 text-sm font-medium transition-all duration-300 hover:scale-105 pb-1 cursor-pointer ${
                       pathname === "/" && currentHash === "#services"
-                        ? "text-accent border-b-2 border-accent"
+                        ? "text-primary border-b-2 border-primary"
                         : "text-dark hover:text-primary"
                     }`}
                     style={{
                       color:
                         pathname === "/" && currentHash === "#services"
-                          ? "var(--color-accent)"
+                          ? "var(--color-primary)"
                           : "var(--color-dark)",
                       borderBottomColor:
                         pathname === "/" && currentHash === "#services"
-                          ? "var(--color-accent)"
+                          ? "var(--color-primary)"
                           : "transparent",
                     }}
                     onMouseEnter={(e) => {
@@ -211,15 +230,15 @@ const Header = () => {
                   href={item.href}
                   className={`text-sm font-medium transition-all duration-300 hover:scale-105 pb-1 ${
                     isActive(item.href)
-                      ? "text-accent border-b-2 border-accent"
+                      ? "text-primary border-b-2 border-primary"
                       : "text-dark hover:text-primary"
                   }`}
                   style={{
                     color: isActive(item.href)
-                      ? "var(--color-accent)"
+                      ? "var(--color-primary)"
                       : "var(--color-dark)",
                     borderBottomColor: isActive(item.href)
-                      ? "var(--color-accent)"
+                      ? "var(--color-primary)"
                       : "transparent",
                   }}
                   onMouseEnter={(e) => {
@@ -254,18 +273,105 @@ const Header = () => {
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
-              onClick={() => openModal("consultation")}
-              className="px-4 py-2 text-sm font-medium rounded-md transition-all duration-300 hover:scale-105 hover:shadow-lg"
-              style={{
-                backgroundColor: "var(--color-primary)",
-                color: "var(--color-white)",
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 text-dark hover:text-primary transition-colors duration-300"
+              style={{ color: "var(--color-dark)" }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = "var(--color-primary)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = "var(--color-dark)";
               }}
             >
-              Contact
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </nav>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div
+          ref={mobileMenuRef}
+          className="md:hidden absolute top-full left-0 right-0 z-40"
+          style={{ backgroundColor: "var(--color-white)" }}
+        >
+          <div className="border-t border-gray-200 shadow-lg">
+            <div className="container mx-auto px-4 py-4 space-y-4">
+              {navigation.map((item) =>
+                item.isDropdown ? (
+                  <div key={item.name} className="space-y-2">
+                    <button
+                      onClick={() =>
+                        setIsMobileServicesOpen(!isMobileServicesOpen)
+                      }
+                      className="flex items-center justify-between w-full text-left text-sm font-medium py-2 border-b border-gray-100 transition-colors duration-200"
+                      style={{ color: "var(--color-primary)" }}
+                    >
+                      {item.name}
+                      <ChevronDown
+                        className={`w-4 h-4 transition-transform duration-200 ${
+                          isMobileServicesOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                    {isMobileServicesOpen && (
+                      <div className="pl-4 space-y-2">
+                        {services.map((service) => (
+                          <button
+                            key={service.id}
+                            onClick={() => {
+                              handleServiceClick(service.pageLink);
+                              setIsMobileMenuOpen(false);
+                              setIsMobileServicesOpen(false);
+                            }}
+                            className="block w-full text-left py-2 text-sm transition-colors duration-200"
+                            style={{ color: "var(--color-primary)" }}
+                          >
+                            <div className="font-medium">{service.name}</div>
+                            <div className="text-xs text-gray-600 mt-1">
+                              {service.description}
+                            </div>
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    onClick={() => handleMobileNavClick(item.href)}
+                    className="block py-2 text-sm font-medium transition-colors duration-300"
+                    style={{
+                      color: isActive(item.href)
+                        ? "var(--color-primary)"
+                        : "var(--color-primary)",
+                    }}
+                  >
+                    {item.name}
+                  </Link>
+                )
+              )}
+
+              {/* Mobile Contact Button */}
+              <div className="pt-4 border-t border-gray-200">
+                <Button
+                  variant="primary"
+                  size="md"
+                  className="w-full font-medium"
+                  onClick={() => {
+                    openModal("consultation");
+                    setIsMobileMenuOpen(false);
+                  }}
+                >
+                  Contactez-nous
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
