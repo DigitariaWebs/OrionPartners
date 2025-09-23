@@ -51,7 +51,6 @@ export async function POST(request: NextRequest) {
     const subject = `Nouvelle inscription newsletter - ${email}`;
     const brand = "#095797";
     const cta = "#9ac322";
-    const muted = "#6b7280";
 
     const html = `
 <!DOCTYPE html>
