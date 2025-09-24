@@ -3,10 +3,10 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Instagram, Facebook, Linkedin, Twitter } from "lucide-react";
+import { Instagram, Facebook, Linkedin } from "lucide-react";
 import Newsletter from "../ui/Newsletter";
 
-const serviceKeyToTitle = (key: string) => {
+const serviceKeyToTitle = (key: string): string => {
   const map: Record<string, string> = {
     servicesconseils: "Services Conseils",
     "comptabilite-certification": "Comptabilité & certification",
@@ -15,7 +15,7 @@ const serviceKeyToTitle = (key: string) => {
   return map[key] || "";
 };
 
-const serviceKeyToUrl = (key: string) => {
+const serviceKeyToUrl = (key: string): string => {
   const map: Record<string, string> = {
     servicesconseils: "/servicesconseils",
     "comptabilite-certification": "/comptabilite-certification",
@@ -215,7 +215,7 @@ export default function Footer() {
                   <Instagram size={18} />
                 </a>
                 <a
-                  href="https://twitter.com/OrionConseil"
+                  href="https://x.com/OrionConseil"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-colors duration-300"
@@ -227,7 +227,15 @@ export default function Footer() {
                     e.currentTarget.style.color = "rgba(0, 0, 0, 0.65)";
                   }}
                 >
-                  <Twitter size={18} />
+                  <svg
+                    width={18}
+                    height={18}
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+                  </svg>
                 </a>
                 <a
                   href="https://www.facebook.com/profile.php?id=61580314478373"
