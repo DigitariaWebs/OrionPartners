@@ -39,64 +39,114 @@ export default function EtudesDataIntelligencePage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#095797] via-[#0a5fa3] to-[#095797] text-white">
-        <div className="absolute inset-0">
+      <section
+        className="relative overflow-hidden px-4 flex items-center justify-start"
+        style={{ height: "calc(100vh - 72px)" }}
+      >
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <div
+            className="absolute inset-0 z-10"
+            style={{
+              background:
+                "linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%)",
+            }}
+          ></div>
           <Image
-            src="/ServiceImages/EtudesRecherches.png"
+            src="/ServiceImages/VilleToronto.jpg"
             alt="Études & Data Intelligence Background"
             fill
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#095797]/80 via-[#0a5fa3]/70 to-[#095797]/80"></div>
         </div>
 
-        <div className="relative container mx-auto px-6 py-24 lg:py-32">
-          <motion.div className="text-center max-w-4xl mx-auto" {...stagger}>
-            <motion.h1
-              className="text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent"
-              {...fadeInUp}
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 z-5">
+          <motion.div
+            className="absolute top-1/4 left-1/4 w-32 sm:w-64 h-32 sm:h-64 bg-[var(--color-primary)]/20 rounded-full blur-3xl"
+            animate={{
+              x: [0, 50, 0],
+              y: [0, -30, 0],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute bottom-1/4 right-1/4 w-48 sm:w-96 h-48 sm:h-96 bg-[var(--color-accent)]/15 rounded-full blur-3xl"
+            animate={{
+              x: [0, -40, 0],
+              y: [0, 40, 0],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-20 max-w-4xl px-12 sm:px-14 lg:px-16 text-left">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mb-6 sm:mb-8"
+          >
+            <h1
+              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.15]"
+              style={{
+                textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                fontSize: "clamp(1.875rem, 6vw, 4.5rem)",
+                marginBottom: "1rem",
+              }}
             >
               Études & Data Intelligence
-            </motion.h1>
+            </h1>
+          </motion.div>
 
-            <motion.p
-              className="text-xl lg:text-2xl text-blue-100 mb-8 leading-relaxed"
-              {...fadeInUp}
-            >
-              Transformer vos données brutes en avantage concurrentiel.
-            </motion.p>
+          <div className="w-30 h-1 bg-[var(--color-accent)] my-7"></div>
 
-            <motion.p
-              className="text-lg text-blue-100 mb-12 leading-relaxed max-w-3xl mx-auto"
-              {...fadeInUp}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4 }}
+            className="mb-8 sm:mb-12"
+          >
+            <p
+              className="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-4xl leading-relaxed"
+              style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5)" }}
             >
-              Découvrez comment vos données peuvent révéler des opportunités
-              cachées, anticiper les tendances du marché et prendre des
-              décisions stratégiques avec confiance grâce à notre expertise en
-              analyse de données.
-            </motion.p>
+              Nous réalisons des études et des recherches pour vous fournir des
+              analyses claires et exploitables. En combinant méthodologies
+              rigoureuses et connaissance du marché, nous vous aidons à prendre
+              des décisions éclairées.
+            </p>
+          </motion.div>
 
-            <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-              {...fadeInUp}
-            >
-              <Link href="/#contact">
-                <button className="group bg-[#9ac322] hover:bg-[#8ab01e] text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 hover:scale-105 cursor-pointer">
-                  Nous contacter
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </Link>
-              <Link href="/#services">
-                <button className="border-2 border-white/30 hover:border-white/50 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 backdrop-blur-sm cursor-pointer">
-                  Découvrir nos services
-                </button>
-              </Link>
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-start items-start"
+          >
+            <Link href="/#contact">
+              <button className="group bg-[var(--color-accent)] hover:bg-[#8ab01e] text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 shadow-xl cursor-pointer">
+                Contactez-nous
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </Link>
+            <Link href="/#services">
+              <button className="min-w-[180px] border-2 border-[var(--color-white)] text-[var(--color-white)] hover:bg-[var(--color-white)] hover:text-black backdrop-blur-sm bg-[var(--color-white)]/10 px-8 py-4 rounded-xl font-semibold transition-all duration-300 cursor-pointer">
+                Découvrez nos expertises
+              </button>
+            </Link>
           </motion.div>
         </div>
-
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent"></div>
       </section>
 
       {/* Business Intelligence Section */}

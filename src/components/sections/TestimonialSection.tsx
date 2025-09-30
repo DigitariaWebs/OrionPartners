@@ -56,6 +56,16 @@ const TestimonialSection: React.FC = () => {
       name: "Logo 2b",
       logo: "https://elitepartners-rdc.com/wp-content/uploads/2025/06/Logo2b.png",
     },
+    {
+      id: 11,
+      name: "Regard d'Afrique",
+      logo: "/Logos/RegardAfriqueLogo.jpg",
+    },
+    {
+      id: 12,
+      name: "MEG",
+      logo: "/Logos/MEGLogo.png",
+    },
   ];
 
   // Duplicate the array for seamless infinite scroll
@@ -178,8 +188,8 @@ const TestimonialSection: React.FC = () => {
             className="text-md max-w-2xl mx-auto"
             style={{ color: "rgba(var(--color-dark-rgb), 0.6)" }}
           >
-            Plus de 50+ entreprises nous font confiance pour leur développement
-            en République Démocratique du Congo
+            Plus de 20+ entreprises nous font confiance pour leur développement
+            en République Démocratique du Congo et ailleurs.
           </p>
         </motion.div>
       </div>

@@ -38,59 +38,113 @@ export default function ServicesConseilsPage() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
       <Header />
 
-      {/* Enhanced Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#095797] via-[#0a5fa3] to-[#095797] text-white">
-        {/* Background Image */}
-        <div className="absolute inset-0">
+      {/* Hero Section */}
+      <section
+        className="relative overflow-hidden px-4 flex items-center justify-start"
+        style={{ height: "calc(100vh - 72px)" }}
+      >
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <div
+            className="absolute inset-0 z-10"
+            style={{
+              background:
+                "linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%)",
+            }}
+          ></div>
           <Image
-            src="/ServiceImages/ServicesConseils.png"
+            src="/ServiceImages/PaysageUrbain.jpg"
             alt="Services de Conseil Background"
             fill
             className="object-cover"
             priority
           />
-          {/* Dark overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#095797]/80 via-[#0a5fa3]/70 to-[#095797]/80"></div>
         </div>
 
-        <div className="relative container mx-auto px-6 py-32 lg:py-48">
-          <motion.div className="text-center max-w-4xl mx-auto" {...stagger}>
-            <motion.h1
-              className="text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent"
-              {...fadeInUp}
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 z-5">
+          <motion.div
+            className="absolute top-1/4 left-1/4 w-32 sm:w-64 h-32 sm:h-64 bg-[var(--color-primary)]/20 rounded-full blur-3xl"
+            animate={{
+              x: [0, 50, 0],
+              y: [0, -30, 0],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute bottom-1/4 right-1/4 w-48 sm:w-96 h-48 sm:h-96 bg-[var(--color-accent)]/15 rounded-full blur-3xl"
+            animate={{
+              x: [0, -40, 0],
+              y: [0, 40, 0],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-20 max-w-4xl px-12 sm:px-14 lg:px-16 text-left">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mb-6 sm:mb-8"
+          >
+            <h1
+              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.15]"
+              style={{
+                textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                fontSize: "clamp(1.875rem, 6vw, 4.5rem)",
+                marginBottom: "1rem",
+              }}
             >
               Services de Conseil
-            </motion.h1>
+            </h1>
+          </motion.div>
 
-            <motion.p
-              className="text-xl lg:text-2xl text-blue-100 mb-8 leading-relaxed"
-              {...fadeInUp}
+          <div className="w-30 h-1 bg-[var(--color-accent)] my-7"></div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4 }}
+            className="mb-8 sm:mb-12"
+          >
+            <p
+              className="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-4xl leading-relaxed"
+              style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5)" }}
             >
               Conseil stratégique, opérationnel et financier pour accompagner
               les entreprises à relever leurs défis complexes.
-            </motion.p>
+            </p>
+          </motion.div>
 
-            <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-              {...fadeInUp}
-            >
-              <Link href="/#contact">
-                <button className="group bg-[#9ac322] hover:bg-[#8ab01e] text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 hover:scale-105 cursor-pointer">
-                  Nous contacter
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </Link>
-              <Link href="/#services">
-                <button className="border-2 border-white/30 hover:border-white/50 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 backdrop-blur-sm cursor-pointer">
-                  Découvrir nos services
-                </button>
-              </Link>
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-start items-start"
+          >
+            <Link href="/#contact">
+              <button className="group bg-[var(--color-accent)] hover:bg-[#8ab01e] text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 shadow-xl cursor-pointer">
+                Contactez-nous
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </Link>
+            <Link href="/#services">
+              <button className="min-w-[180px] border-2 border-[var(--color-white)] text-[var(--color-white)] hover:bg-[var(--color-white)] hover:text-black backdrop-blur-sm bg-[var(--color-white)]/10 px-8 py-4 rounded-xl font-semibold transition-all duration-300 cursor-pointer">
+                Découvrez nos expertises
+              </button>
+            </Link>
           </motion.div>
         </div>
-
-        {/* Decorative elements */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent"></div>
       </section>
 
       {/* Bloc 1: Stratégie & Croissance */}
@@ -336,8 +390,6 @@ export default function ServicesConseilsPage() {
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#095797]/30 via-transparent to-transparent"></div>
-
-                    
                   </div>
                 </div>
               </motion.div>

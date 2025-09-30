@@ -80,7 +80,7 @@ export default function NosServicesSection() {
           >
             Nos Services
           </h2>
-          <p className="mt-4 text-pretty text-sm leading-6 text-neutral-700 sm:text-base">
+          <p className="mt-4 text-pretty text-sm leading-6 text-neutral-700 sm:text-base text-justify">
             {`Plus que des services, nous livrons des résultats. Notre mission est de catalyser votre succès en République Démocratique du Congo en transformant la complexité en avantage compétitif. À travers nos pôles d'expertise, nous déployons des solutions stratégiques et opérationnelles qui génèrent un impact tangible sur votre performance.`}
           </p>
         </motion.header>
@@ -119,29 +119,36 @@ export default function NosServicesSection() {
                 }
               }}
             >
-              <div
-                className="service-icon inline-flex items-center justify-center w-16 h-16 rounded-full mb-4 transition-colors duration-300"
-                style={{
-                  backgroundColor: "rgba(var(--color-primary-rgb), 0.1)",
-                  color: "var(--color-primary)",
-                }}
-              >
-                {service.icon}
+              {/* Icon - Fixed height section */}
+              <div className="flex justify-center mb-4">
+                <div
+                  className="service-icon inline-flex items-center justify-center w-16 h-16 rounded-full transition-colors duration-300"
+                  style={{
+                    backgroundColor: "rgba(var(--color-primary-rgb), 0.1)",
+                    color: "var(--color-primary)",
+                  }}
+                >
+                  {service.icon}
+                </div>
               </div>
+
+              {/* Title - Fixed height section */}
               <h3
-                className="text-xl font-semibold mb-2"
+                className="text-xl font-semibold mb-3 min-h-[3.5rem] flex items-center justify-center"
                 style={{ color: "var(--color-text-primary)" }}
               >
                 {service.title}
               </h3>
 
+              {/* Description - Fixed height section */}
               <p
-                className="text-sm mb-4 line-clamp-3"
+                className="text-sm mb-6 min-h-[7rem] flex items-start justify-center"
                 style={{ color: "var(--color-text-secondary)" }}
               >
                 {service.description}
               </p>
 
+              {/* Features - Flexible section that grows */}
               <div className="mb-4 flex-grow">
                 <h4
                   className="text-sm font-semibold mb-2"
@@ -149,7 +156,7 @@ export default function NosServicesSection() {
                 >
                   Services inclus:
                 </h4>
-                <ul className="space-y-1">
+                <ul className="space-y-2">
                   {service.features.map((feature, idx) => (
                     <li
                       key={idx}
@@ -160,13 +167,14 @@ export default function NosServicesSection() {
                         className="w-3 h-3 mt-0.5 flex-shrink-0"
                         style={{ color: "var(--color-accent)" }}
                       />
-                      <span>{feature}</span>
+                      <span className="text-left">{feature}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="mt-auto">
+              {/* Button - Always at bottom */}
+              <div className="mt-auto pt-4">
                 <Button
                   variant="primary"
                   size="sm"

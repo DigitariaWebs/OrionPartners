@@ -39,65 +39,114 @@ export default function ComptabiliteCertificationPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#095797] via-[#0a5fa3] to-[#095797] text-white">
-        <div className="absolute inset-0">
+      <section
+        className="relative overflow-hidden px-4 flex items-center justify-start"
+        style={{ height: "calc(100vh - 72px)" }}
+      >
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <div
+            className="absolute inset-0 z-10"
+            style={{
+              background:
+                "linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%)",
+            }}
+          ></div>
           <Image
-            src="/ServiceImages/ComptabiliteCertification.png"
+            src="/ServiceImages/VilleNewYork.jpg"
             alt="Comptabilité & Certification Background"
             fill
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#095797]/80 via-[#0a5fa3]/70 to-[#095797]/80"></div>
         </div>
 
-        <div className="relative container mx-auto px-6 py-24 lg:py-32">
-          <motion.div className="text-center max-w-4xl mx-auto" {...stagger}>
-            <motion.h1
-              className="text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent"
-              {...fadeInUp}
-            >
-              Comptabilité & Certification des comptes
-            </motion.h1>
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 z-5">
+          <motion.div
+            className="absolute top-1/4 left-1/4 w-32 sm:w-64 h-32 sm:h-64 bg-[var(--color-primary)]/20 rounded-full blur-3xl"
+            animate={{
+              x: [0, 50, 0],
+              y: [0, -30, 0],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute bottom-1/4 right-1/4 w-48 sm:w-96 h-48 sm:h-96 bg-[var(--color-accent)]/15 rounded-full blur-3xl"
+            animate={{
+              x: [0, -40, 0],
+              y: [0, 40, 0],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        </div>
 
-            <motion.p
-              className="text-xl lg:text-2xl text-blue-100 mb-8 leading-relaxed"
-              {...fadeInUp}
+        {/* Content */}
+        <div className="relative z-20 max-w-4xl px-12 sm:px-14 lg:px-16 text-left">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mb-6 sm:mb-8"
+          >
+            <h1
+              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.15]"
+              style={{
+                textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                fontSize: "clamp(1.875rem, 6vw, 4.5rem)",
+                marginBottom: "1rem",
+              }}
             >
-              Transformer la conformité en performance.
-            </motion.p>
+              Comptabilité & Certification
+            </h1>
+          </motion.div>
 
-            <motion.p
-              className="text-lg text-blue-100 mb-12 leading-relaxed max-w-3xl mx-auto"
-              {...fadeInUp}
-            >
-              Dans l&#39;environnement dynamique et exigeant de la République
-              Démocratique du Congo, la gestion comptable et financière ne peut
-              être une simple formalité. C&#39;est le socle sur lequel reposent vos
-              décisions stratégiques, votre crédibilité auprès des partenaires
-              et votre potentiel de croissance.
-            </motion.p>
+          <div className="w-30 h-1 bg-[var(--color-accent)] my-7"></div>
 
-            <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-              {...fadeInUp}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4 }}
+            className="mb-8 sm:mb-12"
+          >
+            <p
+              className="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-4xl leading-relaxed"
+              style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5)" }}
             >
-              <Link href="/#contact">
-                <button className="group bg-[#9ac322] hover:bg-[#8ab01e] text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 hover:scale-105 cursor-pointer">
-                  Nous contacter
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </Link>
-              <Link href="/#services">
-                <button className="border-2 border-white/30 hover:border-white/50 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 backdrop-blur-sm cursor-pointer">
-                  Découvrir nos services
-                </button>
-              </Link>
-            </motion.div>
+              Une information financière fiable est le socle de toute décision.
+              Nous garantissons la production de vos états financiers et vous
+              fournissons des tableaux de bord clairs pour piloter votre
+              performance.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-start items-start"
+          >
+            <Link href="/#contact">
+              <button className="group bg-[var(--color-accent)] hover:bg-[#8ab01e] text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 shadow-xl cursor-pointer">
+                Contactez-nous
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </Link>
+            <Link href="/#services">
+              <button className="min-w-[180px] border-2 border-[var(--color-white)] text-[var(--color-white)] hover:bg-[var(--color-white)] hover:text-black backdrop-blur-sm bg-[var(--color-white)]/10 px-8 py-4 rounded-xl font-semibold transition-all duration-300 cursor-pointer">
+                Découvrez nos expertises
+              </button>
+            </Link>
           </motion.div>
         </div>
-
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent"></div>
       </section>
 
       {/* Mission Section */}
@@ -151,8 +200,8 @@ export default function ComptabiliteCertificationPage() {
                   Naviguez avec sérénité dans le paysage réglementaire et fiscal
                   congolais (OHADA, DGI, CNSS, etc.). Notre expertise pointue
                   vous garantit des déclarations précises et ponctuelles, vous
-                  mettant à l&apos;abri des pénalités et assurant la pérennité de vos
-                  opérations.
+                  mettant à l&apos;abri des pénalités et assurant la pérennité
+                  de vos opérations.
                 </p>
               </motion.div>
 
@@ -347,17 +396,17 @@ export default function ComptabiliteCertificationPage() {
                   <div className="space-y-6">
                     <p className="text-lg text-gray-700 leading-relaxed">
                       En République Démocratique du Congo, la gestion de la paie
-                      est bien plus qu&#39;une simple transaction mensuelle. C&#39;est
-                      une fonction critique à la croisée du Code du Travail, des
-                      exigences des organismes sociaux (CNSS, INPP, ONEM) et de
-                      la satisfaction de vos employés. Les erreurs coûtent cher,
-                      en pénalités comme en perte de confiance.
+                      est bien plus qu&#39;une simple transaction mensuelle.
+                      C&#39;est une fonction critique à la croisée du Code du
+                      Travail, des exigences des organismes sociaux (CNSS, INPP,
+                      ONEM) et de la satisfaction de vos employés. Les erreurs
+                      coûtent cher, en pénalités comme en perte de confiance.
                     </p>
 
                     <p className="text-lg text-gray-700 leading-relaxed">
                       Notre mission est de transformer votre gestion de la paie
-                      d&#39;un fardeau administratif complexe en un service d&#39;une
-                      fiabilité absolue, vous garantissant conformité,
+                      d&#39;un fardeau administratif complexe en un service
+                      d&#39;une fiabilité absolue, vous garantissant conformité,
                       confidentialité et tranquillité d&#39;esprit.
                     </p>
                   </div>
@@ -448,8 +497,8 @@ export default function ComptabiliteCertificationPage() {
                           IPR & Impôts
                         </h4>
                         <p className="text-gray-600 text-sm leading-relaxed">
-                          Calcul et déclaration de l&apos;Impôt Professionnel sur les
-                          Rémunérations.
+                          Calcul et déclaration de l&apos;Impôt Professionnel
+                          sur les Rémunérations.
                         </p>
                       </div>
                     </div>
@@ -468,8 +517,8 @@ export default function ComptabiliteCertificationPage() {
                           Administration RH
                         </h4>
                         <p className="text-gray-600 text-sm leading-relaxed">
-                          Gestion des formalités d&apos;embauche et départ, soldes de
-                          tout compte.
+                          Gestion des formalités d&apos;embauche et départ,
+                          soldes de tout compte.
                         </p>
                       </div>
                     </div>
@@ -488,8 +537,8 @@ export default function ComptabiliteCertificationPage() {
                           Reportings & États
                         </h4>
                         <p className="text-gray-600 text-sm leading-relaxed">
-                          Production d&apos;états et reportings pour comptabilité et
-                          contrôle de gestion.
+                          Production d&apos;états et reportings pour
+                          comptabilité et contrôle de gestion.
                         </p>
                       </div>
                     </div>
@@ -522,10 +571,11 @@ export default function ComptabiliteCertificationPage() {
                     <p className="text-lg text-gray-700 leading-relaxed">
                       Dans un environnement où la pression fiscale est
                       croissante et les réglementations complexes, la conformité
-                      n&#39;est pas une option, c&#39;est un impératif de gouvernance.
-                      Pour les entreprises opérant en RDC, naviguer dans les
-                      méandres des exigences de la Direction Générale des Impôts
-                      (DGI) requiert une vigilance et une expertise constantes.
+                      n&#39;est pas une option, c&#39;est un impératif de
+                      gouvernance. Pour les entreprises opérant en RDC, naviguer
+                      dans les méandres des exigences de la Direction Générale
+                      des Impôts (DGI) requiert une vigilance et une expertise
+                      constantes.
                     </p>
 
                     <p className="text-lg text-gray-700 leading-relaxed">
@@ -693,8 +743,8 @@ export default function ComptabiliteCertificationPage() {
                         </h4>
                         <p className="text-gray-600 text-sm leading-relaxed">
                           Gestion proactive de vos relations avec
-                          l&#39;administration fiscale pour une collaboration fluide
-                          et efficace.
+                          l&#39;administration fiscale pour une collaboration
+                          fluide et efficace.
                         </p>
                       </div>
                     </div>
@@ -727,7 +777,6 @@ export default function ComptabiliteCertificationPage() {
           </motion.div>
         </div>
       </section>
-      
 
       <Footer />
     </div>
