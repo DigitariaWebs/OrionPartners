@@ -5,21 +5,24 @@ import Header from "@/components/layout/Header";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Target, Users, TrendingUp } from "lucide-react";
+import {
+  ArrowRight,
+  Target,
+  Users,
+  TrendingUp,
+  FileText,
+  Calculator,
+  DollarSign,
+  Search,
+  CheckCircle,
+  BarChart,
+} from "lucide-react";
 
 export default function ServicesConseilsPage() {
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
     animate: { opacity: 1, y: 0 },
     transition: { duration: 0.6 },
-  };
-
-  const stagger = {
-    animate: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
   };
 
   const slideInLeft = {
@@ -186,11 +189,11 @@ export default function ServicesConseilsPage() {
                 <div className="relative group h-full">
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full">
                     <Image
-                      src="/ServiceImages/ServicesConseils.png"
+                      src="/ServiceImages/StratégieCroissance.png"
                       alt="Stratégie & Croissance"
                       width={700}
                       height={500}
-                      className="w-full h-full object-cover"
+                      className="w-full h-115 object-cover object-bottom"
                     />
                   </div>
                 </div>
@@ -343,6 +346,169 @@ export default function ServicesConseilsPage() {
         </div>
       </section>
 
+      {/* Bloc 1.5: Conseil juridique */}
+      <section className="pb-10 pt-4 lg:pt-12 relative overflow-hidden bg-gray-50">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3e%3cg fill='%23095797' fill-opacity='0.1'%3e%3cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-61-51c2.73 0 4.917-2.187 4.917-4.917 0-2.73-2.187-4.917-4.917-4.917C7.187 3.167 5 5.354 5 8.084c0 2.73 2.187 4.917 4.917 4.917zM20.167 72c2.73 0 4.917-2.187 4.917-4.917 0-2.73-2.187-4.917-4.917-4.917C17.437 62.167 15.25 64.354 15.25 67.084c0 2.73 2.187 4.917 4.917 4.917z'/%3e%3c/g%3e%3c/svg%3e")`,
+              backgroundSize: "100px 100px",
+            }}
+          ></div>
+        </div>
+
+        <div className="relative container mx-auto px-6">
+          <div className="max-w-7xl mx-auto">
+            {/* Section Header */}
+            <motion.div className="text-center mb-16" {...fadeInUp}>
+              <div className="inline-flex items-center gap-2 bg-[#095797]/10 text-[#095797] px-4 py-2 rounded-full text-sm font-medium mb-6">
+                <Target className="w-4 h-4" />
+                Expertise Juridique
+              </div>
+              <h2 className="text-4xl lg:text-6xl font-bold text-[#095797] mb-6">
+                Conseil juridique
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Un accompagnement juridique complet pour sécuriser vos projets
+                et garantir votre conformité
+              </p>
+            </motion.div>
+
+            {/* Services Grid */}
+            <motion.div className="space-y-8" {...fadeInUp}>
+              {/* First row - 3 services */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Service 1 */}
+                <motion.div
+                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#095797]/30"
+                  whileHover={{ y: -5 }}
+                  {...fadeInUp}
+                >
+                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#095797] rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
+                    1
+                  </div>
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
+                      Assistance à la conformité réglementaire
+                    </h4>
+                    <p className="text-gray-600 leading-relaxed">
+                      Nous vous accompagnons pour assurer votre conformité avec
+                      l&apos;ensemble des réglementations en vigueur, vous
+                      permettant d&apos;opérer en toute sérénité.
+                    </p>
+                  </div>
+                  <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <Target className="w-16 h-16 text-gray-800" />
+                  </div>
+                </motion.div>
+
+                {/* Service 2 */}
+                <motion.div
+                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#095797]/30"
+                  whileHover={{ y: -5 }}
+                  {...fadeInUp}
+                >
+                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#095797] rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
+                    2
+                  </div>
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
+                      Montage juridique de projets
+                    </h4>
+                    <p className="text-gray-600 leading-relaxed">
+                      Structuration juridique optimale de vos projets pour
+                      maximiser leur efficacité et leur protection juridique dès
+                      la conception.
+                    </p>
+                  </div>
+                  <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <TrendingUp className="w-16 h-16 text-gray-800" />
+                  </div>
+                </motion.div>
+
+                {/* Service 3 */}
+                <motion.div
+                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#095797]/30"
+                  whileHover={{ y: -5 }}
+                  {...fadeInUp}
+                >
+                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#095797] rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
+                    3
+                  </div>
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
+                      Gestion des contentieux techniques
+                    </h4>
+                    <p className="text-gray-600 leading-relaxed">
+                      Support technique expert dans les litiges liés aux
+                      projets, assurant une défense robuste de vos intérêts.
+                    </p>
+                  </div>
+                  <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <Users className="w-16 h-16 text-gray-800" />
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Second row - 2 services centered */}
+              <div className="flex justify-center">
+                <div className="grid md:grid-cols-2 gap-8 max-w-4xl w-full">
+                  {/* Service 4 */}
+                  <motion.div
+                    className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#095797]/30"
+                    whileHover={{ y: -5 }}
+                    {...fadeInUp}
+                  >
+                    <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#095797] rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
+                      4
+                    </div>
+                    <div className="space-y-4">
+                      <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
+                        Gestion des autorisations administratives
+                      </h4>
+                      <p className="text-gray-600 leading-relaxed">
+                        Navigation experte à travers les procédures
+                        administratives pour obtenir toutes les autorisations
+                        nécessaires à vos activités.
+                      </p>
+                    </div>
+                    <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                      <Target className="w-16 h-16 text-gray-800" />
+                    </div>
+                  </motion.div>
+
+                  {/* Service 5 */}
+                  <motion.div
+                    className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#095797]/30"
+                    whileHover={{ y: -5 }}
+                    {...fadeInUp}
+                  >
+                    <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#095797] rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
+                      5
+                    </div>
+                    <div className="space-y-4">
+                      <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
+                        Assistance à la rédaction d&apos;appels d&apos;offres et
+                        de contrats
+                      </h4>
+                      <p className="text-gray-600 leading-relaxed">
+                        Rédaction professionnelle et sécurisée de vos documents
+                        contractuels et réponses aux appels d&apos;offres.
+                      </p>
+                    </div>
+                    <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                      <TrendingUp className="w-16 h-16 text-gray-800" />
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Bloc 2: Représentation & Support Opérationnel */}
       <section className="py-24 lg:py-32 relative overflow-hidden">
         {/* Background Pattern */}
@@ -368,8 +534,8 @@ export default function ServicesConseilsPage() {
                 Représentation & Support Opérationnel
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Votre partenaire de confiance pour une implantation et une
-                expansion réussie en RDC
+                Orion Conseil est votre partenaire de confiance pour une
+                implantation et une expansion réussie en RDC
               </p>
             </motion.div>
 
@@ -383,11 +549,11 @@ export default function ServicesConseilsPage() {
                 <div className="relative group h-full">
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full">
                     <Image
-                      src="/ServiceImages/RepresentationAccompagnement.png"
+                      src="/ServiceImages/ReprésentationSupportOpérationnel.png"
                       alt="Représentation & Support Opérationnel"
-                      width={700}
+                      width={600}
                       height={500}
-                      className="w-full h-full object-cover"
+                      className="w-full h-115 object-fit "
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#095797]/30 via-transparent to-transparent"></div>
                   </div>
@@ -523,7 +689,7 @@ export default function ServicesConseilsPage() {
                   </div>
                   <div className="space-y-4">
                     <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
-                      Défense de Vos Intérêts
+                      Défense de vos Intérêts
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
                       Nous agissons avec une loyauté absolue pour représenter et
@@ -541,7 +707,7 @@ export default function ServicesConseilsPage() {
       </section>
 
       {/* Bloc 3: Private Equity */}
-      <section className="py-24 lg:py-32 relative overflow-hidden">
+      <section className="pb-24 lg:pb-32 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div
@@ -559,7 +725,7 @@ export default function ServicesConseilsPage() {
             <motion.div className="text-center mb-16" {...fadeInUp}>
               <div className="inline-flex items-center gap-2 bg-[#095797]/10 text-[#095797] px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Target className="w-4 h-4" />
-                Capital & Growth
+                Croissance
               </div>
               <h2 className="text-4xl lg:text-6xl font-bold text-[#095797] mb-6">
                 Private Equity
@@ -579,11 +745,11 @@ export default function ServicesConseilsPage() {
                 <div className="relative group h-full">
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full">
                     <Image
-                      src="/ServiceImages/ComptabiliteCertification.png"
+                      src="/ServiceImages/PrivateEquity.png"
                       alt="Private Equity"
                       width={700}
                       height={500}
-                      className="w-full h-full object-cover"
+                      className="w-full h-121 object-fill "
                     />
                   </div>
                 </div>
@@ -609,15 +775,17 @@ export default function ServicesConseilsPage() {
                       </h3>
                       <div className="space-y-4 text-gray-700 pl-11">
                         <p className="leading-relaxed">
-                          Le paradoxe congolais freine le développement
-                          économique. Un potentiel immense mais un accès limité
-                          au capital transforme les opportunités en contraintes.
+                          Le paradoxe congolais : un potentiel immense freiné
+                          par un accès limité au capital. Les sources de
+                          financement traditionnelles ne suffisent plus à
+                          soutenir l&apos;innovation et la croissance
+                          structurelle.
                         </p>
                         <p className="leading-relaxed">
-                          Les sources de financement traditionnelles ne
-                          suffisent plus à soutenir l&apos;innovation et la
-                          croissance structurelle. Le capital intelligent reste
-                          inaccessible aux projets porteurs.
+                          Notre conviction est que le Private Equity n&apos;est
+                          pas juste une alternative, mais le levier stratégique
+                          pour transformer ce potentiel en performance
+                          économique durable.
                         </p>
                       </div>
                     </div>
@@ -889,8 +1057,8 @@ export default function ServicesConseilsPage() {
                               transition={{ duration: 0.6 }}
                               viewport={{ once: true }}
                             >
-                              <div className="flex-shrink-0 w-16 h-16 bg-[#095797] rounded-2xl flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform shadow-lg">
-                                1
+                              <div className="flex-shrink-0 w-16 h-16 bg-[#095797] rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-lg">
+                                <FileText className="w-8 h-8" />
                               </div>
                               <div className="flex-1 bg-gradient-to-r from-[#095797]/5 to-transparent rounded-2xl p-8 border-l-4 border-[#095797] group-hover:shadow-lg transition-shadow">
                                 <h5 className="text-2xl font-bold text-[#095797] mb-3 group-hover:text-gray-700 transition-colors">
@@ -914,8 +1082,8 @@ export default function ServicesConseilsPage() {
                               transition={{ duration: 0.6, delay: 0.2 }}
                               viewport={{ once: true }}
                             >
-                              <div className="flex-shrink-0 w-16 h-16 bg-[#095797] rounded-2xl flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform shadow-lg">
-                                2
+                              <div className="flex-shrink-0 w-16 h-16 bg-[#095797] rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-lg">
+                                <Calculator className="w-8 h-8" />
                               </div>
                               <div className="flex-1 bg-gradient-to-r from-[#095797]/5 to-transparent rounded-2xl p-8 border-l-4 border-[#095797] group-hover:shadow-lg transition-shadow">
                                 <h5 className="text-2xl font-bold text-[#095797] mb-3 group-hover:text-gray-700 transition-colors">
@@ -938,8 +1106,8 @@ export default function ServicesConseilsPage() {
                               transition={{ duration: 0.6, delay: 0.4 }}
                               viewport={{ once: true }}
                             >
-                              <div className="flex-shrink-0 w-16 h-16 bg-[#095797] rounded-2xl flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform shadow-lg">
-                                3
+                              <div className="flex-shrink-0 w-16 h-16 bg-[#095797] rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-lg">
+                                <DollarSign className="w-8 h-8" />
                               </div>
                               <div className="flex-1 bg-gradient-to-r from-[#095797]/5 to-transparent rounded-2xl p-8 border-l-4 border-[#095797] group-hover:shadow-lg transition-shadow">
                                 <h5 className="text-2xl font-bold text-[#095797] mb-3 group-hover:text-gray-700 transition-colors">
@@ -994,8 +1162,8 @@ export default function ServicesConseilsPage() {
                                   accès prioritaire aux pépites de demain.
                                 </p>
                               </div>
-                              <div className="flex-shrink-0 w-16 h-16 bg-[#095797] rounded-2xl flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform shadow-lg">
-                                1
+                              <div className="flex-shrink-0 w-16 h-16 bg-[#095797] rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-lg">
+                                <Search className="w-8 h-8" />
                               </div>
                             </motion.div>
 
@@ -1019,8 +1187,8 @@ export default function ServicesConseilsPage() {
                                   d&#39;investissement.
                                 </p>
                               </div>
-                              <div className="flex-shrink-0 w-16 h-16 bg-[#095797] rounded-2xl flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform shadow-lg">
-                                2
+                              <div className="flex-shrink-0 w-16 h-16 bg-[#095797] rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-lg">
+                                <CheckCircle className="w-8 h-8" />
                               </div>
                             </motion.div>
 
@@ -1044,8 +1212,8 @@ export default function ServicesConseilsPage() {
                                   valeur au sein de votre portefeuille.
                                 </p>
                               </div>
-                              <div className="flex-shrink-0 w-16 h-16 bg-[#095797] rounded-2xl flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform shadow-lg">
-                                3
+                              <div className="flex-shrink-0 w-16 h-16 bg-[#095797] rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-lg">
+                                <BarChart className="w-8 h-8" />
                               </div>
                             </motion.div>
                           </div>

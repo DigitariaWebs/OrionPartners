@@ -382,11 +382,11 @@ export default function ComptabiliteCertificationPage() {
               <motion.div {...slideInLeft}>
                 <div className="relative h-full">
                   <Image
-                    src="/ServiceImages/ComptabiliteCertification.png"
+                    src="/ServiceImages/GestionPaie.png"
                     alt="Gestion de la Paie"
                     width={600}
                     height={400}
-                    className="rounded-2xl shadow-2xl h-full object-cover"
+                    className="rounded-2xl shadow-2xl h-100 object-fill"
                   />
                 </div>
               </motion.div>
@@ -591,11 +591,11 @@ export default function ComptabiliteCertificationPage() {
               <motion.div {...slideInLeft}>
                 <div className="relative h-full">
                   <Image
-                    src="/ServiceImages/ComptabiliteCertification.png"
+                    src="/ServiceImages/ConformitéFiscale.png"
                     alt="Conformité Fiscale"
                     width={600}
                     height={400}
-                    className="rounded-2xl shadow-2xl h-full object-cover"
+                    className="rounded-2xl shadow-2xl h-100 object-fill"
                   />
                 </div>
               </motion.div>

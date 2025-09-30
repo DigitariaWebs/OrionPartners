@@ -14,14 +14,6 @@ export default function EtudesDataIntelligencePage() {
     transition: { duration: 0.6 },
   };
 
-  const stagger = {
-    animate: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
   const slideInLeft = {
     initial: { opacity: 0, x: -50 },
     animate: { opacity: 1, x: 0 },
