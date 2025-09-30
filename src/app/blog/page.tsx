@@ -6,49 +6,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { Calendar, User, ArrowRight } from "lucide-react";
-
-// Sample blog posts data - in a real app, this would come from a CMS or database
-const blogPosts = [
-  {
-    id: 1,
-    slug: "transformation-digitale-entreprises-2025",
-    title: "La transformation digitale des entreprises en 2025",
-    excerpt: "Découvrez les tendances clés de la transformation digitale et comment les entreprises peuvent s'adapter aux nouveaux défis technologiques.",
-    author: "Marie Dubois",
-    authorRole: "Directrice Conseil Digital",
-    publishDate: "2025-01-15",
-    readTime: "5 min",
-    image: "/ServiceImages/EtudesRecherches.png",
-    category: "Transformation Digitale",
-    featured: true
-  },
-  {
-    id: 2,
-    slug: "optimisation-comptabilite-automatisation",
-    title: "Optimisation de la comptabilité par l'automatisation",
-    excerpt: "Comment l'automatisation peut révolutionner vos processus comptables et améliorer l'efficacité de votre entreprise.",
-    author: "Pierre Martin",
-    authorRole: "Expert Comptable",
-    publishDate: "2025-01-10",
-    readTime: "4 min",
-    image: "/ServiceImages/ComptabiliteCertification.png",
-    category: "Comptabilité",
-    featured: false
-  },
-  {
-    id: 3,
-    slug: "intelligence-artificielle-decisionnel",
-    title: "L'intelligence artificielle au service du décisionnel",
-    excerpt: "Explorez comment l'IA transforme l'analyse de données et aide les dirigeants à prendre des décisions plus éclairées.",
-    author: "Sophie Laurent",
-    authorRole: "Data Scientist",
-    publishDate: "2025-01-05",
-    readTime: "6 min",
-    image: "/ServiceImages/EtudesRecherches.png",
-    category: "Data Intelligence",
-    featured: false
-  }
-];
+import { blogPosts } from "./data";
 
 export default function BlogPage() {
   const fadeInUp = {

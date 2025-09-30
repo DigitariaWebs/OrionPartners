@@ -150,7 +150,7 @@ export default function ComptabiliteCertificationPage() {
       </section>
 
       {/* Mission Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-6">
           <motion.div className="max-w-4xl mx-auto text-center" {...fadeInUp}>
             <p className="text-xl text-gray-700 leading-relaxed">
@@ -164,7 +164,7 @@ export default function ComptabiliteCertificationPage() {
       </section>
 
       {/* Strategic Partnership Section */}
-      <section className="py-24 lg:py-32 relative overflow-hidden">
+      <section className="pb-24 lg:pb-32 relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div
             className="absolute inset-0"
@@ -252,7 +252,7 @@ export default function ComptabiliteCertificationPage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-24 bg-gray-50">
+      <section className="pb-24 bg-gray-50">
         <div className="container mx-auto px-6">
           <motion.div className="max-w-6xl mx-auto" {...stagger}>
             <motion.div className="text-center mb-16" {...fadeInUp}>
@@ -361,7 +361,7 @@ export default function ComptabiliteCertificationPage() {
       </section>
 
       {/* Payroll Management Section */}
-      <section className="py-24 lg:py-32 bg-white">
+      <section className="pb-24 lg:pb-32 pt-2 bg-white">
         <div className="container mx-auto px-6">
           <motion.div className="max-w-6xl mx-auto" {...stagger}>
             <motion.div className="text-center mb-16" {...fadeInUp}>
@@ -551,7 +551,7 @@ export default function ComptabiliteCertificationPage() {
       </section>
 
       {/* Tax Compliance Section */}
-      <section className="py-24 lg:py-32 bg-gray-50">
+      <section className="pb-24 lg:pb-32 pt-2 bg-gray-50">
         <div className="container mx-auto px-6">
           <motion.div className="max-w-6xl mx-auto" {...stagger}>
             <motion.div className="text-center mb-16" {...fadeInUp}>

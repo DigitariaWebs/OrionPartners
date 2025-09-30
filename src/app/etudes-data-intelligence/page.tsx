@@ -142,7 +142,7 @@ export default function EtudesDataIntelligencePage() {
       </section>
 
       {/* Business Intelligence Section */}
-      <section className="py-24 lg:py-32 bg-white">
+      <section className="pb-24 lg:pb-32 pt-25 bg-white">
         <div className="container mx-auto px-6">
           <motion.div className="text-center mb-16" {...fadeInUp}>
             <h2 className="text-4xl lg:text-6xl font-bold text-[#095797] mb-6">
@@ -248,7 +248,7 @@ export default function EtudesDataIntelligencePage() {
       </section>
 
       {/* Data Science Section */}
-      <section className="py-24 lg:py-32 bg-gradient-to-br from-slate-50 to-white">
+      <section className="pb-24 lg:pb-32 bg-gradient-to-br from-slate-50 to-white">
         <div className="container mx-auto px-6">
           <motion.div className="text-center mb-16" {...fadeInUp}>
             <h2 className="text-4xl lg:text-6xl font-bold text-[#095797] mb-6">
@@ -340,7 +340,7 @@ export default function EtudesDataIntelligencePage() {
       </section>
 
       {/* Market Studies Section */}
-      <section className="py-24 lg:py-32 bg-white">
+      <section className="pb-24 lg:pb-32 bg-white">
         <div className="container mx-auto px-6">
           <motion.div className="text-center mb-16" {...fadeInUp}>
             <h2 className="text-4xl lg:text-6xl font-bold text-[#095797] mb-6">
