@@ -5,12 +5,14 @@ import HeroSection from "@/components/sections/HeroSection";
 import ServiceSection from "@/components/sections/ServiceSection";
 import StateSection from "@/components/sections/StateSection";
 import TestimonialSection from "@/components/sections/TestimonialSection";
+import ValuePropositionSection from "@/components/sections/ValuePropositionSection";
 
 export default function Home() {
   return (
     <div>
       <Header />
       <HeroSection />
+      <ValuePropositionSection />
       <ServiceSection />
       <StateSection />
       <TestimonialSection />

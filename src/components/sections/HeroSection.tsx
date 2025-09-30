@@ -137,13 +137,16 @@ const HeroSection: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
           >
-            Au cœur de vos défis, au service de votre croissance.
+            Nous sommes un cabinet de services-conseils en gestion et stratégie
+            d’entreprises. Nous accompagnons les entreprises et les
+            organisations publiques et privées sur leurs enjeux stratégiques,
+            opérationnels et financiers.
           </motion.p>
         </motion.div>
 
         <motion.div
           variants={itemVariants}
-          className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-start items-start"
         >
           <motion.div
             //  whileHover={{ scale: 1.05 }}

@@ -146,7 +146,7 @@ const Header = () => {
                 <div key={item.name} className="relative" ref={servicesRef}>
                   <button
                     onClick={() => setIsServicesOpen(!isServicesOpen)}
-                    className={`flex items-center gap-1 text-sm font-medium transition-all duration-300 hover:scale-105 pb-1 cursor-pointer ${
+                    className={`flex items-center gap-1 text-lg font-medium transition-all duration-300 hover:scale-105 pb-1 cursor-pointer ${
                       pathname === "/" && currentHash === "#services"
                         ? "text-primary border-b-2 border-primary"
                         : "text-dark hover:text-primary"
@@ -229,7 +229,7 @@ const Header = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`text-sm font-medium transition-all duration-300 hover:scale-105 pb-1 ${
+                  className={`text-lg font-medium transition-all duration-300 hover:scale-105 pb-1 ${
                     isActive(item.href)
                       ? "text-primary border-b-2 border-primary"
                       : "text-dark hover:text-primary"
