@@ -40,8 +40,10 @@ export default function BlogPage() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">Notre Blog</h1>
-            <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+              Notre Blog
+            </h1>
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 leading-relaxed">
               Découvrez nos insights et analyses sur la transformation digitale,
               la comptabilité et l&apos;intelligence des données
             </p>

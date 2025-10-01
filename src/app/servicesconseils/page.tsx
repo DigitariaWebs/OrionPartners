@@ -171,7 +171,7 @@ export default function ServicesConseilsPage() {
                 <TrendingUp className="w-4 h-4" />
                 Vision & Leadership
               </div>
-              <h2 className="text-4xl lg:text-6xl font-bold text-[#095797] mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
                 Stratégie & Croissance
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -367,7 +367,7 @@ export default function ServicesConseilsPage() {
                 <Target className="w-4 h-4" />
                 Expertise Juridique
               </div>
-              <h2 className="text-4xl lg:text-6xl font-bold text-[#095797] mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
                 Conseil juridique
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -530,7 +530,7 @@ export default function ServicesConseilsPage() {
                 <Users className="w-4 h-4" />
                 Expertise Locale
               </div>
-              <h2 className="text-4xl lg:text-6xl font-bold text-[#095797] mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
                 Représentation & Support Opérationnel
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -727,7 +727,7 @@ export default function ServicesConseilsPage() {
                 <Target className="w-4 h-4" />
                 Croissance
               </div>
-              <h2 className="text-4xl lg:text-6xl font-bold text-[#095797] mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
                 Private Equity
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">

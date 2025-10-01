@@ -238,7 +238,7 @@ export default function NotreEquipePage() {
             className="text-center mb-12"
           >
             <motion.p
-              className="text-sm font-semibold tracking-wider text-[#9ac322] uppercase mb-4"
+              className="text-sm font-semibold tracking-wider text-[#095797] uppercase mb-4"
               variants={fadeInUp}
             >
               Profils consultants
@@ -353,7 +353,7 @@ export default function NotreEquipePage() {
                     </p>
                     <a
                       href={`mailto:${member.email}`}
-                      className="w-8 h-8 bg-[#095797]/10 hover:bg-[#9ac322] rounded-full flex items-center justify-center transition-colors cursor-pointer group/icon"
+                      className="w-8 h-8 bg-[#095797]/10 hover:bg-[#095797] rounded-full flex items-center justify-center transition-colors cursor-pointer group/icon"
                       title={`Envoyer un email à ${member.name}`}
                     >
                       <Mail className="w-4 h-4 text-[#095797] group-hover/icon:text-white" />
@@ -437,7 +437,7 @@ export default function NotreEquipePage() {
                     </p>
                     <a
                       href={`mailto:${member.email}`}
-                      className="w-8 h-8 bg-[#095797]/10 hover:bg-[#9ac322] rounded-full flex items-center justify-center transition-colors cursor-pointer group/icon"
+                      className="w-8 h-8 bg-[#095797]/10 hover:bg-[#095797] rounded-full flex items-center justify-center transition-colors cursor-pointer group/icon"
                       title={`Envoyer un email à ${member.name}`}
                     >
                       <Mail className="w-4 h-4 text-[#095797] group-hover/icon:text-white" />
@@ -492,11 +492,11 @@ export default function NotreEquipePage() {
             {strategies.map((strategy, index) => (
               <motion.div
                 key={index}
-                className="group bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#9ac322]/30"
+                className="group bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#095797]/30"
                 variants={fadeInUp}
               >
                 <div className="text-center">
-                  <div className="w-24 h-24 bg-gradient-to-br from-[#9ac322] to-[#8ab01e] rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <div className="w-24 h-24 bg-gradient-to-br from-[#095797] to-[#034694] rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <strategy.icon className="w-12 h-12 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-[#095797] mb-4 group-hover:text-[#0a5fa3] transition-colors">

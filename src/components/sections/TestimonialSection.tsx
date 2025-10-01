@@ -87,7 +87,7 @@ const TestimonialSection: React.FC = () => {
           className="text-center mb-12"
         >
           <h3
-            className="text-2l lg:text-3xl font-semibold mb-2"
+            className="text-2xl lg:text-3xl font-semibold mb-2"
             style={{ color: "var(--color-text-primary)" }}
           >
             Ils nous ont choisi

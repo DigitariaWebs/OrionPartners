@@ -115,6 +115,16 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
                     Formation
                   </h3>
                   <p className="text-gray-600">{member.education}</p>
+                  <div className="mt-3 space-y-1">
+                    <p className="text-gray-700">
+                      <span className="font-semibold">Université:</span>{" "}
+                      {member.university}
+                    </p>
+                    <p className="text-gray-700">
+                      <span className="font-semibold">Pays:</span>{" "}
+                      {member.country}
+                    </p>
+                  </div>
                 </div>
 
                 {/* Experience */}

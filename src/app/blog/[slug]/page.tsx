@@ -58,7 +58,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             </span>
 
             {/* Title */}
-            <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
               {post.title}
             </h1>
 
@@ -71,10 +71,10 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
                 <span>
-                  {new Date(post.publishDate).toLocaleDateString('fr-FR', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
+                  {new Date(post.publishDate).toLocaleDateString("fr-FR", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
                   })}
                 </span>
               </div>
@@ -125,17 +125,37 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                   transition={{ duration: 0.6, delay: 0.6 }}
                   className="bg-white rounded-xl shadow-lg p-8 mb-8"
                 >
-                  <h3 className="text-xl font-bold mb-6" style={{ color: 'var(--color-primary)' }}>À propos de l&apos;auteur</h3>
+                  <h3
+                    className="text-xl font-bold mb-6"
+                    style={{ color: "var(--color-primary)" }}
+                  >
+                    À propos de l&apos;auteur
+                  </h3>
                   <div className="flex items-start gap-4 mb-6">
                     <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
                       <User className="w-8 h-8 text-primary" />
                     </div>
                     <div className="flex-1">
-                      <p className="font-bold text-lg mb-1" style={{ color: 'var(--color-primary)' }}>{post.author}</p>
-                      <p className="text-sm font-medium mb-2" style={{ color: 'var(--color-dark)' }}>{post.authorRole}</p>
+                      <p
+                        className="font-bold text-lg mb-1"
+                        style={{ color: "var(--color-primary)" }}
+                      >
+                        {post.author}
+                      </p>
+                      <p
+                        className="text-sm font-medium mb-2"
+                        style={{ color: "var(--color-dark)" }}
+                      >
+                        {post.authorRole}
+                      </p>
                     </div>
                   </div>
-                  <p className="text-sm leading-relaxed" style={{ color: 'var(--color-dark)' }}>{post.authorBio}</p>
+                  <p
+                    className="text-sm leading-relaxed"
+                    style={{ color: "var(--color-dark)" }}
+                  >
+                    {post.authorBio}
+                  </p>
                 </motion.div>
 
                 {/* Tags */}
@@ -168,21 +188,42 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                   <h3 className="text-lg font-bold text-dark mb-4">Partager</h3>
                   <div className="flex gap-3">
                     <button
-                      onClick={() => window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, '_blank')}
+                      onClick={() =>
+                        window.open(
+                          `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                            shareUrl
+                          )}`,
+                          "_blank"
+                        )
+                      }
                       className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300"
                       aria-label="Partager sur Facebook"
                     >
                       <Facebook className="w-4 h-4" />
                     </button>
                     <button
-                      onClick={() => window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`, '_blank')}
+                      onClick={() =>
+                        window.open(
+                          `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                            shareText
+                          )}&url=${encodeURIComponent(shareUrl)}`,
+                          "_blank"
+                        )
+                      }
                       className="p-2 bg-blue-400 text-white rounded-lg hover:bg-blue-500 transition-colors duration-300"
                       aria-label="Partager sur Twitter"
                     >
                       <Twitter className="w-4 h-4" />
                     </button>
                     <button
-                      onClick={() => window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`, '_blank')}
+                      onClick={() =>
+                        window.open(
+                          `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+                            shareUrl
+                          )}`,
+                          "_blank"
+                        )
+                      }
                       className="p-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-colors duration-300"
                       aria-label="Partager sur LinkedIn"
                     >

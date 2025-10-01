@@ -178,7 +178,7 @@ export default function ComptabiliteCertificationPage() {
         <div className="relative container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
             <motion.div className="text-center mb-16" {...fadeInUp}>
-              <h2 className="text-4xl lg:text-6xl font-bold text-[#095797] mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
                 Plus qu&apos;une comptabilité, un partenariat stratégique
               </h2>
             </motion.div>
@@ -210,7 +210,7 @@ export default function ComptabiliteCertificationPage() {
                 className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100"
                 {...fadeInUp}
               >
-                <div className="w-16 h-16 bg-[#9ac322] rounded-2xl flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-[#095797] rounded-2xl flex items-center justify-center mb-6">
                   <BarChart3 className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-[#095797] mb-4">
@@ -256,7 +256,7 @@ export default function ComptabiliteCertificationPage() {
         <div className="container mx-auto px-6">
           <motion.div className="max-w-6xl mx-auto" {...stagger}>
             <motion.div className="text-center mb-16" {...fadeInUp}>
-              <h2 className="text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
                 Nos Services Comptables
               </h2>
             </motion.div>
@@ -265,7 +265,7 @@ export default function ComptabiliteCertificationPage() {
               <motion.div className="space-y-6" {...slideInLeft}>
                 <div className="bg-white rounded-2xl p-6 shadow-lg">
                   <div className="flex items-start gap-4">
-                    <Calculator className="w-8 h-8 text-[#9ac322] mt-1 flex-shrink-0" />
+                    <Calculator className="w-8 h-8 text-[#095797] mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="text-xl font-bold text-[#095797] mb-2">
                         Tenue des livres comptables complète
@@ -280,7 +280,7 @@ export default function ComptabiliteCertificationPage() {
 
                 <div className="bg-white rounded-2xl p-6 shadow-lg">
                   <div className="flex items-start gap-4">
-                    <FileText className="w-8 h-8 text-[#9ac322] mt-1 flex-shrink-0" />
+                    <FileText className="w-8 h-8 text-[#095797] mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="text-xl font-bold text-[#095797] mb-2">
                         Préparation des états financiers annuels
@@ -295,7 +295,7 @@ export default function ComptabiliteCertificationPage() {
 
                 <div className="bg-white rounded-2xl p-6 shadow-lg">
                   <div className="flex items-start gap-4">
-                    <Shield className="w-8 h-8 text-[#9ac322] mt-1 flex-shrink-0" />
+                    <Shield className="w-8 h-8 text-[#095797] mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="text-xl font-bold text-[#095797] mb-2">
                         Gestion des déclarations fiscales et sociales
@@ -312,7 +312,7 @@ export default function ComptabiliteCertificationPage() {
               <motion.div className="space-y-6" {...slideInRight}>
                 <div className="bg-white rounded-2xl p-6 shadow-lg">
                   <div className="flex items-start gap-4">
-                    <BarChart3 className="w-8 h-8 text-[#9ac322] mt-1 flex-shrink-0" />
+                    <BarChart3 className="w-8 h-8 text-[#095797] mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="text-xl font-bold text-[#095797] mb-2">
                         Reporting de gestion et tableaux de bord dynamiques
@@ -327,7 +327,7 @@ export default function ComptabiliteCertificationPage() {
 
                 <div className="bg-white rounded-2xl p-6 shadow-lg">
                   <div className="flex items-start gap-4">
-                    <TrendingUp className="w-8 h-8 text-[#9ac322] mt-1 flex-shrink-0" />
+                    <TrendingUp className="w-8 h-8 text-[#095797] mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="text-xl font-bold text-[#095797] mb-2">
                         Prévisions de trésorerie (Cash Flow Forecast)
@@ -342,7 +342,7 @@ export default function ComptabiliteCertificationPage() {
 
                 <div className="bg-white rounded-2xl p-6 shadow-lg">
                   <div className="flex items-start gap-4">
-                    <FileText className="w-8 h-8 text-[#9ac322] mt-1 flex-shrink-0" />
+                    <FileText className="w-8 h-8 text-[#095797] mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="text-xl font-bold text-[#095797] mb-2">
                         Reporting financier et analyse de la performance
@@ -369,7 +369,7 @@ export default function ComptabiliteCertificationPage() {
                 <Users className="w-4 h-4" />
                 Gestion RH
               </div>
-              <h2 className="text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
                 Gestion de la Paie
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -443,12 +443,12 @@ export default function ComptabiliteCertificationPage() {
                   </motion.div>
 
                   <motion.div
-                    className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:border-[#9ac322] transition-all duration-300"
+                    className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:border-[#095797] transition-all duration-300"
                     {...fadeInUp}
                   >
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-[#9ac322]/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <FileText className="w-6 h-6 text-[#9ac322]" />
+                      <div className="w-12 h-12 bg-[#095797]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <FileText className="w-6 h-6 text-[#095797]" />
                       </div>
                       <div>
                         <h4 className="text-lg font-bold text-[#095797] mb-2">
@@ -485,12 +485,12 @@ export default function ComptabiliteCertificationPage() {
                 {/* Second Row - Support Services */}
                 <div className="grid md:grid-cols-3 gap-6">
                   <motion.div
-                    className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:border-[#9ac322] transition-all duration-300"
+                    className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:border-[#095797] transition-all duration-300"
                     {...fadeInUp}
                   >
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-[#9ac322]/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <TrendingUp className="w-6 h-6 text-[#9ac322]" />
+                      <div className="w-12 h-12 bg-[#095797]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <TrendingUp className="w-6 h-6 text-[#095797]" />
                       </div>
                       <div>
                         <h4 className="text-lg font-bold text-[#095797] mb-2">
@@ -525,12 +525,12 @@ export default function ComptabiliteCertificationPage() {
                   </motion.div>
 
                   <motion.div
-                    className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:border-[#9ac322] transition-all duration-300"
+                    className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:border-[#095797] transition-all duration-300"
                     {...fadeInUp}
                   >
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-[#9ac322]/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <BarChart3 className="w-6 h-6 text-[#9ac322]" />
+                      <div className="w-12 h-12 bg-[#095797]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <BarChart3 className="w-6 h-6 text-[#095797]" />
                       </div>
                       <div>
                         <h4 className="text-lg font-bold text-[#095797] mb-2">
@@ -559,7 +559,7 @@ export default function ComptabiliteCertificationPage() {
                 <Shield className="w-4 h-4" />
                 Fiscalité
               </div>
-              <h2 className="text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
                 Conformité Fiscale
               </h2>
             </motion.div>
@@ -642,7 +642,7 @@ export default function ComptabiliteCertificationPage() {
                   </motion.div>
 
                   <motion.div
-                    className="group relative overflow-hidden bg-gradient-to-br from-[#9ac322] via-[#8ab01e] to-[#9ac322] rounded-3xl p-8 text-white shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-[1.02]"
+                    className="group relative overflow-hidden bg-gradient-to-br from-[#095797] via-[#034694] to-[#095797] rounded-3xl p-8 text-white shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-[1.02]"
                     {...fadeInUp}
                   >
                     <div className="relative z-10">
@@ -694,12 +694,12 @@ export default function ComptabiliteCertificationPage() {
                   </motion.div>
 
                   <motion.div
-                    className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:border-[#9ac322] hover:shadow-xl transition-all duration-300 group"
+                    className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:border-[#095797] hover:shadow-xl transition-all duration-300 group"
                     {...fadeInUp}
                   >
                     <div className="text-center space-y-4">
-                      <div className="w-14 h-14 bg-[#9ac322]/10 rounded-xl flex items-center justify-center mx-auto group-hover:bg-[#9ac322] transition-colors duration-300">
-                        <BarChart3 className="w-7 h-7 text-[#9ac322] group-hover:text-white transition-colors duration-300" />
+                      <div className="w-14 h-14 bg-[#095797]/10 rounded-xl flex items-center justify-center mx-auto group-hover:bg-[#095797] transition-colors duration-300">
+                        <BarChart3 className="w-7 h-7 text-[#095797] group-hover:text-white transition-colors duration-300" />
                       </div>
                       <h4 className="text-lg font-bold text-[#095797]">
                         Conseil Fiscal
@@ -730,12 +730,12 @@ export default function ComptabiliteCertificationPage() {
                   </motion.div>
 
                   <motion.div
-                    className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:border-[#9ac322] hover:shadow-xl transition-all duration-300 group md:col-span-2 lg:col-span-2"
+                    className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:border-[#095797] hover:shadow-xl transition-all duration-300 group md:col-span-2 lg:col-span-2"
                     {...fadeInUp}
                   >
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-[#9ac322]/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-[#9ac322] transition-colors duration-300">
-                        <Users className="w-6 h-6 text-[#9ac322] group-hover:text-white transition-colors duration-300" />
+                      <div className="w-12 h-12 bg-[#095797]/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-[#095797] transition-colors duration-300">
+                        <Users className="w-6 h-6 text-[#095797] group-hover:text-white transition-colors duration-300" />
                       </div>
                       <div>
                         <h4 className="text-lg font-bold text-[#095797] mb-2">
@@ -751,7 +751,7 @@ export default function ComptabiliteCertificationPage() {
                   </motion.div>
 
                   <motion.div
-                    className="bg-gradient-to-r from-[#095797]/5 to-[#9ac322]/5 rounded-2xl p-6 border-2 border-dashed border-gray-200 hover:border-[#095797] transition-all duration-300 group"
+                    className="bg-gradient-to-r from-[#095797]/5 to-[#095797]/5 rounded-2xl p-6 border-2 border-dashed border-gray-200 hover:border-[#095797] transition-all duration-300 group"
                     {...fadeInUp}
                   >
                     <div className="text-center space-y-3">

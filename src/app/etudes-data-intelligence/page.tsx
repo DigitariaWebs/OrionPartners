@@ -145,7 +145,7 @@ export default function EtudesDataIntelligencePage() {
       <section className="pb-24 lg:pb-32 pt-25 bg-white">
         <div className="container mx-auto px-6">
           <motion.div className="text-center mb-16" {...fadeInUp}>
-            <h2 className="text-4xl lg:text-6xl font-bold text-[#095797] mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
               Business Intelligence (BI)
             </h2>
             <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
@@ -166,7 +166,7 @@ export default function EtudesDataIntelligencePage() {
               className="bg-gradient-to-br from-[#095797] to-[#0a5fa3] rounded-3xl p-8 text-white"
               {...fadeInUp}
             >
-              <div className="w-16 h-16 bg-[#9ac322] rounded-2xl flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-[#095797] rounded-2xl flex items-center justify-center mb-6">
                 <Users className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold mb-6">
@@ -174,7 +174,7 @@ export default function EtudesDataIntelligencePage() {
               </h3>
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold text-[#9ac322] mb-2">
+                  <h4 className="font-semibold text-[#095797] mb-2">
                     ⎯ The Client
                   </h4>
                   <p className="text-blue-100">
@@ -183,7 +183,7 @@ export default function EtudesDataIntelligencePage() {
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#9ac322] mb-2">
+                  <h4 className="font-semibold text-[#095797] mb-2">
                     ⎯ Problème
                   </h4>
                   <p className="text-blue-100">
@@ -192,7 +192,7 @@ export default function EtudesDataIntelligencePage() {
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#9ac322] mb-2">
+                  <h4 className="font-semibold text-[#095797] mb-2">
                     ⎯ Notre Solution
                   </h4>
                   <p className="text-blue-100">
@@ -209,13 +209,13 @@ export default function EtudesDataIntelligencePage() {
               className="bg-gradient-to-br from-[#095797] to-[#0a5fa3] rounded-3xl p-8 text-white"
               {...fadeInUp}
             >
-              <div className="w-16 h-16 bg-[#9ac322] rounded-2xl flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-[#095797] rounded-2xl flex items-center justify-center mb-6">
                 <BarChart3 className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold mb-6">Analyse Facturation</h3>
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold text-[#9ac322] mb-2">
+                  <h4 className="font-semibold text-[#095797] mb-2">
                     ⎯ The Client
                   </h4>
                   <p className="text-blue-100">
@@ -224,7 +224,7 @@ export default function EtudesDataIntelligencePage() {
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#9ac322] mb-2">
+                  <h4 className="font-semibold text-[#095797] mb-2">
                     ⎯ Problème
                   </h4>
                   <p className="text-blue-100">
@@ -233,7 +233,7 @@ export default function EtudesDataIntelligencePage() {
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#9ac322] mb-2">
+                  <h4 className="font-semibold text-[#095797] mb-2">
                     ⎯ Notre Solution
                   </h4>
                   <p className="text-blue-100">
@@ -251,7 +251,7 @@ export default function EtudesDataIntelligencePage() {
       <section className="pb-24 lg:pb-32 bg-gradient-to-br from-slate-50 to-white">
         <div className="container mx-auto px-6">
           <motion.div className="text-center mb-16" {...fadeInUp}>
-            <h2 className="text-4xl lg:text-6xl font-bold text-[#095797] mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
               Science des Données & Analyse Prédictive
             </h2>
             <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed mb-8">
@@ -273,28 +273,28 @@ export default function EtudesDataIntelligencePage() {
                 </h3>
                 <ul className="space-y-4 text-gray-700">
                   <li className="flex items-start gap-3">
-                    <TrendingUp className="w-6 h-6 text-[#9ac322] mt-1 flex-shrink-0" />
+                    <TrendingUp className="w-6 h-6 text-[#095797] mt-1 flex-shrink-0" />
                     <span>
                       Anticiper les tendances du marché et les évolutions de la
                       demande.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Zap className="w-6 h-6 text-[#9ac322] mt-1 flex-shrink-0" />
+                    <Zap className="w-6 h-6 text-[#095797] mt-1 flex-shrink-0" />
                     <span>
                       Optimiser vos processus opérationnels, logistiques et
                       marketing.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Target className="w-6 h-6 text-[#9ac322] mt-1 flex-shrink-0" />
+                    <Target className="w-6 h-6 text-[#095797] mt-1 flex-shrink-0" />
                     <span>
                       Décrypter les comportements clients pour améliorer la
                       rétention et la personnalisation.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Lightbulb className="w-6 h-6 text-[#9ac322] mt-1 flex-shrink-0" />
+                    <Lightbulb className="w-6 h-6 text-[#095797] mt-1 flex-shrink-0" />
                     <span>
                       Maîtriser les risques et identifier les nouvelles
                       opportunités de croissance avec une longueur
@@ -307,7 +307,7 @@ export default function EtudesDataIntelligencePage() {
 
             <motion.div {...slideInRight}>
               <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
-                <div className="w-16 h-16 bg-[#9ac322] rounded-2xl flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-[#095797] rounded-2xl flex items-center justify-center mb-6">
                   <BarChart3 className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-[#095797] mb-6">
@@ -326,8 +326,8 @@ export default function EtudesDataIntelligencePage() {
                       Précision prédictive
                     </div>
                   </div>
-                  <div className="text-center p-4 bg-[#9ac322]/10 rounded-xl">
-                    <div className="text-2xl font-bold text-[#9ac322]">30%</div>
+                  <div className="text-center p-4 bg-[#095797]/10 rounded-xl">
+                    <div className="text-2xl font-bold text-[#095797]">30%</div>
                     <div className="text-sm text-gray-600">
                       Gain d&apos;efficacité
                     </div>
@@ -343,7 +343,7 @@ export default function EtudesDataIntelligencePage() {
       <section className="pb-24 lg:pb-32 bg-white">
         <div className="container mx-auto px-6">
           <motion.div className="text-center mb-16" {...fadeInUp}>
-            <h2 className="text-4xl lg:text-6xl font-bold text-[#095797] mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
               Études de Marché & Veille Stratégique
             </h2>
             <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
@@ -415,7 +415,7 @@ export default function EtudesDataIntelligencePage() {
 
             {/* Study 2: Consumer Insights */}
             <motion.div
-              className="bg-gradient-to-r from-[#9ac322]/5 to-[#8ab01e]/5 rounded-3xl p-8 lg:p-12"
+              className="bg-gradient-to-r from-[#095797]/5 to-[#034694]/5 rounded-3xl p-8 lg:p-12"
               {...fadeInUp}
             >
               <h3 className="text-3xl font-bold text-[#095797] mb-8">

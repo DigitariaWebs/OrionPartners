@@ -8,6 +8,8 @@ export type TeamMember = {
   email: string;
   expertise: string;
   education: string;
+  university: string;
+  country: string;
   experience: string;
   slug: string;
 };
@@ -28,6 +30,8 @@ export const teamMembers: TeamMember[] = [
       "Développement d'affaires, Stratégie de croissance, Relations clients",
     education:
       "Licence en finance (Université Ibn Khaldoun), Maîtrise en finances publiques (Université Laval)",
+    university: "Université Ibn Khaldoun (Licence), Université Laval (Maîtrise)",
+    country: "Tunisie, Canada",
     experience: "Plus de 5 ans d'expérience en développement d'affaires",
     slug: "ferdinand-ntambwe",
   },
@@ -45,6 +49,8 @@ export const teamMembers: TeamMember[] = [
     expertise:
       "Droit des affaires, Fiscalité d'entreprise, Conformité réglementaire",
     education: "Licence en droit (Université de Kinshasa)",
+    university: "Université de Kinshasa",
+    country: "République Démocratique du Congo",
     experience:
       "13 ans d'expérience en droit des affaires et fiscalité d'entreprise",
     slug: "gisele-kabwende",
@@ -62,6 +68,8 @@ export const teamMembers: TeamMember[] = [
     expertise: "Performance opérationnelle, Gouvernance, Gestion publique",
     education:
       "Licence en économie (Université Pédagogique National), Maîtrise en gestion publique (ENA)",
+    university: "Université Pédagogique National (Licence), ENA (Maîtrise)",
+    country: "République Démocratique du Congo, France",
     experience: "Plus de 5 ans d'expérience en performance et opérations",
     slug: "jean-claude-gersone",
   },
@@ -78,6 +86,8 @@ export const teamMembers: TeamMember[] = [
     expertise:
       "Énergie & Industrie, Énergies renouvelables, Gouvernance environnementale",
     education: "Ingénieur en Pétrole et Gaz (Université de Kinshasa)",
+    university: "Université de Kinshasa",
+    country: "République Démocratique du Congo",
     experience: "Plus de 10 ans d'expérience dans le secteur énergétique",
     slug: "christian-mukeba",
   },
@@ -94,6 +104,8 @@ export const teamMembers: TeamMember[] = [
     expertise:
       "Finance d'entreprise, Modélisation financière, Gestion de la performance (EPM)",
     education: "MBA (Université d'Ottawa, Canada)",
+    university: "Université d'Ottawa",
+    country: "Canada",
     experience: "Plus de 5 ans d'expérience en finance d'entreprise",
     slug: "nancy-besoke",
   },
@@ -111,6 +123,8 @@ export const teamMembers: TeamMember[] = [
       "Développement d'affaires, Stratégie commerciale, Partenariats stratégiques",
     education:
       "Plusieurs certifications en gestion d'entreprise (Université Laval)",
+    university: "Université Laval",
+    country: "Canada",
     experience: "Plus de 10 ans d'expérience en développement d'affaires",
     slug: "philippe-emmanuel-amvenebe",
   },
@@ -127,6 +141,8 @@ export const teamMembers: TeamMember[] = [
     email: "chrismaheshe12@gmail.com",
     expertise: "Production agropastorale, Santé animale, Biosécurité",
     education: "Docteur en Médecine Vétérinaire (Université de Kinshasa)",
+    university: "Université de Kinshasa",
+    country: "République Démocratique du Congo",
     experience: "Plus de 6 ans d'expérience dans le secteur agropastoral",
     slug: "christian-maheshe",
   },
@@ -142,6 +158,8 @@ export const teamMembers: TeamMember[] = [
     email: "kasongocorine@gmail.com",
     expertise: "Stratégie digitale, Marketing digital, Gestion financière",
     education: "Diplômée en économie (Université de Kinshasa)",
+    university: "Université de Kinshasa",
+    country: "République Démocratique du Congo",
     experience:
       "Spécialiste en transformation numérique et stratégie digitale",
     slug: "corine-kasongo",
@@ -159,6 +177,8 @@ export const teamMembers: TeamMember[] = [
     expertise: "Secteur bancaire, Produits financiers, Gestion des risques",
     education:
       "Licence en économie mathématique et DEA (Université de Kinshasa)",
+    university: "Université de Kinshasa",
+    country: "République Démocratique du Congo",
     experience:
       "Spécialiste du secteur bancaire et des institutions financières",
     slug: "edith-elda-nsenkey",
@@ -177,6 +197,8 @@ export const teamMembers: TeamMember[] = [
       "Droit international des affaires, Droit des investissements, Rédaction contractuelle",
     education:
       "Maîtrise en droit international (Université de Montréal), Licence en Droit économique et social (Université de Kinshasa)",
+    university: "Université de Montréal (Maîtrise), Université de Kinshasa (Licence)",
+    country: "Canada, République Démocratique du Congo",
     experience:
       "Plus de 4 ans d'expérience en droit international des affaires",
     slug: "nonce-dede",
@@ -189,13 +211,15 @@ export const teamMembers: TeamMember[] = [
     subtitle: "Associate Consultant, Énergie",
     image: "/NotreEquipe/GraciaMatala.png",
     briefDescription:
-      "Gracia Matala apporte au sein d'Orion Conseil une expertise pointue et spécialisée dans le secteur des énergies. En tant que Consultant Junior, il soutient l'équipe sur des mandats complexes liés aux industries du pétrole, gaz et des énergies renouvelables.",
+      "Gracia Matala apporte au sein d'Orion Conseil une expertise pointue dans le secteur des énergies. En tant qu'Analyste, il soutient l'équipe sur des mandats complexes liés aux industries du pétrole, gaz et des énergies renouvelables.",
     description:
-      "Gracia Matala apporte au sein d'Orion Conseil une expertise pointue et spécialisée dans le secteur des énergies. En tant que Consultant Junior, il soutient l'équipe sur des mandats complexes liés aux industries du pétrole, gaz et des énergies renouvelables. Œuvrant également dans le secteur bancaire, Il contribue activement à l'analyse des marchés, à la veille réglementaire et à la recherche de données stratégiques pour nos clients sur ces deux secteurs. Sa rigueur et sa connaissance approfondie des enjeux énergétiques et une connaissance fine des opérations financières et de la relation client du secteur bancaire sont des atouts précieux pour nos missions. Gracia est titulaire d'une Licence en pétrole, gaz et énergies renouvelables.",
+      "Gracia Matala apporte au sein d'Orion Conseil une expertise pointue dans le secteur des énergies. En tant qu'Analyste, il soutient l'équipe sur des mandats complexes liés aux industries du pétrole, gaz et des énergies renouvelables. Œuvrant également dans le secteur bancaire, Il contribue activement à l'analyse des marchés, à la veille réglementaire et à la recherche de données stratégiques pour nos clients sur ces deux secteurs. Sa rigueur et sa connaissance approfondie des enjeux énergétiques et une connaissance fine des opérations financières et de la relation client du secteur bancaire sont des atouts précieux pour nos missions. Gracia est titulaire d'une Licence en pétrole, gaz et énergies renouvelables.",
     email: "g.matala@orionconseil.com",
     expertise:
       "Secteur des énergies renouvelables et non renouvelables, Analyse de marché",
     education: "Licence en pétrole, gaz et énergies renouvelables",
+    university: "Université de Kinshasa",
+    country: "République Démocratique du Congo",
     experience: "Analyste du secteur énergétique et financier",
     slug: "gracia-matala",
   },
@@ -206,13 +230,15 @@ export const teamMembers: TeamMember[] = [
     image:
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
     briefDescription:
-      "Renedi Mubutshu est une Consultante Junior qui renforce les capacités d'analyse économique et quantitative d'Orion Conseil. Elle joue un rôle clé dans le soutien des missions en fournissant des analyses rigoureuses qui éclairent les décisions stratégiques de nos clients.",
+      "Renedi Mubutshu est une Analyste qui renforce les capacités d'analyse économique et quantitative d'Orion Conseil. Elle joue un rôle clé dans le soutien des missions en fournissant des analyses rigoureuses qui éclairent les décisions stratégiques de nos clients.",
     description:
-      "Renedi Mubutshu est une Consultante Junior qui renforce les capacités d'analyse économique et quantitative d'Orion Conseil. Elle joue un rôle clé dans le soutien des missions en fournissant des analyses rigoureuses qui éclairent les décisions stratégiques de nos clients. Elle participe activement à la recherche, à la modélisation de données et à la préparation de rapports d'analyse de marché. Son esprit analytique et sa capacité à synthétiser des informations complexes sont essentiels pour évaluer la viabilité des projets et identifier les opportunités de croissance. Renedi est titulaire d'une licence en économie de l'Université de Kinshasa (RDC), ce qui ancre son travail dans des fondements théoriques et pratiques solides.",
+      "Renedi Mubutshu est une Analyste qui renforce les capacités d'analyse économique et quantitative d'Orion Conseil. Elle joue un rôle clé dans le soutien des missions en fournissant des analyses rigoureuses qui éclairent les décisions stratégiques de nos clients. Elle participe activement à la recherche, à la modélisation de données et à la préparation de rapports d'analyse de marché. Son esprit analytique et sa capacité à synthétiser des informations complexes sont essentiels pour évaluer la viabilité des projets et identifier les opportunités de croissance. Renedi est titulaire d'une licence en économie de l'Université de Kinshasa (RDC), ce qui ancre son travail dans des fondements théoriques et pratiques solides.",
     email: "renedimubutshu@gmail.com",
     expertise: "Secteur financier, économique et bancaire",
     education:
       "Diplôme d'ingénieur en pétrole, gaz et énergies renouvelables (Université de Kinshasa)",
+    university: "Université de Kinshasa",
+    country: "République Démocratique du Congo",
     experience: "Analyste financier",
     slug: "renedi-mubutshu",
   },
@@ -222,15 +248,17 @@ export const teamMembers: TeamMember[] = [
     subtitle: "Associate Consultant, Communication & Stratégie de Marque",
     image: "/NotreEquipe/VictoriaNkhara.jpeg",
     briefDescription:
-      "Victoria Nkarha pilote la stratégie de communication digitale et de marque au sein d'Orion Conseil. En tant que consultante, elle est spécialisée dans la construction et la protection de l'identité numérique des organisations.",
+      "Victoria Nkarha pilote la stratégie de communication digitale et de marque au sein d'Orion Conseil. En tant qu'Analyste, elle se concentre sur la construction et la protection de l'identité numérique des organisations.",
     description:
-      "Victoria Nkarha pilote la stratégie de communication digitale et de marque au sein d'Orion Conseil. En tant que consultante, elle est spécialisée dans la construction et la protection de l'identité numérique des organisations. Elle conçoit et déploie des stratégies sur mesure pour renforcer l'image de marque (branding), optimiser la visibilité en ligne et gérer l'e-réputation afin d'assurer une présence digitale cohérente et impactante. Passionnée par l'écosystème digital, Victoria excelle dans l'art de traduire les valeurs d'une entreprise en récits engageants et en expériences mémorables pour les audiences cibles. Sa double compétence en gestion et en communication lui permet d'aligner chaque action digitale sur les objectifs stratégiques et commerciaux de nos clients, transformant la présence en ligne en un véritable levier de croissance. Victoria est titulaire d'un Master en gestion des entreprises de l'Université Pédagogique Nationale (UPN) en RDC, une formation qui ancre son approche créative dans une solide compréhension des enjeux business.",
+      "Victoria Nkarha pilote la stratégie de communication digitale et de marque au sein d'Orion Conseil. En tant qu'Analyste, elle se concentre sur la construction et la protection de l'identité numérique des organisations. Elle conçoit et déploie des stratégies sur mesure pour renforcer l'image de marque (branding), optimiser la visibilité en ligne et gérer l'e-réputation afin d'assurer une présence digitale cohérente et impactante. Passionnée par l'écosystème digital, Victoria excelle dans l'art de traduire les valeurs d'une entreprise en récits engageants et en expériences mémorables pour les audiences cibles. Sa double compétence en gestion et en communication lui permet d'aligner chaque action digitale sur les objectifs stratégiques et commerciaux de nos clients, transformant la présence en ligne en un véritable levier de croissance. Victoria est titulaire d'un Master en gestion des entreprises de l'Université Pédagogique Nationale (UPN) en RDC, une formation qui ancre son approche créative dans une solide compréhension des enjeux business.",
     email: "v.nkarha@orionconseil.com",
     expertise: "Communication digitale, Branding, E-réputation",
     education:
       "Master en gestion des entreprises (Université Pédagogique Nationale)",
+    university: "Université Pédagogique Nationale",
+    country: "République Démocratique du Congo",
     experience:
-      "Spécialiste en communication digitale et stratégie de marque",
+      "Analyste en communication digitale et stratégie de marque",
     slug: "victoria-nkarha",
   },
 ];
