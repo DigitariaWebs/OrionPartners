@@ -31,15 +31,15 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
   };
 
   return (
-    <div className="h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 flex flex-col">
+    <div className="min-h-screen lg:h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 flex flex-col">
       <Header />
 
-      <div className="flex-1 overflow-hidden">
-        <div className="h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex-1 lg:overflow-hidden">
+        <div className="lg:h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Back Button */}
           <motion.div className="py-4" {...fadeInUp}>
             <Link
-              href="/notreequipe"
+              href={`/notreequipe#${slug}`}
               className="inline-flex items-center gap-2 text-[#095797] hover:text-[#0a5fa3] transition-colors cursor-pointer"
             >
               <ArrowLeft className="w-5 h-5" />
@@ -47,7 +47,7 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
             </Link>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 h-[calc(100%-4rem)]">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:h-[calc(100%-4rem)] pb-8 lg:pb-0">
             {/* Left Column - Image and Contact - Fixed */}
             <motion.div
               className="lg:col-span-1 flex flex-col justify-center"
@@ -55,7 +55,7 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
             >
               <div className="text-center">
                 <div className="flex justify-center mb-6">
-                  <div className="relative w-48 h-48 overflow-hidden rounded-full">
+                  <div className="relative w-48 h-48 overflow-hidden rounded-full grayscale">
                     <Image
                       src={member.image}
                       alt={member.name}
@@ -87,7 +87,7 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
 
             {/* Right Column - Scrollable Content */}
             <motion.div
-              className="lg:col-span-2 overflow-y-auto pr-4"
+              className="lg:col-span-2 lg:overflow-y-auto lg:pr-4"
               {...fadeInUp}
             >
               <div className="space-y-8 pb-8">

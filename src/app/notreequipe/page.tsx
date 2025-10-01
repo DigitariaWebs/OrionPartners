@@ -301,7 +301,10 @@ export default function NotreEquipePage() {
       </section>
 
       {/* Team Members Section */}
-      <section id="team-members" className="py-20 md:py-24 lg:py-28 bg-gray-50">
+      <section
+        id="team-members"
+        className="py-20 md:py-24 lg:py-28 bg-gray-50 "
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -327,7 +330,8 @@ export default function NotreEquipePage() {
             {teamMembers.slice(0, 10).map((member, index) => (
               <motion.div
                 key={index}
-                className="group flex flex-col"
+                id={member.slug}
+                className="group flex flex-col scroll-mt-40"
                 variants={fadeInUp}
               >
                 <div className="relative flex justify-center pt-6">

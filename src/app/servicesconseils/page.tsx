@@ -135,14 +135,14 @@ export default function ServicesConseilsPage() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-start items-start"
           >
-            <Link href="/#contact">
-              <button className="group bg-[var(--color-accent)] hover:bg-[#8ab01e] text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 shadow-xl cursor-pointer">
+            <Link href="/#contact" className="w-full sm:w-auto">
+              <button className="w-full sm:w-auto group bg-[var(--color-accent)] hover:bg-[#8ab01e] text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-xl cursor-pointer">
                 Contactez-nous
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
-            <Link href="/#services">
-              <button className="min-w-[180px] border-2 border-[var(--color-white)] text-[var(--color-white)] hover:bg-[var(--color-white)] hover:text-black backdrop-blur-sm bg-[var(--color-white)]/10 px-8 py-4 rounded-xl font-semibold transition-all duration-300 cursor-pointer">
+            <Link href="/#services" className="w-full sm:w-auto">
+              <button className="w-full sm:w-auto border-2 border-[var(--color-white)] text-[var(--color-white)] hover:bg-[var(--color-white)] hover:text-black backdrop-blur-sm bg-[var(--color-white)]/10 px-8 py-4 rounded-xl font-semibold transition-all duration-300 cursor-pointer">
                 Découvrez nos expertises
               </button>
             </Link>
@@ -950,11 +950,11 @@ export default function ServicesConseilsPage() {
 
                 {/* Tabbed Interface */}
                 <div className="max-w-6xl mx-auto">
-                  <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
+                  <div className="bg-white rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden">
                     {/* Tab Headers */}
                     <div className="flex border-b border-gray-200">
                       <button
-                        className="flex-1 py-6 px-8 text-center font-semibold text-lg transition-all duration-300 relative overflow-hidden group cursor-pointer"
+                        className="flex-1 py-3 px-2 sm:py-4 sm:px-4 md:py-6 md:px-8 text-center font-semibold text-sm sm:text-base md:text-lg transition-all duration-300 relative overflow-hidden group cursor-pointer"
                         onClick={() => {
                           const tab1 =
                             document.getElementById("tab-enterprises");
@@ -980,19 +980,22 @@ export default function ServicesConseilsPage() {
                         }}
                         id="btn-enterprises"
                       >
-                        <div className="flex items-center justify-center gap-3">
-                          <div className="w-10 h-10 bg-[#095797] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <span className="text-white text-sm font-bold">
+                        <div className="flex items-center justify-center gap-1.5 sm:gap-2 md:gap-3">
+                          <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-[#095797] rounded-lg md:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <span className="text-white text-xs sm:text-sm font-bold">
                               E
                             </span>
                           </div>
-                          <span>Pour les Entreprises</span>
+                          <span className="hidden sm:inline">
+                            Pour les Entreprises
+                          </span>
+                          <span className="sm:hidden">Entreprises</span>
                         </div>
                         <div className="absolute bottom-0 left-0 w-full h-1 bg-[#095797] scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
                       </button>
 
                       <button
-                        className="flex-1 py-6 px-8 text-center font-semibold text-lg transition-all duration-300 relative overflow-hidden group cursor-pointer"
+                        className="flex-1 py-3 px-2 sm:py-4 sm:px-4 md:py-6 md:px-8 text-center font-semibold text-sm sm:text-base md:text-lg transition-all duration-300 relative overflow-hidden group cursor-pointer"
                         onClick={() => {
                           const tab1 =
                             document.getElementById("tab-enterprises");
@@ -1018,53 +1021,59 @@ export default function ServicesConseilsPage() {
                         }}
                         id="btn-investors"
                       >
-                        <div className="flex items-center justify-center gap-3">
-                          <div className="w-10 h-10 bg-[#095797] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <span className="text-white text-sm font-bold">
+                        <div className="flex items-center justify-center gap-1.5 sm:gap-2 md:gap-3">
+                          <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-[#095797] rounded-lg md:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <span className="text-white text-xs sm:text-sm font-bold">
                               I
                             </span>
                           </div>
-                          <span>Pour les Investisseurs</span>
+                          <span className="hidden sm:inline">
+                            Pour les Investisseurs
+                          </span>
+                          <span className="sm:hidden">Investisseurs</span>
                         </div>
                         <div className="absolute bottom-0 left-0 w-full h-1 bg-[#095797] scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
                       </button>
                     </div>
 
                     {/* Tab Content */}
-                    <div className="p-8 lg:p-12">
+                    <div className="p-4 sm:p-6 md:p-8 lg:p-12">
                       {/* Enterprises Tab */}
-                      <div id="tab-enterprises" className="space-y-8">
-                        <div className="text-center mb-12">
-                          <h4 className="text-3xl font-bold text-gray-800 mb-4">
+                      <div
+                        id="tab-enterprises"
+                        className="space-y-6 md:space-y-8"
+                      >
+                        <div className="text-center mb-8 md:mb-12">
+                          <h4 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-3 md:mb-4 px-2">
                             Devenez une évidence pour les investisseurs
                           </h4>
-                          <p className="text-lg text-gray-600">
+                          <p className="text-base sm:text-lg text-gray-600 px-2">
                             Un accompagnement complet vers le financement réussi
                           </p>
                         </div>
 
                         {/* Interactive Timeline */}
                         <div className="relative">
-                          {/* Timeline Line */}
-                          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#095797] to-[#095797]/30"></div>
+                          {/* Timeline Line - Hidden on mobile, visible on md+ */}
+                          <div className="hidden md:block absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#095797] to-[#095797]/30"></div>
 
-                          <div className="space-y-12">
+                          <div className="space-y-6 md:space-y-12">
                             {/* Step 1 */}
                             <motion.div
-                              className="relative flex items-start gap-8 group"
+                              className="relative flex flex-col md:flex-row items-start gap-3 sm:gap-4 md:gap-8 group"
                               initial={{ opacity: 0, x: -50 }}
                               whileInView={{ opacity: 1, x: 0 }}
                               transition={{ duration: 0.6 }}
                               viewport={{ once: true }}
                             >
-                              <div className="flex-shrink-0 w-16 h-16 bg-[#095797] rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-lg">
-                                <FileText className="w-8 h-8" />
+                              <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-[#095797] rounded-xl md:rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-lg">
+                                <FileText className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
                               </div>
-                              <div className="flex-1 bg-gradient-to-r from-[#095797]/5 to-transparent rounded-2xl p-8 border-l-4 border-[#095797] group-hover:shadow-lg transition-shadow">
-                                <h5 className="text-2xl font-bold text-[#095797] mb-3 group-hover:text-gray-700 transition-colors">
+                              <div className="flex-1 bg-gradient-to-r from-[#095797]/5 to-transparent rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 border-l-4 border-[#095797] group-hover:shadow-lg transition-shadow">
+                                <h5 className="text-lg sm:text-xl md:text-2xl font-bold text-[#095797] mb-2 md:mb-3 group-hover:text-gray-700 transition-colors">
                                   Préparation Stratégique (Investment Readiness)
                                 </h5>
-                                <p className="text-gray-600 leading-relaxed text-lg">
+                                <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
                                   Nous forgeons avec vous un dossier
                                   d&#39;investissement irréprochable : business
                                   plan affûté, stratégie clarifiée et financials
@@ -1076,20 +1085,20 @@ export default function ServicesConseilsPage() {
 
                             {/* Step 2 */}
                             <motion.div
-                              className="relative flex items-start gap-8 group"
+                              className="relative flex flex-col md:flex-row items-start gap-3 sm:gap-4 md:gap-8 group"
                               initial={{ opacity: 0, x: -50 }}
                               whileInView={{ opacity: 1, x: 0 }}
                               transition={{ duration: 0.6, delay: 0.2 }}
                               viewport={{ once: true }}
                             >
-                              <div className="flex-shrink-0 w-16 h-16 bg-[#095797] rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-lg">
-                                <Calculator className="w-8 h-8" />
+                              <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-[#095797] rounded-xl md:rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-lg">
+                                <Calculator className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
                               </div>
-                              <div className="flex-1 bg-gradient-to-r from-[#095797]/5 to-transparent rounded-2xl p-8 border-l-4 border-[#095797] group-hover:shadow-lg transition-shadow">
-                                <h5 className="text-2xl font-bold text-[#095797] mb-3 group-hover:text-gray-700 transition-colors">
+                              <div className="flex-1 bg-gradient-to-r from-[#095797]/5 to-transparent rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 border-l-4 border-[#095797] group-hover:shadow-lg transition-shadow">
+                                <h5 className="text-lg sm:text-xl md:text-2xl font-bold text-[#095797] mb-2 md:mb-3 group-hover:text-gray-700 transition-colors">
                                   Valorisation & Modélisation
                                 </h5>
-                                <p className="text-gray-600 leading-relaxed text-lg">
+                                <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
                                   Nous objectivons la valeur de votre entreprise
                                   et projetons son potentiel de croissance à
                                   travers des modèles financiers robustes qui
@@ -1100,20 +1109,20 @@ export default function ServicesConseilsPage() {
 
                             {/* Step 3 */}
                             <motion.div
-                              className="relative flex items-start gap-8 group"
+                              className="relative flex flex-col md:flex-row items-start gap-3 sm:gap-4 md:gap-8 group"
                               initial={{ opacity: 0, x: -50 }}
                               whileInView={{ opacity: 1, x: 0 }}
                               transition={{ duration: 0.6, delay: 0.4 }}
                               viewport={{ once: true }}
                             >
-                              <div className="flex-shrink-0 w-16 h-16 bg-[#095797] rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-lg">
-                                <DollarSign className="w-8 h-8" />
+                              <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-[#095797] rounded-xl md:rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-lg">
+                                <DollarSign className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
                               </div>
-                              <div className="flex-1 bg-gradient-to-r from-[#095797]/5 to-transparent rounded-2xl p-8 border-l-4 border-[#095797] group-hover:shadow-lg transition-shadow">
-                                <h5 className="text-2xl font-bold text-[#095797] mb-3 group-hover:text-gray-700 transition-colors">
+                              <div className="flex-1 bg-gradient-to-r from-[#095797]/5 to-transparent rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 border-l-4 border-[#095797] group-hover:shadow-lg transition-shadow">
+                                <h5 className="text-lg sm:text-xl md:text-2xl font-bold text-[#095797] mb-2 md:mb-3 group-hover:text-gray-700 transition-colors">
                                   Accès Stratégique au Capital
                                 </h5>
-                                <p className="text-gray-600 leading-relaxed text-lg">
+                                <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
                                   Nous activons notre réseau de fonds de Private
                                   Equity et pilotons le processus de levée de
                                   fonds, en négociant les termes qui servent au
@@ -1126,12 +1135,15 @@ export default function ServicesConseilsPage() {
                       </div>
 
                       {/* Investors Tab */}
-                      <div id="tab-investors" className="space-y-8 hidden">
-                        <div className="text-center mb-12">
-                          <h4 className="text-3xl font-bold text-gray-800 mb-4">
+                      <div
+                        id="tab-investors"
+                        className="space-y-6 md:space-y-8 hidden"
+                      >
+                        <div className="text-center mb-8 md:mb-12">
+                          <h4 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-3 md:mb-4 px-2">
                             Déployez votre capital avec confiance et impact
                           </h4>
-                          <p className="text-lg text-gray-600">
+                          <p className="text-base sm:text-lg text-gray-600 px-2">
                             Un sourcing d&#39;opportunités d&#39;exception pour
                             votre portefeuille
                           </p>
@@ -1139,47 +1151,50 @@ export default function ServicesConseilsPage() {
 
                         {/* Interactive Timeline */}
                         <div className="relative">
-                          {/* Timeline Line */}
-                          <div className="absolute right-8 top-0 bottom-0 w-0.5 bg-gradient-to-t from-[#095797] to-[#095797]/30"></div>
+                          {/* Timeline Line - Hidden on mobile, visible on md+ */}
+                          <div className="hidden md:block absolute right-8 top-0 bottom-0 w-0.5 bg-gradient-to-t from-[#095797] to-[#095797]/30"></div>
 
-                          <div className="space-y-12">
+                          <div className="space-y-6 md:space-y-12">
                             {/* Step 1 */}
                             <motion.div
-                              className="relative flex items-start gap-8 group"
+                              className="relative flex flex-col md:flex-row items-start gap-3 sm:gap-4 md:gap-8 group"
                               initial={{ opacity: 0, x: 50 }}
                               whileInView={{ opacity: 1, x: 0 }}
                               transition={{ duration: 0.6 }}
                               viewport={{ once: true }}
                             >
-                              <div className="flex-1 bg-gradient-to-l from-[#095797]/5 to-transparent rounded-2xl p-8 border-r-4 border-[#095797] group-hover:shadow-lg transition-shadow">
-                                <h5 className="text-2xl font-bold text-[#095797] mb-3 group-hover:text-gray-700 transition-colors">
+                              <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-[#095797] rounded-xl md:rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-lg md:order-2">
+                                <Search className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+                              </div>
+                              <div className="flex-1 bg-gradient-to-r md:bg-gradient-to-l from-[#095797]/5 to-transparent rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 border-l-4 md:border-l-0 md:border-r-4 border-[#095797] group-hover:shadow-lg transition-shadow md:order-1">
+                                <h5 className="text-lg sm:text-xl md:text-2xl font-bold text-[#095797] mb-2 md:mb-3 group-hover:text-gray-700 transition-colors">
                                   Deal Flow Exclusif & Qualifié
                                 </h5>
-                                <p className="text-gray-600 leading-relaxed text-lg">
+                                <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
                                   Notre ancrage local nous permet de sourcer des
                                   opportunités à fort potentiel, souvent hors
                                   des radars traditionnels, vous donnant un
                                   accès prioritaire aux pépites de demain.
                                 </p>
                               </div>
-                              <div className="flex-shrink-0 w-16 h-16 bg-[#095797] rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-lg">
-                                <Search className="w-8 h-8" />
-                              </div>
                             </motion.div>
 
                             {/* Step 2 */}
                             <motion.div
-                              className="relative flex items-start gap-8 group"
+                              className="relative flex flex-col md:flex-row items-start gap-3 sm:gap-4 md:gap-8 group"
                               initial={{ opacity: 0, x: 50 }}
                               whileInView={{ opacity: 1, x: 0 }}
                               transition={{ duration: 0.6, delay: 0.2 }}
                               viewport={{ once: true }}
                             >
-                              <div className="flex-1 bg-gradient-to-l from-[#095797]/5 to-transparent rounded-2xl p-8 border-r-4 border-[#095797] group-hover:shadow-lg transition-shadow">
-                                <h5 className="text-2xl font-bold text-[#095797] mb-3 group-hover:text-gray-700 transition-colors">
+                              <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-[#095797] rounded-xl md:rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-lg md:order-2">
+                                <CheckCircle className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+                              </div>
+                              <div className="flex-1 bg-gradient-to-r md:bg-gradient-to-l from-[#095797]/5 to-transparent rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 border-l-4 md:border-l-0 md:border-r-4 border-[#095797] group-hover:shadow-lg transition-shadow md:order-1">
+                                <h5 className="text-lg sm:text-xl md:text-2xl font-bold text-[#095797] mb-2 md:mb-3 group-hover:text-gray-700 transition-colors">
                                   Due Diligence à 360°
                                 </h5>
-                                <p className="text-gray-600 leading-relaxed text-lg">
+                                <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
                                   Nous menons des audits d&#39;acquisition
                                   complets (stratégiques, financiers,
                                   opérationnels) pour transformer le risque en
@@ -1187,33 +1202,30 @@ export default function ServicesConseilsPage() {
                                   d&#39;investissement.
                                 </p>
                               </div>
-                              <div className="flex-shrink-0 w-16 h-16 bg-[#095797] rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-lg">
-                                <CheckCircle className="w-8 h-8" />
-                              </div>
                             </motion.div>
 
                             {/* Step 3 */}
                             <motion.div
-                              className="relative flex items-start gap-8 group"
+                              className="relative flex flex-col md:flex-row items-start gap-3 sm:gap-4 md:gap-8 group"
                               initial={{ opacity: 0, x: 50 }}
                               whileInView={{ opacity: 1, x: 0 }}
                               transition={{ duration: 0.6, delay: 0.4 }}
                               viewport={{ once: true }}
                             >
-                              <div className="flex-1 bg-gradient-to-l from-[#095797]/5 to-transparent rounded-2xl p-8 border-r-4 border-[#095797] group-hover:shadow-lg transition-shadow">
-                                <h5 className="text-2xl font-bold text-[#095797] mb-3 group-hover:text-gray-700 transition-colors">
+                              <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-[#095797] rounded-xl md:rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-lg md:order-2">
+                                <BarChart className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+                              </div>
+                              <div className="flex-1 bg-gradient-to-r md:bg-gradient-to-l from-[#095797]/5 to-transparent rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 border-l-4 md:border-l-0 md:border-r-4 border-[#095797] group-hover:shadow-lg transition-shadow md:order-1">
+                                <h5 className="text-lg sm:text-xl md:text-2xl font-bold text-[#095797] mb-2 md:mb-3 group-hover:text-gray-700 transition-colors">
                                   Création de Valeur Active (Post-acquisition)
                                 </h5>
-                                <p className="text-gray-600 leading-relaxed text-lg">
+                                <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
                                   Nous agissons comme votre partenaire
                                   opérationnel sur le terrain pour piloter la
                                   performance, mettre en œuvre les plans
                                   stratégiques et accélérer la création de
                                   valeur au sein de votre portefeuille.
                                 </p>
-                              </div>
-                              <div className="flex-shrink-0 w-16 h-16 bg-[#095797] rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-lg">
-                                <BarChart className="w-8 h-8" />
                               </div>
                             </motion.div>
                           </div>

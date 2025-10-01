@@ -134,14 +134,14 @@ export default function ComptabiliteCertificationPage() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-start items-start"
           >
-            <Link href="/#contact">
-              <button className="group bg-[var(--color-accent)] hover:bg-[#8ab01e] text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 shadow-xl cursor-pointer">
+            <Link href="/#contact" className="w-full sm:w-auto">
+              <button className="w-full sm:w-auto group bg-[var(--color-accent)] hover:bg-[#8ab01e] text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-xl cursor-pointer">
                 Contactez-nous
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
-            <Link href="/#services">
-              <button className="min-w-[180px] border-2 border-[var(--color-white)] text-[var(--color-white)] hover:bg-[var(--color-white)] hover:text-black backdrop-blur-sm bg-[var(--color-white)]/10 px-8 py-4 rounded-xl font-semibold transition-all duration-300 cursor-pointer">
+            <Link href="/#services" className="w-full sm:w-auto">
+              <button className="w-full sm:w-auto border-2 border-[var(--color-white)] text-[var(--color-white)] hover:bg-[var(--color-white)] hover:text-black backdrop-blur-sm bg-[var(--color-white)]/10 px-8 py-4 rounded-xl font-semibold transition-all duration-300 cursor-pointer">
                 Découvrez nos expertises
               </button>
             </Link>
@@ -679,17 +679,19 @@ export default function ComptabiliteCertificationPage() {
                     className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:border-[#095797] hover:shadow-xl transition-all duration-300 group"
                     {...fadeInUp}
                   >
-                    <div className="text-center space-y-4">
-                      <div className="w-14 h-14 bg-[#095797]/10 rounded-xl flex items-center justify-center mx-auto group-hover:bg-[#095797] transition-colors duration-300">
-                        <TrendingUp className="w-7 h-7 text-[#095797] group-hover:text-white transition-colors duration-300" />
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-[#095797]/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-[#095797] transition-colors duration-300">
+                        <TrendingUp className="w-6 h-6 text-[#095797] group-hover:text-white transition-colors duration-300" />
                       </div>
-                      <h4 className="text-lg font-bold text-[#095797]">
-                        Revue de Conformité
-                      </h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">
-                        Diagnostic complet de votre situation fiscale pour
-                        identifier et corriger les risques.
-                      </p>
+                      <div>
+                        <h4 className="text-lg font-bold text-[#095797] mb-2">
+                          Revue de Conformité
+                        </h4>
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                          Diagnostic complet de votre situation fiscale pour
+                          identifier et corriger les risques.
+                        </p>
+                      </div>
                     </div>
                   </motion.div>
 
@@ -697,17 +699,19 @@ export default function ComptabiliteCertificationPage() {
                     className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:border-[#095797] hover:shadow-xl transition-all duration-300 group"
                     {...fadeInUp}
                   >
-                    <div className="text-center space-y-4">
-                      <div className="w-14 h-14 bg-[#095797]/10 rounded-xl flex items-center justify-center mx-auto group-hover:bg-[#095797] transition-colors duration-300">
-                        <BarChart3 className="w-7 h-7 text-[#095797] group-hover:text-white transition-colors duration-300" />
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-[#095797]/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-[#095797] transition-colors duration-300">
+                        <BarChart3 className="w-6 h-6 text-[#095797] group-hover:text-white transition-colors duration-300" />
                       </div>
-                      <h4 className="text-lg font-bold text-[#095797]">
-                        Conseil Fiscal
-                      </h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">
-                        Conseil permanent sur vos opérations courantes et
-                        projets stratégiques.
-                      </p>
+                      <div>
+                        <h4 className="text-lg font-bold text-[#095797] mb-2">
+                          Conseil Fiscal
+                        </h4>
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                          Conseil permanent sur vos opérations courantes et
+                          projets stratégiques.
+                        </p>
+                      </div>
                     </div>
                   </motion.div>
 
@@ -715,17 +719,19 @@ export default function ComptabiliteCertificationPage() {
                     className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:border-[#095797] hover:shadow-xl transition-all duration-300 group md:col-span-2 lg:col-span-1"
                     {...fadeInUp}
                   >
-                    <div className="text-center space-y-4">
-                      <div className="w-14 h-14 bg-[#095797]/10 rounded-xl flex items-center justify-center mx-auto group-hover:bg-[#095797] transition-colors duration-300">
-                        <Calculator className="w-7 h-7 text-[#095797] group-hover:text-white transition-colors duration-300" />
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-[#095797]/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-[#095797] transition-colors duration-300">
+                        <Calculator className="w-6 h-6 text-[#095797] group-hover:text-white transition-colors duration-300" />
                       </div>
-                      <h4 className="text-lg font-bold text-[#095797]">
-                        Optimisation TVA
-                      </h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">
-                        Gestion stratégique de la Taxe sur la Valeur Ajoutée
-                        pour optimiser votre trésorerie.
-                      </p>
+                      <div>
+                        <h4 className="text-lg font-bold text-[#095797] mb-2">
+                          Optimisation TVA
+                        </h4>
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                          Gestion stratégique de la Taxe sur la Valeur Ajoutée
+                          pour optimiser votre trésorerie.
+                        </p>
+                      </div>
                     </div>
                   </motion.div>
 
