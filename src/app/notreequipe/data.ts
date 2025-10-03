@@ -39,8 +39,7 @@ export const teamMembers: TeamMember[] = [
     name: "Gisèle Kabwende",
     title: "Avocate",
     subtitle: "Associée, Directrice du pôle Juridique & Fiscal",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+    image: "/NotreEquipe/GiseleKabwende.png",
     briefDescription:
       "À la tête de notre pôle Juridique et Fiscal, Me. Gisèle Kabwende est une avocate chevronnée forte de 13 ans d'expérience en droit des affaires et fiscalité d'entreprise.",
     description:
@@ -132,8 +131,7 @@ export const teamMembers: TeamMember[] = [
     name: "Christian Maheshe",
     title: "",
     subtitle: "Consultant, Production et Santé agropastorale",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+    image: "/NotreEquipe/ChristianMaheshe.jpeg",
     briefDescription:
       "Fort de plus de 6 ans d'expérience, Christian Maheshe est le consultant spécialiste des secteurs agricole et de l'élevage au sein d'Orion Conseil. Il accompagne nos clients évoluant dans le secteur agropastoral.",
     description:
@@ -227,8 +225,7 @@ export const teamMembers: TeamMember[] = [
     name: "Renedi Mubutshu",
     title: "",
     subtitle: "Associate Consultant, Analyse Économique",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
+    image: "/NotreEquipe/RenediMubutshu.jpeg",
     briefDescription:
       "Renedi Mubutshu est une Analyste qui renforce les capacités d'analyse économique et quantitative d'Orion Conseil. Elle joue un rôle clé dans le soutien des missions en fournissant des analyses rigoureuses qui éclairent les décisions stratégiques de nos clients.",
     description:

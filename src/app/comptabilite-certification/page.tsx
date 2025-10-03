@@ -53,7 +53,7 @@ export default function ComptabiliteCertificationPage() {
             }}
           ></div>
           <Image
-            src="/ServiceImages/VilleNewYork.jpg"
+            src="/ServiceImages/comptabilite-certification.jpg"
             alt="Comptabilité & Certification Background"
             fill
             className="object-cover"

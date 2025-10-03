@@ -45,7 +45,7 @@ export default function EtudesDataIntelligencePage() {
             }}
           ></div>
           <Image
-            src="/ServiceImages/VilleToronto.jpg"
+            src="/ServiceImages/etudes-data-intelligence.jpg"
             alt="Études & Data Intelligence Background"
             fill
             className="object-cover"

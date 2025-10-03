@@ -84,24 +84,26 @@ export default function BlogPage() {
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
                       style={{ transformOrigin: "center" }}
                     />
+                    <div className="absolute top-4 left-4">
+                      <span className="px-3 py-1 bg-accent/90 text-white rounded-full text-sm font-medium">
+                        {featuredPost.category}
+                      </span>
+                    </div>
                   </div>
                 </div>
                 <div className="md:w-1/2 p-8">
-                  <div className="flex items-center gap-4 mb-4">
-                    <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">
-                      {featuredPost.category}
-                    </span>
-                    <span className="text-sm text-dark/60">
-                      {featuredPost.readTime} de lecture
-                    </span>
-                  </div>
-
                   <h3
                     className="text-2xl font-bold mb-4 group-hover:text-accent transition-colors duration-300"
                     style={{ color: "var(--color-primary)" }}
                   >
                     {featuredPost.title}
                   </h3>
+
+                  <div className="flex items-center gap-4 mb-4">
+                    <span className="text-sm text-dark/60">
+                      {featuredPost.readTime} de lecture
+                    </span>
+                  </div>
 
                   <p
                     className="mb-6 leading-relaxed"

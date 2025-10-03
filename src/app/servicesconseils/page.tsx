@@ -56,11 +56,12 @@ export default function ServicesConseilsPage() {
             }}
           ></div>
           <Image
-            src="/ServiceImages/PaysageUrbain.jpg"
+            src="/ServiceImages/servicesconseils.jpg"
             alt="Services de Conseil Background"
             fill
             className="object-cover"
             priority
+            quality={100}
           />
         </div>
 
