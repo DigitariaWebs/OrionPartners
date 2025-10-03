@@ -12,6 +12,8 @@ export type TeamMember = {
   country: string;
   experience: string;
   slug: string;
+  zoom?: number; // Zoom factor for the image, e.g., 1.1 for 110%
+  position?: string; // Object position for the image, e.g., "center 0%"
 };
 
 export const teamMembers: TeamMember[] = [
@@ -34,6 +36,8 @@ export const teamMembers: TeamMember[] = [
     country: "Tunisie, Canada",
     experience: "Plus de 5 ans d'expérience en développement d'affaires",
     slug: "ferdinand-ntambwe",
+    zoom: 1.5,
+    position: "center -10%",
   },
   {
     name: "Gisèle Kabwende",
@@ -53,6 +57,8 @@ export const teamMembers: TeamMember[] = [
     experience:
       "13 ans d'expérience en droit des affaires et fiscalité d'entreprise",
     slug: "gisele-kabwende",
+    zoom: 1,
+    position: "center 30%",
   },
   {
     name: "Jean Claude Gersone",
@@ -71,6 +77,8 @@ export const teamMembers: TeamMember[] = [
     country: "République Démocratique du Congo, France",
     experience: "Plus de 5 ans d'expérience en performance et opérations",
     slug: "jean-claude-gersone",
+    zoom: 1.5,
+    position: "center -10%",
   },
   {
     name: "Christian Mukeba",
@@ -89,6 +97,8 @@ export const teamMembers: TeamMember[] = [
     country: "République Démocratique du Congo",
     experience: "Plus de 10 ans d'expérience dans le secteur énergétique",
     slug: "christian-mukeba",
+    zoom: 1,
+    position: "center 0%",
   },
   {
     name: "Nancy Besoke, MBA",
@@ -107,6 +117,8 @@ export const teamMembers: TeamMember[] = [
     country: "Canada",
     experience: "Plus de 5 ans d'expérience en finance d'entreprise",
     slug: "nancy-besoke",
+    zoom: 1.5,
+    position: "center -10%",
   },
   {
     name: "Philippe Emmanuel Amvenebe",
@@ -126,6 +138,8 @@ export const teamMembers: TeamMember[] = [
     country: "Canada",
     experience: "Plus de 10 ans d'expérience en développement d'affaires",
     slug: "philippe-emmanuel-amvenebe",
+    zoom: 1,
+    position: "center 20%",
   },
   {
     name: "Christian Maheshe",
@@ -143,6 +157,8 @@ export const teamMembers: TeamMember[] = [
     country: "République Démocratique du Congo",
     experience: "Plus de 6 ans d'expérience dans le secteur agropastoral",
     slug: "christian-maheshe",
+    zoom: 1.4,
+    position: "center -60%",
   },
   {
     name: "Corine Kasongo",
@@ -161,6 +177,8 @@ export const teamMembers: TeamMember[] = [
     experience:
       "Spécialiste en transformation numérique et stratégie digitale",
     slug: "corine-kasongo",
+    zoom: 1.5,
+    position: "center -15%",
   },
   {
     name: "Edith Elda Nsenkey",
@@ -180,7 +198,10 @@ export const teamMembers: TeamMember[] = [
     experience:
       "Spécialiste du secteur bancaire et des institutions financières",
     slug: "edith-elda-nsenkey",
+    zoom: 1,
+    position: "center 0%",
   },
+
   {
     name: "Nonce Dede, LL.M.",
     title: "LL.M.",
@@ -200,6 +221,8 @@ export const teamMembers: TeamMember[] = [
     experience:
       "Plus de 4 ans d'expérience en droit international des affaires",
     slug: "nonce-dede",
+    zoom: 1.6,
+    position: "center -20%",
   },
 
   // Nos équipes supports
@@ -220,6 +243,8 @@ export const teamMembers: TeamMember[] = [
     country: "République Démocratique du Congo",
     experience: "Analyste du secteur énergétique et financier",
     slug: "gracia-matala",
+    zoom: 1.2,
+    position: "center -30%",
   },
   {
     name: "Renedi Mubutshu",
@@ -233,11 +258,13 @@ export const teamMembers: TeamMember[] = [
     email: "renedimubutshu@gmail.com",
     expertise: "Secteur financier, économique et bancaire",
     education:
-      "Diplôme d'ingénieur en pétrole, gaz et énergies renouvelables (Université de Kinshasa)",
+      "Diplôme en économie (Université de Kinshasa)",
     university: "Université de Kinshasa",
     country: "République Démocratique du Congo",
     experience: "Analyste financier",
     slug: "renedi-mubutshu",
+    zoom: 1.5,
+    position: "center -10%",
   },
   {
     name: "Victoria Nkarha",
@@ -257,5 +284,7 @@ export const teamMembers: TeamMember[] = [
     experience:
       "Analyste en communication digitale et stratégie de marque",
     slug: "victoria-nkarha",
+    zoom: 1.4,
+    position: "center 20%",
   },
 ];

@@ -340,8 +340,8 @@ export default function NotreEquipePage() {
                       src={member.image}
                       alt={member.name}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300 grayscale"
-                      style={{ objectPosition: "center 0%" }}
+                      className="object-cover transition-transform duration-300 grayscale"
+                      style={{ objectPosition: member.position, transform: `scale(${member.zoom})` }}
                     />
                   </div>
                 </div>
@@ -424,8 +424,8 @@ export default function NotreEquipePage() {
                       src={member.image}
                       alt={member.name}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300 grayscale"
-                      style={{ objectPosition: "center 0%" }}
+                      className="object-cover transition-transform duration-300 grayscale"
+                      style={{ objectPosition: member.position || "center 0%", transform: `scale(${member.zoom || 1.1})` }}
                     />
                   </div>
                 </div>

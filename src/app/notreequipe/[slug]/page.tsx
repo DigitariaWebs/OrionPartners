@@ -61,7 +61,7 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
                       alt={member.name}
                       fill
                       className="object-cover"
-                      style={{ objectPosition: "center 0%" }}
+                      style={{ objectPosition: member.position, transform: `scale(${member.zoom})` }}
                     />
                   </div>
                 </div>
