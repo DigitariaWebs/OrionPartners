@@ -73,7 +73,7 @@ export const teamMembers: TeamMember[] = [
     expertise: "Performance opérationnelle, Gouvernance, Gestion publique",
     education:
       "Licence en économie (Université Pédagogique National), Maîtrise en gestion publique (ENA)",
-    university: "Université Pédagogique National (Licence), ENA (Maîtrise)",
+    university: "Université Pédagogique Nationale (Licence), ENA (Maîtrise)",
     country: "République Démocratique du Congo, France",
     experience: "Plus de 5 ans d'expérience en performance et opérations",
     slug: "jean-claude-gersone",
@@ -177,8 +177,8 @@ export const teamMembers: TeamMember[] = [
     experience:
       "Spécialiste en transformation numérique et stratégie digitale",
     slug: "corine-kasongo",
-    zoom: 1.5,
-    position: "center -15%",
+    zoom: 1.2,
+    position: "center -10%",
   },
   {
     name: "Edith Elda Nsenkey",

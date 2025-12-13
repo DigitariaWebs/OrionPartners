@@ -260,7 +260,7 @@ export default function AboutSection() {
                   className="text-xl font-semibold mb-2 text-center"
                   style={{ color: "var(--color-primary)" }}
                 >
-                  Notre Mission
+                  Notre mission
                 </h4>
                 <p className="text-gray-800 text-base md:text-lg leading-relaxed max-w-prose mx-auto text-justify">
                   Notre mission est d&apos;accompagner les entreprises et les
@@ -311,7 +311,7 @@ export default function AboutSection() {
                   className="text-2xl font-bold mb-2 text-center"
                   style={{ color: "var(--color-primary)" }}
                 >
-                  Notre Expertise
+                  Notre expertise
                 </h3>
                 <p className="text-gray-800 text-lg md:text-xl leading-relaxed max-w-prose mx-auto text-justify">
                   Plus de 15 ans d&apos;expérience cumulée dans le conseil
@@ -330,7 +330,7 @@ export default function AboutSection() {
                   className="text-2xl font-bold mb-2 text-center"
                   style={{ color: "var(--color-primary)" }}
                 >
-                  Notre Approche
+                  Notre approche
                 </h3>
                 <ul className="space-y-2 mt-4">
                   {approach.map((item, i) => (
@@ -404,7 +404,7 @@ export default function AboutSection() {
                 className="text-3xl md:text-4xl font-bold mb-3 text-center"
                 style={{ color: "#000" }}
               >
-                Nos Valeurs
+                Nos valeurs
               </h3>
               <p className="text-gray-600 text-base md:text-lg mb-12 text-center max-w-2xl mx-auto">
                 Nos valeurs fondamentales guident chacune de nos actions et

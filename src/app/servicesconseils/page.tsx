@@ -109,7 +109,7 @@ export default function ServicesConseilsPage() {
                 marginBottom: "1rem",
               }}
             >
-              Services de Conseil
+              Services Conseil
             </h1>
           </motion.div>
 
@@ -125,8 +125,8 @@ export default function ServicesConseilsPage() {
               className="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-4xl leading-relaxed"
               style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5)" }}
             >
-              Conseil stratégique, opérationnel et financier pour accompagner
-              les entreprises à relever leurs défis complexes.
+              Conseil stratégique, opérationnel et financier pour aider les
+              entreprises à relever leurs défis complexes.
             </p>
           </motion.div>
 
@@ -305,7 +305,7 @@ export default function ServicesConseilsPage() {
                   </div>
                   <div className="space-y-4">
                     <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
-                      Feuille de Route Actionnable
+                      Feuille de route actionnable
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
                       Nous co-construisons avec vous une stratégie sur mesure,
@@ -623,7 +623,7 @@ export default function ServicesConseilsPage() {
             <motion.div className="space-y-8" {...fadeInUp}>
               <div className="text-center">
                 <h3 className="text-3xl lg:text-4xl font-bold text-[#095797] mb-4">
-                  Nos Services de Terrain
+                  Nos services de terrain
                 </h3>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                   Trois piliers pour votre succès opérationnel
@@ -647,7 +647,7 @@ export default function ServicesConseilsPage() {
                     <p className="text-gray-600 leading-relaxed">
                       Nous maîtrisons les rouages administratifs et
                       réglementaires pour accélérer votre implantation et
-                      sécuriser vos opérations. Fini les blocages.
+                      sécuriser vos opérations. Plus de blocages.
                     </p>
                   </div>
                   <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -666,7 +666,7 @@ export default function ServicesConseilsPage() {
                   </div>
                   <div className="space-y-4">
                     <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
-                      Gestion de Projets Déléguée
+                      Gestion de projets déléguée
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
                       Nous pilotons vos projets avec rigueur, en assurant le
@@ -912,7 +912,7 @@ export default function ServicesConseilsPage() {
                       <div className="w-6 h-6 bg-[#095797] rounded-lg flex items-center justify-center">
                         <span className="text-white text-xs font-bold">E</span>
                       </div>
-                      Pour les entrepreneurs
+                      Pour les Entrepreneurs (E)
                     </h4>
                     <p className="text-gray-600">
                       Nous transformons votre vision en projet
@@ -924,7 +924,7 @@ export default function ServicesConseilsPage() {
                       <div className="w-6 h-6 bg-[#095797] rounded-lg flex items-center justify-center">
                         <span className="text-white text-xs font-bold">I</span>
                       </div>
-                      Pour les investisseurs
+                      Pour les Investisseurs (I)
                     </h4>
                     <p className="text-gray-600">
                       Nous transformons l&#39;incertitude du marché en avantage
@@ -1072,14 +1072,14 @@ export default function ServicesConseilsPage() {
                               </div>
                               <div className="flex-1 bg-gradient-to-r from-[#095797]/5 to-transparent rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 border-l-4 border-[#095797] group-hover:shadow-lg transition-shadow">
                                 <h5 className="text-lg sm:text-xl md:text-2xl font-bold text-[#095797] mb-2 md:mb-3 group-hover:text-gray-700 transition-colors">
-                                  Préparation Stratégique (Investment Readiness)
+                                  Préparation stratégique (Investment readiness)
                                 </h5>
                                 <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
                                   Nous forgeons avec vous un dossier
                                   d&#39;investissement irréprochable : business
-                                  plan affûté, stratégie clarifiée et financials
-                                  fiabilisés pour capter l&#39;attention et la
-                                  confiance.
+                                  plan affûté, stratégie clarifiée et états
+                                  financiers fiables pour capter l&#39;attention
+                                  et la confiance.
                                 </p>
                               </div>
                             </motion.div>

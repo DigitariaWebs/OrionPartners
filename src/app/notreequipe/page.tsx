@@ -209,19 +209,15 @@ export default function NotreEquipePage() {
             </motion.div>
 
             <motion.div className="w-full sm:w-auto">
-              <Button
-                size="lg"
-                variant="outline"
-                className="min-w-[180px] w-full sm:w-auto border-2 border-[var(--color-white)] text-[var(--color-white)] hover:bg-[var(--color-white)] hover:text-black backdrop-blur-sm bg-[var(--color-white)]/10"
-                onClick={() => {
-                  const contactSection = document.getElementById("contact");
-                  if (contactSection) {
-                    contactSection.scrollIntoView({ behavior: "smooth" });
-                  }
-                }}
-              >
-                Contactez-nous
-              </Button>
+              <Link href="/#contact">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="min-w-[180px] w-full sm:w-auto border-2 border-[var(--color-white)] text-[var(--color-white)] hover:bg-[var(--color-white)] hover:text-black backdrop-blur-sm bg-[var(--color-white)]/10"
+                >
+                  Contactez-nous
+                </Button>
+              </Link>
             </motion.div>
           </motion.div>
         </motion.div>

@@ -419,8 +419,8 @@ export default function EtudesDataIntelligencePage() {
               {...fadeInUp}
             >
               <h3 className="text-3xl font-bold text-[#095797] mb-8">
-                Étude comportement consommateur : évolution des préférences
-                générationnelles à Kinshasa
+                Étude du comportement du consommateur : évolution des
+                préférences générationnelles à Kinshasa
               </h3>
               <div className="grid lg:grid-cols-2 gap-8">
                 <div className="space-y-6">

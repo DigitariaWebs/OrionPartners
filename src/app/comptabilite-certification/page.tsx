@@ -54,7 +54,7 @@ export default function ComptabiliteCertificationPage() {
           ></div>
           <Image
             src="/ServiceImages/comptabilite-certification.jpg"
-            alt="Comptabilité & Certification Background"
+            alt="Comptabilité & Certification"
             fill
             className="object-cover"
             priority
@@ -194,7 +194,7 @@ export default function ComptabiliteCertificationPage() {
                   <Shield className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-[#095797] mb-4">
-                  Conformité Inébranlable : Votre Tranquillité d&#39;Esprit
+                  Conformité inébranlable : votre tranquillité d&#39;esprit
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
                   Naviguez avec sérénité dans le paysage réglementaire et fiscal
@@ -214,7 +214,7 @@ export default function ComptabiliteCertificationPage() {
                   <BarChart3 className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-[#095797] mb-4">
-                  Clarté Stratégique : Vos Données au Service de Vos Décisions
+                  Clarté stratégique : vos données au service de vos décisions
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
                   Nous transformons vos chiffres bruts en intelligence
@@ -235,8 +235,8 @@ export default function ComptabiliteCertificationPage() {
                   <Clock className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-[#095797] mb-4">
-                  Efficacité et Gain de Temps : Votre Énergie au Service de
-                  Votre Cœur de Métier
+                  Efficacité et gain de temps : votre énergie au service de
+                  votre cœur de métier
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
                   Déléguez la complexité, gardez le contrôle. Nous optimisons
@@ -268,7 +268,7 @@ export default function ComptabiliteCertificationPage() {
                     <Calculator className="w-8 h-8 text-[#095797] mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="text-xl font-bold text-[#095797] mb-2">
-                        Tenue des livres comptables complète
+                        Tenue de comptabilité complète
                       </h3>
                       <p className="text-gray-600">
                         Saisie et traitement de vos opérations de manière
@@ -330,7 +330,7 @@ export default function ComptabiliteCertificationPage() {
                     <TrendingUp className="w-8 h-8 text-[#095797] mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="text-xl font-bold text-[#095797] mb-2">
-                        Prévisions de trésorerie (Cash Flow Forecast)
+                        Prévisions de flux de trésorerie
                       </h3>
                       <p className="text-gray-600">
                         Modélisation de vos flux financiers pour anticiper et
@@ -370,7 +370,7 @@ export default function ComptabiliteCertificationPage() {
                 Gestion RH
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
-                Gestion de la Paie
+                Gestion de la paie
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 Sécurisez votre capital humain et libérez vos ressources
@@ -383,7 +383,7 @@ export default function ComptabiliteCertificationPage() {
                 <div className="relative h-full">
                   <Image
                     src="/ServiceImages/GestionPaie.png"
-                    alt="Gestion de la Paie"
+                    alt="Gestion de la paie"
                     width={600}
                     height={400}
                     className="rounded-2xl shadow-2xl h-100 object-fill"
@@ -517,8 +517,8 @@ export default function ComptabiliteCertificationPage() {
                           Administration RH
                         </h4>
                         <p className="text-gray-600 text-sm leading-relaxed">
-                          Gestion des formalités d&apos;embauche et départ,
-                          soldes de tout compte.
+                          Gestion des formalités d&apos;embauche et de départ,
+                          ainsi que des soldes de tout compte.
                         </p>
                       </div>
                     </div>
@@ -537,8 +537,8 @@ export default function ComptabiliteCertificationPage() {
                           Reportings & États
                         </h4>
                         <p className="text-gray-600 text-sm leading-relaxed">
-                          Production d&apos;états et reportings pour
-                          comptabilité et contrôle de gestion.
+                          Production d&apos;états et de reportings pour la
+                          comptabilité et le contrôle de gestion.
                         </p>
                       </div>
                     </div>
@@ -560,7 +560,7 @@ export default function ComptabiliteCertificationPage() {
                 Fiscalité
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
-                Conformité Fiscale
+                Conformité fiscale
               </h2>
             </motion.div>
 
@@ -592,7 +592,7 @@ export default function ComptabiliteCertificationPage() {
                 <div className="relative h-full">
                   <Image
                     src="/ServiceImages/ConformitéFiscale.png"
-                    alt="Conformité Fiscale"
+                    alt="Conformité fiscale"
                     width={600}
                     height={400}
                     className="rounded-2xl shadow-2xl h-100 object-fill"
@@ -652,16 +652,13 @@ export default function ComptabiliteCertificationPage() {
                         </div>
                         <div>
                           <h4 className="text-2xl font-bold">
-                            Contrôles Fiscaux
+                            Contrôles Fiscaux : Assistance & Représentation
                           </h4>
-                          <p className="text-green-100">
-                            Assistance & Représentation
-                          </p>
                         </div>
                       </div>
                       <p className="text-green-50 leading-relaxed mb-6">
-                        Accompagnement personnalisé lors des contrôles fiscaux
-                        avec notre équipe d&#39;experts spécialisés.
+                        Accompagnement personnalisé par notre équipe
+                        d&#39;experts spécialisés lors des contrôles fiscaux.
                       </p>
                       <div className="flex items-center gap-2 text-sm text-green-200">
                         <div className="w-2 h-2 bg-blue-400 rounded-full"></div>

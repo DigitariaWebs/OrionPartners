@@ -241,7 +241,7 @@ export default function ContactSection() {
                 className="text-[15px] md:text-base mb-8 max-w-2xl mx-auto"
                 style={{ color: "rgba(var(--color-white-rgb), 0.95)" }}
               >
-                Contactez-nous aujourd&apos;hui pour une évaluation
+                Contactez-nous dès aujourd&apos;hui pour une évaluation
                 personnalisée de vos besoins. Notre équipe vous accompagnera
                 dans la mise en place des services adaptés.
               </p>

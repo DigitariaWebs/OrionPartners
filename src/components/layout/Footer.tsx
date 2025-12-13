@@ -8,9 +8,9 @@ import Newsletter from "../ui/Newsletter";
 
 const serviceKeyToTitle = (key: string): string => {
   const map: Record<string, string> = {
-    servicesconseils: "Services Conseils",
-    "comptabilite-certification": "Comptabilité & certification",
-    "etudes-recherches": "Études et recherches",
+    servicesconseils: "Services-conseils",
+    "comptabilite-certification": "Comptabilité & Certification",
+    "etudes-recherches": "Études et Recherches",
   };
   return map[key] || "";
 };
@@ -193,10 +193,7 @@ export default function Footer() {
           }}
         >
           <div className="flex items-center justify-between flex-wrap gap-2">
-            <div>
-              &copy; {new Date().getFullYear()} Orion Conseil. Tous droits
-              réservés.
-            </div>
+            <div>&copy; 2024 Orion Conseil. Tous droits réservés.</div>
             <div className="text-right">
               <div className="flex items-center justify-end gap-3">
                 <a

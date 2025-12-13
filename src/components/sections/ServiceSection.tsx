@@ -16,7 +16,7 @@ const services = [
       "Stratégie et Croissance d'Entreprise",
       "Représentation & Support Opérationnel",
       "Conseil en Private Equity (Capital-Investissement)",
-      "Gestion des Ressources humaines",
+      "Gestion des ressources humaines",
     ],
     pageLink: "/servicesconseils",
     icon: <Globe className="w-8 h-8" />,
@@ -26,7 +26,7 @@ const services = [
     title: "Comptabilité & certification",
     description:
       "Une information financière fiable est le socle de toute décision. Nous garantissons la production de vos états financiers, nous certifions la sincérité de vos comptes et nous vous fournissons des tableaux de bord clairs pour piloter votre performance.",
-    features: ["Calcul de Paie", "Conformité Fiscale & Réglementaire"],
+    features: ["Calcul de paie", "Conformité fiscale & réglementaire"],
     pageLink: "/comptabilite-certification",
     icon: <Settings className="w-8 h-8" />,
   },
@@ -80,7 +80,7 @@ export default function NosServicesSection() {
           >
             Nos Services
           </h2>
-          <p className="mt-4 text-pretty text-sm leading-6 text-neutral-700 sm:text-base text-justify">
+          <p className="mt-4 text-pretty text-base leading-7 text-neutral-700 sm:text-lg text-justify">
             {`Plus que des services, nous livrons des résultats. Notre mission est de catalyser votre succès en République Démocratique du Congo en transformant la complexité en avantage compétitif. À travers nos pôles d'expertise, nous déployons des solutions stratégiques et opérationnelles qui génèrent un impact tangible sur votre performance.`}
           </p>
         </motion.header>
@@ -142,7 +142,7 @@ export default function NosServicesSection() {
 
               {/* Description - Fixed height section */}
               <p
-                className="text-sm mb-6 min-h-[7rem] flex items-start justify-center"
+                className="text-base mb-6 min-h-[7rem] flex items-start justify-center"
                 style={{ color: "var(--color-text-secondary)" }}
               >
                 {service.description}
@@ -151,7 +151,7 @@ export default function NosServicesSection() {
               {/* Features - Flexible section that grows */}
               <div className="mb-4 flex-grow">
                 <h4
-                  className="text-sm font-semibold mb-2"
+                  className="text-base font-semibold mb-2"
                   style={{ color: "var(--color-text-primary)" }}
                 >
                   Services inclus:
@@ -160,11 +160,11 @@ export default function NosServicesSection() {
                   {service.features.map((feature, idx) => (
                     <li
                       key={idx}
-                      className="flex items-start gap-2 text-xs"
+                      className="flex items-start gap-2 text-sm"
                       style={{ color: "var(--color-text-secondary)" }}
                     >
                       <Check
-                        className="w-3 h-3 mt-0.5 flex-shrink-0"
+                        className="w-4 h-4 mt-0.5 flex-shrink-0"
                         style={{ color: "var(--color-accent)" }}
                       />
                       <span className="text-left">{feature}</span>

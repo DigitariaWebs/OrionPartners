@@ -90,7 +90,7 @@ const TestimonialSection: React.FC = () => {
             className="text-2xl lg:text-3xl font-semibold mb-2"
             style={{ color: "var(--color-text-primary)" }}
           >
-            Ils nous ont choisi
+            Ils nous ont choisis
           </h3>
           <div
             className="w-24 h-1 mx-auto rounded-full "
@@ -188,7 +188,7 @@ const TestimonialSection: React.FC = () => {
             className="text-md max-w-2xl mx-auto"
             style={{ color: "rgba(var(--color-dark-rgb), 0.6)" }}
           >
-            Plus de 20+ entreprises nous font confiance pour leur développement
+            Plus de 20 entreprises nous font confiance pour leur développement
             en République Démocratique du Congo et ailleurs.
           </p>
         </motion.div>
