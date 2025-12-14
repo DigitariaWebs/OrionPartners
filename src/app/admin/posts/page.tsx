@@ -4,14 +4,25 @@ import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import AdminLayout from "@/components/admin/AdminLayout";
+import LoadingScreen from "@/components/ui/LoadingScreen";
 import Link from "next/link";
-import { Pencil, Trash2, Eye, EyeOff, Search } from "lucide-react";
+import { Pencil, Trash2, Search, FileText } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function AdminPostsPage() {
   const { data: session, status } = useSession();
   const router = useRouter();
-  const [posts, setPosts] = useState<any[]>([]);
+  const [posts, setPosts] = useState<
+    {
+      _id: string;
+      title: string;
+      excerpt: string;
+      category: string;
+      published: boolean;
+      featured: boolean;
+      publishDate: string;
+    }[]
+  >([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterCategory, setFilterCategory] = useState("all");
@@ -43,9 +54,13 @@ export default function AdminPostsPage() {
     return null;
   }
 
+  if (loading) {
+    return <LoadingScreen message="Chargement des articles..." />;
+  }
+
   const fetchPosts = async () => {
     try {
-      const response = await fetch("/api/blog");
+      const response = await fetch("/api/blog/");
       const data = await response.json();
       if (data.posts) {
         setPosts(data.posts);
@@ -104,7 +119,7 @@ export default function AdminPostsPage() {
           </div>
           <Link
             href="/admin/posts/new"
-            className="px-6 py-3 bg-[var(--color-primary)] text-white rounded-lg hover:bg-[var(--color-primary-hover)] transition-all shadow-md shadow-[var(--color-shadow)] font-semibold flex items-center gap-2"
+            className="px-6 py-3 bg-[var(--color-primary)] text-white rounded-lg hover:bg-[var(--color-primary-hover)] transition-all shadow-md font-semibold flex items-center gap-2"
           >
             <svg
               className="w-5 h-5"
@@ -291,4 +306,5 @@ export default function AdminPostsPage() {
     </AdminLayout>
   );
 }
+
 

@@ -2,9 +2,31 @@ import { NextRequest, NextResponse } from 'next/server';
 import connectDB from '@/lib/mongodb';
 import BlogPost from '@/models/BlogPost';
 import { blogPosts } from '@/app/blog/data';
+import { requireAdmin } from "@/lib/auth-helper";
+import { checkRateLimit, getClientIp, RATE_LIMITS } from "@/lib/rate-limit";
 
 // POST - Migrate blog posts from data.ts to MongoDB
 export async function POST(request: NextRequest) {
+  // Require admin authentication
+  const authCheck = await requireAdmin();
+  if (!authCheck.authorized) {
+    return authCheck.response;
+  }
+
+  // Apply rate limiting
+  const clientIp = getClientIp(request);
+  const rateLimitResult = checkRateLimit(
+    `migrate:${clientIp}`,
+    RATE_LIMITS.admin
+  );
+
+  if (!rateLimitResult.success) {
+    return NextResponse.json(
+      { error: "Too many requests. Please try again later." },
+      { status: 429 }
+    );
+  }
+
   try {
     await connectDB();
 
@@ -12,9 +34,10 @@ export async function POST(request: NextRequest) {
     const existingCount = await BlogPost.countDocuments();
     if (existingCount > 0) {
       return NextResponse.json(
-        { 
-          error: 'Database already contains blog posts. Clear the database first if you want to re-migrate.',
-          existingCount 
+        {
+          error:
+            "Database already contains blog posts. Clear the database first if you want to re-migrate.",
+          existingCount,
         },
         { status: 400 }
       );
@@ -22,7 +45,7 @@ export async function POST(request: NextRequest) {
 
     // Migrate posts
     const migratedPosts = [];
-    
+
     for (const post of blogPosts) {
       try {
         const newPost = await BlogPost.create({
@@ -42,16 +65,16 @@ export async function POST(request: NextRequest) {
           published: true,
         });
         migratedPosts.push(newPost);
-      } catch (error: any) {
+      } catch (error) {
         console.error(`Error migrating post "${post.title}":`, error);
       }
     }
 
     return NextResponse.json(
       {
-        message: 'Blog posts migrated successfully',
+        message: "Blog posts migrated successfully",
         count: migratedPosts.length,
-        posts: migratedPosts.map(p => ({
+        posts: migratedPosts.map((p) => ({
           id: p._id,
           title: p.title,
           slug: p.slug,
@@ -59,10 +82,10 @@ export async function POST(request: NextRequest) {
       },
       { status: 201 }
     );
-  } catch (error: any) {
-    console.error('Error during migration:', error);
+  } catch (error) {
+    console.error("Error during migration:", error);
     return NextResponse.json(
-      { error: 'Failed to migrate blog posts', details: error.message },
+      { error: "Failed to migrate blog posts" },
       { status: 500 }
     );
   }
@@ -70,19 +93,39 @@ export async function POST(request: NextRequest) {
 
 // DELETE - Clear all blog posts (for re-migration)
 export async function DELETE(request: NextRequest) {
+  // Require admin authentication
+  const authCheck = await requireAdmin();
+  if (!authCheck.authorized) {
+    return authCheck.response;
+  }
+
+  // Apply rate limiting
+  const clientIp = getClientIp(request);
+  const rateLimitResult = checkRateLimit(
+    `migrate:${clientIp}`,
+    RATE_LIMITS.admin
+  );
+
+  if (!rateLimitResult.success) {
+    return NextResponse.json(
+      { error: "Too many requests. Please try again later." },
+      { status: 429 }
+    );
+  }
+
   try {
     await connectDB();
 
     const result = await BlogPost.deleteMany({});
 
     return NextResponse.json({
-      message: 'All blog posts deleted',
+      message: "All blog posts deleted",
       deletedCount: result.deletedCount,
     });
-  } catch (error: any) {
-    console.error('Error clearing blog posts:', error);
+  } catch (error) {
+    console.error("Error clearing blog posts:", error);
     return NextResponse.json(
-      { error: 'Failed to clear blog posts', details: error.message },
+      { error: "Failed to clear blog posts" },
       { status: 500 }
     );
   }

@@ -9,9 +9,25 @@ import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
 
 export default function NewPostPage() {
-  const { data: session, status } = useSession();
+  const { status } = useSession();
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    title: "",
+    slug: "",
+    excerpt: "",
+    author: "",
+    authorRole: "",
+    authorBio: "",
+    readTime: "",
+    image: "",
+    category: "",
+    content: "",
+    tags: "",
+    featured: false,
+    published: true,
+    publishDate: new Date().toISOString().split("T")[0],
+  });
 
   useEffect(() => {
     if (status === "unauthenticated") {
@@ -33,22 +49,6 @@ export default function NewPostPage() {
   if (status === "unauthenticated") {
     return null;
   }
-  const [formData, setFormData] = useState({
-    title: "",
-    slug: "",
-    excerpt: "",
-    author: "",
-    authorRole: "",
-    authorBio: "",
-    readTime: "",
-    image: "",
-    category: "",
-    content: "",
-    tags: "",
-    featured: false,
-    published: true,
-    publishDate: new Date().toISOString().split("T")[0],
-  });
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -84,7 +84,7 @@ export default function NewPostPage() {
         .map((tag) => tag.trim())
         .filter((tag) => tag !== "");
 
-      const response = await fetch("/api/blog", {
+      const response = await fetch("/api/blog/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -363,4 +363,5 @@ export default function NewPostPage() {
     </AdminLayout>
   );
 }
+
 

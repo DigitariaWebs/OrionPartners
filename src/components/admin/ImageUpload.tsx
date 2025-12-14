@@ -42,7 +42,7 @@ export default function ImageUpload({
       const formData = new FormData();
       formData.append("file", file);
 
-      const response = await fetch("/api/upload", {
+      const response = await fetch("/api/upload/", {
         method: "POST",
         body: formData,
       });
@@ -191,4 +191,5 @@ export default function ImageUpload({
     </div>
   );
 }
+
 

@@ -1,30 +1,41 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
-
-interface NewsletterData {
-  email: string;
-}
+import { checkRateLimit, getClientIp, RATE_LIMITS } from "@/lib/rate-limit";
+import { newsletterSchema, validateData } from "@/lib/validation";
+import { sanitizeText } from "@/lib/sanitize";
 
 export async function POST(request: NextRequest) {
+  // Apply rate limiting
+  const clientIp = getClientIp(request);
+  const rateLimitResult = checkRateLimit(
+    `newsletter:${clientIp}`,
+    RATE_LIMITS.newsletter
+  );
+
+  if (!rateLimitResult.success) {
+    return NextResponse.json(
+      { error: "Trop de demandes. Veuillez réessayer dans quelques minutes." },
+      {
+        status: 429,
+        headers: {
+          "Retry-After": String(
+            Math.ceil((rateLimitResult.resetTime - Date.now()) / 1000)
+          ),
+        },
+      }
+    );
+  }
+
   try {
-    const body = (await request.json()) as NewsletterData;
-    const { email } = body;
+    const body = await request.json();
 
-    if (!email) {
-      return NextResponse.json(
-        { error: "L'adresse email est requise" },
-        { status: 400 }
-      );
+    // Validate input data
+    const validation = validateData(newsletterSchema, body);
+    if (!validation.success) {
+      return NextResponse.json({ error: validation.error }, { status: 400 });
     }
 
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return NextResponse.json(
-        { error: "Format d'email invalide" },
-        { status: 400 }
-      );
-    }
+    const { email } = validation.data;
 
     const host = process.env.SMTP_HOST || "smtp.gmail.com";
     const port = parseInt(process.env.SMTP_PORT || "587", 10);
@@ -35,7 +46,7 @@ export async function POST(request: NextRequest) {
 
     if (!user || !pass || !to) {
       return NextResponse.json(
-        { error: "Service de newsletter non configuré sur le serveur" },
+        { error: "Service de newsletter non configuré" },
         { status: 500 }
       );
     }
@@ -47,8 +58,9 @@ export async function POST(request: NextRequest) {
       auth: { user, pass },
     });
 
-    // Send notification to admin
-    const subject = `Nouvelle inscription newsletter - ${email}`;
+    // Sanitize email for display
+    const safeEmail = sanitizeText(email);
+    const subject = `Nouvelle inscription newsletter - ${safeEmail}`;
     const brand = "#095797";
     const cta = "#9ac322";
 
@@ -82,17 +94,17 @@ export async function POST(request: NextRequest) {
         <div class="content">
             <div class="info-item">
                 <strong>Adresse email :</strong>
-                <a href="mailto:${email}" style="color: ${brand}; text-decoration: none;">${email}</a>
+                <a href="mailto:${safeEmail}" style="color: ${brand}; text-decoration: none;">${safeEmail}</a>
             </div>
             <div class="info-item">
                 <strong>Date d'inscription :</strong>
-                ${new Date().toLocaleDateString('fr-FR', {
-                  weekday: 'long',
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                  hour: '2-digit',
-                  minute: '2-digit'
+                ${new Date().toLocaleDateString("fr-FR", {
+                  weekday: "long",
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                  hour: "2-digit",
+                  minute: "2-digit",
                 })}
             </div>
             <div class="info-item">
@@ -116,15 +128,17 @@ export async function POST(request: NextRequest) {
 ==============================
 
 INFORMATIONS:
-• Email: ${email}
-• Date: ${new Date().toLocaleDateString('fr-FR')} à ${new Date().toLocaleTimeString('fr-FR')}
+• Email: ${safeEmail}
+• Date: ${new Date().toLocaleDateString(
+      "fr-FR"
+    )} à ${new Date().toLocaleTimeString("fr-FR")}
 
 ACTIONS À EFFECTUER:
 • Ajouter cette adresse à votre liste de diffusion
 • Envoyer un email de bienvenue
 • Vérifier la validité de l'email si nécessaire
 
-Email: ${email}
+Email: ${safeEmail}
 `;
 
     await transporter.sendMail({
@@ -148,4 +162,3 @@ Email: ${email}
     );
   }
 }
-

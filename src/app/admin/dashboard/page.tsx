@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import AdminLayout from "@/components/admin/AdminLayout";
+import LoadingScreen from "@/components/ui/LoadingScreen";
 import { FileText, Eye, TrendingUp, Clock } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -31,42 +32,37 @@ export default function AdminDashboard() {
     draftPosts: 0,
     featuredPosts: 0,
   });
-  const [recentPosts, setRecentPosts] = useState<any[]>([]);
+  const [recentPosts, setRecentPosts] = useState<
+    {
+      _id: string;
+      title: string;
+      published: boolean;
+      featured: boolean;
+      publishDate: string;
+      category: string;
+    }[]
+  >([]);
   const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    if (status === "authenticated") {
-      fetchDashboardData();
-    }
-  }, [status]);
-
-  if (status === "loading") {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="text-center">
-          <div className="w-16 h-16 border-4 border-[#095797] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading...</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (status === "unauthenticated") {
-    return null;
-  }
 
   const fetchDashboardData = async () => {
     try {
-      const response = await fetch("/api/blog");
+      const response = await fetch("/api/blog/");
       const data = await response.json();
 
       if (data.posts) {
-        const posts = data.posts;
+        const posts = data.posts as {
+          _id: string;
+          title: string;
+          published: boolean;
+          featured: boolean;
+          publishDate: string;
+          category: string;
+        }[];
         setStats({
           totalPosts: posts.length,
-          publishedPosts: posts.filter((p: any) => p.published).length,
-          draftPosts: posts.filter((p: any) => !p.published).length,
-          featuredPosts: posts.filter((p: any) => p.featured).length,
+          publishedPosts: posts.filter((p) => p.published).length,
+          draftPosts: posts.filter((p) => !p.published).length,
+          featuredPosts: posts.filter((p) => p.featured).length,
         });
         setRecentPosts(posts.slice(0, 5));
       }
@@ -76,6 +72,12 @@ export default function AdminDashboard() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    if (status === "authenticated") {
+      fetchDashboardData();
+    }
+  }, [status]);
 
   const statCards = [
     {
@@ -110,7 +112,7 @@ export default function AdminDashboard() {
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Dashboard</h1>
           <p className="text-gray-600">
-            Welcome back! Here's an overview of your blog.
+            Welcome back! Here&apos;s an overview of your blog.
           </p>
         </div>
 
@@ -168,7 +170,7 @@ export default function AdminDashboard() {
               </div>
               <Link
                 href="/admin/posts/new"
-                className="px-5 py-2.5 bg-[var(--color-primary)] text-white rounded-lg hover:bg-[var(--color-primary-hover)] transition-all shadow-md shadow-[var(--color-shadow)] font-medium text-sm flex items-center gap-2"
+                className="px-5 py-2.5 bg-[var(--color-primary)] text-white rounded-lg hover:bg-[var(--color-primary-hover)] transition-all shadow-md font-medium text-sm flex items-center gap-2"
               >
                 <svg
                   className="w-4 h-4"
@@ -303,4 +305,5 @@ export default function AdminDashboard() {
     </AdminLayout>
   );
 }
+
 

@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -11,6 +12,37 @@ export default function AdminLoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+
+  // Suppress NextAuth console errors during initial load
+  useEffect(() => {
+    const originalWarn = console.warn;
+    const originalError = console.error;
+
+    console.warn = (...args) => {
+      if (
+        args[0]?.includes?.("ClientFetchError") ||
+        args[0]?.includes?.("Failed to fetch")
+      ) {
+        return; // Suppress auth-related fetch errors
+      }
+      originalWarn.apply(console, args);
+    };
+
+    console.error = (...args) => {
+      if (
+        args[0]?.includes?.("ClientFetchError") ||
+        args[0]?.includes?.("Failed to fetch")
+      ) {
+        return; // Suppress auth-related fetch errors
+      }
+      originalError.apply(console, args);
+    };
+
+    return () => {
+      console.warn = originalWarn;
+      console.error = originalError;
+    };
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,13 +56,22 @@ export default function AdminLoginPage() {
         redirect: false,
       });
 
-      if (result?.error) {
+      console.log("[LOGIN] SignIn result:", result);
+
+      // Check for actual errors (not the string 'undefined')
+      if (result?.error && result.error !== 'undefined') {
+        console.error("[LOGIN] Error:", result.error);
         setError(result.error);
       } else if (result?.ok) {
+        console.log("[LOGIN] Success! Redirecting to dashboard...");
         router.push("/admin/dashboard");
         router.refresh();
+      } else {
+        console.error("[LOGIN] Unexpected result:", result);
+        setError("Login failed. Please try again.");
       }
     } catch (err) {
+      console.error("[LOGIN] Exception:", err);
       setError("An unexpected error occurred");
     } finally {
       setLoading(false);
@@ -49,9 +90,7 @@ export default function AdminLoginPage() {
           <h1 className="text-3xl font-bold text-[#095797] mb-2">
             Admin Login
           </h1>
-          <p className="text-gray-600">
-            Sign in to manage your blog
-          </p>
+          <p className="text-gray-600">Sign in to manage your blog</p>
         </div>
 
         {error && (
@@ -113,15 +152,13 @@ export default function AdminLoginPage() {
         </form>
 
         <div className="mt-6 text-center">
-          <a
-            href="/"
-            className="text-sm text-[#095797] hover:underline"
-          >
+          <Link href="/" className="text-sm text-[#095797] hover:underline">
             ← Back to website
-          </a>
+          </Link>
         </div>
       </motion.div>
     </div>
   );
 }
+
 

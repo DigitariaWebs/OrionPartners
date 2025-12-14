@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Calendar, User, ArrowLeft, Facebook, Twitter, Linkedin } from "lucide-react";
 import { notFound } from "next/navigation";
 import { use, useEffect, useState } from "react";
+import { sanitizeHtml } from "@/lib/sanitize";
 
 interface BlogPost {
   _id: string;
@@ -162,7 +163,9 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
                   className="prose prose-lg max-w-none"
-                  dangerouslySetInnerHTML={{ __html: post.content }}
+                  dangerouslySetInnerHTML={{
+                    __html: sanitizeHtml(post.content),
+                  }}
                 />
               </div>
 

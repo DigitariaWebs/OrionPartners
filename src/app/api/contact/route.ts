@@ -1,20 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { checkRateLimit, getClientIp, RATE_LIMITS } from "@/lib/rate-limit";
+import { contactFormSchema, validateData } from "@/lib/validation";
+import { sanitizeText } from "@/lib/sanitize";
 
 export const runtime = "nodejs";
 
 type FormType = "consultation" | "service" | "job" | "partnership";
-
-interface ContactFormData {
-  name: string;
-  email: string;
-  phone: string;
-  service?: string;
-  details?: string;
-  formType?: FormType;
-  serviceName?: string;
-  fileName?: string;
-}
 
 function getSubject({
   name,
@@ -27,24 +19,55 @@ function getSubject({
   service?: string;
   serviceName?: string;
 }) {
-  const svc = service || serviceName;
+  // Sanitize user inputs in subject line
+  const safeName = sanitizeText(name);
+  const svc = sanitizeText(service || serviceName || "");
+
   switch (formType) {
     case "consultation":
-      return `Nouvelle demande de consultation de ${name}`;
+      return `Nouvelle demande de consultation de ${safeName}`;
     case "service":
-      return `Nouvelle demande de service: ${svc || "Service"} de ${name}`;
+      return `Nouvelle demande de service: ${svc || "Service"} de ${safeName}`;
     case "job":
-      return `Nouvelle candidature de ${name}`;
+      return `Nouvelle candidature de ${safeName}`;
     case "partnership":
-      return `Nouvelle demande de partenariat de ${name}`;
+      return `Nouvelle demande de partenariat de ${safeName}`;
     default:
-      return `Nouveau contact de ${name}`;
+      return `Nouveau contact de ${safeName}`;
   }
 }
 
 export async function POST(request: NextRequest) {
+  // Apply rate limiting
+  const clientIp = getClientIp(request);
+  const rateLimitResult = checkRateLimit(
+    `contact:${clientIp}`,
+    RATE_LIMITS.contact
+  );
+
+  if (!rateLimitResult.success) {
+    return NextResponse.json(
+      { error: "Trop de demandes. Veuillez réessayer dans quelques minutes." },
+      {
+        status: 429,
+        headers: {
+          "Retry-After": String(
+            Math.ceil((rateLimitResult.resetTime - Date.now()) / 1000)
+          ),
+        },
+      }
+    );
+  }
+
   try {
-    const body = (await request.json()) as ContactFormData;
+    const body = await request.json();
+
+    // Validate input data
+    const validation = validateData(contactFormSchema, body);
+    if (!validation.success) {
+      return NextResponse.json({ error: validation.error }, { status: 400 });
+    }
+
     const {
       name,
       email,
@@ -54,14 +77,7 @@ export async function POST(request: NextRequest) {
       formType,
       serviceName,
       fileName,
-    } = body;
-
-    if (!name || !email || !phone) {
-      return NextResponse.json(
-        { error: "Name, email, and phone are required" },
-        { status: 400 }
-      );
-    }
+    } = validation.data;
 
     const host = process.env.SMTP_HOST || "smtp.gmail.com";
     const port = parseInt(process.env.SMTP_PORT || "587", 10);
@@ -72,7 +88,7 @@ export async function POST(request: NextRequest) {
 
     if (!user || !pass || !to) {
       return NextResponse.json(
-        { error: "Email transport not configured on server" },
+        { error: "Service email non configuré" },
         { status: 500 }
       );
     }
@@ -84,10 +100,22 @@ export async function POST(request: NextRequest) {
       auth: { user, pass },
     });
 
-    const subject = getSubject({ name, formType, service, serviceName });
-    // Use website theme colors from src/app/globals.css
-    // --color-primary: #095797
-    // --color-accent: #9ac322
+    const subject = getSubject({
+      name,
+      formType: formType as FormType,
+      service,
+      serviceName,
+    });
+
+    // Sanitize all user-provided content for email
+    const safeName = sanitizeText(name);
+    const safeEmail = sanitizeText(email);
+    const safePhone = sanitizeText(phone);
+    const safeService = sanitizeText(service || serviceName || "");
+    const safeDetails = details ? sanitizeText(details) : "";
+    const safeFileName = fileName ? sanitizeText(fileName) : "";
+
+    // Use website theme colors
     const brand = "#095797";
     const cta = "#9ac322";
     const muted = "#6b7280";
@@ -102,7 +130,6 @@ export async function POST(request: NextRequest) {
 	<style>
 		body { background:#f6f7f9; margin:0; padding:24px; font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; color:#111827; }
 		.container { max-width:640px; margin:0 auto; background:#ffffff; border-radius:16px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,0.06); }
-		/* Header gradient uses primary and a slightly darker primary as stop */
 		.header { padding:28px 24px; background: linear-gradient(135deg, ${brand} 0%, #073b6a 100%); color:#fff; text-align:center; }
 		.header h1 { margin:0 0 6px; font-size:22px; font-weight:800; letter-spacing:0.2px; }
 		.header p { margin:0; opacity:0.9; font-size:13px; }
@@ -136,49 +163,49 @@ export async function POST(request: NextRequest) {
 				<div class="grid">
 					<div class="item">
 						<div class="label">Nom complet</div>
-						<div class="value">${name}</div>
+						<div class="value">${safeName}</div>
 					</div>
 					<div class="item">
 						<div class="label">Adresse email</div>
-						<div class="value"><a href="mailto:${email}" style="color:${brand}; text-decoration:none;">${email}</a></div>
+						<div class="value"><a href="mailto:${safeEmail}" style="color:${brand}; text-decoration:none;">${safeEmail}</a></div>
 					</div>
 					<div class="item">
 						<div class="label">Téléphone</div>
-						<div class="value"><a href="tel:${phone}" style="color:${brand}; text-decoration:none;">${phone}</a></div>
+						<div class="value"><a href="tel:${safePhone}" style="color:${brand}; text-decoration:none;">${safePhone}</a></div>
 					</div>
 					${
-            service || serviceName
+            safeService
               ? `
 					<div class="item">
 						<div class="label">Service</div>
-						<div class="value">${service || serviceName}</div>
+						<div class="value">${safeService}</div>
 					</div>`
               : ""
           }
 					${
-            fileName
+            safeFileName
               ? `
 					<div class="item">
 						<div class="label">Fichier</div>
-						<div class="value">${fileName}</div>
+						<div class="value">${safeFileName}</div>
 					</div>`
               : ""
           }
 				</div>
 
 				${
-          details
+          safeDetails
             ? `
 				<div class="section">
 					<h3>Détails</h3>
-					<div class="bubble">${details.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</div>
+					<div class="bubble">${safeDetails}</div>
 				</div>`
             : ""
         }
 
         <div class="actions">
-          <a class="btn btn-cta " href="mailto:${email}" style="color:#fff; text-decoration:none;">Répondre par email</a>
-          <a class="btn btn-primary" href="tel:${phone}" style="color:#fff; text-decoration:none;">Appeler maintenant</a>
+          <a class="btn btn-cta " href="mailto:${safeEmail}" style="color:#fff; text-decoration:none;">Répondre par email</a>
+          <a class="btn btn-primary" href="tel:${safePhone}" style="color:#fff; text-decoration:none;">Appeler maintenant</a>
         </div>
 			</div>
 			<div class="footer">
@@ -193,17 +220,17 @@ export async function POST(request: NextRequest) {
 ==============================
 
 INFORMATIONS CLIENT:
-• Nom: ${name}
-• Email: ${email}
-• Téléphone: ${phone}
+• Nom: ${safeName}
+• Email: ${safeEmail}
+• Téléphone: ${safePhone}
 • Type de demande: ${formType || "contact"}
-${service || serviceName ? `• Service: ${service || serviceName}` : ""}
-${fileName ? `• Fichier: ${fileName}` : ""}
+${safeService ? `• Service: ${safeService}` : ""}
+${safeFileName ? `• Fichier: ${safeFileName}` : ""}
 
-${details ? `DÉTAILS:\n${details}\n\n` : ""}PROCHAINES ÉTAPES:
+${safeDetails ? `DÉTAILS:\n${safeDetails}\n\n` : ""}PROCHAINES ÉTAPES:
 • Répondre dans les 24 heures
-• Email: ${email}
-• Téléphone: ${phone}
+• Email: ${safeEmail}
+• Téléphone: ${safePhone}
 `;
 
     await transporter.sendMail({

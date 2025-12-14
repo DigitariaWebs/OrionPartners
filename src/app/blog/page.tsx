@@ -2,6 +2,7 @@
 
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
+import LoadingScreen from "@/components/ui/LoadingScreen";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -32,7 +33,7 @@ export default function BlogPage() {
 
   const fetchBlogPosts = async () => {
     try {
-      const response = await fetch("/api/blog?published=true");
+      const response = await fetch("/api/blog/?published=true");
       const data = await response.json();
       if (data.posts) {
         setBlogPosts(data.posts);

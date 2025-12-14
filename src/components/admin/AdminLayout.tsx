@@ -93,7 +93,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                     href={item.href}
                     className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 group ${
                       isActive
-                        ? "bg-[var(--color-primary)] text-white shadow-md shadow-[var(--color-shadow)]"
+                        ? "bg-[var(--color-primary)] text-white shadow-md"
                         : "text-gray-600 hover:bg-[var(--color-light)] hover:text-[var(--color-primary)]"
                     }`}
                   >
@@ -143,4 +143,5 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
     </div>
   );
 }
+
 

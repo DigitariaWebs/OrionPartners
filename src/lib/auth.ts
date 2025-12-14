@@ -3,8 +3,11 @@ import Credentials from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 import connectDB from "@/lib/mongodb";
 import User from "@/models/User";
+import { checkRateLimit, RATE_LIMITS } from "@/lib/rate-limit";
+import { authConfig } from "./auth.config";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
+  ...authConfig,
   providers: [
     Credentials({
       name: "Credentials",
@@ -17,12 +20,36 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           return null;
         }
 
+        // Apply rate limiting based on email to prevent brute force attacks
+        const email = String(credentials.email).toLowerCase().trim();
+        const rateLimitResult = checkRateLimit(
+          `login:${email}`,
+          RATE_LIMITS.login
+        );
+
+        if (!rateLimitResult.success) {
+          console.warn(`Rate limited login attempt for: ${email}`);
+          return null;
+        }
+
         try {
           await connectDB();
 
-          const user = await User.findOne({ email: credentials.email });
+          // Find user - case insensitive email search
+          // Must explicitly select password since it has select: false in schema
+          const user = await User.findOne({ email }).select('+password');
+
+          console.log('[AUTH DEBUG] User found:', !!user);
+          console.log('[AUTH DEBUG] Password exists:', !!user?.password);
+          console.log('[AUTH DEBUG] Password length:', user?.password?.length);
 
           if (!user) {
+            console.warn(`User not found: ${email}`);
+            return null;
+          }
+
+          if (!user.password) {
+            console.error(`Password field missing for user: ${email}`);
             return null;
           }
 
@@ -32,9 +59,11 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           );
 
           if (!isPasswordValid) {
+            console.warn(`Failed login attempt for: ${email}`);
             return null;
           }
 
+          // Successful login
           return {
             id: user._id.toString(),
             email: user.email,
@@ -48,29 +77,5 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       },
     }),
   ],
-  callbacks: {
-    async jwt({ token, user }) {
-      if (user) {
-        token.role = (user as any).role;
-        token.id = (user as any).id;
-      }
-      return token;
-    },
-    async session({ session, token }) {
-      if (session.user) {
-        (session.user as any).role = token.role;
-        (session.user as any).id = token.id;
-      }
-      return session;
-    },
-  },
-  pages: {
-    signIn: "/admin/login",
-  },
-  session: {
-    strategy: "jwt",
-  },
-  secret: process.env.NEXTAUTH_SECRET,
-  trustHost: true,
 });
 

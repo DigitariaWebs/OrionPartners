@@ -9,7 +9,7 @@ const bcrypt = require('bcryptjs');
 const readline = require('readline');
 
 // Load environment variables
-require('dotenv').config({ path: '.env' });
+require('dotenv').config({ path: '.env.local' });
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -65,7 +65,7 @@ async function createAdmin() {
     // Get user input
     const name = await question('Enter admin name: ');
     const email = await question('Enter admin email: ');
-    const password = await question('Enter admin password (min 6 chars): ');
+    const password = await question('Enter admin password (min 8 chars, must include uppercase, lowercase, and number): ');
 
     // Validate input
     if (!name || !email || !password) {
@@ -73,8 +73,25 @@ async function createAdmin() {
       process.exit(1);
     }
 
-    if (password.length < 6) {
-      console.error('\n❌ Error: Password must be at least 6 characters');
+    // Password validation
+    if (password.length < 8) {
+      console.error('\n❌ Error: Password must be at least 8 characters');
+      process.exit(1);
+    }
+    if (password.length > 128) {
+      console.error('\n❌ Error: Password must be at most 128 characters');
+      process.exit(1);
+    }
+    if (!/(?=.*[a-z])/.test(password)) {
+      console.error('\n❌ Error: Password must contain at least one lowercase letter');
+      process.exit(1);
+    }
+    if (!/(?=.*[A-Z])/.test(password)) {
+      console.error('\n❌ Error: Password must contain at least one uppercase letter');
+      process.exit(1);
+    }
+    if (!/(?=.*\d)/.test(password)) {
+      console.error('\n❌ Error: Password must contain at least one number');
       process.exit(1);
     }
 

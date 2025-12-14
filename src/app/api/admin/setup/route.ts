@@ -2,39 +2,48 @@ import { NextRequest, NextResponse } from 'next/server';
 import connectDB from '@/lib/mongodb';
 import User from '@/models/User';
 import bcrypt from 'bcryptjs';
+import { checkRateLimit, getClientIp, RATE_LIMITS } from "@/lib/rate-limit";
+import { adminUserSchema, validateData } from "@/lib/validation";
 
 // POST - Create initial admin user (only works if no users exist)
 export async function POST(request: NextRequest) {
+  // Apply strict rate limiting to prevent brute force attacks
+  const clientIp = getClientIp(request);
+  const rateLimitResult = checkRateLimit(
+    `setup:${clientIp}`,
+    RATE_LIMITS.login
+  );
+
+  if (!rateLimitResult.success) {
+    return NextResponse.json(
+      { error: "Too many requests. Please try again later." },
+      { status: 429 }
+    );
+  }
+
   try {
     await connectDB();
 
-    // Check if any users already exist
+    // Check if any users already exist - this endpoint only works for initial setup
     const userCount = await User.countDocuments();
     if (userCount > 0) {
       return NextResponse.json(
-        { error: 'Admin user already exists. This endpoint can only be used for initial setup.' },
+        { error: "Initial setup already completed." },
         { status: 400 }
       );
     }
 
     const body = await request.json();
-    const { name, email, password } = body;
 
-    if (!name || !email || !password) {
-      return NextResponse.json(
-        { error: 'Name, email, and password are required' },
-        { status: 400 }
-      );
+    // Validate input with strong password requirements
+    const validation = validateData(adminUserSchema, body);
+    if (!validation.success) {
+      return NextResponse.json({ error: validation.error }, { status: 400 });
     }
 
-    if (password.length < 6) {
-      return NextResponse.json(
-        { error: 'Password must be at least 6 characters' },
-        { status: 400 }
-      );
-    }
+    const { name, email, password } = validation.data;
 
-    // Hash password
+    // Hash password with strong cost factor
     const hashedPassword = await bcrypt.hash(password, 12);
 
     // Create admin user
@@ -42,12 +51,12 @@ export async function POST(request: NextRequest) {
       name,
       email: email.toLowerCase(),
       password: hashedPassword,
-      role: 'admin',
+      role: "admin",
     });
 
     return NextResponse.json(
       {
-        message: 'Admin user created successfully',
+        message: "Admin user created successfully",
         user: {
           id: adminUser._id,
           name: adminUser.name,
@@ -57,10 +66,10 @@ export async function POST(request: NextRequest) {
       },
       { status: 201 }
     );
-  } catch (error: any) {
-    console.error('Error creating admin user:', error);
+  } catch (error) {
+    console.error("Error creating admin user:", error);
     return NextResponse.json(
-      { error: 'Failed to create admin user', details: error.message },
+      { error: "Failed to create admin user" },
       { status: 500 }
     );
   }
