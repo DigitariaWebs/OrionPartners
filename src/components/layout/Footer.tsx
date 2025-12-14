@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Instagram, Facebook, Linkedin } from "lucide-react";
+import { Instagram, Facebook, Linkedin, Shield } from "lucide-react";
 import Newsletter from "../ui/Newsletter";
 
 const serviceKeyToTitle = (key: string): string => {
@@ -264,6 +264,23 @@ export default function Footer() {
                 >
                   <Linkedin size={18} />
                 </a>
+
+                {/* Admin Button */}
+                <div className="h-4 w-px bg-gray-300 mx-1"></div>
+                <Link
+                  href="/admin/login"
+                  className="transition-colors duration-300 flex items-center gap-1 px-2 py-1 rounded hover:bg-gray-100"
+                  style={{ color: "rgba(0, 0, 0, 0.65)" }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = "var(--color-primary)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = "rgba(0, 0, 0, 0.65)";
+                  }}
+                  title="Admin Dashboard"
+                >
+                  <Shield size={18} />
+                </Link>
               </div>
             </div>
           </div>

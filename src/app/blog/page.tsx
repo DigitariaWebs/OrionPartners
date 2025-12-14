@@ -6,9 +6,44 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { Calendar, User, ArrowRight } from "lucide-react";
-import { blogPosts } from "./data";
+import { useEffect, useState } from "react";
+
+interface BlogPost {
+  _id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  author: string;
+  authorRole: string;
+  publishDate: string;
+  readTime: string;
+  image: string;
+  category: string;
+  featured: boolean;
+}
 
 export default function BlogPage() {
+  const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchBlogPosts();
+  }, []);
+
+  const fetchBlogPosts = async () => {
+    try {
+      const response = await fetch("/api/blog?published=true");
+      const data = await response.json();
+      if (data.posts) {
+        setBlogPosts(data.posts);
+      }
+    } catch (error) {
+      console.error("Error fetching blog posts:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
     animate: { opacity: 1, y: 0 },
@@ -23,8 +58,23 @@ export default function BlogPage() {
     },
   };
 
-  const featuredPost = blogPosts.find(post => post.featured);
-  const otherPosts = blogPosts.filter(post => !post.featured);
+  const featuredPost = blogPosts.find((post) => post.featured);
+  const otherPosts = blogPosts.filter((post) => !post.featured);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
+        <Header />
+        <div className="flex items-center justify-center min-h-[400px]">
+          <div className="text-center">
+            <div className="w-16 h-16 border-4 border-[#095797] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <p className="text-gray-600">Chargement des articles...</p>
+          </div>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
@@ -188,7 +238,7 @@ export default function BlogPage() {
           >
             {otherPosts.map((post) => (
               <motion.article
-                key={post.id}
+                key={post._id}
                 variants={fadeInUp}
                 className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group flex flex-col h-full"
               >

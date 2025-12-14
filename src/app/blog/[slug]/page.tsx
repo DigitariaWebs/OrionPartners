@@ -7,10 +7,23 @@ import Image from "next/image";
 import Link from "next/link";
 import { Calendar, User, ArrowLeft, Facebook, Twitter, Linkedin } from "lucide-react";
 import { notFound } from "next/navigation";
-import { use } from "react";
-import { blogPosts } from "../data";
+import { use, useEffect, useState } from "react";
 
-
+interface BlogPost {
+  _id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  author: string;
+  authorRole: string;
+  authorBio: string;
+  publishDate: string;
+  readTime: string;
+  image: string;
+  category: string;
+  content: string;
+  tags: string[];
+}
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -20,13 +33,50 @@ interface BlogPostPageProps {
 
 export default function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = use(params);
-  const post = blogPosts.find(p => p.slug === slug);
+  const [post, setPost] = useState<BlogPost | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchPost();
+  }, [slug]);
+
+  const fetchPost = async () => {
+    try {
+      const response = await fetch(`/api/blog/${slug}`);
+      const data = await response.json();
+      if (response.ok && data.post) {
+        setPost(data.post);
+      } else {
+        notFound();
+      }
+    } catch (error) {
+      console.error("Error fetching post:", error);
+      notFound();
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
+        <Header />
+        <div className="flex items-center justify-center min-h-[400px]">
+          <div className="text-center">
+            <div className="w-16 h-16 border-4 border-[#095797] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <p className="text-gray-600">Chargement de l&apos;article...</p>
+          </div>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 
   if (!post) {
     notFound();
   }
 
-  const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
+  const shareUrl = typeof window !== "undefined" ? window.location.href : "";
   const shareText = `Découvrez cet article : ${post.title}`;
 
   return (
