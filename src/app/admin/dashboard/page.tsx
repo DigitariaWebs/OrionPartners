@@ -46,25 +46,25 @@ export default function AdminDashboard() {
 
   const fetchDashboardData = async () => {
     try {
-      const response = await fetch("/api/blog/");
-      const data = await response.json();
+      // Fetch stats and recent posts in parallel
+      const [statsResponse, postsResponse] = await Promise.all([
+        fetch("/api/blog/stats"), // Create a dedicated stats endpoint
+        fetch("/api/blog/?limit=5&published=true") // Only fetch 5 recent posts
+      ]);
 
-      if (data.posts) {
-        const posts = data.posts as {
-          _id: string;
-          title: string;
-          published: boolean;
-          featured: boolean;
-          publishDate: string;
-          category: string;
-        }[];
-        setStats({
-          totalPosts: posts.length,
-          publishedPosts: posts.filter((p) => p.published).length,
-          draftPosts: posts.filter((p) => !p.published).length,
-          featuredPosts: posts.filter((p) => p.featured).length,
-        });
-        setRecentPosts(posts.slice(0, 5));
+      const [statsData, postsData] = await Promise.all([
+        statsResponse.json(),
+        postsResponse.json()
+      ]);
+
+      // Update stats
+      if (statsData.stats) {
+        setStats(statsData.stats);
+      }
+
+      // Update recent posts
+      if (postsData.posts) {
+        setRecentPosts(postsData.posts);
       }
     } catch (error) {
       console.error("Error fetching dashboard data:", error);

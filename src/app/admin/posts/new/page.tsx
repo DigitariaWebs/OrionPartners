@@ -12,6 +12,7 @@ export default function NewPostPage() {
   const { status } = useSession();
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     title: "",
     slug: "",
@@ -26,7 +27,7 @@ export default function NewPostPage() {
     tags: "",
     featured: false,
     published: true,
-    publishDate: new Date().toISOString().split("T")[0],
+    publishDate: new Date().toISOString().slice(0, 16), // Format for datetime-local input
   });
 
   useEffect(() => {
@@ -58,9 +59,22 @@ export default function NewPostPage() {
     const { name, value, type } = e.target;
     const checked = (e.target as HTMLInputElement).checked;
 
+    let processedValue: string | boolean = type === "checkbox" ? checked : value;
+
+    // Handle datetime-local input
+    if (name === "publishDate" && value) {
+      try {
+        const date = new Date(value);
+        processedValue = date.toISOString();
+      } catch (error) {
+        console.error("Invalid datetime format:", value);
+        return; // Don't update state with invalid date
+      }
+    }
+
     setFormData({
       ...formData,
-      [name]: type === "checkbox" ? checked : value,
+      [name]: processedValue,
     });
   };
 
@@ -77,8 +91,37 @@ export default function NewPostPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setError("");
 
     try {
+      // Validate required fields
+      const requiredFields = [
+        'title', 'slug', 'excerpt', 'author', 'authorRole', 'authorBio',
+        'readTime', 'image', 'category', 'content'
+      ];
+
+      const missingFields = requiredFields.filter(field => !formData[field as keyof typeof formData]);
+
+      if (missingFields.length > 0) {
+        setError(`Missing required fields: ${missingFields.join(', ')}`);
+        setLoading(false);
+        return;
+      }
+
+      // Validate publishDate format
+      let publishDate: string;
+      try {
+        const date = new Date(formData.publishDate);
+        if (isNaN(date.getTime())) {
+          throw new Error('Invalid date');
+        }
+        publishDate = date.toISOString();
+      } catch (dateError) {
+        setError("Invalid publish date format. Please use a valid date and time.");
+        setLoading(false);
+        return;
+      }
+
       const tagsArray = formData.tags
         .split(",")
         .map((tag) => tag.trim())
@@ -91,6 +134,7 @@ export default function NewPostPage() {
         },
         body: JSON.stringify({
           ...formData,
+          publishDate,
           tags: tagsArray,
         }),
       });
@@ -98,14 +142,26 @@ export default function NewPostPage() {
       const data = await response.json();
 
       if (response.ok) {
-        alert("Post created successfully!");
         router.push("/admin/posts");
       } else {
-        alert(`Error: ${data.error || "Failed to create post"}`);
+        // Enhanced error handling
+        if (data.error) {
+          if (data.error.includes('slug')) {
+            setError("This slug is already taken. Please choose a different one.");
+          } else if (data.error.includes('datetime')) {
+            setError("Invalid date format. Please check the publish date.");
+          } else if (data.error.includes('validation')) {
+            setError(`Validation error: ${data.error}`);
+          } else {
+            setError(data.error);
+          }
+        } else {
+          setError("Failed to create post. Please try again.");
+        }
       }
-    } catch (error) {
-      console.error("Error creating post:", error);
-      alert("Failed to create post");
+    } catch (err) {
+      console.error("Error creating post:", err);
+      setError("Network error. Please check your connection and try again.");
     } finally {
       setLoading(false);
     }
@@ -122,6 +178,17 @@ export default function NewPostPage() {
             Fill in the details below to create a new blog post
           </p>
         </div>
+
+        {error && (
+          <div className="mb-6 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+            <div className="flex items-center">
+              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+              </svg>
+              {error}
+            </div>
+          </div>
+        )}
 
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Title & Slug */}
@@ -298,14 +365,15 @@ export default function NewPostPage() {
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Publish Date
+                  Publish Date & Time
                 </label>
                 <input
-                  type="date"
+                  type="datetime-local"
                   name="publishDate"
                   value={formData.publishDate}
                   onChange={handleChange}
                   className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#095797] focus:border-transparent"
+                  required
                 />
               </div>
 
