@@ -1,48 +1,38 @@
-import DOMPurify from 'isomorphic-dompurify';
-
 /**
  * Sanitizes HTML content to prevent XSS attacks
- * Allows safe HTML elements while removing potentially malicious scripts
+ * Uses a simple regex-based approach for edge compatibility
  */
 export function sanitizeHtml(html: string): string {
   if (!html) return '';
 
-  // Add a hook to block data URLs explicitly
-  DOMPurify.addHook('uponSanitizeAttribute', (node, data) => {
-    // Block data: URLs in src and href attributes
-    if (data.attrName === 'src' || data.attrName === 'href') {
-      if (data.attrValue && data.attrValue.toLowerCase().startsWith('data:')) {
-        data.keepAttr = false;
-      }
-    }
-  });
-
-  const sanitized = DOMPurify.sanitize(html, {
-    // Allow common formatting and content elements
-    ALLOWED_TAGS: [
-      'p', 'br', 'strong', 'em', 'u', 's', 'b', 'i',
-      'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
-      'ul', 'ol', 'li',
-      'blockquote', 'pre', 'code',
-      'a', 'img',
-      'table', 'thead', 'tbody', 'tr', 'th', 'td',
-      'div', 'span',
-    ],
-    ALLOWED_ATTR: [
-      'href', 'target', 'rel',
-      'src', 'alt', 'width', 'height',
-      'class', 'style',
-    ],
-    // Additional security options
-    ALLOW_DATA_ATTR: false,
-    ALLOW_UNKNOWN_PROTOCOLS: false,
-    SAFE_FOR_TEMPLATES: true,
-    // Strict URL validation - only allow http(s), mailto, tel
-    ALLOWED_URI_REGEXP: /^(?:(?:(?:f|ht)tps?|mailto|tel):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i,
-  });
-
-  // Remove the hook after use to avoid side effects
-  DOMPurify.removeAllHooks();
+  // Remove script tags and their contents
+  let sanitized = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
+  
+  // Remove event handlers (onclick, onerror, onload, etc.)
+  sanitized = sanitized.replace(/\s*on\w+\s*=\s*["'][^"']*["']/gi, '');
+  sanitized = sanitized.replace(/\s*on\w+\s*=\s*[^\s>]*/gi, '');
+  
+  // Remove javascript: protocol
+  sanitized = sanitized.replace(/javascript:/gi, '');
+  
+  // Remove data: URLs (potential XSS vector)
+  sanitized = sanitized.replace(/data:text\/html/gi, '');
+  sanitized = sanitized.replace(/src\s*=\s*["']data:/gi, 'src="');
+  sanitized = sanitized.replace(/href\s*=\s*["']data:/gi, 'href="');
+  
+  // Remove iframe, embed, object tags
+  sanitized = sanitized.replace(/<iframe\b[^<]*(?:(?!<\/iframe>)<[^<]*)*<\/iframe>/gi, '');
+  sanitized = sanitized.replace(/<embed\b[^>]*>/gi, '');
+  sanitized = sanitized.replace(/<object\b[^<]*(?:(?!<\/object>)<[^<]*)*<\/object>/gi, '');
+  
+  // Remove style tags with potentially malicious content
+  sanitized = sanitized.replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '');
+  
+  // Remove base tags (can be used for XSS)
+  sanitized = sanitized.replace(/<base\b[^>]*>/gi, '');
+  
+  // Remove meta refresh tags
+  sanitized = sanitized.replace(/<meta\b[^>]*http-equiv\s*=\s*["']?refresh["']?[^>]*>/gi, '');
 
   return sanitized;
 }
