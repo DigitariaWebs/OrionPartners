@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 require('dotenv').config({ path: '.env.local' });
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
@@ -32,7 +33,7 @@ async function checkOrCreateUser() {
       console.log('\n⚠️  No users found. Creating admin user...');
       
       const hashedPassword = await bcrypt.hash('admin123', 10);
-      const adminUser = await User.create({
+      await User.create({
         name: 'Admin',
         email: 'admin@orionpartners.com',
         password: hashedPassword,

@@ -2,7 +2,6 @@
 
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
-import LoadingScreen from "@/components/ui/LoadingScreen";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";

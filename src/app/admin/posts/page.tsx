@@ -4,13 +4,12 @@ import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import AdminLayout from "@/components/admin/AdminLayout";
-import LoadingScreen from "@/components/ui/LoadingScreen";
 import Link from "next/link";
 import { Pencil, Trash2, Search, FileText } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function AdminPostsPage() {
-  const { data: session, status } = useSession();
+  const { status } = useSession();
   const router = useRouter();
   const [posts, setPosts] = useState<
     {

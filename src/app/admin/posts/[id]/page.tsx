@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, use } from "react";
+import { useEffect, useState, use, useCallback } from "react";
 import { useSession } from "next-auth/react";
 import AdminLayout from "@/components/admin/AdminLayout";
 import RichTextEditor from "@/components/admin/RichTextEditor";
@@ -15,18 +15,12 @@ interface EditPostPageProps {
 }
 
 export default function EditPostPage({ params }: EditPostPageProps) {
-  const { data: session, status } = useSession();
+  const { status } = useSession();
   const router = useRouter();
   const { id } = use(params);
   const [loading, setLoading] = useState(false);
   const [fetching, setFetching] = useState(true);
   const [error, setError] = useState("");
-
-  useEffect(() => {
-    if (status === "unauthenticated") {
-      router.push("/admin/login");
-    }
-  }, [status, router]);
   const [formData, setFormData] = useState({
     title: "",
     slug: "",
@@ -44,28 +38,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
     publishDate: "",
   });
 
-  useEffect(() => {
-    if (status === "authenticated") {
-      fetchPost();
-    }
-  }, [id, status]);
-
-  if (status === "loading") {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="text-center">
-          <div className="w-16 h-16 border-4 border-[#095797] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-gray-600">Chargement...</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (status === "unauthenticated") {
-    return null;
-  }
-
-  const fetchPost = async () => {
+  const fetchPost = useCallback(async () => {
     try {
       const response = await fetch(`/api/blog/${id}`);
       const data = await response.json();
@@ -98,7 +71,34 @@ export default function EditPostPage({ params }: EditPostPageProps) {
     } finally {
       setFetching(false);
     }
-  };
+  }, [id, router]);
+
+  useEffect(() => {
+    if (status === "unauthenticated") {
+      router.push("/admin/login");
+    }
+  }, [status, router]);
+
+  useEffect(() => {
+    if (status === "authenticated") {
+      fetchPost();
+    }
+  }, [id, status, fetchPost]);
+
+  if (status === "loading") {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-[#095797] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-gray-600">Chargement...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (status === "unauthenticated") {
+    return null;
+  }
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -115,7 +115,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
       try {
         const date = new Date(value);
         processedValue = date.toISOString();
-      } catch (error) {
+      } catch {
         console.error("Invalid datetime format:", value);
         return; // Don't update state with invalid date
       }
@@ -155,7 +155,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
           throw new Error('Invalid date');
         }
         publishDate = date.toISOString();
-      } catch (dateError) {
+      } catch {
         setError("Format de date invalide. Veuillez vérifier la date de publication.");
         setLoading(false);
         return;
@@ -220,7 +220,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
     <AdminLayout>
       <div className="max-w-5xl">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Modifier l'article</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">Modifier l&apos;article</h1>
           <p className="text-gray-600">
             Mettez à jour les détails ci-dessous pour modifier cet article de blog
           </p>

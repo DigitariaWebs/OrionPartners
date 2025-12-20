@@ -66,7 +66,7 @@ export default function NewPostPage() {
       try {
         const date = new Date(value);
         processedValue = date.toISOString();
-      } catch (error) {
+      } catch {
         console.error("Invalid datetime format:", value);
         return; // Don't update state with invalid date
       }
@@ -118,7 +118,7 @@ export default function NewPostPage() {
           throw new Error('Invalid date');
         }
         publishDate = date.toISOString();
-      } catch (dateError) {
+      } catch {
         setError("Invalid publish date format. Please use a valid date and time.");
         setLoading(false);
         return;
@@ -294,12 +294,12 @@ export default function NewPostPage() {
 
           {/* Author Information */}
           <div className="bg-white rounded-xl shadow-sm border p-6">
-            <h2 className="text-xl font-semibold mb-4">Informations sur l'auteur</h2>
+            <h2 className="text-xl font-semibold mb-4">Informations sur l&apos;auteur</h2>
 
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Nom de l'auteur *
+                  Nom de l&apos;auteur *
                 </label>
                 <input
                   type="text"
@@ -313,7 +313,7 @@ export default function NewPostPage() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Rôle de l'auteur *
+                  Rôle de l&apos;auteur *
                 </label>
                 <input
                   type="text"
@@ -327,7 +327,7 @@ export default function NewPostPage() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Biographie de l'auteur *
+                  Biographie de l&apos;auteur *
                 </label>
                 <textarea
                   name="authorBio"

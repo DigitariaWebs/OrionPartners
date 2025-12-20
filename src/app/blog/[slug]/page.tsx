@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Calendar, User, ArrowLeft, Facebook, Twitter, Linkedin } from "lucide-react";
 import { notFound } from "next/navigation";
-import { use, useEffect, useState } from "react";
+import { use, useEffect, useState, useCallback } from "react";
 import { sanitizeHtml } from "@/lib/sanitize";
 
 interface BlogPost {
@@ -37,11 +37,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   const [post, setPost] = useState<BlogPost | null>(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetchPost();
-  }, [slug]);
-
-  const fetchPost = async () => {
+  const fetchPost = useCallback(async () => {
     try {
       const response = await fetch(`/api/blog/${slug}`);
       const data = await response.json();
@@ -56,7 +52,11 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
     } finally {
       setLoading(false);
     }
-  };
+  }, [slug]);
+
+  useEffect(() => {
+    fetchPost();
+  }, [slug, fetchPost]);
 
   if (loading) {
     return (

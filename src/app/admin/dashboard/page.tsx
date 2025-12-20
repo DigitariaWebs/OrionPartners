@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import AdminLayout from "@/components/admin/AdminLayout";
-import LoadingScreen from "@/components/ui/LoadingScreen";
 import { FileText, Eye, TrendingUp, Clock } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -17,7 +16,7 @@ interface Stats {
 }
 
 export default function AdminDashboard() {
-  const { data: session, status } = useSession();
+  const { status } = useSession();
   const router = useRouter();
 
   useEffect(() => {
@@ -49,12 +48,12 @@ export default function AdminDashboard() {
       // Fetch stats and recent posts in parallel
       const [statsResponse, postsResponse] = await Promise.all([
         fetch("/api/blog/stats"), // Create a dedicated stats endpoint
-        fetch("/api/blog/?limit=5&published=true") // Only fetch 5 recent posts
+        fetch("/api/blog/?limit=5&published=true"), // Only fetch 5 recent posts
       ]);
 
       const [statsData, postsData] = await Promise.all([
         statsResponse.json(),
-        postsResponse.json()
+        postsResponse.json(),
       ]);
 
       // Update stats
@@ -110,7 +109,9 @@ export default function AdminDashboard() {
     <AdminLayout>
       <div>
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Tableau de bord</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            Tableau de bord
+          </h1>
           <p className="text-gray-600">
             Bienvenue ! Voici un aperçu de votre blog.
           </p>

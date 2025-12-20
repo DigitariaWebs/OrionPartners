@@ -15,7 +15,6 @@ interface MongooseCache {
 
 // Global cache to prevent multiple connections in development
 declare global {
-  // eslint-disable-next-line no-var
   var mongooseCache: MongooseCache | undefined;
 }
 
