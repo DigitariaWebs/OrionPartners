@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import connectDB from '@/lib/mongodb';
 import BlogPost from '@/models/BlogPost';
 import { requireAdmin } from '@/lib/auth-helper';
-import { sanitizeHtml, sanitizeText } from "@/lib/sanitize";
+import { sanitizeHtml } from "@/lib/sanitize";
 import { checkRateLimit, getClientIp, RATE_LIMITS } from "@/lib/rate-limit";
 import {
   blogPostUpdateSchema,
@@ -121,31 +121,24 @@ export async function PUT(
       }
     }
 
-    // Prepare sanitized update data
+    // Prepare update data - only sanitize HTML content, preserve special characters in text fields
     const updateData: Record<string, unknown> = {};
 
     if (validatedData.slug) updateData.slug = validatedData.slug;
-    if (validatedData.title)
-      updateData.title = sanitizeText(validatedData.title);
-    if (validatedData.excerpt)
-      updateData.excerpt = sanitizeText(validatedData.excerpt);
-    if (validatedData.author)
-      updateData.author = sanitizeText(validatedData.author);
+    if (validatedData.title) updateData.title = validatedData.title;
+    if (validatedData.excerpt) updateData.excerpt = validatedData.excerpt;
+    if (validatedData.author) updateData.author = validatedData.author;
     if (validatedData.authorRole)
-      updateData.authorRole = sanitizeText(validatedData.authorRole);
-    if (validatedData.authorBio)
-      updateData.authorBio = sanitizeText(validatedData.authorBio);
+      updateData.authorRole = validatedData.authorRole;
+    if (validatedData.authorBio) updateData.authorBio = validatedData.authorBio;
     if (validatedData.publishDate)
       updateData.publishDate = validatedData.publishDate;
-    if (validatedData.readTime)
-      updateData.readTime = sanitizeText(validatedData.readTime);
+    if (validatedData.readTime) updateData.readTime = validatedData.readTime;
     if (validatedData.image) updateData.image = validatedData.image;
-    if (validatedData.category)
-      updateData.category = sanitizeText(validatedData.category);
+    if (validatedData.category) updateData.category = validatedData.category;
     if (validatedData.content)
-      updateData.content = sanitizeHtml(validatedData.content);
-    if (validatedData.tags)
-      updateData.tags = validatedData.tags.map((tag) => sanitizeText(tag));
+      updateData.content = sanitizeHtml(validatedData.content); // Only sanitize HTML content for XSS prevention
+    if (validatedData.tags) updateData.tags = validatedData.tags;
     if (validatedData.featured !== undefined)
       updateData.featured = validatedData.featured;
     if (validatedData.published !== undefined)

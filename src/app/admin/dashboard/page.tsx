@@ -81,25 +81,25 @@ export default function AdminDashboard() {
 
   const statCards = [
     {
-      title: "Total Posts",
+      title: "Articles totaux",
       value: stats.totalPosts,
       icon: FileText,
       color: "bg-blue-500",
     },
     {
-      title: "Published",
+      title: "Publiés",
       value: stats.publishedPosts,
       icon: Eye,
       color: "bg-green-500",
     },
     {
-      title: "Drafts",
+      title: "Brouillons",
       value: stats.draftPosts,
       icon: Clock,
       color: "bg-yellow-500",
     },
     {
-      title: "Featured",
+      title: "À la une",
       value: stats.featuredPosts,
       icon: TrendingUp,
       color: "bg-purple-500",
@@ -110,9 +110,9 @@ export default function AdminDashboard() {
     <AdminLayout>
       <div>
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Dashboard</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">Tableau de bord</h1>
           <p className="text-gray-600">
-            Welcome back! Here&apos;s an overview of your blog.
+            Bienvenue ! Voici un aperçu de votre blog.
           </p>
         </div>
 
@@ -185,7 +185,7 @@ export default function AdminDashboard() {
                     d="M12 4v16m8-8H4"
                   />
                 </svg>
-                Nouveau Post
+                Nouveau Article
               </Link>
             </div>
           </div>

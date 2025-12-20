@@ -41,7 +41,7 @@ export default function NewPostPage() {
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="text-center">
           <div className="w-16 h-16 border-4 border-[#095797] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading...</p>
+          <p className="text-gray-600">Chargement...</p>
         </div>
       </div>
     );
@@ -81,9 +81,11 @@ export default function NewPostPage() {
   const generateSlug = () => {
     const slug = formData.title
       .toLowerCase()
-      .replace(/[^\w\s-]/g, "")
-      .replace(/\s+/g, "-")
-      .replace(/--+/g, "-")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "") // Remove accents
+      .replace(/[^a-z0-9\s-]/g, "") // Remove special chars except spaces and hyphens
+      .replace(/\s+/g, "-") // Replace spaces with hyphens
+      .replace(/--+/g, "-") // Remove multiple hyphens
       .trim();
     setFormData({ ...formData, slug });
   };
@@ -147,21 +149,21 @@ export default function NewPostPage() {
         // Enhanced error handling
         if (data.error) {
           if (data.error.includes('slug')) {
-            setError("This slug is already taken. Please choose a different one.");
+            setError("Ce slug est déjà pris. Veuillez en choisir un autre.");
           } else if (data.error.includes('datetime')) {
-            setError("Invalid date format. Please check the publish date.");
+            setError("Format de date invalide. Veuillez vérifier la date de publication.");
           } else if (data.error.includes('validation')) {
-            setError(`Validation error: ${data.error}`);
+            setError(`Erreur de validation : ${data.error}`);
           } else {
             setError(data.error);
           }
         } else {
-          setError("Failed to create post. Please try again.");
+          setError("Échec de la création. Veuillez réessayer.");
         }
       }
     } catch (err) {
       console.error("Error creating post:", err);
-      setError("Network error. Please check your connection and try again.");
+      setError("Erreur réseau. Veuillez vérifier votre connexion et réessayer.");
     } finally {
       setLoading(false);
     }
@@ -172,10 +174,10 @@ export default function NewPostPage() {
       <div className="max-w-5xl">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            Create New Post
+            Créer un nouvel article
           </h1>
           <p className="text-gray-600">
-            Fill in the details below to create a new blog post
+            Remplissez les détails ci-dessous pour créer un nouvel article de blog
           </p>
         </div>
 
@@ -193,12 +195,12 @@ export default function NewPostPage() {
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Title & Slug */}
           <div className="bg-white rounded-xl shadow-sm border p-6">
-            <h2 className="text-xl font-semibold mb-4">Basic Information</h2>
+            <h2 className="text-xl font-semibold mb-4">Informations de base</h2>
 
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Title *
+                  Titre *
                 </label>
                 <input
                   type="text"
@@ -224,13 +226,13 @@ export default function NewPostPage() {
                   required
                 />
                 <p className="mt-1 text-sm text-gray-500">
-                  URL-friendly version of the title
+                  Version adaptée aux URL du titre
                 </p>
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Excerpt *
+                  Extrait *
                 </label>
                 <textarea
                   name="excerpt"
@@ -245,7 +247,7 @@ export default function NewPostPage() {
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Category *
+                    Catégorie *
                   </label>
                   <input
                     type="text"
@@ -254,13 +256,13 @@ export default function NewPostPage() {
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#095797] focus:border-transparent"
                     required
-                    placeholder="e.g., Fiscalité, Technology"
+                    placeholder="ex. : Fiscalité, Technologie"
                   />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Read Time *
+                    Temps de lecture *
                   </label>
                   <input
                     type="text"
@@ -269,14 +271,14 @@ export default function NewPostPage() {
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#095797] focus:border-transparent"
                     required
-                    placeholder="e.g., 5 min"
+                    placeholder="ex. : 5 min"
                   />
                 </div>
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Tags (comma-separated)
+                  Étiquettes (séparées par des virgules)
                 </label>
                 <input
                   type="text"
@@ -284,7 +286,7 @@ export default function NewPostPage() {
                   value={formData.tags}
                   onChange={handleChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#095797] focus:border-transparent"
-                  placeholder="tag1, tag2, tag3"
+                  placeholder="étiquette1, étiquette2, étiquette3"
                 />
               </div>
             </div>
@@ -292,12 +294,12 @@ export default function NewPostPage() {
 
           {/* Author Information */}
           <div className="bg-white rounded-xl shadow-sm border p-6">
-            <h2 className="text-xl font-semibold mb-4">Author Information</h2>
+            <h2 className="text-xl font-semibold mb-4">Informations sur l'auteur</h2>
 
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Author Name *
+                  Nom de l'auteur *
                 </label>
                 <input
                   type="text"
@@ -311,7 +313,7 @@ export default function NewPostPage() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Author Role *
+                  Rôle de l'auteur *
                 </label>
                 <input
                   type="text"
@@ -325,7 +327,7 @@ export default function NewPostPage() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Author Bio *
+                  Biographie de l'auteur *
                 </label>
                 <textarea
                   name="authorBio"
@@ -341,7 +343,7 @@ export default function NewPostPage() {
 
           {/* Featured Image */}
           <div className="bg-white rounded-xl shadow-sm border p-6">
-            <h2 className="text-xl font-semibold mb-4">Featured Image *</h2>
+            <h2 className="text-xl font-semibold mb-4">Image principale *</h2>
             <ImageUpload
               value={formData.image}
               onChange={(url) => setFormData({ ...formData, image: url })}
@@ -351,7 +353,7 @@ export default function NewPostPage() {
 
           {/* Content */}
           <div className="bg-white rounded-xl shadow-sm border p-6">
-            <h2 className="text-xl font-semibold mb-4">Content *</h2>
+            <h2 className="text-xl font-semibold mb-4">Contenu *</h2>
             <RichTextEditor
               content={formData.content}
               onChange={(content) => setFormData({ ...formData, content })}
@@ -360,12 +362,12 @@ export default function NewPostPage() {
 
           {/* Publishing Options */}
           <div className="bg-white rounded-xl shadow-sm border p-6">
-            <h2 className="text-xl font-semibold mb-4">Publishing Options</h2>
+            <h2 className="text-xl font-semibold mb-4">Options de publication</h2>
 
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Publish Date & Time
+                  Date et heure de publication
                 </label>
                 <input
                   type="datetime-local"
@@ -387,7 +389,7 @@ export default function NewPostPage() {
                     className="w-4 h-4 text-[#095797] border-gray-300 rounded focus:ring-[#095797]"
                   />
                   <span className="text-sm font-medium text-gray-700">
-                    Publish immediately
+                    Publier immédiatement
                   </span>
                 </label>
 
@@ -400,7 +402,7 @@ export default function NewPostPage() {
                     className="w-4 h-4 text-[#095797] border-gray-300 rounded focus:ring-[#095797]"
                   />
                   <span className="text-sm font-medium text-gray-700">
-                    Featured post
+                    Article à la une
                   </span>
                 </label>
               </div>
@@ -415,7 +417,7 @@ export default function NewPostPage() {
               className="px-6 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
               disabled={loading}
             >
-              Cancel
+              Annuler
             </button>
             <button
               type="submit"
@@ -423,7 +425,7 @@ export default function NewPostPage() {
               className="px-6 py-2 bg-[#095797] text-white rounded-lg hover:bg-[#074171] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
             >
               {loading && <Loader2 className="w-4 h-4 animate-spin" />}
-              {loading ? "Creating..." : "Create Post"}
+              {loading ? "Création..." : "Créer l'article"}
             </button>
           </div>
         </form>

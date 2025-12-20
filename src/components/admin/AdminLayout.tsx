@@ -21,12 +21,12 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
 
   const navItems = [
     {
-      name: "Dashboard",
+      name: "Tableau de bord",
       href: "/admin/dashboard",
       icon: LayoutDashboard,
     },
     {
-      name: "Blog Posts",
+      name: "Articles de blog",
       href: "/admin/posts",
       icon: FileText,
     },
@@ -68,7 +68,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                 className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-200 border border-transparent hover:border-white/20"
               >
                 <LogOut className="w-4 h-4" />
-                Logout
+                Déconnexion
               </button>
             </div>
           </div>

@@ -22,13 +22,13 @@ export const passwordSchema = z
     'Password must contain at least one uppercase letter, one lowercase letter, and one number'
   );
 
-// Name validation
+// Name validation - allows letters, spaces, hyphens, apostrophes, commas, and periods for credentials
 export const nameSchema = z
   .string()
   .min(2, 'Name must be at least 2 characters')
   .max(100, 'Name too long')
   .trim()
-  .regex(/^[a-zA-ZÀ-ÿ\s'-]+$/, 'Name contains invalid characters');
+  .regex(/^[a-zA-ZÀ-ÿ\s'\-,.]+$/, 'Name contains invalid characters');
 
 // Phone validation - allows international formats
 export const phoneSchema = z
@@ -47,7 +47,7 @@ export const slugSchema = z
     'Slug must be lowercase alphanumeric with hyphens only'
   );
 
-// Blog post title validation
+// Blog post title validation - allows any characters including French special chars
 export const titleSchema = z
   .string()
   .min(3, 'Title must be at least 3 characters')
@@ -87,10 +87,10 @@ export const contactFormSchema = z.object({
   name: nameSchema,
   email: emailSchema,
   phone: phoneSchema,
-  service: z.string().max(100).optional(),
-  details: z.string().max(5000, 'Details too long').optional(),
+  service: z.string().max(100).trim().optional(),
+  details: z.string().max(5000, 'Details too long').trim().optional(),
   formType: z.enum(['consultation', 'service', 'job', 'partnership']).optional(),
-  serviceName: z.string().max(100).optional(),
+  serviceName: z.string().max(100).trim().optional(),
   fileName: z.string().max(255).optional(),
 });
 
@@ -116,16 +116,16 @@ export const adminUserSchema = z.object({
 export const blogPostSchema = z.object({
   slug: slugSchema,
   title: titleSchema,
-  excerpt: z.string().min(10).max(500),
+  excerpt: z.string().min(10).max(500).trim(),
   author: nameSchema,
-  authorRole: z.string().min(2).max(100),
-  authorBio: z.string().min(10).max(500),
+  authorRole: z.string().min(2).max(100).trim(),
+  authorBio: z.string().min(10).max(500).trim(),
   publishDate: z.string().datetime().optional(),
-  readTime: z.string().max(20),
+  readTime: z.string().max(20).trim(),
   image: imageUrlSchema,
-  category: z.string().min(2).max(50),
+  category: z.string().min(2).max(50).trim(),
   content: contentSchema,
-  tags: z.array(z.string().max(50)).max(20).optional(),
+  tags: z.array(z.string().max(50).trim()).max(20).optional(),
   featured: z.boolean().optional(),
   published: z.boolean().optional(),
 });

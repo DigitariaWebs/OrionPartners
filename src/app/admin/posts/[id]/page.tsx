@@ -55,7 +55,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="text-center">
           <div className="w-16 h-16 border-4 border-[#095797] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading...</p>
+          <p className="text-gray-600">Chargement...</p>
         </div>
       </div>
     );
@@ -89,12 +89,12 @@ export default function EditPostPage({ params }: EditPostPageProps) {
           publishDate: new Date(post.publishDate).toISOString().slice(0, 16),
         });
       } else {
-        alert("Post not found");
+        alert("Article non trouvé");
         router.push("/admin/posts");
       }
     } catch (error) {
       console.error("Error fetching post:", error);
-      alert("Failed to fetch post");
+      alert("Échec de la récupération de l'article");
     } finally {
       setFetching(false);
     }
@@ -142,7 +142,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
       const missingFields = requiredFields.filter(field => !formData[field as keyof typeof formData]);
 
       if (missingFields.length > 0) {
-        setError(`Missing required fields: ${missingFields.join(', ')}`);
+        setError(`Champs requis manquants : ${missingFields.join(', ')}`);
         setLoading(false);
         return;
       }
@@ -156,7 +156,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
         }
         publishDate = date.toISOString();
       } catch (dateError) {
-        setError("Invalid date format. Please check the publish date.");
+        setError("Format de date invalide. Veuillez vérifier la date de publication.");
         setLoading(false);
         return;
       }
@@ -186,21 +186,21 @@ export default function EditPostPage({ params }: EditPostPageProps) {
         // Enhanced error handling
         if (data.error) {
           if (data.error.includes('slug')) {
-            setError("This slug is already taken. Please choose a different one.");
+            setError("Ce slug est déjà pris. Veuillez en choisir un autre.");
           } else if (data.error.includes('datetime')) {
-            setError("Invalid date format. Please check the publish date.");
+            setError("Format de date invalide. Veuillez vérifier la date de publication.");
           } else if (data.error.includes('validation')) {
-            setError(`Validation error: ${data.error}`);
+            setError(`Erreur de validation : ${data.error}`);
           } else {
             setError(data.error);
           }
         } else {
-          setError("Failed to update post. Please try again.");
+          setError("Échec de la mise à jour. Veuillez réessayer.");
         }
       }
     } catch (err) {
       console.error("Error updating post:", err);
-      setError("Network error. Please check your connection and try again.");
+      setError("Erreur réseau. Veuillez vérifier votre connexion et réessayer.");
     } finally {
       setLoading(false);
     }
@@ -220,9 +220,9 @@ export default function EditPostPage({ params }: EditPostPageProps) {
     <AdminLayout>
       <div className="max-w-5xl">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Edit Post</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">Modifier l'article</h1>
           <p className="text-gray-600">
-            Update the details below to edit this blog post
+            Mettez à jour les détails ci-dessous pour modifier cet article de blog
           </p>
         </div>
 
@@ -240,7 +240,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Title & Slug */}
           <div className="bg-white rounded-xl shadow-sm border p-6">
-            <h2 className="text-xl font-semibold mb-4">Basic Information</h2>
+            <h2 className="text-xl font-semibold mb-4">Informations de base</h2>
 
             <div className="space-y-4">
               <div>
@@ -455,7 +455,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
               className="px-6 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
               disabled={loading}
             >
-              Cancel
+              Annuler
             </button>
             <button
               type="submit"
@@ -463,7 +463,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
               className="px-6 py-2 bg-[#095797] text-white rounded-lg hover:bg-[#074171] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
             >
               {loading && <Loader2 className="w-4 h-4 animate-spin" />}
-              {loading ? "Updating..." : "Update Post"}
+              {loading ? "Mise à jour..." : "Mettre à jour l'article"}
             </button>
           </div>
         </form>

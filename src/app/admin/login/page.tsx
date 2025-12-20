@@ -68,11 +68,11 @@ export default function AdminLoginPage() {
         router.refresh();
       } else {
         console.error("[LOGIN] Unexpected result:", result);
-        setError("Login failed. Please try again.");
+        setError("Échec de la connexion. Veuillez réessayer.");
       }
     } catch (err) {
       console.error("[LOGIN] Exception:", err);
-      setError("An unexpected error occurred");
+      setError("Une erreur inattendue s'est produite");
     } finally {
       setLoading(false);
     }
@@ -88,9 +88,9 @@ export default function AdminLoginPage() {
       >
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-[#095797] mb-2">
-            Admin Login
+            Connexion administrateur
           </h1>
-          <p className="text-gray-600">Sign in to manage your blog</p>
+          <p className="text-gray-600">Connectez-vous pour gérer votre blog</p>
         </div>
 
         {error && (
@@ -109,7 +109,7 @@ export default function AdminLoginPage() {
               htmlFor="email"
               className="block text-sm font-medium text-gray-700 mb-2"
             >
-              Email Address
+              Adresse e-mail
             </label>
             <input
               type="email"
@@ -128,7 +128,7 @@ export default function AdminLoginPage() {
               htmlFor="password"
               className="block text-sm font-medium text-gray-700 mb-2"
             >
-              Password
+              Mot de passe
             </label>
             <input
               type="password"
@@ -147,7 +147,7 @@ export default function AdminLoginPage() {
             disabled={loading}
             className="w-full bg-[#095797] hover:bg-[#074171] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {loading ? "Signing in..." : "Sign In"}
+            {loading ? "Connexion en cours..." : "Se connecter"}
           </button>
         </form>
 

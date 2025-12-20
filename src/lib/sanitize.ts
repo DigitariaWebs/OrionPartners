@@ -1,6 +1,7 @@
 /**
  * Sanitizes HTML content to prevent XSS attacks
  * Uses a simple regex-based approach for edge compatibility
+ * Preserves legitimate special characters and formatting
  */
 export function sanitizeHtml(html: string): string {
   if (!html) return '';
@@ -15,9 +16,9 @@ export function sanitizeHtml(html: string): string {
   // Remove javascript: protocol
   sanitized = sanitized.replace(/javascript:/gi, '');
   
-  // Remove data: URLs (potential XSS vector)
+  // Remove data: URLs (potential XSS vector) but allow data:image for inline images
   sanitized = sanitized.replace(/data:text\/html/gi, '');
-  sanitized = sanitized.replace(/src\s*=\s*["']data:/gi, 'src="');
+  sanitized = sanitized.replace(/src\s*=\s*["']data:(?!image)/gi, 'src="');
   sanitized = sanitized.replace(/href\s*=\s*["']data:/gi, 'href="');
   
   // Remove iframe, embed, object tags
@@ -38,19 +39,16 @@ export function sanitizeHtml(html: string): string {
 }
 
 /**
- * Sanitizes plain text by escaping HTML entities
- * Use this for content that should NOT contain any HTML
+ * Sanitizes plain text fields without escaping special characters
+ * Use this for content that should NOT contain HTML but may have accents, quotes, etc.
+ * Only trims whitespace and validates max length
  */
-export function sanitizeText(text: string): string {
+export function sanitizeText(text: string, maxLength: number = 10000): string {
   if (!text) return '';
   
-  return text
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#x27;')
-    .replace(/\//g, '&#x2F;');
+  // Just trim whitespace and enforce max length
+  // This preserves all special characters like é, à, ô, etc.
+  return text.trim().slice(0, maxLength);
 }
 
 

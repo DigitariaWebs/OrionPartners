@@ -10,7 +10,17 @@ export const metadata: Metadata = {
   authors: [{ name: "Orion Conseil" }],
   robots: "index, follow",
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/Logos/Logo.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: "/Logos/Logo.png",
+  },
+  openGraph: {
+    title: "Orion Conseil",
+    description: "Professional solutions and services",
+    images: ["/Logos/Logo.png"],
+    type: "website",
   },
 };
 

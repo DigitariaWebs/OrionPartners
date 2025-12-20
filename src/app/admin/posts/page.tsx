@@ -54,7 +54,7 @@ export default function AdminPostsPage() {
   }, [status]);
 
   const handleDelete = async (id: string, title: string) => {
-    if (!confirm(`Are you sure you want to delete "${title}"?`)) {
+    if (!confirm(`Êtes-vous sûr de vouloir supprimer "${title}" ?`)) {
       return;
     }
 
@@ -65,13 +65,13 @@ export default function AdminPostsPage() {
 
       if (response.ok) {
         setPosts(posts.filter((post) => post._id !== id));
-        alert("Post deleted successfully");
+        alert("Article supprimé avec succès");
       } else {
-        alert("Failed to delete post");
+        alert("Échec de la suppression");
       }
     } catch (error) {
       console.error("Error deleting post:", error);
-      alert("Error deleting post");
+      alert("Erreur lors de la suppression");
     }
   };
 

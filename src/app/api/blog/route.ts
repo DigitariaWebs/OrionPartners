@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import connectDB from '@/lib/mongodb';
 import BlogPost from '@/models/BlogPost';
 import { requireAdmin } from '@/lib/auth-helper';
-import { sanitizeHtml, sanitizeText } from "@/lib/sanitize";
+import { sanitizeHtml } from "@/lib/sanitize";
 import { checkRateLimit, getClientIp, RATE_LIMITS } from "@/lib/rate-limit";
 import { blogPostSchema, validateData } from "@/lib/validation";
 
@@ -103,20 +103,20 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Sanitize content
+    // Sanitize content - only sanitize HTML, preserve special characters in text fields
     const newPost = await BlogPost.create({
       slug: validatedData.slug,
-      title: sanitizeText(validatedData.title),
-      excerpt: sanitizeText(validatedData.excerpt),
-      author: sanitizeText(validatedData.author),
-      authorRole: sanitizeText(validatedData.authorRole),
-      authorBio: sanitizeText(validatedData.authorBio),
+      title: validatedData.title,
+      excerpt: validatedData.excerpt,
+      author: validatedData.author,
+      authorRole: validatedData.authorRole,
+      authorBio: validatedData.authorBio,
       publishDate: validatedData.publishDate || new Date(),
-      readTime: sanitizeText(validatedData.readTime),
+      readTime: validatedData.readTime,
       image: validatedData.image,
-      category: sanitizeText(validatedData.category),
-      content: sanitizeHtml(validatedData.content), // Sanitize HTML content
-      tags: validatedData.tags?.map((tag) => sanitizeText(tag)) || [],
+      category: validatedData.category,
+      content: sanitizeHtml(validatedData.content), // Only sanitize HTML content for XSS prevention
+      tags: validatedData.tags || [],
       featured: validatedData.featured || false,
       published:
         validatedData.published !== undefined ? validatedData.published : true,
