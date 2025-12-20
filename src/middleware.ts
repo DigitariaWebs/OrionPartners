@@ -59,13 +59,13 @@ export default auth(async function middleware(request: NextRequest) {
     "script-src 'self' 'unsafe-eval' 'unsafe-inline'",
     "style-src 'self' 'unsafe-inline'",
     "img-src 'self' blob: data: https://res.cloudinary.com https://*.cloudinary.com",
-    "font-src 'self'",
+    "font-src 'self' https://r2cdn.perplexity.ai",
     "object-src 'none'",
     "base-uri 'self'",
     "form-action 'self'",
     "frame-ancestors 'none'",
     "connect-src 'self' https://api.cloudinary.com",
-    "media-src 'self'",
+    "media-src 'self' https://res.cloudinary.com https://*.cloudinary.com",
     "worker-src 'self' blob:",
     "manifest-src 'self'",
   ];
@@ -93,4 +93,5 @@ export const config = {
     "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico)$).*)",
   ],
 };
+
 

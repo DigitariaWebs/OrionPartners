@@ -6,7 +6,6 @@ import Button from '@/components/ui/Button';
 
 const HeroSection: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [videoFailed, setVideoFailed] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
@@ -58,31 +57,18 @@ const HeroSection: React.FC = () => {
               "linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%)",
           }}
         ></div>
-        {isVisible && !videoFailed ? (
-          <motion.video
-            // Use local copy to avoid remote loading/CORS issues
-            src="/NotreEquipe/HeroSection.mp4"
-            poster="/ServiceImages/VilleNewYork.jpg"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-            initial={{ scale: 1.1 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 10 }}
-            onError={() => setVideoFailed(true)}
-          />
-        ) : (
-          <motion.img
-            src="/ServiceImages/VilleNewYork.jpg"
-            alt="Skyline de New York"
-            className="w-full h-full object-cover"
-            initial={{ scale: 1.05, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.6 }}
-          />
-        )}
+        <motion.video
+          // Use Cloudinary video for better performance
+          src="https://res.cloudinary.com/dpfvcl1vs/video/upload/v1766242468/4970648-uhd_3840_2160_30fps_hmflsc.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 10 }}
+        />
       </motion.div>
 
       {/* Animated Background Elements */}

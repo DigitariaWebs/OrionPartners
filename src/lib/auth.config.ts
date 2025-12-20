@@ -115,3 +115,4 @@ export const authConfig: NextAuthConfig = {
   providers: [], // Providers are added in auth.ts
 };
 
+

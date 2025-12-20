@@ -128,3 +128,4 @@ Make sure your `.env` file exists and has the correct MongoDB connection string.
 Add your Cloudinary credentials to `.env`. You can get them from your Cloudinary dashboard.
 
 
+

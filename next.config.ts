@@ -2,6 +2,19 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   trailingSlash: true,
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "Content-Security-Policy",
+            value: "media-src *; font-src 'self' https://r2cdn.perplexity.ai;",
+          },
+        ],
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {

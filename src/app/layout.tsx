@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import ModalProvider from "../components/providers/ModalProvider";
+import CspHead from "../components/CspHead";
 
 export const metadata: Metadata = {
   title: "Orion Conseil",
@@ -26,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
+        <CspHead />
         <ModalProvider>{children}</ModalProvider>
       </body>
     </html>

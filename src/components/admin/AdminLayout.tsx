@@ -41,7 +41,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
             <div className="flex items-center">
               <Link href="/admin/dashboard" className="flex items-center gap-3">
                 <span className="text-2xl font-bold text-white tracking-tight">
-                  Orion Partners
+                  ORION CONSEIL
                 </span>
                 <span className="px-2 py-0.5 text-xs font-semibold bg-[var(--color-accent)] text-white rounded shadow-sm">
                   ADMIN
@@ -143,5 +143,6 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
     </div>
   );
 }
+
 
 
