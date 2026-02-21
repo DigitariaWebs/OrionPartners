@@ -103,6 +103,13 @@ export default function AdminDashboard() {
       icon: TrendingUp,
       color: "bg-purple-500",
     },
+    {
+      title: "Analytics",
+      value: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID !== 'GA_MEASUREMENT_ID' ? "Actif" : "Non configuré",
+      icon: TrendingUp,
+      color: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID !== 'GA_MEASUREMENT_ID' ? "bg-green-500" : "bg-red-500",
+      isText: true,
+    },
   ];
 
   return (
@@ -135,7 +142,7 @@ export default function AdminDashboard() {
                       {stat.title}
                     </p>
                     <p className="text-3xl font-bold text-[var(--color-primary)]">
-                      {loading ? "..." : stat.value}
+                      {loading ? "..." : stat.isText ? stat.value : stat.value}
                     </p>
                   </div>
                   <div
@@ -146,6 +153,8 @@ export default function AdminDashboard() {
                         ? "bg-green-500 shadow-green-200"
                         : stat.color === "bg-yellow-500"
                         ? "bg-yellow-500 shadow-yellow-200"
+                        : stat.color === "bg-red-500"
+                        ? "bg-red-500 shadow-red-200"
                         : "bg-purple-500 shadow-purple-200"
                     }`}
                   >
@@ -155,6 +164,61 @@ export default function AdminDashboard() {
               </motion.div>
             );
           })}
+        </div>
+
+        {/* Analytics Section */}
+        <div className="bg-white rounded-xl shadow-xl border-0 overflow-hidden">
+          <div className="p-6 border-b border-gray-100 bg-gray-50/50">
+            <div className="flex items-center justify-between">
+              <div>
+                <h2 className="text-xl font-bold text-[var(--color-primary)]">
+                  Google Analytics
+                </h2>
+                <p className="text-sm text-gray-500 mt-1">
+                  Suivi du trafic du site
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="p-6">
+            <div className="space-y-4">
+              <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                <div>
+                  <p className="font-medium text-gray-900">Statut du suivi</p>
+                  <p className="text-sm text-gray-500">
+                    {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID !== 'GA_MEASUREMENT_ID'
+                      ? 'Actif - Le suivi est configuré'
+                      : 'Non configuré - ID de mesure manquant'}
+                  </p>
+                </div>
+                <div className={`px-3 py-1 rounded-full text-sm font-medium ${
+                  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID !== 'GA_MEASUREMENT_ID'
+                    ? 'bg-green-100 text-green-800'
+                    : 'bg-red-100 text-red-800'
+                }`}>
+                  {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID !== 'GA_MEASUREMENT_ID' ? 'Actif' : 'Inactif'}
+                </div>
+              </div>
+              {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID !== 'GA_MEASUREMENT_ID' && (
+                <div className="flex items-center justify-between p-4 bg-blue-50 rounded-lg">
+                  <div>
+                    <p className="font-medium text-gray-900">ID de mesure</p>
+                    <p className="text-sm text-gray-500 font-mono">
+                      {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}
+                    </p>
+                  </div>
+                  <a
+                    href={`https://analytics.google.com/analytics/web/?hl=fr&pli=1#/p${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.replace('G-', '')}/reports/intelligenthome`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition-colors"
+                  >
+                    Voir Analytics
+                  </a>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
 
         {/* Recent Posts */}

@@ -287,4 +287,23 @@ export const teamMembers: TeamMember[] = [
     zoom: 1.4,
     position: "center 20%",
   },
+  {
+    name: "Osmarie Mabanga",
+    title: "",
+    subtitle: "Associate Consultant, comptabilité et intelligence d'affaires",
+    image: "/NotreEquipe/OsmarieMabanga.jpg",
+    briefDescription:
+      "Osmarie Mabanga est une Consultante associée et analyste d'affaires spécialisée en comptabilité et en fiscalité au sein d'Orion Conseil.",
+    description:
+      "Osmarie Mabanga est une Consultante associée et analyste d'affaires spécialisée en comptabilité et en fiscalité au sein d'Orion Conseil. Elle apporte son expertise en analyse financière, en gestion comptable et en conformité fiscale pour accompagner les entreprises dans l'évaluation rigoureuse de leur performance. Osmarie joue un rôle clé dans l'optimisation des processus comptables et fiscaux, ainsi que dans la mise en place de stratégies financières adaptées aux objectifs de croissance de nos clients. Sa maîtrise des enjeux réglementaires et sa capacité à structurer l'information financière sont des atouts majeurs pour assurer la pérennité et la conformité des organisations qu'elle accompagne. Osmarie est titulaire d'une Licence en sciences économiques et administration des affaires de l'Université Protestante au Congo (UPC).",
+    email: "contact@orionconseil.com",
+    expertise: "Comptabilité, Gestion financière, Fiscalité, Analyse d'affaires",
+    education: "Master en sciences économiques et administration des affaires (Université Protestante au Congo)",
+    university: "Université Protestante au Congo",
+    country: "République Démocratique du Congo",
+    experience: "Analyste d'affaires, comptable et fiscale",
+    slug: "osmarie-mabanga",
+    zoom: 1.2,
+    position: "center 10%",
+  },
 ];

@@ -16,6 +16,7 @@ import {
   Search,
   CheckCircle,
   BarChart,
+  Home,
 } from "lucide-react";
 
 export default function ServicesConseilsPage() {
@@ -1236,6 +1237,184 @@ export default function ServicesConseilsPage() {
                   </div>
                 </div>
               </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bloc 4: Expertise Immobilière */}
+      <section className="py-24 lg:py-32 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3e%3cg fill='%23095797' fill-opacity='0.1'%3e%3cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-61-51c2.73 0 4.917-2.187 4.917-4.917 0-2.73-2.187-4.917-4.917-4.917C7.187 3.167 5 5.354 5 8.084c0 2.73 2.187 4.917 4.917 4.917zM20.167 72c2.73 0 4.917-2.187 4.917-4.917 0-2.73-2.187-4.917-4.917-4.917C17.437 62.167 15.25 64.354 15.25 67.084c0 2.73 2.187 4.917 4.917 4.917z'/%3e%3c/g%3e%3c/svg%3e")`,
+              backgroundSize: "100px 100px",
+            }}
+          ></div>
+        </div>
+
+        <div className="relative container mx-auto px-6">
+          <div className="max-w-7xl mx-auto">
+            {/* Section Header */}
+            <motion.div className="text-center mb-16" {...fadeInUp}>
+              <div className="inline-flex items-center gap-2 bg-[#095797]/10 text-[#095797] px-4 py-2 rounded-full text-sm font-medium mb-6">
+                <Home className="w-4 h-4" />
+                Développement Immobilier
+              </div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
+                Expertise Immobilière
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Immobilier & Développement : Maîtriser les opportunités du marché congolais
+              </p>
+            </motion.div>
+
+            {/* Main Content Grid */}
+            <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-stretch mb-20">
+              {/* Left Column - Image */}
+              <motion.div
+                className="lg:col-span-6 relative h-full"
+                {...slideInLeft}
+              >
+                <div className="relative group h-full">
+                  <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full">
+                    <Image
+                      src="/ServiceImages/ExpertiseImmobiliere.png"
+                      alt="Expertise Immobilière"
+                      width={700}
+                      height={500}
+                      className="w-full h-115 object-cover object-bottom"
+                    />
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Right Column - Content */}
+              <motion.div
+                className="lg:col-span-6 flex flex-col justify-center"
+                {...slideInRight}
+              >
+                {/* Combined Challenge & Solution Section */}
+                <div className="bg-gradient-to-br from-[#095797]/5 to-[#9ac322]/5 p-8 rounded-2xl border border-[#095797]/20 shadow-lg">
+                  <div className="space-y-8">
+                    {/* Challenge Section */}
+                    <div className="space-y-4">
+                      <h3 className="text-2xl font-bold text-[#095797] flex items-center gap-3">
+                        <div className="w-8 h-8 bg-[#095797] rounded-lg flex items-center justify-center">
+                          <span className="text-white text-sm font-bold">
+                            !
+                          </span>
+                        </div>
+                        Le Défi
+                      </h3>
+                      <div className="space-y-4 text-gray-700 pl-11">
+                        <p className="leading-relaxed">
+                          Marché immobilier dynamique mais risqu&eacute; en RDC (r&eacute;glementations, titres fonciers, volatilit&eacute;).
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Solution Section */}
+                    <div className="space-y-4">
+                      <h3 className="text-2xl font-bold text-[#095797] flex items-center gap-3">
+                        <div className="w-8 h-8 bg-[#095797] rounded-lg flex items-center justify-center">
+                          <span className="text-white text-sm font-bold">
+                            ✓
+                          </span>
+                        </div>
+                        Notre Solution
+                      </h3>
+                      <div className="pl-11">
+                        <p className="text-lg text-gray-700 leading-relaxed">
+                          Conseil en acquisition/valorisation/promotion, due diligence immobili&egrave;re, structuration financi&egrave;re de projets immobiliers, montage juridique/financier.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Expertises Section */}
+            <motion.div className="space-y-8" {...fadeInUp}>
+              <div className="text-center">
+                <h3 className="text-3xl lg:text-4xl font-bold text-[#095797] mb-4">
+                  Nos Expertises Immobilières
+                </h3>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  Trois piliers pour votre succès immobilier
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-8">
+                {/* Expertise 1 */}
+                <motion.div
+                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#095797]/30"
+                  whileHover={{ y: -5 }}
+                  {...fadeInUp}
+                >
+                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#095797] rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
+                    1
+                  </div>
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
+                      Diagnostic foncier/marché
+                    </h4>
+                    <p className="text-gray-600 leading-relaxed">
+                      Analyse approfondie des opportunités foncières et des tendances du marché pour identifier les projets viables.
+                    </p>
+                  </div>
+                  <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <Target className="w-16 h-16 text-gray-800" />
+                  </div>
+                </motion.div>
+
+                {/* Expertise 2 */}
+                <motion.div
+                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#095797]/30"
+                  whileHover={{ y: -5 }}
+                  {...fadeInUp}
+                >
+                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#095797] rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
+                    2
+                  </div>
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
+                      Feuille de route projet
+                    </h4>
+                    <p className="text-gray-600 leading-relaxed">
+                      Élaboration de stratégies complètes pour le développement, la vente ou la location de biens immobiliers.
+                    </p>
+                  </div>
+                  <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <TrendingUp className="w-16 h-16 text-gray-800" />
+                  </div>
+                </motion.div>
+
+                {/* Expertise 3 */}
+                <motion.div
+                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#095797]/30"
+                  whileHover={{ y: -5 }}
+                  {...fadeInUp}
+                >
+                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#095797] rounded-xl flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
+                    3
+                  </div>
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
+                      Alignement avec strat&eacute;gie d&apos;entreprise/investisseurs
+                    </h4>
+                    <p className="text-gray-600 leading-relaxed">
+                      Int&eacute;gration des projets immobiliers dans la strat&eacute;gie globale de l&apos;entreprise ou des objectifs d&apos;investissement.
+                    </p>
+                  </div>
+                  <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <Users className="w-16 h-16 text-gray-800" />
+                  </div>
+                </motion.div>
+              </div>
             </motion.div>
           </div>
         </div>
