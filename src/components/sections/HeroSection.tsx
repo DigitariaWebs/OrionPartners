@@ -123,7 +123,7 @@ const HeroSection: React.FC = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Orion Conseil
+              {t("header.brandName")}
             </motion.span>
           </motion.h1>
         </motion.div>
@@ -176,7 +176,7 @@ const HeroSection: React.FC = () => {
               variant="outline"
               className="min-w-[180px] w-full sm:w-auto border-2 border-[var(--color-white)] text-[var(--color-white)] hover:bg-[var(--color-white)] hover:text-black backdrop-blur-sm bg-[var(--color-white)]/10"
             >
-              Découvrez nos expertises en conseil
+              {t("hero.expertiseCta")}
             </Button>
           </motion.div>
         </motion.div>

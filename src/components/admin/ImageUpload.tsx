@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import { Upload, X, Loader2, ImageIcon } from "lucide-react";
 import Image from "next/image";
+import { useI18n } from "@/i18n/useI18n";
 
 interface ImageUploadProps {
   value: string;
@@ -19,19 +20,20 @@ export default function ImageUpload({
   const [error, setError] = useState<string | null>(null);
   const [dragActive, setDragActive] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+  const { t } = useI18n();
 
   const handleUpload = async (file: File) => {
     if (!file) return;
 
     // Validate file type
     if (!file.type.startsWith("image/")) {
-      setError("Please select an image file");
+      setError(t("admin.imageUpload.selectImageError"));
       return;
     }
 
     // Validate file size (max 5MB)
     if (file.size > 5 * 1024 * 1024) {
-      setError("File size must be less than 5MB");
+      setError(t("admin.imageUpload.fileSizeError"));
       return;
     }
 
@@ -52,10 +54,10 @@ export default function ImageUpload({
       if (response.ok) {
         onChange(data.url);
       } else {
-        setError(data.error || "Failed to upload image");
+        setError(data.error || t("admin.imageUpload.uploadFailed"));
       }
     } catch (err) {
-      setError("Failed to upload image");
+      setError(t("admin.imageUpload.uploadFailed"));
       console.error("Upload error:", err);
     } finally {
       setUploading(false);
@@ -105,7 +107,7 @@ export default function ImageUpload({
           <div className="relative w-64 h-40 rounded-lg overflow-hidden border">
             <Image
               src={value}
-              alt="Uploaded image"
+              alt={t("admin.imageUpload.uploadedImageAlt")}
               fill
               className="object-cover"
             />
@@ -147,7 +149,7 @@ export default function ImageUpload({
           {uploading ? (
             <div className="flex flex-col items-center">
               <Loader2 className="w-10 h-10 text-[#095797] animate-spin mb-3" />
-              <p className="text-sm text-gray-600">Uploading...</p>
+              <p className="text-sm text-gray-600">{t("admin.imageUpload.uploading")}</p>
             </div>
           ) : (
             <div className="flex flex-col items-center">
@@ -155,9 +157,9 @@ export default function ImageUpload({
                 <Upload className="w-6 h-6 text-gray-500" />
               </div>
               <p className="text-sm font-medium text-gray-700 mb-1">
-                Click to upload or drag and drop
+                {t("admin.imageUpload.uploadInstructions")}
               </p>
-              <p className="text-xs text-gray-500">PNG, JPG, GIF up to 5MB</p>
+              <p className="text-xs text-gray-500">{t("admin.imageUpload.supportedFormats")}</p>
             </div>
           )}
         </div>
@@ -166,7 +168,7 @@ export default function ImageUpload({
       {/* Or enter URL manually */}
       <div className="flex items-center gap-4">
         <div className="flex-1 h-px bg-gray-200"></div>
-        <span className="text-sm text-gray-500">or enter URL</span>
+        <span className="text-sm text-gray-500">{t("admin.imageUpload.orEnterUrl")}</span>
         <div className="flex-1 h-px bg-gray-200"></div>
       </div>
 
@@ -177,7 +179,7 @@ export default function ImageUpload({
             type="url"
             value={value}
             onChange={(e) => onChange(e.target.value)}
-            placeholder="https://example.com/image.jpg"
+            placeholder={t("admin.imageUpload.urlPlaceholder")}
             className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#095797] focus:border-transparent"
             disabled={disabled || uploading}
           />

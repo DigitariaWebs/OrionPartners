@@ -133,7 +133,7 @@ const Header = () => {
           <Link href="/" className="flex items-center">
             <Image
               src="/Logos/Logo.png"
-              alt="Orion Conseil Logo"
+              alt={t("header.logoAlt")}
               width={460}
               height={440}
               priority

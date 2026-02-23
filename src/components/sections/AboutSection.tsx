@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import { useI18n } from "@/i18n/useI18n";
 
 // Animated SVG Accent
 function AnimatedAccent({ className = "" }: { className?: string }) {
@@ -35,15 +36,17 @@ function AnimatedAccent({ className = "" }: { className?: string }) {
   );
 }
 
-const approach = [
-  "Une approche sur-mesure pour chaque client",
-  "L'obsession du résultat comme moteur",
-  "Des solutions concrètes pour un impact durable",
-];
-
 // (Removed StatCounter, WorldMapAnimation and fadeIn — unused)
 
 export default function AboutSection() {
+  const { t } = useI18n();
+
+  const approach = [
+    t("about.section.approach.items.0"),
+    t("about.section.approach.items.1"),
+    t("about.section.approach.items.2"),
+  ];
+
   const containerRef = React.useRef<HTMLDivElement | null>(null);
   const firstMarkerRef = React.useRef<HTMLDivElement | null>(null);
   const lastMarkerRef = React.useRef<HTMLDivElement | null>(null);
@@ -95,7 +98,7 @@ export default function AboutSection() {
           className="text-4xl font-extrabold mb-10 text-center tracking-tight"
           style={{ color: "var(--color-primary)" }}
         >
-          À propos
+          {t("about.section.title")}
         </h2>
 
         <div className="w-full flex flex-col items-center">
@@ -145,15 +148,10 @@ export default function AboutSection() {
                 className="text-2xl font-bold mb-6 text-center"
                 style={{ color: "var(--color-primary)" }}
               >
-                Une raison de croire, d&apos;exister.
+                {t("about.section.reasonToBelieve.title")}
               </h3>
               <p className="text-gray-700 text-lg text-justify leading-relaxed">
-                Fondé sur la conviction que la prospérité de la RDC passe par
-                des organisations plus fortes, Orion Conseil a été créé pour
-                offrir un conseil de nouvelle génération. Face à un marché où
-                les solutions importées échouent souvent, nous avons bâti un
-                modèle qui ancre l&apos;excellence stratégique dans les réalités
-                congolaises, pour générer un impact réel et pérenne.
+                {t("about.section.reasonToBelieve.description")}
               </p>
             </div>
           </motion.div>
@@ -188,19 +186,10 @@ export default function AboutSection() {
                 className="text-2xl font-bold mb-2 text-center"
                 style={{ color: "var(--color-primary)" }}
               >
-                Orion Conseil
+                {t("about.section.orionConseil.title")}
               </h3>
               <p className="text-gray-700 text-lg text-justify">
-                Un cabinet de services-conseils en gestion d&apos;entreprises et des
-                organisations. Nous accompagnons les entreprises et les
-                organisations publiques et privées sur leurs enjeux
-                stratégiques, opérationnels et financiers. Notre force réside
-                dans une approche unique qui combiner une connaissance intime
-                des écosystèmes locaux avec la rigueur des standards
-                internationaux. Cette double expertise nous permet de concevoir
-                des solutions à haute valeur ajoutée, parfaitement pertinentes
-                et immédiatement opérationnelles, pour transformer vos ambitions
-                en succès concrets.
+                {t("about.section.orionConseil.description")}
               </p>
             </div>
           </motion.div>
@@ -241,12 +230,10 @@ export default function AboutSection() {
                   className="text-xl font-semibold mb-2 text-center"
                   style={{ color: "var(--color-primary)" }}
                 >
-                  Notre vision
+                  {t("about.section.vision.title")}
                 </h4>
                 <p className="text-gray-800 text-base md:text-lg leading-relaxed max-w-prose mx-auto text-justify">
-                  Devenir le partenaire stratégique de référence et un acteur
-                  majeur dans la transformation du potentiel économique de la
-                  RDC en une prospérité durable et partagée.
+                  {t("about.section.vision.description")}
                 </p>
               </motion.article>
               <motion.article
@@ -260,16 +247,10 @@ export default function AboutSection() {
                   className="text-xl font-semibold mb-2 text-center"
                   style={{ color: "var(--color-primary)" }}
                 >
-                  Notre mission
+                  {t("about.section.mission.title")}
                 </h4>
                 <p className="text-gray-800 text-base md:text-lg leading-relaxed max-w-prose mx-auto text-justify">
-                  Notre mission est d&apos;accompagner les entreprises et les
-                  organisations publiques et privées en RDC pour transformer
-                  leurs défis les plus complexes en performance durable. Nous
-                  déployons des solutions stratégiques, financières et
-                  opérationnelles qui marient une compréhension intime des
-                  réalités congolaises avec l&apos;exigence des meilleures
-                  pratiques internationales.
+                  {t("about.section.mission.description")}
                 </p>
               </motion.article>
             </div>
@@ -311,12 +292,10 @@ export default function AboutSection() {
                   className="text-2xl font-bold mb-2 text-center"
                   style={{ color: "var(--color-primary)" }}
                 >
-                  Notre expertise
+                  {t("about.section.expertise.title")}
                 </h3>
                 <p className="text-gray-800 text-lg md:text-xl leading-relaxed max-w-prose mx-auto text-justify">
-                  Plus de 15 ans d&apos;expérience cumulée dans le conseil
-                  stratégique et l&apos;accompagnement des entreprises vers
-                  l&apos;excellence opérationnelle.
+                  {t("about.section.expertise.description")}
                 </p>
               </motion.article>
               <motion.article
@@ -330,7 +309,7 @@ export default function AboutSection() {
                   className="text-2xl font-bold mb-2 text-center"
                   style={{ color: "var(--color-primary)" }}
                 >
-                  Notre approche
+                  {t("about.section.approach.title")}
                 </h3>
                 <ul className="space-y-2 mt-4">
                   {approach.map((item, i) => (
@@ -404,18 +383,17 @@ export default function AboutSection() {
                 className="text-3xl md:text-4xl font-bold mb-3 text-center"
                 style={{ color: "#000" }}
               >
-                Nos valeurs
+                {t("about.section.values.title")}
               </h3>
               <p className="text-gray-600 text-base md:text-lg mb-12 text-center max-w-2xl mx-auto">
-                Nos valeurs fondamentales guident chacune de nos actions et
-                définissent notre culture d&apos;entreprise.
+                {t("about.section.values.description")}
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 {[
                   {
-                    title: "Leadership",
-                    text: "Nous cultivons un leadership éthique qui inspire confiance et respect.",
+                    title: t("about.section.values.leadership.title"),
+                    text: t("about.section.values.leadership.description"),
                     icon: (
                       <svg
                         className="w-8 h-8"
@@ -433,8 +411,8 @@ export default function AboutSection() {
                     ),
                   },
                   {
-                    title: "Excellence",
-                    text: "Nous nous efforçons constamment d'atteindre l'excellence dans tous nos services et interactions.",
+                    title: t("about.section.values.excellence.title"),
+                    text: t("about.section.values.excellence.description"),
                     icon: (
                       <svg
                         className="w-8 h-8"
@@ -452,8 +430,8 @@ export default function AboutSection() {
                     ),
                   },
                   {
-                    title: "Intégrité",
-                    text: "Nous maintenons une intégrité inébranlable dans toutes nos actions.",
+                    title: t("about.section.values.integrity.title"),
+                    text: t("about.section.values.integrity.description"),
                     icon: (
                       <svg
                         className="w-8 h-8"
@@ -471,8 +449,8 @@ export default function AboutSection() {
                     ),
                   },
                   {
-                    title: "Engagement",
-                    text: "Nous nous engageons à surpasser les attentes en fournissant des services de qualité supérieure.",
+                    title: t("about.section.values.commitment.title"),
+                    text: t("about.section.values.commitment.description"),
                     icon: (
                       <svg
                         className="w-8 h-8"

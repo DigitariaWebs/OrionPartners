@@ -14,6 +14,7 @@ import {
   X,
   AlertCircle,
 } from 'lucide-react';
+import { useI18n } from "@/i18n/useI18n";
 
 interface FormModalProps {
   isOpen: boolean;
@@ -23,6 +24,7 @@ interface FormModalProps {
 }
 
 const ContactModal: React.FC<FormModalProps> = ({ isOpen, onClose, formType, serviceName }) => {
+  const { t } = useI18n();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [fileName, setFileName] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -84,25 +86,25 @@ const ContactModal: React.FC<FormModalProps> = ({ isOpen, onClose, formType, ser
     const newErrors: { [key: string]: string } = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = 'Le nom est requis';
+      newErrors.name = t('models.contactModal.validation.nameRequired');
     } else if (formData.name.trim().length < 2) {
-      newErrors.name = 'Le nom doit contenir au moins 2 caractères';
+      newErrors.name = t('models.contactModal.validation.nameMinLength');
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = "L'email est requis";
+      newErrors.email = t('models.contactModal.validation.emailRequired');
     } else if (!validateEmail(formData.email)) {
-      newErrors.email = 'Veuillez entrer une adresse email valide';
+      newErrors.email = t('models.contactModal.validation.emailInvalid');
     }
 
     if (!formData.phone.trim()) {
-      newErrors.phone = 'Le numéro de téléphone est requis';
+      newErrors.phone = t('models.contactModal.validation.phoneRequired');
     } else if (!validatePhone(formData.phone)) {
-      newErrors.phone = 'Veuillez entrer un numéro de téléphone valide';
+      newErrors.phone = t('models.contactModal.validation.phoneInvalid');
     }
 
     if (!formData.service.trim()) {
-      newErrors.service = 'Veuillez sélectionner un service';
+      newErrors.service = t('models.contactModal.validation.serviceRequired');
     }
 
     setErrors(newErrors);
@@ -142,10 +144,10 @@ const ContactModal: React.FC<FormModalProps> = ({ isOpen, onClose, formType, ser
       if (response.ok) {
         setIsSubmitted(true);
       } else {
-        setApiError(result.error || "Erreur lors de l'envoi du formulaire. Veuillez réessayer.");
+        setApiError(result.error || t('models.contactModal.errors.formError'));
       }
     } catch {
-      setApiError('Erreur de connexion. Vérifiez votre connexion internet et réessayez.');
+      setApiError(t('models.contactModal.errors.connectionError'));
     } finally {
       setIsLoading(false);
     }
@@ -170,38 +172,20 @@ const ContactModal: React.FC<FormModalProps> = ({ isOpen, onClose, formType, ser
     }
   };
 
-  const titles = {
-    consultation: {
-      icon: <X className="w-8 h-8 text-white" />,
-      title: "Nous souhaitons vous entendre!",
-      subtitle: "Orion Conseil est prêt a mettre son expertise pour vous accompagner et vous proposer les meilleures solutions adapté a vos besoins. Parlons en!",
-      formTitle: "Consultation gratuite",
-      formSubtitle: "Prenons contact.",
-    },
-    service: {
-      icon: <Briefcase className="w-8 h-8 text-white" />,
-      title: "Planifions votre service",
-      subtitle: "Nous confirmerons les détails avec vous rapidement.",
-      formTitle: `Planifier : ${serviceName || ""}`,
-      formSubtitle: "Organisons cela ensemble.",
-    },
-    job: {
-      icon: <Award className="w-8 h-8 text-white" />,
-      title: "Rejoignez notre équipe",
-      subtitle: "Nous sommes ravis de l'intérêt que vous portez.",
-      formTitle: "Postuler maintenant",
-      formSubtitle: "Faites le premier pas vers une carrière enrichissante.",
-    },
-    partnership: {
-      icon: <Handshake className="w-8 h-8 text-white" />,
-      title: "Devenons partenaires",
-      subtitle: "Collaborons pour offrir le meilleur service possible.",
-      formTitle: "Demande de partenariat",
-      formSubtitle: "Ensemble, nous sommes plus forts.",
-    },
-  } as const;
+  const getTitles = () => {
+    return {
+      icon: formType === 'consultation' ? <X className="w-8 h-8 text-white" /> :
+            formType === 'service' ? <Briefcase className="w-8 h-8 text-white" /> :
+            formType === 'job' ? <Award className="w-8 h-8 text-white" /> :
+            <Handshake className="w-8 h-8 text-white" />,
+      title: t(`models.contactModal.types.${formType}.title`),
+      subtitle: t(`models.contactModal.types.${formType}.subtitle`),
+      formTitle: formType === 'service' ? `${t(`models.contactModal.types.${formType}.formTitle`)} ${serviceName || ""}` : t(`models.contactModal.types.${formType}.formTitle`),
+      formSubtitle: t(`models.contactModal.types.${formType}.formSubtitle`),
+    };
+  };
 
-  const currentContent = titles[formType];
+  const currentContent = getTitles();
 
   return (
     <AnimatePresence>
@@ -275,16 +259,16 @@ const ContactModal: React.FC<FormModalProps> = ({ isOpen, onClose, formType, ser
                       />
                     </motion.div>
                     <h2 className="text-2xl font-bold text-gray-800 mt-5">
-                      Demande envoyée !
+                      {t('models.contactModal.successTitle')}
                     </h2>
                     <p className="text-gray-500 mt-2">
-                      Merci. Nous reviendrons vers vous très prochainement.
+                      {t('models.contactModal.successMessage')}
                     </p>
                     <button
                       onClick={onClose}
                       className="mt-6 bg-gray-100 text-gray-700 px-6 sm:px-8 py-3 rounded-lg font-semibold"
                     >
-                      Fermer
+                      {t('models.contactModal.close')}
                     </button>
                   </motion.div>
                 ) : (
@@ -303,7 +287,7 @@ const ContactModal: React.FC<FormModalProps> = ({ isOpen, onClose, formType, ser
                       </h2>
                       <button
                         onClick={onClose}
-                        aria-label="Fermer le formulaire"
+                        aria-label={t('models.contactModal.closeForm')}
                         className="md:hidden w-10 h-10 bg-gray-100 rounded-xl flex items-center justify-center hover:bg-gray-200 transition-colors duration-200 cursor-pointer"
                       >
                         <X className="w-5 h-5 text-gray-600" />
@@ -343,7 +327,7 @@ const ContactModal: React.FC<FormModalProps> = ({ isOpen, onClose, formType, ser
                         <input
                           type="text"
                           name="name"
-                          placeholder="Nom et prénom"
+                          placeholder={t('models.contactModal.placeholders.name')}
                           required
                           value={formData.name}
                           onChange={handleInputChange}
@@ -366,7 +350,7 @@ const ContactModal: React.FC<FormModalProps> = ({ isOpen, onClose, formType, ser
                         <input
                           type="email"
                           name="email"
-                          placeholder="Adresse email"
+                          placeholder={t('models.contactModal.placeholders.email')}
                           required
                           value={formData.email}
                           onChange={handleInputChange}
@@ -389,7 +373,7 @@ const ContactModal: React.FC<FormModalProps> = ({ isOpen, onClose, formType, ser
                         <input
                           type="tel"
                           name="phone"
-                          placeholder="Numéro de téléphone"
+                          placeholder={t('models.contactModal.placeholders.phone')}
                           required
                           value={formData.phone}
                           onChange={handleInputChange}
@@ -420,16 +404,16 @@ const ContactModal: React.FC<FormModalProps> = ({ isOpen, onClose, formType, ser
                           }`}
                         >
                           <option value="" disabled>
-                            Sélectionnez un service
+                            {t('models.contactModal.placeholders.service')}
                           </option>
-                          <option value="Services Conseils">
-                            Services Conseils
+                          <option value={t('models.contactModal.serviceOptions.consultingServices')}>
+                            {t('models.contactModal.serviceOptions.consultingServices')}
                           </option>
-                          <option value="Comptabilité & certification">
-                            Comptabilité & certification
+                          <option value={t('models.contactModal.serviceOptions.accountingCertification')}>
+                            {t('models.contactModal.serviceOptions.accountingCertification')}
                           </option>
-                          <option value="Études et recherches">
-                            Études et recherches
+                          <option value={t('models.contactModal.serviceOptions.studiesResearch')}>
+                            {t('models.contactModal.serviceOptions.studiesResearch')}
                           </option>
                         </select>
                       </motion.div>
@@ -446,8 +430,8 @@ const ContactModal: React.FC<FormModalProps> = ({ isOpen, onClose, formType, ser
                           name="details"
                           placeholder={
                             formType === "partnership"
-                              ? "Décrivez votre organisation et votre proposition..."
-                              : "Détails"
+                              ? t('models.contactModal.placeholders.partnershipDetails')
+                              : t('models.contactModal.placeholders.details')
                           }
                           rows={4}
                           value={formData.details}
@@ -478,7 +462,7 @@ const ContactModal: React.FC<FormModalProps> = ({ isOpen, onClose, formType, ser
                               "linear-gradient(90deg, var(--color-primary), rgba(var(--color-primary-rgb), 0.9))",
                           }}
                         >
-                          {isLoading ? "Envoi en cours..." : "Envoyer"}
+                          {isLoading ? t('models.contactModal.sending') : t('models.contactModal.send')}
                         </motion.button>
                       </motion.div>
                     </motion.form>

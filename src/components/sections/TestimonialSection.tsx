@@ -3,8 +3,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useI18n } from "@/i18n/useI18n";
 
 const TestimonialSection: React.FC = () => {
+  const { t } = useI18n();
   const clients = [
     {
       id: 1,
@@ -90,7 +92,7 @@ const TestimonialSection: React.FC = () => {
             className="text-2xl lg:text-3xl font-semibold mb-2"
             style={{ color: "var(--color-text-primary)" }}
           >
-            Ils nous ont choisis
+            {t("clients.title")}
           </h3>
           <div
             className="w-24 h-1 mx-auto rounded-full "
@@ -145,7 +147,7 @@ const TestimonialSection: React.FC = () => {
                 >
                   <Image
                     src={client.logo}
-                    alt={`Logo ${client.name}`}
+                    alt={`${t("clients.logoAlt")} ${client.name}`}
                     width={160}
                     height={80}
                     className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100"
@@ -188,8 +190,7 @@ const TestimonialSection: React.FC = () => {
             className="text-md max-w-2xl mx-auto"
             style={{ color: "rgba(var(--color-dark-rgb), 0.6)" }}
           >
-            Plus de 20 entreprises nous font confiance pour leur développement
-            en République Démocratique du Congo et ailleurs.
+            {t("clients.subtitle")}
           </p>
         </motion.div>
       </div>

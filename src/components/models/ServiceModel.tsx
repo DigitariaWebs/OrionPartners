@@ -6,6 +6,7 @@ import { X, Check } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useModal } from "../providers/ModalProvider";
+import { useI18n } from "@/i18n/useI18n";
 
 export type ServiceInfo = {
   id: string;
@@ -16,62 +17,6 @@ export type ServiceInfo = {
   features?: string[];
   pageLink?: string;
 };
-
-const SERVICE_DETAILS: ServiceInfo[] = [
-  {
-    id: "servicesconseils",
-    title: "Services Conseils",
-    imageSrc: "/ServiceImages/ServicesConseils.png",
-    pricing: "Sur devis",
-    description:
-      "Nous offrons des services de conseil stratégique et opérationnel pour accompagner les entreprises à relever leurs défis complexes et atteindre leurs objectifs de performance. Grâce à une approche axée sur les résultats, nous élaborons des stratégies performantes et apportons des solutions concrètes pour optimiser vos opérations, renforcer votre résilience et améliorer votre performance globale.",
-    features: [
-      "Stratégie et Croissance d'Entreprise",
-      "Représentation & Support Opérationnel",
-      "Conseil en Private Equity (Capital-Investissement)",
-      "Gestion des Ressources humaines",
-    ],
-    pageLink: "/servicesconseils",
-  },
-  {
-    id: "comptabilite-certification",
-    title: "Comptabilité & certification",
-    imageSrc: "/ServiceImages/ComptabiliteCertification.png",
-    pricing: "Selon mission",
-    description:
-      "Une information financière fiable est le socle de toute décision. Nous garantissons la production de vos états financiers, nous certifions la sincérité de vos comptes et nous vous fournissons des tableaux de bord clairs pour piloter votre performance. Au-delà de l'obligation légale, nous transformons votre comptabilité en un véritable outil de gestion.",
-    features: ["Calcul de Paie", "Conformité Fiscale & Réglementaire"],
-    pageLink: "/comptabilite-certification",
-  },
-  {
-    id: "representation-accompagnement",
-    title: "Représentation & Support Opérationnel",
-    imageSrc: "/ServiceImages/RepresentationAccompagnement.png",
-    pricing: "Sur demande",
-    description:
-      "Votre partenaire stratégique pour réussir en République Démocratique du Congo. La RDC offre un potentiel exceptionnel mais sa complexité administrative, réglementaire et culturelle nécessite une expertise locale. Sans partenaire sur le terrain, les projets s'exposent à des retards et surcoûts.\n\nNous sommes votre extension stratégique et opérationnelle en RDC. Notre mission : transformer la complexité locale en avantage compétitif grâce à notre équipe engagée à 100% pour votre succès.",
-    features: [
-      "Accompagnement terrain",
-      "Représentation lors d'événements",
-      "Support opérationnel sur mesure",
-    ],
-    pageLink: "/representation-accompagnement",
-  },
-  {
-    id: "etudes-recherches",
-    title: "Études et recherches",
-    imageSrc: "/ServiceImages/EtudesRecherches.png",
-    pricing: "Forfait / projet",
-    description:
-      "Nous réalisons des études et des recherches pour vous fournir des analyses claires, pertinentes et exploitables. En combinant des méthodologies rigoureuses et une connaissance approfondie du marché, nous aidons nos clients à prendre des décisions éclairées et à saisir les meilleures opportunités.",
-    features: [
-      "Business Intelligence",
-      "Science des Données & Analyse Prédictive",
-      "Études de Marché & Veille Stratégique",
-    ],
-    pageLink: "/etudes-data-intelligence",
-  },
-];
 
 interface ServiceModalProps {
   isOpen: boolean;
@@ -84,9 +29,23 @@ export default function ServiceModel({
   onClose,
   serviceId,
 }: ServiceModalProps) {
-  const service = SERVICE_DETAILS.find((s) => s.id === serviceId);
+  const { t } = useI18n();
   const { openModal } = useModal();
   const router = useRouter();
+
+  const getServiceData = (id: string) => {
+    return {
+      id,
+      title: t(`models.serviceModal.services.${id}.title`),
+      imageSrc: `/ServiceImages/${id === 'servicesconseils' ? 'ServicesConseils' : id === 'comptabilite-certification' ? 'ComptabiliteCertification' : id === 'representation-accompagnement' ? 'RepresentationAccompagnement' : 'EtudesRecherches'}.png`,
+      pricing: t(`models.serviceModal.services.${id}.pricing`),
+      description: t(`models.serviceModal.services.${id}.description`),
+      features: t(`models.serviceModal.services.${id}.features`),
+      pageLink: id === 'servicesconseils' ? '/servicesconseils' : id === 'comptabilite-certification' ? '/comptabilite-certification' : id === 'representation-accompagnement' ? '/representation-accompagnement' : '/etudes-data-intelligence',
+    };
+  };
+
+  const service = serviceId ? getServiceData(serviceId) : null;
 
   React.useEffect(() => {
     const handleEscKey = (event: KeyboardEvent) => {
@@ -177,7 +136,7 @@ export default function ServiceModel({
 
                 <button
                   onClick={onClose}
-                  aria-label="Fermer"
+                  aria-label={t("models.serviceModal.close")}
                   className="absolute left-4 top-4 w-9 h-9 rounded-lg bg-white/90 flex items-center justify-center shadow-sm hover:bg-white transition-colors cursor-pointer"
                 >
                   <X className="w-4 h-4 text-gray-700" />
@@ -199,7 +158,7 @@ export default function ServiceModel({
 
                   {service.features && (
                     <ul className="mt-5 grid grid-cols-1 gap-3">
-                      {service.features.map((feat, i) => (
+                      {(service.features as unknown as string[]).map((feat: string, i: number) => (
                         <li key={i} className="flex items-start gap-3">
                           <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[color:var(--color-accent)] text-white">
                             <Check className="w-4 h-4" />
@@ -224,7 +183,7 @@ export default function ServiceModel({
                     className="flex-1 px-4 py-3 rounded-xl text-white font-semibold cursor-pointer hover:scale-105 transition-all duration-200"
                     style={{ backgroundColor: "var(--color-accent)" }}
                   >
-                    Réserver maintenant
+                    {t("models.serviceModal.bookNow")}
                   </button>
 
                   <button
@@ -236,7 +195,7 @@ export default function ServiceModel({
                     }}
                     className="flex-1 px-4 py-3 rounded-xl border border-gray-200 text-gray-700 bg-white font-medium hover:bg-gray-50 cursor-pointer transition-colors duration-200"
                   >
-                    En savoir plus
+                    {t("models.serviceModal.learnMore")}
                   </button>
                 </div>
               </div>

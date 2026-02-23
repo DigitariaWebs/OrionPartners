@@ -6,7 +6,9 @@
     "team": "Notre équipe",
     "about": "À propos",
     "contact": "Contact",
-    "contact_us": "Nous contacter"
+    "contact_us": "Nous contacter",
+    "logoAlt": "Logo Orion Conseil",
+    "brandName": "Orion Conseil"
   },
   "navigation": {
     "accueil": "Accueil",
@@ -18,7 +20,8 @@
     "title": "Transformez Votre Entreprise",
     "subtitle": "Conseil Stratégique et Opérationnel Expert",
     "description": "Nous sommes un cabinet de services-conseils en gestion et stratégie d'entreprises. Nous accompagnons les entreprises et les organisations publiques et privées sur leurs enjeux stratégiques, opérationnels et financiers.",
-    "cta": "Commencer"
+    "cta": "Commencer",
+    "expertiseCta": "Découvrez nos expertises en conseil"
   },
   "services": {
     "title": "Nos Services",
@@ -65,23 +68,74 @@
     "team": "Membres de l'Équipe Expert",
     "experience": "Années d'Expérience"
   },
+"stateSection": {
+    "intro": "Orion Conseil est un cabinet de conseil spécialisé dans l'accompagnement des entreprises à chaque étape de leur développement. Que ce soit pour optimiser vos opérations, pénétrer un nouveau marché ou sécuriser vos activités, nous vous apportons une expertise locale combinée à des standards internationaux.",
+    "expertise": {
+        "title": "Notre Expertise",
+        "description": "Plus de 15 ans d'expérience dans le conseil stratégique et l'accompagnement des entreprises vers l'excellence opérationnelle."
+    },
+    "approach": {
+        "title": "Notre Approche",
+        "description": "Une méthodologie éprouvée basée sur l'analyse rigoureuse et la mise en œuvre pragmatique de solutions sur mesure.",
+        "points": {
+            "custom": "Une approche sur-mesure pour chaque client",
+            "results": "L'obsession du résultat comme moteur",
+            "impact": "Des solutions concrètes pour un impact durable"
+        }
+    },
+    "stats": {
+        "title": "En Chiffres",
+        "clients": "Clients accompagnés",
+        "experience": "Années d'expérience",
+        "sectors": "Secteurs d'activité",
+        "satisfaction": "Taux de satisfaction client"
+    }
+},
   "distinctions": {
-    "title": "Nos Distinctions",
-    "subtitle": "Reconnus pour notre excellence et notre engagement"
+    "title": "Ce qui nous distingue",
+    "description": "Nous combinons expertise et vision stratégique pour livrer des solutions sur mesure à fort impact qui façonnent l'avenir de nos clients.",
+    "altText": "Ce qui nous distingue",
+    "items": {
+      "localIntelligence": {
+        "title": "Intelligence locale",
+        "description": "Connaissance approfondie de plusieurs secteurs de développement"
+      },
+      "sectorExpertise": {
+        "title": "Expertise sectorielle",
+        "description": "Connaissance approfondie de plusieurs secteurs de développement"
+      },
+      "strategicVision": {
+        "title": "Vision stratégique",
+        "description": "Prise en compte des implications stratégiques à long terme"
+      },
+      "analyticalRigor": {
+        "title": "Rigueur analytique",
+        "description": "Approcher rigoureuse produisant des résultats fiables et crédibles"
+      }
+    }
   },
   "testimonials": {
     "title": "Ce que disent nos clients",
     "subtitle": "Entendez nos partenaires satisfaits"
   },
-  "contact": {
-    "title": "Contactez-nous",
-    "subtitle": "Prêt à commencer ? Planifiez une consultation gratuite et obtenez une évaluation personnalisée de vos besoins.",
-    "information": "Informations de contact",
-    "phone": "Téléphone (Montréal)",
-    "whatsapp1": "WhatsApp 1",
-    "whatsapp2": "WhatsApp 2",
-    "email": "Email",
-    "location": "Adresse",
+"clients": {
+    "title": "Ils nous ont choisis",
+    "subtitle": "Plus de 20 entreprises nous font confiance pour leur développement en République Démocratique du Congo et ailleurs.",
+    "logoAlt": "Logo"
+},
+    "contact": {
+        "title": "Contactez-nous",
+        "subtitle": "Prêt à commencer ? Planifiez une consultation gratuite et obtenez une évaluation personnalisée de vos besoins.",
+        "information": "Informations de contact",
+        "phone": "Téléphone (Montréal)",
+        "whatsapp1": "WhatsApp 1",
+        "whatsapp2": "WhatsApp 2",
+        "email": "Email",
+        "location": "Adresse",
+        "officeKinshasa": "Bureau de Kinshasa",
+        "officeMontreal": "Bureau de Montréal",
+        "addressKinshasa": "No. 1 Av. Tombalbaye, Kinshasa-Gombe, DRC",
+        "addressMontreal": "Ouvre bientôt.",
     "form_title": "Envoyez-nous un Message",
     "form_name": "Votre Nom",
     "form_email": "Adresse Email",
@@ -93,7 +147,7 @@
     "form_success": "Message envoyé avec succès!",
     "form_error": "Erreur lors de l'envoi. Veuillez réessayer."
   },
-  "footer": {
+    "footer": {
     "description": "Orion Conseil — cabinet de conseil accompagnant les entreprises et organisations sur leurs enjeux stratégiques, opérationnels et financiers.",
     "navigation": "Navigation",
     "services": "Nos Services",
@@ -105,7 +159,13 @@
     "phone": "+1 581 995 7492",
     "email": "contact@orionconseil.com",
     "copyright": "© 2024 Orion Conseil. Tous droits réservés.",
-    "allRightsReserved": "Tous droits réservés."
+    "allRightsReserved": "Tous droits réservés.",
+    "serviceTitles": {
+      "servicesconseils": "Services-Conseils",
+      "comptabilite-certification": "Comptabilité & Certification",
+      "etudes-recherches": "Études et Recherches"
+    },
+    "adminDashboard": "Tableau de Bord Admin"
   },
   "newsletter": {
     "title": "Infolettre",
@@ -153,7 +213,58 @@
   },
   "about": {
     "title": "À Propos de Nous",
-    "description": "En savoir plus sur Orion Conseil"
+    "description": "En savoir plus sur Orion Conseil",
+    "section": {
+      "title": "À propos",
+      "reasonToBelieve": {
+        "title": "Une raison de croire, d'exister.",
+        "description": "Fondé sur la conviction que la prospérité de la RDC passe par des organisations plus fortes, Orion Conseil a été créé pour offrir un conseil de nouvelle génération. Face à un marché où les solutions importées échouent souvent, nous avons bâti un modèle qui ancre l'excellence stratégique dans les réalités congolaises, pour générer un impact réel et pérenne."
+      },
+      "orionConseil": {
+        "title": "Orion Conseil",
+        "description": "Un cabinet de services-conseils en gestion d'entreprises et des organisations. Nous accompagnons les entreprises et les organisations publiques et privées sur leurs enjeux stratégiques, opérationnels et financiers. Notre force réside dans une approche unique qui combiner une connaissance intime des écosystèmes locaux avec la rigueur des standards internationaux. Cette double expertise nous permet de concevoir des solutions à haute valeur ajoutée, parfaitement pertinentes et immédiatement opérationnelles, pour transformer vos ambitions en succès concrets."
+      },
+      "vision": {
+        "title": "Notre vision",
+        "description": "Devenir le partenaire stratégique de référence et un acteur majeur dans la transformation du potentiel économique de la RDC en une prospérité durable et partagée."
+      },
+      "mission": {
+        "title": "Notre mission",
+        "description": "Notre mission est d'accompagner les entreprises et les organisations publiques et privées en RDC pour transformer leurs défis les plus complexes en performance durable. Nous déployons des solutions stratégiques, financières et opérationnelles qui marient une compréhension intime des réalités congolaises avec l'exigence des meilleures pratiques internationales."
+      },
+      "expertise": {
+        "title": "Notre expertise",
+        "description": "Plus de 15 ans d'expérience cumulée dans le conseil stratégique et l'accompagnement des entreprises vers l'excellence opérationnelle."
+      },
+      "approach": {
+        "title": "Notre approche",
+        "items": [
+          "Une approche sur-mesure pour chaque client",
+          "L'obsession du résultat comme moteur",
+          "Des solutions concrètes pour un impact durable"
+        ]
+      },
+      "values": {
+        "title": "Nos valeurs",
+        "description": "Nos valeurs fondamentales guident chacune de nos actions et définissent notre culture d'entreprise.",
+        "leadership": {
+          "title": "Leadership",
+          "description": "Nous cultivons un leadership éthique qui inspire confiance et respect."
+        },
+        "excellence": {
+          "title": "Excellence",
+          "description": "Nous nous efforçons constamment d'atteindre l'excellence dans tous nos services et interactions."
+        },
+        "integrity": {
+          "title": "Intégrité",
+          "description": "Nous maintenons une intégrité inébranlable dans toutes nos actions."
+        },
+        "commitment": {
+          "title": "Engagement",
+          "description": "Nous nous engageons à surpasser les attentes en fournissant des services de qualité supérieure."
+        }
+      }
+    }
   },
   "button": {
     "primary": "Commencer",
@@ -1058,7 +1169,148 @@
             "backHome": "Retour à l'accueil",
             "helpText": "Besoin d'aide ?",
             "contactUs": "Contactez-nous"
+        },
+    "admin": {
+        "brandName": "ORION CONSEIL",
+        "brandLabel": "ADMIN",
+        "mainMenu": "Menu Principal",
+        "dashboard": "Tableau de bord",
+        "blogPosts": "Articles de blog",
+        "logout": "Déconnexion",
+        "viewPublicSite": "Voir le site public",
+        "imageUpload": {
+            "selectImageError": "Veuillez sélectionner un fichier image",
+            "fileSizeError": "La taille du fichier doit être inférieure à 5 Mo",
+            "uploadFailed": "Échec du téléchargement de l'image",
+            "uploadedImageAlt": "Image téléchargée",
+            "uploading": "Téléchargement en cours...",
+            "uploadInstructions": "Cliquez pour télécharger ou glissez-déposez",
+            "supportedFormats": "PNG, JPG, GIF jusqu'à 5 Mo",
+            "orEnterUrl": "ou saisissez l'URL",
+            "urlPlaceholder": "https://exemple.com/image.jpg"
+        },
+        "richTextEditor": {
+            "enterImageUrl": "Entrez l'URL de l'image :",
+            "enterUrl": "Entrez l'URL :",
+            "bold": "Gras",
+            "italic": "Italique",
+            "heading1": "Titre 1",
+            "heading2": "Titre 2",
+            "bulletList": "Liste à puces",
+            "numberedList": "Liste numérotée",
+            "quote": "Citation",
+            "addLink": "Ajouter un lien",
+            "addImage": "Ajouter une image",
+            "undo": "Annuler",
+            "redo": "Rétablir"
         }
+    },
+    "models": {
+        "serviceModal": {
+            "close": "Fermer",
+            "bookNow": "Réserver maintenant",
+            "learnMore": "En savoir plus",
+            "services": {
+                "servicesconseils": {
+                    "title": "Services Conseils",
+                    "description": "Nous offrons des services de conseil stratégique et opérationnel pour accompagner les entreprises à relever leurs défis complexes et atteindre leurs objectifs de performance. Grâce à une approche axée sur les résultats, nous élaborons des stratégies performantes et apportons des solutions concrètes pour optimiser vos opérations, renforcer votre résilience et améliorer votre performance globale.",
+                    "pricing": "Sur devis",
+                    "features": [
+                        "Stratégie et Croissance d'Entreprise",
+                        "Représentation & Support Opérationnel",
+                        "Conseil en Private Equity (Capital-Investissement)",
+                        "Gestion des ressources humaines"
+                    ]
+                },
+                "comptabilite-certification": {
+                    "title": "Comptabilité & certification",
+                    "description": "Une information financière fiable est le socle de toute décision. Nous garantissons la production de vos états financiers, nous certifions la sincérité de vos comptes et nous vous fournissons des tableaux de bord clairs pour piloter votre performance. Au-delà de l'obligation légale, nous transformons votre comptabilité en un véritable outil de gestion.",
+                    "pricing": "Selon mission",
+                    "features": ["Calcul de Paie", "Conformité Fiscale & Réglementaire"]
+                },
+                "representation-accompagnement": {
+                    "title": "Représentation & Support Opérationnel",
+                    "description": "Votre partenaire stratégique pour réussir en République Démocratique du Congo. La RDC offre un potentiel exceptionnel mais sa complexité administrative, réglementaire et culturelle nécessite une expertise locale. Sans partenaire sur le terrain, les projets s'exposent à des retards et surcoûts.\n\nNous sommes votre extension stratégique et opérationnelle en RDC. Notre mission : transformer la complexité locale en avantage compétitif grâce à notre équipe engagée à 100% pour votre succès.",
+                    "pricing": "Sur demande",
+                    "features": [
+                        "Accompagnement terrain",
+                        "Représentation lors d'événements",
+                        "Support opérationnel sur mesure"
+                    ]
+                },
+                "etudes-recherches": {
+                    "title": "Études et recherches",
+                    "description": "Nous réalisons des études et des recherches pour vous fournir des analyses claires, pertinentes et exploitables. En combinant des méthodologies rigoureuses et une connaissance approfondie du marché, nous aidons nos clients à prendre des décisions éclairées et à saisir les meilleures opportunités.",
+                    "pricing": "Forfait / projet",
+                    "features": [
+                        "Business Intelligence",
+                        "Science des Données & Analyse Prédictive",
+                        "Études de Marché & Veille Stratégique"
+                    ]
+                }
+            }
+        },
+        "contactModal": {
+            "closeForm": "Fermer le formulaire",
+            "sending": "Envoi en cours...",
+            "send": "Envoyer",
+            "successTitle": "Demande envoyée !",
+            "successMessage": "Merci. Nous reviendrons vers vous très prochainement.",
+            "close": "Fermer",
+            "validation": {
+                "nameRequired": "Le nom est requis",
+                "nameMinLength": "Le nom doit contenir au moins 2 caractères",
+                "emailRequired": "L'email est requis",
+                "emailInvalid": "Veuillez entrer une adresse email valide",
+                "phoneRequired": "Le numéro de téléphone est requis",
+                "phoneInvalid": "Veuillez entrer un numéro de téléphone valide",
+                "serviceRequired": "Veuillez sélectionner un service"
+            },
+            "errors": {
+                "formError": "Erreur lors de l'envoi du formulaire. Veuillez réessayer.",
+                "connectionError": "Erreur de connexion. Vérifiez votre connexion internet et réessayez."
+            },
+            "placeholders": {
+                "name": "Nom et prénom",
+                "email": "Adresse email",
+                "phone": "Numéro de téléphone",
+                "service": "Sélectionnez un service",
+                "details": "Détails",
+                "partnershipDetails": "Décrivez votre organisation et votre proposition..."
+            },
+            "serviceOptions": {
+                "consultingServices": "Services Conseils",
+                "accountingCertification": "Comptabilité & certification",
+                "studiesResearch": "Études et recherches"
+            },
+            "types": {
+                "consultation": {
+                    "title": "Nous souhaitons vous entendre!",
+                    "subtitle": "Orion Conseil est prêt a mettre son expertise pour vous accompagner et vous proposer les meilleures solutions adapté a vos besoins. Parlons en!",
+                    "formTitle": "Consultation gratuite",
+                    "formSubtitle": "Prenons contact."
+                },
+                "service": {
+                    "title": "Planifions votre service",
+                    "subtitle": "Nous confirmerons les détails avec vous rapidement.",
+                    "formTitle": "Planifier :",
+                    "formSubtitle": "Organisons cela ensemble."
+                },
+                "job": {
+                    "title": "Rejoignez notre équipe",
+                    "subtitle": "Nous sommes ravis de l'intérêt que vous portez.",
+                    "formTitle": "Postuler maintenant",
+                    "formSubtitle": "Faites le premier pas vers une carrière enrichissante."
+                },
+                "partnership": {
+                    "title": "Devenons partenaires",
+                    "subtitle": "Collaborons pour offrir le meilleur service possible.",
+                    "formTitle": "Demande de partenariat",
+                    "formSubtitle": "Ensemble, nous sommes plus forts."
+                }
+            }
+        }
+    }
 }
 
 

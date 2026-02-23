@@ -17,6 +17,7 @@ import {
   Link as LinkIcon,
   ImageIcon,
 } from "lucide-react";
+import { useI18n } from "@/i18n/useI18n";
 
 interface RichTextEditorProps {
   content: string;
@@ -27,6 +28,7 @@ export default function RichTextEditor({
   content,
   onChange,
 }: RichTextEditorProps) {
+  const { t } = useI18n();
   const editor = useEditor({
     extensions: [
       StarterKit,
@@ -60,14 +62,14 @@ export default function RichTextEditor({
   }
 
   const addImage = () => {
-    const url = window.prompt("Enter image URL:");
+    const url = window.prompt(t("admin.richTextEditor.enterImageUrl"));
     if (url) {
       editor.chain().focus().setImage({ src: url }).run();
     }
   };
 
   const addLink = () => {
-    const url = window.prompt("Enter URL:");
+    const url = window.prompt(t("admin.richTextEditor.enterUrl"));
     if (url) {
       editor.chain().focus().setLink({ href: url }).run();
     }
@@ -103,7 +105,7 @@ export default function RichTextEditor({
         <MenuButton
           onClick={() => editor.chain().focus().toggleBold().run()}
           isActive={editor.isActive("bold")}
-          title="Bold"
+          title={t("admin.richTextEditor.bold")}
         >
           <Bold className="w-4 h-4" />
         </MenuButton>
@@ -111,7 +113,7 @@ export default function RichTextEditor({
         <MenuButton
           onClick={() => editor.chain().focus().toggleItalic().run()}
           isActive={editor.isActive("italic")}
-          title="Italic"
+          title={t("admin.richTextEditor.italic")}
         >
           <Italic className="w-4 h-4" />
         </MenuButton>
@@ -123,7 +125,7 @@ export default function RichTextEditor({
             editor.chain().focus().toggleHeading({ level: 1 }).run()
           }
           isActive={editor.isActive("heading", { level: 1 })}
-          title="Heading 1"
+          title={t("admin.richTextEditor.heading1")}
         >
           <Heading1 className="w-4 h-4" />
         </MenuButton>
@@ -133,7 +135,7 @@ export default function RichTextEditor({
             editor.chain().focus().toggleHeading({ level: 2 }).run()
           }
           isActive={editor.isActive("heading", { level: 2 })}
-          title="Heading 2"
+          title={t("admin.richTextEditor.heading2")}
         >
           <Heading2 className="w-4 h-4" />
         </MenuButton>
@@ -143,7 +145,7 @@ export default function RichTextEditor({
         <MenuButton
           onClick={() => editor.chain().focus().toggleBulletList().run()}
           isActive={editor.isActive("bulletList")}
-          title="Bullet List"
+          title={t("admin.richTextEditor.bulletList")}
         >
           <List className="w-4 h-4" />
         </MenuButton>
@@ -151,7 +153,7 @@ export default function RichTextEditor({
         <MenuButton
           onClick={() => editor.chain().focus().toggleOrderedList().run()}
           isActive={editor.isActive("orderedList")}
-          title="Numbered List"
+          title={t("admin.richTextEditor.numberedList")}
         >
           <ListOrdered className="w-4 h-4" />
         </MenuButton>
@@ -159,18 +161,18 @@ export default function RichTextEditor({
         <MenuButton
           onClick={() => editor.chain().focus().toggleBlockquote().run()}
           isActive={editor.isActive("blockquote")}
-          title="Quote"
+          title={t("admin.richTextEditor.quote")}
         >
           <Quote className="w-4 h-4" />
         </MenuButton>
 
         <div className="w-px h-8 bg-gray-300 mx-1" />
 
-        <MenuButton onClick={addLink} title="Add Link">
+        <MenuButton onClick={addLink} title={t("admin.richTextEditor.addLink")}>
           <LinkIcon className="w-4 h-4" />
         </MenuButton>
 
-        <MenuButton onClick={addImage} title="Add Image">
+        <MenuButton onClick={addImage} title={t("admin.richTextEditor.addImage")}>
           <ImageIcon className="w-4 h-4" />
         </MenuButton>
 
@@ -178,14 +180,14 @@ export default function RichTextEditor({
 
         <MenuButton
           onClick={() => editor.chain().focus().undo().run()}
-          title="Undo"
+          title={t("admin.richTextEditor.undo")}
         >
           <Undo className="w-4 h-4" />
         </MenuButton>
 
         <MenuButton
           onClick={() => editor.chain().focus().redo().run()}
-          title="Redo"
+          title={t("admin.richTextEditor.redo")}
         >
           <Redo className="w-4 h-4" />
         </MenuButton>

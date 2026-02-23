@@ -7,13 +7,8 @@ import { Instagram, Facebook, Linkedin, Shield } from "lucide-react";
 import Newsletter from "../ui/Newsletter";
 import { useI18n } from "@/i18n/useI18n";
 
-const serviceKeyToTitle = (key: string): string => {
-  const map: Record<string, string> = {
-    servicesconseils: "Services-conseils",
-    "comptabilite-certification": "Comptabilité & Certification",
-    "etudes-recherches": "Études et Recherches",
-  };
-  return map[key] || "";
+const serviceKeyToTitle = (key: string, t: (key: string) => string): string => {
+  return t(`footer.serviceTitles.${key}`) || "";
 };
 
 const serviceKeyToUrl = (key: string): string => {
@@ -174,7 +169,7 @@ export default function Footer() {
                       e.currentTarget.style.color = "var(--color-dark)";
                     }}
                   >
-                    {serviceKeyToTitle(k)}
+                    {serviceKeyToTitle(k, t)}
                   </Link>
                 </li>
               ))}
@@ -278,7 +273,7 @@ export default function Footer() {
                   onMouseLeave={(e) => {
                     e.currentTarget.style.color = "rgba(0, 0, 0, 0.65)";
                   }}
-                  title="Admin Dashboard"
+                  title={t("footer.adminDashboard")}
                 >
                   <Shield size={18} />
                 </Link>

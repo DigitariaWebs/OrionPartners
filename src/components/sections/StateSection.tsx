@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
+import { useI18n } from "@/i18n/useI18n";
 
 interface CounterProps {
   end: number;
@@ -23,7 +24,7 @@ function Counter({ end, duration, prefix = "", suffix = "" }: CounterProps) {
           setIsInView(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (currentCount) {
@@ -83,6 +84,8 @@ const fadeInUp = {
 };
 
 export default function StateSection() {
+  const { t } = useI18n();
+
   return (
     <section className="relative w-full scroll-mt-24 bg-white">
       {/* Decorative top rule */}
@@ -101,12 +104,7 @@ export default function StateSection() {
               variants={fadeInUp}
             >
               <p className="text-base sm:text-lg leading-relaxed text-gray-700">
-                Orion Conseil est un cabinet de conseil spécialisé dans
-                l&apos;accompagnement des entreprises à chaque étape de leur
-                développement. Que ce soit pour optimiser vos opérations,
-                pénétrer un nouveau marché ou sécuriser vos activités, nous vous
-                apportons une expertise locale combinée à des standards
-                internationaux.
+                {t("stateSection.intro")}
               </p>
             </motion.div>
             {/* Notre Expertise */}
@@ -120,12 +118,10 @@ export default function StateSection() {
                 className="text-2xl font-bold mb-4"
                 style={{ color: "var(--color-primary)" }}
               >
-                Notre Expertise
+                {t("stateSection.expertise.title")}
               </h3>
               <p className="text-base leading-relaxed text-gray-700">
-                Plus de 15 ans d&apos;expérience dans le conseil stratégique et
-                l&apos;accompagnement des entreprises vers l&apos;excellence
-                opérationnelle.
+                {t("stateSection.expertise.description")}
               </p>
             </motion.div>
 
@@ -140,11 +136,10 @@ export default function StateSection() {
                 className="text-2xl font-bold mb-4"
                 style={{ color: "var(--color-primary)" }}
               >
-                Notre Approche
+                {t("stateSection.approach.title")}
               </h3>
               <p className="text-base leading-relaxed text-gray-700 mb-6">
-                Une méthodologie éprouvée basée sur l&apos;analyse rigoureuse et
-                la mise en œuvre pragmatique de solutions sur mesure.
+                {t("stateSection.approach.description")}
               </p>
 
               {/* Bullet Points */}
@@ -157,7 +152,7 @@ export default function StateSection() {
                     />
                   </div>
                   <p className="text-base text-gray-700">
-                    Une approche sur-mesure pour chaque client
+                    {t("stateSection.approach.points.custom")}
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
@@ -168,7 +163,7 @@ export default function StateSection() {
                     />
                   </div>
                   <p className="text-base text-gray-700">
-                    L&apos;obsession du résultat comme moteur
+                    {t("stateSection.approach.points.results")}
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
@@ -179,7 +174,7 @@ export default function StateSection() {
                     />
                   </div>
                   <p className="text-base text-gray-700">
-                    Des solutions concrètes pour un impact durable
+                    {t("stateSection.approach.points.impact")}
                   </p>
                 </div>
               </div>
@@ -205,7 +200,7 @@ export default function StateSection() {
                 className="text-xl font-bold mb-8 text-center"
                 style={{ color: "var(--color-primary)" }}
               >
-                En Chiffres
+                {t("stateSection.stats.title")}
               </h3>
 
               <div className="space-y-8">
@@ -219,7 +214,7 @@ export default function StateSection() {
                 >
                   <Counter end={50} duration={2} suffix="+" />
                   <p className="text-sm uppercase tracking-wider text-gray-600 font-semibold">
-                    Clients accompagnés
+                    {t("stateSection.stats.clients")}
                   </p>
                 </motion.div>
 
@@ -233,7 +228,7 @@ export default function StateSection() {
                 >
                   <Counter end={15} duration={2} suffix="+" />
                   <p className="text-sm uppercase tracking-wider text-gray-600 font-semibold">
-                    Années d&apos;expérience
+                    {t("stateSection.stats.experience")}
                   </p>
                 </motion.div>
 
@@ -247,7 +242,7 @@ export default function StateSection() {
                 >
                   <Counter end={3} duration={2} />
                   <p className="text-sm uppercase tracking-wider text-gray-600 font-semibold">
-                    Secteurs d&apos;activité
+                    {t("stateSection.stats.sectors")}
                   </p>
                 </motion.div>
 
@@ -261,7 +256,7 @@ export default function StateSection() {
                 >
                   <Counter end={95} duration={2} suffix="%" />
                   <p className="text-sm uppercase tracking-wider text-gray-600 font-semibold">
-                    Taux de satisfaction client
+                    {t("stateSection.stats.satisfaction")}
                   </p>
                 </motion.div>
               </div>

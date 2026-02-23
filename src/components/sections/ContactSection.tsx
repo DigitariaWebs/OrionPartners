@@ -181,13 +181,13 @@ export default function ContactSection() {
                     className="font-semibold"
                     style={{ color: "var(--color-text-primary)" }}
                   >
-                    Bureau de Kinshasa
+                    {t("contact.officeKinshasa")}
                   </h4>
                   <p
                     className="transition-colors"
                     style={{ color: "rgba(var(--color-dark-rgb), 0.75)" }}
                   >
-                    No. 1 Av. Tombalbaye, Kinshasa-Gombe, DRC
+                    {t("contact.addressKinshasa")}
                   </p>
                 </div>
               </a>
@@ -212,13 +212,13 @@ export default function ContactSection() {
                     className="font-semibold"
                     style={{ color: "var(--color-text-primary)" }}
                   >
-                    Bureau de Montréal
+                    {t("contact.officeMontreal")}
                   </h4>
                   <p
                     className="transition-colors"
                     style={{ color: "rgba(var(--color-dark-rgb), 0.75)" }}
                   >
-                    Ouvre bientôt.
+                    {t("contact.addressMontreal")}
                   </p>
                 </div>
               </a>

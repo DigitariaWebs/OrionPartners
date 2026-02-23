@@ -6,7 +6,9 @@
     "team": "Our Team",
     "about": "About",
     "contact": "Contact",
-    "contact_us": "Contact us"
+    "contact_us": "Contact us",
+    "logoAlt": "Orion Conseil Logo",
+    "brandName": "Orion Conseil"
   },
   "navigation": {
     "accueil": "Home",
@@ -18,7 +20,8 @@
     "title": "Transform Your Business",
     "subtitle": "Expert Strategic and Operational Advice",
     "description": "We are a management and business strategy consulting firm. We support companies and public and private organizations on their strategic, operational and financial challenges.",
-    "cta": "Get Started"
+    "cta": "Get Started",
+    "expertiseCta": "Discover our consulting expertise"
   },
   "services": {
     "title": "Our Services",
@@ -65,23 +68,74 @@
     "team": "Expert Team Members",
     "experience": "Years of Experience"
   },
+"stateSection": {
+    "intro": "Orion Conseil is a consulting firm specialized in supporting companies at every stage of their development. Whether it's to optimize your operations, enter a new market, or secure your activities, we provide you with local expertise combined with international standards.",
+    "expertise": {
+        "title": "Our Expertise",
+        "description": "Over 15 years of experience in strategic consulting and supporting companies towards operational excellence."
+    },
+    "approach": {
+        "title": "Our Approach",
+        "description": "A proven methodology based on rigorous analysis and pragmatic implementation of tailor-made solutions.",
+        "points": {
+            "custom": "A tailor-made approach for each client",
+            "results": "Obsession with results as a driver",
+            "impact": "Concrete solutions for a lasting impact"
+        }
+    },
+    "stats": {
+        "title": "In Numbers",
+        "clients": "Clients supported",
+        "experience": "Years of experience",
+        "sectors": "Business sectors",
+        "satisfaction": "Customer satisfaction rate"
+    }
+},
   "distinctions": {
-    "title": "Our Distinctions",
-    "subtitle": "Recognized for our excellence and commitment"
+    "title": "What sets us apart",
+    "description": "We combine expertise and strategic vision to deliver high-impact bespoke solutions that shape our clients' future.",
+    "altText": "What sets us apart",
+    "items": {
+      "localIntelligence": {
+        "title": "Local Intelligence",
+        "description": "In-depth knowledge of multiple development sectors"
+      },
+      "sectorExpertise": {
+        "title": "Sector Expertise",
+        "description": "In-depth knowledge of multiple development sectors"
+      },
+      "strategicVision": {
+        "title": "Strategic Vision",
+        "description": "Taking long-term strategic implications into account"
+      },
+      "analyticalRigor": {
+        "title": "Analytical Rigor",
+        "description": "Rigorous approach producing reliable and credible results"
+      }
+    }
   },
   "testimonials": {
     "title": "What Our Clients Say",
     "subtitle": "Hear from our satisfied partners"
   },
-  "contact": {
-    "title": "Contact Us",
-    "subtitle": "Ready to get started? Schedule a free consultation and get a personalized assessment of your needs.",
-    "information": "Contact Information",
-    "phone": "Phone (Montreal)",
-    "whatsapp1": "WhatsApp 1",
-    "whatsapp2": "WhatsApp 2",
-    "email": "Email",
-    "location": "Location",
+"clients": {
+    "title": "They chose us",
+    "subtitle": "More than 20 companies trust us for their development in the Democratic Republic of Congo and elsewhere.",
+    "logoAlt": "Logo"
+},
+    "contact": {
+        "title": "Contact Us",
+        "subtitle": "Ready to get started? Schedule a free consultation and get a personalized assessment of your needs.",
+        "information": "Contact Information",
+        "phone": "Phone (Montreal)",
+        "whatsapp1": "WhatsApp 1",
+        "whatsapp2": "WhatsApp 2",
+        "email": "Email",
+        "location": "Location",
+        "officeKinshasa": "Kinshasa Office",
+        "officeMontreal": "Montreal Office",
+        "addressKinshasa": "No. 1 Av. Tombalbaye, Kinshasa-Gombe, DRC",
+        "addressMontreal": "Opening soon.",
     "form_title": "Send us a Message",
     "form_name": "Your Name",
     "form_email": "Email Address",
@@ -93,7 +147,7 @@
     "form_success": "Message sent successfully!",
     "form_error": "Failed to send message. Please try again."
   },
-  "footer": {
+    "footer": {
     "description": "Orion Counsel — advisory firm supporting companies and organizations on their strategic, operational and financial issues.",
     "navigation": "Navigation",
     "services": "Our Services",
@@ -105,7 +159,13 @@
     "phone": "+1 581 995 7492",
     "email": "contact@orionconseil.com",
     "copyright": "© 2024 Orion Conseil. All rights reserved.",
-    "allRightsReserved": "All rights reserved."
+    "allRightsReserved": "All rights reserved.",
+    "serviceTitles": {
+      "servicesconseils": "Consulting Services",
+      "comptabilite-certification": "Accounting & Certification",
+      "etudes-recherches": "Studies and Research"
+    },
+    "adminDashboard": "Admin Dashboard"
   },
   "newsletter": {
     "title": "Newsletter",
@@ -153,7 +213,58 @@
   },
   "about": {
     "title": "About Us",
-    "description": "Learn more about Orion Conseil"
+    "description": "Learn more about Orion Conseil",
+    "section": {
+      "title": "About",
+      "reasonToBelieve": {
+        "title": "A reason to believe, to exist.",
+        "description": "Founded on the conviction that the prosperity of the DRC comes through stronger organizations, Orion Conseil was created to offer next-generation consulting. Facing a market where imported solutions often fail, we have built a model that anchors strategic excellence in Congolese realities, to generate real and lasting impact."
+      },
+      "orionConseil": {
+        "title": "Orion Conseil",
+        "description": "A management consulting services firm for businesses and organizations. We support companies and public and private organizations on their strategic, operational and financial challenges. Our strength lies in a unique approach that combines intimate knowledge of local ecosystems with the rigor of international standards. This dual expertise allows us to design high-value-added solutions, perfectly relevant and immediately operational, to transform your ambitions into concrete successes."
+      },
+      "vision": {
+        "title": "Our Vision",
+        "description": "To become the strategic partner of reference and a major player in the transformation of the DRC's economic potential into sustainable and shared prosperity."
+      },
+      "mission": {
+        "title": "Our Mission",
+        "description": "Our mission is to accompany companies and public and private organizations in the DRC to transform their most complex challenges into sustainable performance. We deploy strategic, financial and operational solutions that combine an intimate understanding of Congolese realities with the demands of international best practices."
+      },
+      "expertise": {
+        "title": "Our Expertise",
+        "description": "Over 15 years of cumulative experience in strategic consulting and supporting companies towards operational excellence."
+      },
+      "approach": {
+        "title": "Our Approach",
+        "items": [
+          "A tailored approach for each client",
+          "Result obsession as the driving force",
+          "Concrete solutions for lasting impact"
+        ]
+      },
+      "values": {
+        "title": "Our Values",
+        "description": "Our fundamental values guide each of our actions and define our corporate culture.",
+        "leadership": {
+          "title": "Leadership",
+          "description": "We cultivate ethical leadership that inspires trust and respect."
+        },
+        "excellence": {
+          "title": "Excellence",
+          "description": "We constantly strive to achieve excellence in all our services and interactions."
+        },
+        "integrity": {
+          "title": "Integrity",
+          "description": "We maintain unwavering integrity in all our actions."
+        },
+        "commitment": {
+          "title": "Commitment",
+          "description": "We are committed to exceeding expectations by providing superior quality services."
+        }
+      }
+    }
   },
   "button": {
     "primary": "Get Started",
@@ -1047,6 +1158,147 @@
         "backHome": "Back to Home",
         "helpText": "Need help?",
         "contactUs": "Contact Us"
+    },
+    "admin": {
+        "brandName": "ORION CONSEIL",
+        "brandLabel": "ADMIN",
+        "mainMenu": "Main Menu",
+        "dashboard": "Dashboard",
+        "blogPosts": "Blog Posts",
+        "logout": "Logout",
+        "viewPublicSite": "View Public Site",
+        "imageUpload": {
+            "selectImageError": "Please select an image file",
+            "fileSizeError": "File size must be less than 5MB",
+            "uploadFailed": "Failed to upload image",
+            "uploadedImageAlt": "Uploaded image",
+            "uploading": "Uploading...",
+            "uploadInstructions": "Click to upload or drag and drop",
+            "supportedFormats": "PNG, JPG, GIF up to 5MB",
+            "orEnterUrl": "or enter URL",
+            "urlPlaceholder": "https://example.com/image.jpg"
+        },
+        "richTextEditor": {
+            "enterImageUrl": "Enter image URL:",
+            "enterUrl": "Enter URL:",
+            "bold": "Bold",
+            "italic": "Italic",
+            "heading1": "Heading 1",
+            "heading2": "Heading 2",
+            "bulletList": "Bullet List",
+            "numberedList": "Numbered List",
+            "quote": "Quote",
+            "addLink": "Add Link",
+            "addImage": "Add Image",
+            "undo": "Undo",
+            "redo": "Redo"
+        }
+    },
+    "models": {
+        "serviceModal": {
+            "close": "Close",
+            "bookNow": "Book now",
+            "learnMore": "Learn more",
+            "services": {
+                "servicesconseils": {
+                    "title": "Consulting Services",
+                    "description": "We offer strategic and operational consulting services to help companies overcome their complex challenges and achieve their performance objectives. Through a results-oriented approach, we develop high-performance strategies and provide concrete solutions to optimize your operations, strengthen your resilience, and improve your overall performance.",
+                    "pricing": "On quote",
+                    "features": [
+                        "Corporate Strategy and Growth",
+                        "Representation & Operational Support",
+                        "Private Equity Advisory (Venture Capital)",
+                        "Human Resources Management"
+                    ]
+                },
+                "comptabilite-certification": {
+                    "title": "Accounting & Certification",
+                    "description": "Reliable financial information is the foundation of any decision. We guarantee the production of your financial statements, certify the accuracy of your accounts, and provide you with clear dashboards to pilot your performance. Beyond legal obligations, we transform your accounting into a real management tool.",
+                    "pricing": "Per mission",
+                    "features": ["Payroll Calculation", "Fiscal & Regulatory Compliance"]
+                },
+                "representation-accompagnement": {
+                    "title": "Representation & Operational Support",
+                    "description": "Your strategic partner for success in the Democratic Republic of Congo. The DRC offers exceptional potential but its administrative, regulatory and cultural complexity requires local expertise. Without local partners, projects are exposed to delays and cost overruns.\n\nWe are your strategic and operational extension in the DRC. Our mission: transform local complexity into a competitive advantage thanks to our team fully committed to your success.",
+                    "pricing": "On request",
+                    "features": [
+                        "Field support",
+                        "Event representation",
+                        "Tailored operational support"
+                    ]
+                },
+                "etudes-recherches": {
+                    "title": "Studies and Research",
+                    "description": "We conduct studies and research to provide you with clear, relevant and actionable analyses. By combining rigorous methodologies and in-depth knowledge of the market, we help our clients make informed decisions and seize the best opportunities.",
+                    "pricing": "Fixed price / project",
+                    "features": [
+                        "Business Intelligence",
+                        "Data Science & Predictive Analytics",
+                        "Market Studies & Strategic Monitoring"
+                    ]
+                }
+            }
+        },
+        "contactModal": {
+            "closeForm": "Close form",
+            "sending": "Sending...",
+            "send": "Send",
+            "successTitle": "Request sent!",
+            "successMessage": "Thank you. We will get back to you very soon.",
+            "close": "Close",
+            "validation": {
+                "nameRequired": "Name is required",
+                "nameMinLength": "Name must be at least 2 characters",
+                "emailRequired": "Email is required",
+                "emailInvalid": "Please enter a valid email address",
+                "phoneRequired": "Phone number is required",
+                "phoneInvalid": "Please enter a valid phone number",
+                "serviceRequired": "Please select a service"
+            },
+            "errors": {
+                "formError": "Error sending form. Please try again.",
+                "connectionError": "Connection error. Check your internet connection and try again."
+            },
+            "placeholders": {
+                "name": "Full name",
+                "email": "Email address",
+                "phone": "Phone number",
+                "service": "Select a service",
+                "details": "Details",
+                "partnershipDetails": "Describe your organization and your proposal..."
+            },
+            "serviceOptions": {
+                "consultingServices": "Consulting Services",
+                "accountingCertification": "Accounting & Certification",
+                "studiesResearch": "Studies and Research"
+            },
+            "types": {
+                "consultation": {
+                    "title": "We want to hear from you!",
+                    "subtitle": "Orion Conseil is ready to put its expertise to work for you and offer the best solutions adapted to your needs. Let's talk about it!",
+                    "formTitle": "Free consultation",
+                    "formSubtitle": "Let's get in touch."
+                },
+                "service": {
+                    "title": "Let's plan your service",
+                    "subtitle": "We will confirm the details with you quickly.",
+                    "formTitle": "Schedule:",
+                    "formSubtitle": "Let's organize this together."
+                },
+                "job": {
+                    "title": "Join our team",
+                    "subtitle": "We are delighted by your interest.",
+                    "formTitle": "Apply now",
+                    "formSubtitle": "Take the first step towards a rewarding career."
+                },
+                "partnership": {
+                    "title": "Let's become partners",
+                    "subtitle": "Let's collaborate to provide the best possible service.",
+                    "formTitle": "Partnership request",
+                    "formSubtitle": "Together, we are stronger."
+                }
+            }
+        }
     }
 }
 
