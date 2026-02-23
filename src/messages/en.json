@@ -1,0 +1,152 @@
+{
+  "header": {
+    "home": "Home",
+    "services": "Services",
+    "blog": "Blog",
+    "team": "Our Team",
+    "about": "About",
+    "contact": "Contact",
+    "contact_us": "Contact us"
+  },
+  "navigation": {
+    "accueil": "Home",
+    "servicesconseils": "Services-Advice",
+    "comptabilite-certification": "Accounting & Certification",
+    "etudes-recherches": "Studies and Research"
+  },
+  "hero": {
+    "title": "Transform Your Business",
+    "subtitle": "Expert Strategic and Operational Advice",
+    "description": "We are a management and business strategy consulting firm. We support companies and public and private organizations on their strategic, operational and financial challenges.",
+    "cta": "Get Started"
+  },
+  "services": {
+    "title": "Our Services",
+    "intro": "More than services, we deliver results. Our mission is to catalyze your success in all your strategic, operational and financial challenges. Through our centers of expertise, we deploy strategic and operational solutions that generate tangible impact on your performance.",
+    "servicesconseils": {
+      "title": "Services Advice",
+      "description": "We offer strategic and operational consulting services to help companies overcome complex challenges and achieve their performance goals.",
+    "feature1": "Business Strategy & Growth",
+    "feature2": "Representation & Operational Support",
+    "feature3": "Private Equity Consulting (Capital Investment)",
+    "feature4": "Human Resources Management"
+    },
+    "comptabilite": {
+      "title": "Accounting & Certification",
+      "description": "Reliable financial information is the foundation of every decision. We guarantee the production of your financial statements, we certify the accuracy of your accounts and provide you with clear dashboards to manage your performance.",
+    "feature1": "Payroll Calculation",
+    "feature2": "Tax Compliance & Regulatory Compliance"
+    },
+    "etudes": {
+      "title": "Studies and Research",
+      "description": "We conduct studies and research to provide you with clear, relevant and actionable analysis. By combining rigorous methodologies and deep market knowledge, we help our clients make informed decisions and seize the best opportunities.",
+    "feature1": "Business Intelligence",
+    "feature2": "Data Science & Predictive Analysis",
+    "feature3": "Market Studies & Strategic Monitoring"
+    }
+  },
+  "valueProposition": {
+    "title": "Customized support, based on your organization's needs",
+    "subtitle": "We transform your challenges into opportunities by providing you with Solutions, aligned with your operational realities and ambitions.",
+    "tagline": "Optimize your performance and ensure your sustainable development.",
+    "commitment": "We are committed to developing integrated solutions that optimize the achievement of our clients' results while ensuring compliance with and respect for the best ethical practices.",
+    "collaboration": "We work collaboratively with the highest-level executives of the world's largest companies to help them create and implement the best solutions for the future of their businesses.",
+    "values": {
+      "excellence": "Excellence",
+      "ethics": "Ethics",
+      "collaboration": "Collaboration",
+      "innovation": "Innovation"
+    }
+  },
+  "stats": {
+    "title": "Why Trust Us",
+    "projects": "Successful Projects",
+    "clients": "Satisfied Clients",
+    "team": "Expert Team Members",
+    "experience": "Years of Experience"
+  },
+  "distinctions": {
+    "title": "Our Distinctions",
+    "subtitle": "Recognized for our excellence and commitment"
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "subtitle": "Hear from our satisfied partners"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Ready to get started? Schedule a free consultation and get a personalized assessment of your needs.",
+    "information": "Contact Information",
+    "phone": "Phone (Montreal)",
+    "whatsapp1": "WhatsApp 1",
+    "whatsapp2": "WhatsApp 2",
+    "email": "Email",
+    "location": "Location",
+    "form_title": "Send us a Message",
+    "form_name": "Your Name",
+    "form_email": "Email Address",
+    "form_phone": "Phone Number",
+    "form_subject": "Subject",
+    "form_message": "Message",
+    "form_submit": "Send Message",
+    "form_sending": "Sending...",
+    "form_success": "Message sent successfully!",
+    "form_error": "Failed to send message. Please try again."
+  },
+  "footer": {
+    "description": "Orion Counsel — advisory firm supporting companies and organizations on their strategic, operational and financial issues.",
+    "navigation": "Navigation",
+    "services": "Our Services",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "followUs": "Follow Us",
+    "address": "Montreal, Canada",
+    "phone": "+1 581 995 7492",
+    "email": "contact@orionconseil.com",
+    "copyright": "© 2024 Orion Conseil. All rights reserved.",
+    "allRightsReserved": "All rights reserved."
+  },
+  "newsletter": {
+    "title": "Newsletter",
+    "description": "Stay informed of our latest news and advice.",
+    "placeholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "subscribing": "Subscribing...",
+    "success": "Thank you! Your newsletter subscription has been confirmed.",
+    "error": "An error occurred. Please try again.",
+    "invalid_email": "Please enter a valid email address",
+    "empty_email": "Please enter your email address"
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Latest articles and insights",
+    "read_more": "Read More",
+    "published": "Published on",
+    "author": "By",
+    "loading": "Loading articles..."
+  },
+  "team": {
+    "title": "Our Team",
+    "description": "Meet our expert team members",
+    "loading": "Loading team members..."
+  },
+  "about": {
+    "title": "About Us",
+    "description": "Learn more about Orion Conseil"
+  },
+  "button": {
+    "primary": "Get Started",
+    "secondary": "Learn More",
+    "contact": "Contact Us",
+    "explore": "Explore",
+    "close": "Close",
+    "back": "Back"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "cancel": "Cancel"
+  }
+}

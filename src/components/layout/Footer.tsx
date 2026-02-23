@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Instagram, Facebook, Linkedin, Shield } from "lucide-react";
 import Newsletter from "../ui/Newsletter";
+import { useI18n } from "@/i18n/useI18n";
 
 const serviceKeyToTitle = (key: string): string => {
   const map: Record<string, string> = {
@@ -25,6 +26,8 @@ const serviceKeyToUrl = (key: string): string => {
 };
 
 export default function Footer() {
+  const { t } = useI18n();
+  
   const services = [
     "servicesconseils",
     "comptabilite-certification",
@@ -60,9 +63,7 @@ export default function Footer() {
                 fontSize: "0.875rem",
               }}
             >
-              Orion Conseil — cabinet de conseil accompagnant les entreprises et
-              organisations sur leurs enjeux stratégiques, opérationnels et
-              financiers.
+              {t("footer.description")}
             </p>
           </div>
 
@@ -71,7 +72,7 @@ export default function Footer() {
               className="font-serif font-semibold mb-4"
               style={{ color: "var(--color-primary)" }}
             >
-              Navigation
+              {t("footer.navigation")}
             </h4>
             <ul className="space-y-2">
               <li>
@@ -86,7 +87,7 @@ export default function Footer() {
                     e.currentTarget.style.color = "var(--color-dark)";
                   }}
                 >
-                  Accueil
+                  {t("header.home")}
                 </Link>
               </li>
               <li>
@@ -101,7 +102,7 @@ export default function Footer() {
                     e.currentTarget.style.color = "var(--color-dark)";
                   }}
                 >
-                  Services
+                  {t("header.services")}
                 </Link>
               </li>
               <li>
@@ -116,7 +117,7 @@ export default function Footer() {
                     e.currentTarget.style.color = "var(--color-dark)";
                   }}
                 >
-                  Notre équipe
+                  {t("header.team")}
                 </Link>
               </li>
               <li>
@@ -131,7 +132,7 @@ export default function Footer() {
                     e.currentTarget.style.color = "var(--color-dark)";
                   }}
                 >
-                  À propos
+                  {t("header.about")}
                 </Link>
               </li>
               <li>
@@ -146,7 +147,7 @@ export default function Footer() {
                     e.currentTarget.style.color = "var(--color-dark)";
                   }}
                 >
-                  Contact
+                  {t("header.contact")}
                 </Link>
               </li>
             </ul>
@@ -157,7 +158,7 @@ export default function Footer() {
               className="font-serif font-semibold mb-4"
               style={{ color: "var(--color-primary)" }}
             >
-              Nos services
+              {t("footer.services")}
             </h4>
             <ul className="space-y-2">
               {services.map((k) => (
@@ -193,7 +194,7 @@ export default function Footer() {
           }}
         >
           <div className="flex items-center justify-between flex-wrap gap-2">
-            <div>&copy; 2024 Orion Conseil. Tous droits réservés.</div>
+            <div>{t("footer.copyright")}</div>
             <div className="text-right">
               <div className="flex items-center justify-end gap-3">
                 <a

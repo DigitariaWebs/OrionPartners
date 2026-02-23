@@ -6,6 +6,8 @@ import Image from "next/image";
 import Button from "../ui/Button";
 import { usePathname, useRouter } from "next/navigation";
 import { useModal } from "../providers/ModalProvider";
+import { useI18n } from "@/i18n/useI18n";
+import { LanguageSwitcher } from "@/i18n/LanguageSwitcher";
 import { ChevronDown, Menu, X } from "lucide-react";
 
 const Header = () => {
@@ -17,6 +19,7 @@ const Header = () => {
   const pathname = usePathname();
   const router = useRouter();
   const { openModal } = useModal();
+  const { t } = useI18n();
   const servicesRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
@@ -62,31 +65,31 @@ const Header = () => {
   }, []);
 
   const navigation = [
-    { name: "Accueil", href: "/#accueil" },
-    { name: "Services", href: "/#services", isDropdown: true },
-    { name: "Blog", href: "/blog" },
-    { name: "Notre équipe", href: "/notreequipe" },
-    { name: "À propos", href: "/a-propos" },
-    { name: "Contact", href: "/#contact" },
+    { name: t("header.home"), href: "/#accueil" },
+    { name: t("header.services"), href: "/#services", isDropdown: true },
+    { name: t("header.blog"), href: "/blog" },
+    { name: t("header.team"), href: "/notreequipe" },
+    { name: t("header.about"), href: "/a-propos" },
+    { name: t("header.contact"), href: "/#contact" },
   ];
 
   const services = [
     {
       id: "servicesconseils",
-      name: "Services Conseils",
-      description: "Conseil stratégique et opérationnel",
+      name: t("services.servicesconseils.title"),
+      description: t("navigation.servicesconseils"),
       pageLink: "/servicesconseils",
     },
     {
       id: "comptabilite-certification",
-      name: "Comptabilité & certification",
-      description: "Gestion comptable et reporting financier",
+      name: t("services.comptabilite.title"),
+      description: t("navigation.comptabilite-certification"),
       pageLink: "/comptabilite-certification",
     },
     {
       id: "etudes-recherches",
-      name: "Études et recherches",
-      description: "Analyses et études de marché",
+      name: t("services.etudes.title"),
+      description: t("navigation.etudes-recherches"),
       pageLink: "/etudes-data-intelligence",
     },
   ];
@@ -260,14 +263,15 @@ const Header = () => {
           </div>
 
           {/* Contact Button - Right */}
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center gap-4">
+            <LanguageSwitcher />
             <Button
               variant="primary"
               size="md"
               className="font-medium"
               onClick={() => openModal("consultation")}
             >
-              Contactez-nous
+              {t("header.contact_us")}
             </Button>
           </div>
 
@@ -366,8 +370,13 @@ const Header = () => {
                     setIsMobileMenuOpen(false);
                   }}
                 >
-                  Contactez-nous
+                  {t("header.contact_us")}
                 </Button>
+              </div>
+
+              {/* Mobile Language Switcher */}
+              <div className="pt-4 border-t border-gray-200">
+                <LanguageSwitcher />
               </div>
             </div>
           </div>

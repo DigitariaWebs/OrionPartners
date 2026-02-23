@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Mail, Send, CheckCircle2, AlertCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useI18n } from '@/i18n/useI18n';
 
 interface NewsletterProps {
   variant?: 'footer' | 'section' | 'inline';
@@ -14,6 +15,7 @@ export default function Newsletter({ variant = 'footer', className = '' }: Newsl
   const [isLoading, setIsLoading] = useState(false);
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
+  const { t } = useI18n();
 
   const validateEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -25,13 +27,13 @@ export default function Newsletter({ variant = 'footer', className = '' }: Newsl
 
     if (!email.trim()) {
       setStatus("error");
-      setMessage("Veuillez entrer votre adresse e-mail");
+      setMessage(t("newsletter.empty_email"));
       return;
     }
 
     if (!validateEmail(email)) {
       setStatus("error");
-      setMessage("Veuillez entrer une adresse e-mail valide");
+      setMessage(t("newsletter.invalid_email"));
       return;
     }
 
@@ -51,19 +53,17 @@ export default function Newsletter({ variant = 'footer', className = '' }: Newsl
 
       if (response.ok) {
         setStatus("success");
-        setMessage(
-          "Merci ! Votre inscription à notre infolettre a été confirmée."
-        );
+        setMessage(t("newsletter.success"));
         setEmail("");
       } else {
         setStatus("error");
         setMessage(
-          data.error || "Une erreur est survenue. Veuillez réessayer."
+          data.error || t("newsletter.error")
         );
       }
     } catch {
       setStatus("error");
-      setMessage("Erreur de connexion. Veuillez réessayer.");
+      setMessage(t("newsletter.error"));
     } finally {
       setIsLoading(false);
       setTimeout(() => {
@@ -89,10 +89,10 @@ export default function Newsletter({ variant = 'footer', className = '' }: Newsl
           style={{ color: headingColor }}
         >
           <Mail className="w-5 h-5" />
-          Infolettre
+          {t("newsletter.title")}
         </h3>
         <p className="text-sm mb-4" style={{ color: textColor }}>
-          Restez informé de nos dernières actualités et conseils.
+          {t("newsletter.description")}
         </p>
       </div>
 
@@ -102,7 +102,7 @@ export default function Newsletter({ variant = 'footer', className = '' }: Newsl
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Votre adresse e-mail"
+            placeholder={t("newsletter.placeholder")}
             disabled={isLoading}
             className={`w-full px-4 py-2 rounded-lg border-2 transition-all focus:outline-none focus:ring-2 ${
               isFooterVariant
@@ -137,12 +137,12 @@ export default function Newsletter({ variant = 'footer', className = '' }: Newsl
           {isLoading ? (
             <>
               <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-              Inscription...
+              {t("newsletter.subscribing")}
             </>
           ) : (
             <>
               <Send className="w-4 h-4" />
-              S&apos;inscrire
+              {t("newsletter.subscribe")}
             </>
           )}
         </button>

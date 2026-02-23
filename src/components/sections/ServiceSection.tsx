@@ -4,44 +4,54 @@ import { motion, Variants } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { Globe, Settings, BarChart3, Check } from "lucide-react";
 import Button from "../ui/Button";
+import { useI18n } from "@/i18n/useI18n";
 
 
-const services = [
+const services = (
+  t: (key: string) => string,
+): Array<{
+  id: string;
+  title: string;
+  description: string;
+  features: string[];
+  pageLink: string;
+  icon: React.JSX.Element;
+}> => [
   {
     id: "servicesconseils",
-    title: "Services Conseils",
-    description:
-      "Nous offrons des services de conseil stratégique et opérationnel pour accompagner les entreprises à relever leurs défis complexes et atteindre leurs objectifs de performance.",
+    title: t("services.servicesconseils.title"),
+    description: t("services.servicesconseils.description"),
     features: [
-      "Stratégie et Croissance d'Entreprise",
-      "Représentation & Support Opérationnel",
-      "Conseil en Private Equity (Capital-Investissement)",
-      "Gestion des ressources humaines",
+      t("services.servicesconseils.feature1"),
+      t("services.servicesconseils.feature2"),
+      t("services.servicesconseils.feature3"),
+      t("services.servicesconseils.feature4"),
     ],
     pageLink: "/servicesconseils",
     icon: <Globe className="w-8 h-8" />,
   },
   {
-    id: "comptabilite-certification",
-    title: "Comptabilité & certification",
-    description:
-      "Une information financière fiable est le socle de toute décision. Nous garantissons la production de vos états financiers, nous certifions la sincérité de vos comptes et nous vous fournissons des tableaux de bord clairs pour piloter votre performance.",
-    features: ["Calcul de paie", "Conformité fiscale & réglementaire"],
+    id: "comptabilite",
+    title: t("services.comptabilite.title"),
+    description: t("services.comptabilite.description"),
+    features: [
+      t("services.comptabilite.feature1"),
+      t("services.comptabilite.feature2"),
+    ],
     pageLink: "/comptabilite-certification",
-    icon: <Settings className="w-8 h-8" />,
+    icon: <BarChart3 className="w-8 h-8" />,
   },
   {
-    id: "etudes-recherches",
-    title: "Études et recherches",
-    description:
-      "Nous réalisons des études et des recherches pour vous fournir des analyses claires, pertinentes et exploitables. En combinant des méthodologies rigoureuses et une connaissance approfondie du marché, nous aidons nos clients à prendre des décisions éclairées et à saisir les meilleures opportunités.",
+    id: "etudes",
+    title: t("services.etudes.title"),
+    description: t("services.etudes.description"),
     features: [
-      "Business Intelligence",
-      "Science des Données & Analyse Prédictive",
-      "Études de Marché & Veille Stratégique",
+      t("services.etudes.feature1"),
+      t("services.etudes.feature2"),
+      t("services.etudes.feature3"),
     ],
     pageLink: "/etudes-data-intelligence",
-    icon: <BarChart3 className="w-8 h-8" />,
+    icon: <Settings className="w-8 h-8" />,
   },
 ];
 
@@ -51,9 +61,10 @@ const fadeInUp: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
-
 export default function NosServicesSection() {
   const router = useRouter();
+  const { t } = useI18n();
+  const servicesData = services(t);
 
   return (
     <section
@@ -78,16 +89,16 @@ export default function NosServicesSection() {
             className="text-balance text-2xl font-semibold tracking-tight sm:text-3xl"
             style={{ color: "var(--color-primary)" }}
           >
-            Nos Services
+            {t("services.title")}
           </h2>
           <p className="mt-4 text-pretty text-base leading-7 text-neutral-700 sm:text-lg text-justify">
-            {`Plus que des services, nous livrons des résultats. Notre mission est de catalyser votre succès en République Démocratique du Congo en transformant la complexité en avantage compétitif. À travers nos pôles d'expertise, nous déployons des solutions stratégiques et opérationnelles qui génèrent un impact tangible sur votre performance.`}
+            {t("services.intro")}
           </p>
         </motion.header>
 
-        {/* Service Grid */}
+        {/* ServiceData Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          {services.map((service, index) => (
+          {servicesData.map((service, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -101,7 +112,7 @@ export default function NosServicesSection() {
                 e.currentTarget.style.borderColor =
                   "rgba(var(--color-primary-rgb), 0.2)";
                 const iconDiv = e.currentTarget.querySelector(
-                  ".service-icon"
+                  ".service-icon",
                 ) as HTMLElement;
                 if (iconDiv) {
                   iconDiv.style.backgroundColor =
@@ -111,7 +122,7 @@ export default function NosServicesSection() {
               onMouseLeave={(e) => {
                 e.currentTarget.style.borderColor = "var(--color-border)";
                 const iconDiv = e.currentTarget.querySelector(
-                  ".service-icon"
+                  ".service-icon",
                 ) as HTMLElement;
                 if (iconDiv) {
                   iconDiv.style.backgroundColor =
@@ -154,7 +165,7 @@ export default function NosServicesSection() {
                   className="text-base font-semibold mb-2"
                   style={{ color: "var(--color-text-primary)" }}
                 >
-                  Services inclus:
+                  {t("button.primary")}:
                 </h4>
                 <ul className="space-y-2">
                   {service.features.map((feature, idx) => (
@@ -180,7 +191,7 @@ export default function NosServicesSection() {
                   size="sm"
                   onClick={() => router.push(service.pageLink)}
                 >
-                  En savoir plus
+                  {t("button.secondary")}
                 </Button>
               </div>
             </motion.div>

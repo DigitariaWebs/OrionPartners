@@ -2,6 +2,7 @@
 
 import { motion, Variants } from "framer-motion";
 import { Target, Award, Users } from "lucide-react";
+import { useI18n } from "@/i18n/useI18n";
 
 // Animation variants
 const fadeInUp: Variants = {
@@ -10,6 +11,7 @@ const fadeInUp: Variants = {
 };
 
 export default function ValuePropositionSection() {
+  const { t } = useI18n();
   return (
     <section className="relative w-full scroll-mt-24 bg-gradient-to-b from-white to-gray-50">
       {/* Decorative top rule */}
@@ -29,19 +31,16 @@ export default function ValuePropositionSection() {
             className="text-balance text-2xl font-semibold tracking-tight sm:text-3xl"
             style={{ color: "var(--color-primary)" }}
           >
-            Un accompagnement sur mesure, selon les besoins de votre
-            organisation
+            {t("valueProposition.title")}
           </h2>
           <p className="mt-4 text-pretty text-sm leading-6 font-semibold text-[var(--color-muted)] sm:text-base">
-            Nous transformons vos défis en opportunités en vous apportant des
-            solutions sur mesure, alignées sur vos réalités opérationnelles et
-            vos ambitions.
+            {t("valueProposition.subtitle")}
           </p>
           <p
-            className="mt-4 text-pretty text-sm leading-6  sm:text-base"
+            className="mt-4 text-pretty text-sm leading-6 sm:text-base"
             style={{ color: "var(--color-muted)" }}
           >
-            Optimiser votre performance et assurer votre développement durable.
+            {t("valueProposition.tagline")}
           </p>
         </motion.header>
 
@@ -67,10 +66,7 @@ export default function ValuePropositionSection() {
                   </div>
                 </div>
                 <p className="text-lg sm:text-xl leading-relaxed mb-6">
-                  Nous nous engageons à développer des solutions intégrées qui
-                  optimisent l&apos;atteinte de résultats de nos clients tout en
-                  assurant la conformité et le respect des meilleures pratiques
-                  éthiques.
+                  {t("valueProposition.commitment")}
                 </p>
               </motion.div>
 
@@ -81,10 +77,7 @@ export default function ValuePropositionSection() {
                   </div>
                 </div>
                 <p className="text-lg sm:text-xl leading-relaxed">
-                  Nous travaillons en collaboration avec les plus hauts
-                  dirigeants des plus grandes entreprises mondiales, afin de les
-                  aider à créer et à mettre en œuvre les meilleures solutions
-                  pour l&apos;avenir de leurs entreprises.
+                  {t("valueProposition.collaboration")}
                 </p>
               </motion.div>
             </div>
@@ -105,19 +98,19 @@ export default function ValuePropositionSection() {
                       <div className="bg-white/20 backdrop-blur-sm rounded-lg p-6 flex flex-col items-center justify-center">
                         <Target className="w-12 h-12 text-white mb-2" />
                         <span className="text-white text-sm font-semibold">
-                          Excellence
+                          {t("valueProposition.values.excellence")}
                         </span>
                       </div>
                       <div className="bg-white/20 backdrop-blur-sm rounded-lg p-6 flex flex-col items-center justify-center">
                         <Award className="w-12 h-12 text-white mb-2" />
                         <span className="text-white text-sm font-semibold">
-                          Éthique
+                          {t("valueProposition.values.ethics")}
                         </span>
                       </div>
                       <div className="bg-white/20 backdrop-blur-sm rounded-lg p-6 flex flex-col items-center justify-center">
                         <Users className="w-12 h-12 text-white mb-2" />
                         <span className="text-white text-sm font-semibold">
-                          Collaboration
+                          {t("valueProposition.values.collaboration")}
                         </span>
                       </div>
                       <div className="bg-white/20 backdrop-blur-sm rounded-lg p-6 flex flex-col items-center justify-center">
@@ -125,19 +118,17 @@ export default function ValuePropositionSection() {
                           <div className="w-10 h-10 rounded-full border-4 border-white" />
                         </div>
                         <span className="text-white text-sm font-semibold">
-                          Innovation
+                          {t("valueProposition.values.innovation")}
                         </span>
                       </div>
                     </div>
                   </div>
                 </div>
+                <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
+                <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
               </motion.div>
             </div>
           </div>
-
-          {/* Decorative background elements */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
         </motion.div>
       </div>
 

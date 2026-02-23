@@ -3,6 +3,8 @@ import Script from "next/script";
 import "./globals.css";
 import ModalProvider from "../components/providers/ModalProvider";
 import CspHead from "../components/CspHead";
+import { I18nProvider } from "../i18n/I18nProvider";
+import { messages } from "../messages/messages";
 
 export const metadata: Metadata = {
   title: "Orion Conseil",
@@ -52,7 +54,9 @@ export default function RootLayout({
             gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');
           `}
         </Script>
-        <ModalProvider>{children}</ModalProvider>
+        <I18nProvider messages={messages}>
+          <ModalProvider>{children}</ModalProvider>
+        </I18nProvider>
       </body>
     </html>
   );

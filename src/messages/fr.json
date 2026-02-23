@@ -1,0 +1,152 @@
+{
+  "header": {
+    "home": "Accueil",
+    "services": "Services",
+    "blog": "Blog",
+    "team": "Notre équipe",
+    "about": "À propos",
+    "contact": "Contact",
+    "contact_us": "Nous contacter"
+  },
+  "navigation": {
+    "accueil": "Accueil",
+    "servicesconseils": "Services-Conseils",
+    "comptabilite-certification": "Comptabilité & Certification",
+    "etudes-recherches": "Études et Recherches"
+  },
+  "hero": {
+    "title": "Transformez Votre Entreprise",
+    "subtitle": "Conseil Stratégique et Opérationnel Expert",
+    "description": "Nous sommes un cabinet de services-conseils en gestion et stratégie d'entreprises. Nous accompagnons les entreprises et les organisations publiques et privées sur leurs enjeux stratégiques, opérationnels et financiers.",
+    "cta": "Commencer"
+  },
+  "services": {
+    "title": "Nos Services",
+    "intro": "Plus que des services, nous livrons des résultats. Notre mission est de catalyser votre succès en République Démocratique du Congo en transformant la complexité en avantage compétitif. À travers nos pôles d'expertise, nous déployons des solutions stratégiques et opérationnelles qui génèrent un impact tangible sur votre performance.",
+    "servicesconseils": {
+      "title": "Services Conseils",
+      "description": "Nous offrons des services de conseil stratégique et opérationnel pour accompagner les entreprises à relever leurs défis complexes et atteindre leurs objectifs de performance.",
+    "feature1": "Stratégie et Croissance d'Entreprise",
+    "feature2": "Représentation & Support Opérationnel",
+    "feature3": "Conseil en Private Equity (Capital-Investissement)",
+    "feature4": "Gestion des ressources humaines"
+    },
+    "comptabilite": {
+      "title": "Comptabilité & certification",
+      "description": "Une information financière fiable est le socle de toute décision. Nous garantissons la production de vos états financiers, nous certifions la sincérité de vos comptes et nous vous fournissons des tableaux de bord clairs pour piloter votre performance.",
+    "feature1": "Calcul de paie",
+    "feature2": "Conformité fiscale & réglementaire"
+    },
+    "etudes": {
+      "title": "Études et recherches",
+      "description": "Nous réalisons des études et des recherches pour vous fournir des analyses claires, pertinentes et exploitables. En combinant des méthodologies rigoureuses et une connaissance approfondie du marché, nous aidons nos clients à prendre des décisions éclairées et à saisir les meilleures opportunités.",
+    "feature1": "Business Intelligence",
+    "feature2": "Science des Données & Analyse Prédictive",
+    "feature3": "Études de Marché & Veille Stratégique"
+    }
+  },
+  "valueProposition": {
+    "title": "Un accompagnement sur mesure, selon les besoins de votre organisation",
+    "subtitle": "Nous transformons vos défis en opportunités en vous apportant des solutions sur mesure, alignées sur vos réalités opérationnelles et vos ambitions.",
+    "tagline": "Optimiser votre performance et assurer votre développement durable.",
+    "commitment": "Nous nous engageons à développer des solutions intégrées qui optimisent l'atteinte de résultats de nos clients tout en assurant la conformité et le respect des meilleures pratiques éthiques.",
+    "collaboration": "Nous travaillons en collaboration avec les plus hauts dirigeants des plus grandes entreprises mondiales, afin de les aider à créer et à mettre en œuvre les meilleures solutions pour l'avenir de leurs entreprises.",
+    "values": {
+      "excellence": "Excellence",
+      "ethics": "Éthique",
+      "collaboration": "Collaboration",
+      "innovation": "Innovation"
+    }
+  },
+  "stats": {
+    "title": "Pourquoi nous faire confiance",
+    "projects": "Projets Réussis",
+    "clients": "Clients Satisfaits",
+    "team": "Membres de l'Équipe Expert",
+    "experience": "Années d'Expérience"
+  },
+  "distinctions": {
+    "title": "Nos Distinctions",
+    "subtitle": "Reconnus pour notre excellence et notre engagement"
+  },
+  "testimonials": {
+    "title": "Ce que disent nos clients",
+    "subtitle": "Entendez nos partenaires satisfaits"
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Prêt à commencer ? Planifiez une consultation gratuite et obtenez une évaluation personnalisée de vos besoins.",
+    "information": "Informations de contact",
+    "phone": "Téléphone (Montréal)",
+    "whatsapp1": "WhatsApp 1",
+    "whatsapp2": "WhatsApp 2",
+    "email": "Email",
+    "location": "Adresse",
+    "form_title": "Envoyez-nous un Message",
+    "form_name": "Votre Nom",
+    "form_email": "Adresse Email",
+    "form_phone": "Numéro de Téléphone",
+    "form_subject": "Sujet",
+    "form_message": "Message",
+    "form_submit": "Envoyer le Message",
+    "form_sending": "Envoi...",
+    "form_success": "Message envoyé avec succès!",
+    "form_error": "Erreur lors de l'envoi. Veuillez réessayer."
+  },
+  "footer": {
+    "description": "Orion Conseil — cabinet de conseil accompagnant les entreprises et organisations sur leurs enjeux stratégiques, opérationnels et financiers.",
+    "navigation": "Navigation",
+    "services": "Nos Services",
+    "legal": "Juridique",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions d'Utilisation",
+    "followUs": "Nous Suivre",
+    "address": "Montréal, Canada",
+    "phone": "+1 581 995 7492",
+    "email": "contact@orionconseil.com",
+    "copyright": "© 2024 Orion Conseil. Tous droits réservés.",
+    "allRightsReserved": "Tous droits réservés."
+  },
+  "newsletter": {
+    "title": "Infolettre",
+    "description": "Restez informé de nos dernières actualités et conseils.",
+    "placeholder": "Entrez votre email",
+    "subscribe": "S'abonner",
+    "subscribing": "Abonnement en cours...",
+    "success": "Merci ! Votre inscription à notre infolettre a été confirmée.",
+    "error": "Une erreur est survenue. Veuillez réessayer.",
+    "invalid_email": "Veuillez entrer une adresse e-mail valide",
+    "empty_email": "Veuillez entrer votre adresse e-mail"
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Derniers articles et perspectives",
+    "read_more": "Lire Plus",
+    "published": "Publié le",
+    "author": "Par",
+    "loading": "Chargement des articles..."
+  },
+  "team": {
+    "title": "Notre Équipe",
+    "description": "Rencontrez nos membres d'équipe experts",
+    "loading": "Chargement des membres de l'équipe..."
+  },
+  "about": {
+    "title": "À Propos de Nous",
+    "description": "En savoir plus sur Orion Conseil"
+  },
+  "button": {
+    "primary": "Commencer",
+    "secondary": "En Savoir Plus",
+    "contact": "Nous Contacter",
+    "explore": "Explorer",
+    "close": "Fermer",
+    "back": "Retour"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur est survenue",
+    "retry": "Réessayer",
+    "cancel": "Annuler"
+  }
+}

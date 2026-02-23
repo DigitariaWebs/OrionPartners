@@ -1,8 +1,11 @@
 "use client";
 import { Phone, Mail, MapPin, Users } from "lucide-react";
 import { useModal } from "../providers/ModalProvider";
+import { useI18n } from "@/i18n/useI18n";
+
 export default function ContactSection() {
   const { openModal } = useModal();
+  const { t } = useI18n();
   return (
     <section
       id="contact"
@@ -15,14 +18,13 @@ export default function ContactSection() {
             className="mt-2 text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight"
             style={{ color: "var(--color-primary)" }}
           >
-            Contactez-nous
+            {t("contact.title")}
           </h2>
           <p
             className="mt-4 text-[15px] md:text-base max-w-3xl mx-auto"
             style={{ color: "var(--color-text-primary)" }}
           >
-            Prêt à commencer ? Planifiez une consultation gratuite et obtenez
-            une évaluation personnalisée de vos besoins.
+            {t("contact.subtitle")}
           </p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-14 items-stretch">
@@ -31,7 +33,7 @@ export default function ContactSection() {
               className="text-2xl md:text-3xl font-extrabold"
               style={{ color: "var(--color-text-primary)" }}
             >
-              Informations de contact
+              {t("contact.information")}
             </h3>
             <div className="space-y-4">
               <a
@@ -52,7 +54,7 @@ export default function ContactSection() {
                     className="font-semibold"
                     style={{ color: "var(--color-text-primary)" }}
                   >
-                    Téléphone (Montréal)
+                    {t("contact.phone")}
                   </h4>
                   <p style={{ color: "rgba(var(--color-dark-rgb), 0.75)" }}>
                     +1 581 995 7492
@@ -84,7 +86,7 @@ export default function ContactSection() {
                     className="font-semibold"
                     style={{ color: "var(--color-text-primary)" }}
                   >
-                    WhatsApp 1
+                    {t("contact.whatsapp1")}
                   </h4>
                   <p
                     className="transition-colors"
@@ -120,7 +122,7 @@ export default function ContactSection() {
                     className="font-semibold"
                     style={{ color: "var(--color-text-primary)" }}
                   >
-                    WhatsApp 2
+                    {t("contact.whatsapp2")}
                   </h4>
                   <p
                     className="transition-colors"
@@ -149,7 +151,7 @@ export default function ContactSection() {
                     className="font-semibold"
                     style={{ color: "var(--color-text-primary)" }}
                   >
-                    Email
+                    {t("contact.email")}
                   </h4>
                   <p
                     className="transition-colors"
@@ -235,15 +237,13 @@ export default function ContactSection() {
                 className="text-2xl md:text-3xl font-extrabold mb-4"
                 style={{ color: "var(--color-white)" }}
               >
-                Consultation gratuite
+                {t("contact.information")}
               </h3>
               <p
                 className="text-[15px] md:text-base mb-8 max-w-2xl mx-auto"
                 style={{ color: "rgba(var(--color-white-rgb), 0.95)" }}
               >
-                Contactez-nous dès aujourd&apos;hui pour une évaluation
-                personnalisée de vos besoins. Notre équipe vous accompagnera
-                dans la mise en place des services adaptés.
+                {t("contact.subtitle")}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 sm:justify-center">
                 <button
@@ -254,15 +254,15 @@ export default function ContactSection() {
                       "linear-gradient(90deg, var(--color-accent), var(--color-accent-hover))",
                   }}
                 >
-                  Demander une consultation
+                  {t("contact.form_submit")}
                 </button>
                 <a
-                  href="tel:5142228271"
+                  href="tel:+15819957492"
                   className="px-6 py-3 rounded-xl font-semibold ring-1 ring-black/5 bg-white/70 backdrop-blur hover:-translate-y-0.5 transition-transform inline-flex items-center justify-center"
                   style={{ color: "var(--color-primary)" }}
                 >
                   <Phone className="w-5 h-5 mr-2" />
-                  Appeler maintenant
+                  {t("contact.phone")}
                 </a>
               </div>
             </div>

@@ -3,9 +3,11 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Button from '@/components/ui/Button';
+import { useI18n } from '@/i18n/useI18n';
 
 const HeroSection: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const { t } = useI18n();
 
   useEffect(() => {
     setIsVisible(true);
@@ -136,10 +138,7 @@ const HeroSection: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
           >
-            Nous sommes un cabinet de services-conseils en gestion et stratégie
-            d’entreprises. Nous accompagnons les entreprises et les
-            organisations publiques et privées sur leurs enjeux stratégiques,
-            opérationnels et financiers.
+            {t("hero.description")}
           </motion.p>
         </motion.div>
 
@@ -163,7 +162,7 @@ const HeroSection: React.FC = () => {
                 }
               }}
             >
-              Contactez-nous
+              {t("header.contact_us")}
             </Button>
           </motion.div>
 
