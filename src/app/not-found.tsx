@@ -2,8 +2,11 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useI18n } from "@/i18n/useI18n";
 
 export default function NotFound() {
+  const { t } = useI18n();
+
   return (
     <div className="min-h-screen flex flex-col">
       <main className="flex-grow flex items-center justify-center bg-[var(--color-light)] px-4 py-16">
@@ -26,11 +29,11 @@ export default function NotFound() {
           >
             {/* Error Message */}
             <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-dark)] mb-4">
-              Page non trouvée
+              {t("notFound.title")}
             </h2>
-            
+
             <p className="text-lg md:text-xl text-[var(--color-dark)] mb-8 opacity-80">
-              Désolé, la page que vous recherchez n&apos;existe pas ou a été déplacée.
+              {t("notFound.description")}
             </p>
 
             {/* Decorative line */}
@@ -43,7 +46,7 @@ export default function NotFound() {
                 whileTap={{ scale: 0.95 }}
                 className="bg-[var(--color-primary)] text-[var(--color-white)] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[var(--color-primary-hover)] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2 shadow-lg"
               >
-                Retour à l&apos;accueil
+                {t("notFound.backHome")}
               </motion.button>
             </Link>
           </motion.div>
@@ -56,12 +59,12 @@ export default function NotFound() {
             className="mt-12"
           >
             <p className="text-[var(--color-dark)] opacity-70">
-              Besoin d&apos;aide ?{" "}
+              {t("notFound.helpText")}{" "}
               <Link
                 href="/#contact"
                 className="text-[var(--color-accent)] hover:text-[var(--color-accent-hover)] underline font-semibold transition-colors duration-200"
               >
-                Contactez-nous
+                {t("notFound.contactUs")}
               </Link>
             </p>
           </motion.div>

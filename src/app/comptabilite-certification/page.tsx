@@ -6,8 +6,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Shield, BarChart3, Clock, Calculator, FileText, Users, TrendingUp } from "lucide-react";
+import { useI18n } from "@/i18n/useI18n";
 
 export default function ComptabiliteCertificationPage() {
+  const { t } = useI18n();
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
     animate: { opacity: 1, y: 0 },
@@ -54,7 +56,7 @@ export default function ComptabiliteCertificationPage() {
           ></div>
           <Image
             src="/ServiceImages/comptabilite-certification.jpg"
-            alt="Comptabilité & Certification"
+            alt={t("comptabiliteCertification.imagesAlt.accountingCertification")}
             fill
             className="object-cover"
             priority
@@ -105,7 +107,7 @@ export default function ComptabiliteCertificationPage() {
                 marginBottom: "1rem",
               }}
             >
-              Comptabilité & Certification
+              {t("comptabiliteCertification.hero.title")}
             </h1>
           </motion.div>
 
@@ -121,10 +123,7 @@ export default function ComptabiliteCertificationPage() {
               className="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-4xl leading-relaxed"
               style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5)" }}
             >
-              Une information financière fiable est le socle de toute décision.
-              Nous garantissons la production de vos états financiers et vous
-              fournissons des tableaux de bord clairs pour piloter votre
-              performance.
+              {t("comptabiliteCertification.hero.description")}
             </p>
           </motion.div>
 
@@ -136,13 +135,13 @@ export default function ComptabiliteCertificationPage() {
           >
             <Link href="/#contact" className="w-full sm:w-auto">
               <button className="w-full sm:w-auto group bg-[var(--color-accent)] hover:bg-[#8ab01e] text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-xl cursor-pointer">
-                Contactez-nous
+                {t("comptabiliteCertification.hero.contactButton")}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
             <Link href="/#services" className="w-full sm:w-auto">
               <button className="w-full sm:w-auto border-2 border-[var(--color-white)] text-[var(--color-white)] hover:bg-[var(--color-white)] hover:text-black backdrop-blur-sm bg-[var(--color-white)]/10 px-8 py-4 rounded-xl font-semibold transition-all duration-300 cursor-pointer">
-                Découvrez nos expertises
+                {t("comptabiliteCertification.hero.expertiseButton")}
               </button>
             </Link>
           </motion.div>
@@ -154,10 +153,7 @@ export default function ComptabiliteCertificationPage() {
         <div className="container mx-auto px-6">
           <motion.div className="max-w-4xl mx-auto text-center" {...fadeInUp}>
             <p className="text-xl text-gray-700 leading-relaxed">
-              Notre mission est de vous fournir une image financière d&#39;une
-              clarté absolue et une conformité inébranlable, pour que vous
-              puissiez vous concentrer sur ce que vous faites de mieux : diriger
-              et développer votre entreprise.
+              {t("comptabiliteCertification.mission")}
             </p>
           </motion.div>
         </div>
@@ -179,7 +175,7 @@ export default function ComptabiliteCertificationPage() {
           <div className="max-w-7xl mx-auto">
             <motion.div className="text-center mb-16" {...fadeInUp}>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
-                Plus qu&apos;une comptabilité, un partenariat stratégique
+                {t("comptabiliteCertification.strategicPartnership.title")}
               </h2>
             </motion.div>
 
@@ -194,14 +190,10 @@ export default function ComptabiliteCertificationPage() {
                   <Shield className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-[#095797] mb-4">
-                  Conformité inébranlable : votre tranquillité d&#39;esprit
+                  {t("comptabiliteCertification.strategicPartnership.blocks.compliance.title")}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Naviguez avec sérénité dans le paysage réglementaire et fiscal
-                  congolais (OHADA, DGI, CNSS, etc.). Notre expertise pointue
-                  vous garantit des déclarations précises et ponctuelles, vous
-                  mettant à l&apos;abri des pénalités et assurant la pérennité
-                  de vos opérations.
+                  {t("comptabiliteCertification.strategicPartnership.blocks.compliance.description")}
                 </p>
               </motion.div>
 
@@ -214,15 +206,10 @@ export default function ComptabiliteCertificationPage() {
                   <BarChart3 className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-[#095797] mb-4">
-                  Clarté stratégique : vos données au service de vos décisions
+                  {t("comptabiliteCertification.strategicPartnership.blocks.clarity.title")}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Nous transformons vos chiffres bruts en intelligence
-                  d&#39;affaires. Grâce à des tableaux de bord sur mesure et des
-                  rapports de gestion pertinents, vous ne subissez plus
-                  l&apos;information : vous l&apos;utilisez pour piloter votre
-                  performance, anticiper vos besoins de trésorerie et prendre
-                  des décisions éclairées qui façonnent votre avenir.
+                  {t("comptabiliteCertification.strategicPartnership.blocks.clarity.description")}
                 </p>
               </motion.div>
 
@@ -235,15 +222,10 @@ export default function ComptabiliteCertificationPage() {
                   <Clock className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-[#095797] mb-4">
-                  Efficacité et gain de temps : votre énergie au service de
-                  votre cœur de métier
+                  {t("comptabiliteCertification.strategicPartnership.blocks.efficiency.title")}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Déléguez la complexité, gardez le contrôle. Nous optimisons
-                  vos processus comptables grâce à des méthodes rigoureuses et
-                  des outils modernes. Libérez vos équipes des tâches
-                  chronophages et réallouez leurs forces vives là où elles
-                  créent le plus de valeur : au service de vos clients.
+                  {t("comptabiliteCertification.strategicPartnership.blocks.efficiency.description")}
                 </p>
               </motion.div>
             </div>
@@ -257,7 +239,7 @@ export default function ComptabiliteCertificationPage() {
           <motion.div className="max-w-6xl mx-auto" {...stagger}>
             <motion.div className="text-center mb-16" {...fadeInUp}>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
-                Nos Services Comptables
+                {t("comptabiliteCertification.services.title")}
               </h2>
             </motion.div>
 
@@ -268,11 +250,10 @@ export default function ComptabiliteCertificationPage() {
                     <Calculator className="w-8 h-8 text-[#095797] mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="text-xl font-bold text-[#095797] mb-2">
-                        Tenue de comptabilité complète
+                        {t("comptabiliteCertification.services.items.completeAccounting.title")}
                       </h3>
                       <p className="text-gray-600">
-                        Saisie et traitement de vos opérations de manière
-                        mensuelle, trimestrielle ou selon vos besoins.
+                        {t("comptabiliteCertification.services.items.completeAccounting.description")}
                       </p>
                     </div>
                   </div>
@@ -283,11 +264,10 @@ export default function ComptabiliteCertificationPage() {
                     <FileText className="w-8 h-8 text-[#095797] mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="text-xl font-bold text-[#095797] mb-2">
-                        Préparation des états financiers annuels
+                        {t("comptabiliteCertification.services.items.annualFinancialStatements.title")}
                       </h3>
                       <p className="text-gray-600">
-                        Établissement du bilan, du compte de résultat et des
-                        annexes en conformité avec les normes SYSCOHADA.
+                        {t("comptabiliteCertification.services.items.annualFinancialStatements.description")}
                       </p>
                     </div>
                   </div>
@@ -298,11 +278,10 @@ export default function ComptabiliteCertificationPage() {
                     <Shield className="w-8 h-8 text-[#095797] mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="text-xl font-bold text-[#095797] mb-2">
-                        Gestion des déclarations fiscales et sociales
+                        {t("comptabiliteCertification.services.items.taxSocialDeclarations.title")}
                       </h3>
                       <p className="text-gray-600">
-                        Préparation et dépôt de toutes vos déclarations (TVA,
-                        IPR, IERE, etc.) pour une conformité parfaite.
+                        {t("comptabiliteCertification.services.items.taxSocialDeclarations.description")}
                       </p>
                     </div>
                   </div>
@@ -315,11 +294,10 @@ export default function ComptabiliteCertificationPage() {
                     <BarChart3 className="w-8 h-8 text-[#095797] mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="text-xl font-bold text-[#095797] mb-2">
-                        Reporting de gestion et tableaux de bord dynamiques
+                        {t("comptabiliteCertification.services.items.managementReporting.title")}
                       </h3>
                       <p className="text-gray-600">
-                        Conception de rapports personnalisés pour suivre vos
-                        indicateurs de performance clés (KPIs).
+                        {t("comptabiliteCertification.services.items.managementReporting.description")}
                       </p>
                     </div>
                   </div>
@@ -330,11 +308,10 @@ export default function ComptabiliteCertificationPage() {
                     <TrendingUp className="w-8 h-8 text-[#095797] mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="text-xl font-bold text-[#095797] mb-2">
-                        Prévisions de flux de trésorerie
+                        {t("comptabiliteCertification.services.items.cashFlowForecasts.title")}
                       </h3>
                       <p className="text-gray-600">
-                        Modélisation de vos flux financiers pour anticiper et
-                        sécuriser vos liquidités.
+                        {t("comptabiliteCertification.services.items.cashFlowForecasts.description")}
                       </p>
                     </div>
                   </div>
@@ -345,11 +322,10 @@ export default function ComptabiliteCertificationPage() {
                     <FileText className="w-8 h-8 text-[#095797] mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="text-xl font-bold text-[#095797] mb-2">
-                        Reporting financier et analyse de la performance
+                        {t("comptabiliteCertification.services.items.financialReporting.title")}
                       </h3>
                       <p className="text-gray-600">
-                        Analyse approfondie de vos performances financières pour
-                        une prise de décision éclairée.
+                        {t("comptabiliteCertification.services.items.financialReporting.description")}
                       </p>
                     </div>
                   </div>
@@ -367,14 +343,13 @@ export default function ComptabiliteCertificationPage() {
             <motion.div className="text-center mb-16" {...fadeInUp}>
               <div className="inline-flex items-center gap-2 bg-[#095797]/10 text-[#095797] px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Users className="w-4 h-4" />
-                Gestion RH
+                {t("comptabiliteCertification.payroll.badge")}
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
-                Gestion de la paie
+                {t("comptabiliteCertification.payroll.title")}
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Sécurisez votre capital humain et libérez vos ressources
-                stratégiques.
+                {t("comptabiliteCertification.payroll.subtitle")}
               </p>
             </motion.div>
 
@@ -383,7 +358,7 @@ export default function ComptabiliteCertificationPage() {
                 <div className="relative h-full">
                   <Image
                     src="/ServiceImages/GestionPaie.png"
-                    alt="Gestion de la paie"
+                    alt={t("comptabiliteCertification.imagesAlt.payrollManagement")}
                     width={600}
                     height={400}
                     className="rounded-2xl shadow-2xl h-100 object-fill"
@@ -395,19 +370,11 @@ export default function ComptabiliteCertificationPage() {
                 <div className="bg-white rounded-2xl p-8 shadow-xl h-full flex flex-col justify-center">
                   <div className="space-y-6">
                     <p className="text-lg text-gray-700 leading-relaxed">
-                      En République Démocratique du Congo, la gestion de la paie
-                      est bien plus qu&#39;une simple transaction mensuelle.
-                      C&#39;est une fonction critique à la croisée du Code du
-                      Travail, des exigences des organismes sociaux (CNSS, INPP,
-                      ONEM) et de la satisfaction de vos employés. Les erreurs
-                      coûtent cher, en pénalités comme en perte de confiance.
+                      {t("comptabiliteCertification.payroll.description1")}
                     </p>
 
                     <p className="text-lg text-gray-700 leading-relaxed">
-                      Notre mission est de transformer votre gestion de la paie
-                      d&#39;un fardeau administratif complexe en un service
-                      d&#39;une fiabilité absolue, vous garantissant conformité,
-                      confidentialité et tranquillité d&#39;esprit.
+                      {t("comptabiliteCertification.payroll.description2")}
                     </p>
                   </div>
                 </div>
@@ -416,7 +383,7 @@ export default function ComptabiliteCertificationPage() {
 
             <div className="mt-16">
               <h3 className="text-3xl font-bold text-[#095797] mb-12 text-center">
-                Nos services de gestion de la paie
+                {t("comptabiliteCertification.payroll.servicesTitle")}
               </h3>
 
               <div className="space-y-8">
@@ -432,11 +399,10 @@ export default function ComptabiliteCertificationPage() {
                       </div>
                       <div>
                         <h4 className="text-lg font-bold text-[#095797] mb-2">
-                          Calcul des salaires
+                          {t("comptabiliteCertification.payroll.services.salaryCalculation.title")}
                         </h4>
                         <p className="text-gray-600 text-sm leading-relaxed">
-                          Traitement précis de tous les éléments (fixe,
-                          variable, avantages, absences).
+                          {t("comptabiliteCertification.payroll.services.salaryCalculation.description")}
                         </p>
                       </div>
                     </div>
@@ -452,11 +418,10 @@ export default function ComptabiliteCertificationPage() {
                       </div>
                       <div>
                         <h4 className="text-lg font-bold text-[#095797] mb-2">
-                          Bulletins de paie
+                          {t("comptabiliteCertification.payroll.services.paySlips.title")}
                         </h4>
                         <p className="text-gray-600 text-sm leading-relaxed">
-                          Établissement de bulletins clairs et conformes pour
-                          chaque employé.
+                          {t("comptabiliteCertification.payroll.services.paySlips.description")}
                         </p>
                       </div>
                     </div>
@@ -472,10 +437,10 @@ export default function ComptabiliteCertificationPage() {
                       </div>
                       <div>
                         <h4 className="text-lg font-bold text-[#095797] mb-2">
-                          Déclarations sociales
+                          {t("comptabiliteCertification.payroll.services.socialDeclarations.title")}
                         </h4>
                         <p className="text-gray-600 text-sm leading-relaxed">
-                          Gestion mensuelle et trimestrielle (CNSS, INPP, ONEM).
+                          {t("comptabiliteCertification.payroll.services.socialDeclarations.description")}
                         </p>
                       </div>
                     </div>
@@ -494,11 +459,10 @@ export default function ComptabiliteCertificationPage() {
                       </div>
                       <div>
                         <h4 className="text-lg font-bold text-[#095797] mb-2">
-                          IPR & Impôts
+                          {t("comptabiliteCertification.payroll.services.iprTaxes.title")}
                         </h4>
                         <p className="text-gray-600 text-sm leading-relaxed">
-                          Calcul et déclaration de l&apos;Impôt Professionnel
-                          sur les Rémunérations.
+                          {t("comptabiliteCertification.payroll.services.iprTaxes.description")}
                         </p>
                       </div>
                     </div>
@@ -514,11 +478,10 @@ export default function ComptabiliteCertificationPage() {
                       </div>
                       <div>
                         <h4 className="text-lg font-bold text-[#095797] mb-2">
-                          Administration RH
+                          {t("comptabiliteCertification.payroll.services.hrAdministration.title")}
                         </h4>
                         <p className="text-gray-600 text-sm leading-relaxed">
-                          Gestion des formalités d&apos;embauche et de départ,
-                          ainsi que des soldes de tout compte.
+                          {t("comptabiliteCertification.payroll.services.hrAdministration.description")}
                         </p>
                       </div>
                     </div>
@@ -534,11 +497,10 @@ export default function ComptabiliteCertificationPage() {
                       </div>
                       <div>
                         <h4 className="text-lg font-bold text-[#095797] mb-2">
-                          Reportings & États
+                          {t("comptabiliteCertification.payroll.services.reportsStates.title")}
                         </h4>
                         <p className="text-gray-600 text-sm leading-relaxed">
-                          Production d&apos;états et de reportings pour la
-                          comptabilité et le contrôle de gestion.
+                          {t("comptabiliteCertification.payroll.services.reportsStates.description")}
                         </p>
                       </div>
                     </div>
@@ -557,10 +519,10 @@ export default function ComptabiliteCertificationPage() {
             <motion.div className="text-center mb-16" {...fadeInUp}>
               <div className="inline-flex items-center gap-2 bg-[#095797]/10 text-[#095797] px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Shield className="w-4 h-4" />
-                Fiscalité
+                {t("comptabiliteCertification.taxCompliance.badge")}
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
-                Conformité fiscale
+                {t("comptabiliteCertification.taxCompliance.title")}
               </h2>
             </motion.div>
 
@@ -569,20 +531,11 @@ export default function ComptabiliteCertificationPage() {
                 <div className="bg-white rounded-2xl p-8 shadow-xl h-full flex flex-col justify-center">
                   <div className="space-y-6">
                     <p className="text-lg text-gray-700 leading-relaxed">
-                      Dans un environnement où la pression fiscale est
-                      croissante et les réglementations complexes, la conformité
-                      n&#39;est pas une option, c&#39;est un impératif de
-                      gouvernance. Pour les entreprises opérant en RDC, naviguer
-                      dans les méandres des exigences de la Direction Générale
-                      des Impôts (DGI) requiert une vigilance et une expertise
-                      constantes.
+                      {t("comptabiliteCertification.taxCompliance.description1")}
                     </p>
 
                     <p className="text-lg text-gray-700 leading-relaxed">
-                      Notre mission est de sécuriser votre entreprise face à
-                      cette complexité, en transformant la contrainte fiscale en
-                      un élément maîtrisé et optimisé de votre stratégie
-                      financière.
+                      {t("comptabiliteCertification.taxCompliance.description2")}
                     </p>
                   </div>
                 </div>
@@ -592,7 +545,7 @@ export default function ComptabiliteCertificationPage() {
                 <div className="relative h-full">
                   <Image
                     src="/ServiceImages/ConformitéFiscale.png"
-                    alt="Conformité fiscale"
+                    alt={t("comptabiliteCertification.imagesAlt.taxCompliance")}
                     width={600}
                     height={400}
                     className="rounded-2xl shadow-2xl h-100 object-fill"
@@ -603,7 +556,7 @@ export default function ComptabiliteCertificationPage() {
 
             <div className="mt-16">
               <h3 className="text-3xl font-bold text-[#095797] mb-12 text-center">
-                Nos services fiscaux complets
+                {t("comptabiliteCertification.taxCompliance.servicesTitle")}
               </h3>
 
               <div className="space-y-12">
@@ -620,21 +573,19 @@ export default function ComptabiliteCertificationPage() {
                         </div>
                         <div>
                           <h4 className="text-2xl font-bold">
-                            Déclarations Fiscales
+                            {t("comptabiliteCertification.taxCompliance.heroServices.taxDeclarations.title")}
                           </h4>
                           <p className="text-blue-100">
-                            Complètes & Ponctuelles
+                            {t("comptabiliteCertification.taxCompliance.heroServices.taxDeclarations.subtitle")}
                           </p>
                         </div>
                       </div>
                       <p className="text-blue-50 leading-relaxed mb-6">
-                        Préparation et dépôt de toutes vos déclarations fiscales
-                        périodiques et annuelles (TVA, IPR, IERE, etc.) avec une
-                        précision absolue.
+                        {t("comptabiliteCertification.taxCompliance.heroServices.taxDeclarations.description")}
                       </p>
                       <div className="flex items-center gap-2 text-sm text-blue-200">
                         <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                        <span>Conformité garantie</span>
+                        <span>{t("comptabiliteCertification.taxCompliance.heroServices.taxDeclarations.status")}</span>
                       </div>
                     </div>
                     <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/5 rounded-full"></div>
@@ -652,17 +603,16 @@ export default function ComptabiliteCertificationPage() {
                         </div>
                         <div>
                           <h4 className="text-2xl font-bold">
-                            Contrôles Fiscaux : Assistance & Représentation
+                            {t("comptabiliteCertification.taxCompliance.heroServices.taxAudits.title")}
                           </h4>
                         </div>
                       </div>
                       <p className="text-green-50 leading-relaxed mb-6">
-                        Accompagnement personnalisé par notre équipe
-                        d&#39;experts spécialisés lors des contrôles fiscaux.
+                        {t("comptabiliteCertification.taxCompliance.heroServices.taxAudits.description")}
                       </p>
                       <div className="flex items-center gap-2 text-sm text-green-200">
                         <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                        <span>Protection optimale</span>
+                        <span>{t("comptabiliteCertification.taxCompliance.heroServices.taxAudits.status")}</span>
                       </div>
                     </div>
                     <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/5 rounded-full"></div>
@@ -682,11 +632,10 @@ export default function ComptabiliteCertificationPage() {
                       </div>
                       <div>
                         <h4 className="text-lg font-bold text-[#095797] mb-2">
-                          Revue de Conformité
+                          {t("comptabiliteCertification.taxCompliance.additionalServices.complianceReview.title")}
                         </h4>
                         <p className="text-gray-600 text-sm leading-relaxed">
-                          Diagnostic complet de votre situation fiscale pour
-                          identifier et corriger les risques.
+                          {t("comptabiliteCertification.taxCompliance.additionalServices.complianceReview.description")}
                         </p>
                       </div>
                     </div>
@@ -702,11 +651,10 @@ export default function ComptabiliteCertificationPage() {
                       </div>
                       <div>
                         <h4 className="text-lg font-bold text-[#095797] mb-2">
-                          Conseil Fiscal
+                          {t("comptabiliteCertification.taxCompliance.additionalServices.taxAdvice.title")}
                         </h4>
                         <p className="text-gray-600 text-sm leading-relaxed">
-                          Conseil permanent sur vos opérations courantes et
-                          projets stratégiques.
+                          {t("comptabiliteCertification.taxCompliance.additionalServices.taxAdvice.description")}
                         </p>
                       </div>
                     </div>
@@ -722,11 +670,10 @@ export default function ComptabiliteCertificationPage() {
                       </div>
                       <div>
                         <h4 className="text-lg font-bold text-[#095797] mb-2">
-                          Optimisation TVA
+                          {t("comptabiliteCertification.taxCompliance.additionalServices.vatOptimization.title")}
                         </h4>
                         <p className="text-gray-600 text-sm leading-relaxed">
-                          Gestion stratégique de la Taxe sur la Valeur Ajoutée
-                          pour optimiser votre trésorerie.
+                          {t("comptabiliteCertification.taxCompliance.additionalServices.vatOptimization.description")}
                         </p>
                       </div>
                     </div>
@@ -742,12 +689,10 @@ export default function ComptabiliteCertificationPage() {
                       </div>
                       <div>
                         <h4 className="text-lg font-bold text-[#095797] mb-2">
-                          Relation DGI
+                          {t("comptabiliteCertification.taxCompliance.additionalServices.dgiRelations.title")}
                         </h4>
                         <p className="text-gray-600 text-sm leading-relaxed">
-                          Gestion proactive de vos relations avec
-                          l&#39;administration fiscale pour une collaboration
-                          fluide et efficace.
+                          {t("comptabiliteCertification.taxCompliance.additionalServices.dgiRelations.description")}
                         </p>
                       </div>
                     </div>
@@ -762,14 +707,14 @@ export default function ComptabiliteCertificationPage() {
                         <Clock className="w-6 h-6 text-[#095797] group-hover:text-white transition-colors duration-300" />
                       </div>
                       <h4 className="text-lg font-bold text-[#095797]">
-                        Accompagnement Sur-Mesure
+                        {t("comptabiliteCertification.taxCompliance.additionalServices.tailoredSupport.title")}
                       </h4>
                       <p className="text-gray-600 text-sm">
-                        Une équipe dédiée à votre réussite fiscale
+                        {t("comptabiliteCertification.taxCompliance.additionalServices.tailoredSupport.description")}
                       </p>
                       <Link href="/#contact">
                         <button className="mt-4 bg-[#095797] hover:bg-[#084a7a] text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors duration-300 cursor-pointer">
-                          Nous contacter
+                          {t("comptabiliteCertification.taxCompliance.additionalServices.tailoredSupport.button")}
                         </button>
                       </Link>
                     </div>

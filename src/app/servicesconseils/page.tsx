@@ -5,6 +5,7 @@ import Header from "@/components/layout/Header";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useI18n } from "@/i18n/useI18n";
 import {
   ArrowRight,
   Target,
@@ -20,6 +21,7 @@ import {
 } from "lucide-react";
 
 export default function ServicesConseilsPage() {
+  const { t } = useI18n();
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
     animate: { opacity: 1, y: 0 },
@@ -58,7 +60,7 @@ export default function ServicesConseilsPage() {
           ></div>
           <Image
             src="/ServiceImages/servicesconseils.jpg"
-            alt="Services de Conseil Background"
+            alt={t("servicesConseils.imageAlt.servicesConseil")}
             fill
             className="object-cover"
             priority
@@ -110,7 +112,7 @@ export default function ServicesConseilsPage() {
                 marginBottom: "1rem",
               }}
             >
-              Services Conseil
+              {t("servicesConseils.hero.title")}
             </h1>
           </motion.div>
 
@@ -126,8 +128,7 @@ export default function ServicesConseilsPage() {
               className="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-4xl leading-relaxed"
               style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5)" }}
             >
-              Conseil stratégique, opérationnel et financier pour aider les
-              entreprises à relever leurs défis complexes.
+              {t("servicesConseils.hero.description")}
             </p>
           </motion.div>
 
@@ -139,13 +140,13 @@ export default function ServicesConseilsPage() {
           >
             <Link href="/#contact" className="w-full sm:w-auto">
               <button className="w-full sm:w-auto group bg-[var(--color-accent)] hover:bg-[#8ab01e] text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-xl cursor-pointer">
-                Contactez-nous
+                {t("servicesConseils.hero.contactButton")}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
             <Link href="/#services" className="w-full sm:w-auto">
               <button className="w-full sm:w-auto border-2 border-[var(--color-white)] text-[var(--color-white)] hover:bg-[var(--color-white)] hover:text-black backdrop-blur-sm bg-[var(--color-white)]/10 px-8 py-4 rounded-xl font-semibold transition-all duration-300 cursor-pointer">
-                Découvrez nos expertises
+                {t("servicesConseils.hero.expertiseButton")}
               </button>
             </Link>
           </motion.div>
@@ -171,13 +172,13 @@ export default function ServicesConseilsPage() {
             <motion.div className="text-center mb-16" {...fadeInUp}>
               <div className="inline-flex items-center gap-2 bg-[#095797]/10 text-[#095797] px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <TrendingUp className="w-4 h-4" />
-                Vision & Leadership
+                {t("servicesConseils.strategyGrowth.badge")}
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
-                Stratégie & Croissance
+                {t("servicesConseils.strategyGrowth.title")}
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                De la vision au leadership de marché
+                {t("servicesConseils.strategyGrowth.subtitle")}
               </p>
             </motion.div>
 
@@ -192,7 +193,7 @@ export default function ServicesConseilsPage() {
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full">
                     <Image
                       src="/ServiceImages/StratégieCroissance.png"
-                      alt="Stratégie & Croissance"
+                      alt={t("servicesConseils.imageAlt.strategyGrowth")}
                       width={700}
                       height={500}
                       className="w-full h-115 object-cover object-bottom"
@@ -217,20 +218,13 @@ export default function ServicesConseilsPage() {
                             !
                           </span>
                         </div>
-                        Le Défi
+                        {t("servicesConseils.strategyGrowth.challengeTitle")}
                       </h3>
                       <div className="space-y-4 text-gray-700 pl-11">
                         <p className="leading-relaxed">
-                          Naviguer sans une carte claire est le plus grand des
-                          risques. Dans un marché congolais dynamique, la
-                          stagnation guette les entreprises qui opèrent au jour
-                          le jour.
-                        </p>
-                        <p className="leading-relaxed">
-                          La pression concurrentielle, l&#39;évolution rapide
-                          des attentes clients et le manque de recul stratégique
-                          transforment les opportunités en menaces. Vous avez la
-                          vision, mais le chemin pour y parvenir reste flou.
+                          {t(
+                            "servicesConseils.strategyGrowth.challengeDescription",
+                          )}
                         </p>
                       </div>
                     </div>
@@ -243,14 +237,13 @@ export default function ServicesConseilsPage() {
                             ✓
                           </span>
                         </div>
-                        Notre Solution
+                        {t("servicesConseils.strategyGrowth.solutionTitle")}
                       </h3>
                       <div className="pl-11">
                         <p className="text-lg text-gray-700 leading-relaxed">
-                          Nous transformons l&#39;incertitude en un plan
-                          d&#39;action. Nous ne vous donnons pas un rapport
-                          théorique, mais une feuille de route claire pour
-                          dominer votre marché.
+                          {t(
+                            "servicesConseils.strategyGrowth.solutionDescription",
+                          )}
                         </p>
                       </div>
                     </div>
@@ -263,10 +256,10 @@ export default function ServicesConseilsPage() {
             <motion.div className="space-y-8" {...fadeInUp}>
               <div className="text-center">
                 <h3 className="text-3xl lg:text-4xl font-bold text-[#095797] mb-4">
-                  Nos Expertises Stratégiques
+                  {t("servicesConseils.strategyGrowth.expertiseTitle")}
                 </h3>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  Trois piliers fondamentaux pour votre réussite
+                  {t("servicesConseils.strategyGrowth.expertiseSubtitle")}
                 </p>
               </div>
 
@@ -282,12 +275,14 @@ export default function ServicesConseilsPage() {
                   </div>
                   <div className="space-y-4">
                     <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
-                      Diagnostic Précis
+                      {t(
+                        "servicesConseils.strategyGrowth.expertise.diagnostic.title",
+                      )}
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
-                      Nous plongeons au cœur de votre marché et de votre
-                      organisation pour révéler les véritables leviers de
-                      croissance et les freins cachés.
+                      {t(
+                        "servicesConseils.strategyGrowth.expertise.diagnostic.description",
+                      )}
                     </p>
                   </div>
                   <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -306,12 +301,14 @@ export default function ServicesConseilsPage() {
                   </div>
                   <div className="space-y-4">
                     <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
-                      Feuille de route actionnable
+                      {t(
+                        "servicesConseils.strategyGrowth.expertise.roadmap.title",
+                      )}
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
-                      Nous co-construisons avec vous une stratégie sur mesure,
-                      avec des objectifs clairs et des initiatives priorisées
-                      pour un impact maximal.
+                      {t(
+                        "servicesConseils.strategyGrowth.expertise.roadmap.description",
+                      )}
                     </p>
                   </div>
                   <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -330,12 +327,14 @@ export default function ServicesConseilsPage() {
                   </div>
                   <div className="space-y-4">
                     <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
-                      Alignement de votre Équipe
+                      {t(
+                        "servicesConseils.strategyGrowth.expertise.alignment.title",
+                      )}
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
-                      Nous nous assurons que votre stratégie est comprise et
-                      portée par vos équipes, transformant le plan en une
-                      véritable culture de la performance.
+                      {t(
+                        "servicesConseils.strategyGrowth.expertise.alignment.description",
+                      )}
                     </p>
                   </div>
                   <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -367,14 +366,13 @@ export default function ServicesConseilsPage() {
             <motion.div className="text-center mb-16" {...fadeInUp}>
               <div className="inline-flex items-center gap-2 bg-[#095797]/10 text-[#095797] px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Target className="w-4 h-4" />
-                Expertise Juridique
+                {t("servicesConseils.legalAdvice.badge")}
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
-                Conseil juridique
+                {t("servicesConseils.legalAdvice.title")}
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Un accompagnement juridique complet pour sécuriser vos projets
-                et garantir votre conformité
+                {t("servicesConseils.legalAdvice.subtitle")}
               </p>
             </motion.div>
 
@@ -393,12 +391,14 @@ export default function ServicesConseilsPage() {
                   </div>
                   <div className="space-y-4">
                     <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
-                      Assistance à la conformité réglementaire
+                      {t(
+                        "servicesConseils.legalAdvice.services.regulatoryCompliance.title",
+                      )}
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
-                      Nous vous accompagnons pour assurer votre conformité avec
-                      l&apos;ensemble des réglementations en vigueur, vous
-                      permettant d&apos;opérer en toute sérénité.
+                      {t(
+                        "servicesConseils.legalAdvice.services.regulatoryCompliance.description",
+                      )}
                     </p>
                   </div>
                   <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -417,12 +417,14 @@ export default function ServicesConseilsPage() {
                   </div>
                   <div className="space-y-4">
                     <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
-                      Montage juridique de projets
+                      {t(
+                        "servicesConseils.legalAdvice.services.legalProjectSetup.title",
+                      )}
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
-                      Structuration juridique optimale de vos projets pour
-                      maximiser leur efficacité et leur protection juridique dès
-                      la conception.
+                      {t(
+                        "servicesConseils.legalAdvice.services.legalProjectSetup.description",
+                      )}
                     </p>
                   </div>
                   <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -441,11 +443,14 @@ export default function ServicesConseilsPage() {
                   </div>
                   <div className="space-y-4">
                     <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
-                      Gestion des contentieux techniques
+                      {t(
+                        "servicesConseils.legalAdvice.services.technicalLitigation.title",
+                      )}
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
-                      Support technique expert dans les litiges liés aux
-                      projets, assurant une défense robuste de vos intérêts.
+                      {t(
+                        "servicesConseils.legalAdvice.services.technicalLitigation.description",
+                      )}
                     </p>
                   </div>
                   <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -468,12 +473,14 @@ export default function ServicesConseilsPage() {
                     </div>
                     <div className="space-y-4">
                       <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
-                        Gestion des autorisations administratives
+                        {t(
+                          "servicesConseils.legalAdvice.services.administrativePermits.title",
+                        )}
                       </h4>
                       <p className="text-gray-600 leading-relaxed">
-                        Navigation experte à travers les procédures
-                        administratives pour obtenir toutes les autorisations
-                        nécessaires à vos activités.
+                        {t(
+                          "servicesConseils.legalAdvice.services.administrativePermits.description",
+                        )}
                       </p>
                     </div>
                     <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -492,12 +499,14 @@ export default function ServicesConseilsPage() {
                     </div>
                     <div className="space-y-4">
                       <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
-                        Assistance à la rédaction d&apos;appels d&apos;offres et
-                        de contrats
+                        {t(
+                          "servicesConseils.legalAdvice.services.tenderContracts.title",
+                        )}
                       </h4>
                       <p className="text-gray-600 leading-relaxed">
-                        Rédaction professionnelle et sécurisée de vos documents
-                        contractuels et réponses aux appels d&apos;offres.
+                        {t(
+                          "servicesConseils.legalAdvice.services.tenderContracts.description",
+                        )}
                       </p>
                     </div>
                     <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -530,14 +539,13 @@ export default function ServicesConseilsPage() {
             <motion.div className="text-center mb-16" {...fadeInUp}>
               <div className="inline-flex items-center gap-2 bg-[#095797]/10 text-[#095797] px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Users className="w-4 h-4" />
-                Expertise Locale
+                {t("servicesConseils.representationSupport.badge")}
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
-                Représentation & Support Opérationnel
+                {t("servicesConseils.representationSupport.title")}
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Orion Conseil est votre partenaire de confiance pour une
-                implantation et une expansion réussie en RDC
+                {t("servicesConseils.representationSupport.subtitle")}
               </p>
             </motion.div>
 
@@ -552,7 +560,7 @@ export default function ServicesConseilsPage() {
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full">
                     <Image
                       src="/ServiceImages/ReprésentationSupportOpérationnel.png"
-                      alt="Représentation & Support Opérationnel"
+                      alt={t("servicesConseils.imageAlt.representationSupport")}
                       width={600}
                       height={500}
                       className="w-full h-115 object-fit "
@@ -578,21 +586,15 @@ export default function ServicesConseilsPage() {
                             !
                           </span>
                         </div>
-                        Le Défi
+                        {t(
+                          "servicesConseils.representationSupport.challengeTitle",
+                        )}
                       </h3>
                       <div className="space-y-4 text-gray-700 pl-11">
                         <p className="leading-relaxed">
-                          La complexité locale peut paralyser les projets les
-                          plus prometteurs. La RDC offre des opportunités
-                          uniques, mais la distance, les barrières culturelles
-                          et la complexité administrative transforment souvent
-                          l&#39;ambition en obstacle.
-                        </p>
-                        <p className="leading-relaxed">
-                          Pour un investisseur ou une entreprise sans ancrage
-                          local, le risque de retards, de surcoûts et
-                          d&#39;erreurs stratégiques est immense. Vous avez la
-                          vision, mais le terrain reste un mystère.
+                          {t(
+                            "servicesConseils.representationSupport.challengeDescription",
+                          )}
                         </p>
                       </div>
                     </div>
@@ -605,13 +607,15 @@ export default function ServicesConseilsPage() {
                             ✓
                           </span>
                         </div>
-                        Notre Solution
+                        {t(
+                          "servicesConseils.representationSupport.solutionTitle",
+                        )}
                       </h3>
                       <div className="pl-11">
                         <p className="text-lg text-gray-700 leading-relaxed">
-                          Nous sommes vos yeux, vos oreilles et votre bras droit
-                          sur le terrain. Nous transformons la complexité locale
-                          en votre avantage stratégique.
+                          {t(
+                            "servicesConseils.representationSupport.solutionDescription",
+                          )}
                         </p>
                       </div>
                     </div>
@@ -624,10 +628,10 @@ export default function ServicesConseilsPage() {
             <motion.div className="space-y-8" {...fadeInUp}>
               <div className="text-center">
                 <h3 className="text-3xl lg:text-4xl font-bold text-[#095797] mb-4">
-                  Nos services de terrain
+                  {t("servicesConseils.representationSupport.servicesTitle")}
                 </h3>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  Trois piliers pour votre succès opérationnel
+                  {t("servicesConseils.representationSupport.servicesSubtitle")}
                 </p>
               </div>
 
@@ -643,12 +647,14 @@ export default function ServicesConseilsPage() {
                   </div>
                   <div className="space-y-4">
                     <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
-                      Facilitateur d&#39;Affaires
+                      {t(
+                        "servicesConseils.representationSupport.expertise.facilitator.title",
+                      )}
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
-                      Nous maîtrisons les rouages administratifs et
-                      réglementaires pour accélérer votre implantation et
-                      sécuriser vos opérations. Plus de blocages.
+                      {t(
+                        "servicesConseils.representationSupport.expertise.facilitator.description",
+                      )}
                     </p>
                   </div>
                   <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -667,12 +673,14 @@ export default function ServicesConseilsPage() {
                   </div>
                   <div className="space-y-4">
                     <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
-                      Gestion de projets déléguée
+                      {t(
+                        "servicesConseils.representationSupport.expertise.projectManagement.title",
+                      )}
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
-                      Nous pilotons vos projets avec rigueur, en assurant le
-                      lien entre vos objectifs stratégiques et l&#39;exécution
-                      sur le terrain.
+                      {t(
+                        "servicesConseils.representationSupport.expertise.projectManagement.description",
+                      )}
                     </p>
                   </div>
                   <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -691,11 +699,14 @@ export default function ServicesConseilsPage() {
                   </div>
                   <div className="space-y-4">
                     <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
-                      Défense de vos Intérêts
+                      {t(
+                        "servicesConseils.representationSupport.expertise.interestDefense.title",
+                      )}
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
-                      Nous agissons avec une loyauté absolue pour représenter et
-                      défendre vos intérêts auprès des partenaires locaux.
+                      {t(
+                        "servicesConseils.representationSupport.expertise.interestDefense.description",
+                      )}
                     </p>
                   </div>
                   <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -727,13 +738,13 @@ export default function ServicesConseilsPage() {
             <motion.div className="text-center mb-16" {...fadeInUp}>
               <div className="inline-flex items-center gap-2 bg-[#095797]/10 text-[#095797] px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Target className="w-4 h-4" />
-                Croissance
+                {t("servicesConseils.privateEquity.badge")}
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
-                Private Equity
+                {t("servicesConseils.privateEquity.title")}
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Nous connectons le capital à la croissance
+                {t("servicesConseils.privateEquity.subtitle")}
               </p>
             </motion.div>
 
@@ -748,7 +759,7 @@ export default function ServicesConseilsPage() {
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full">
                     <Image
                       src="/ServiceImages/PrivateEquity.png"
-                      alt="Private Equity"
+                      alt={t("servicesConseils.imageAlt.privateEquity")}
                       width={700}
                       height={500}
                       className="w-full h-121 object-fill "
@@ -773,21 +784,13 @@ export default function ServicesConseilsPage() {
                             !
                           </span>
                         </div>
-                        Le Défi
+                        {t("servicesConseils.privateEquity.challengeTitle")}
                       </h3>
                       <div className="space-y-4 text-gray-700 pl-11">
                         <p className="leading-relaxed">
-                          Le paradoxe congolais : un potentiel immense freiné
-                          par un accès limité au capital. Les sources de
-                          financement traditionnelles ne suffisent plus à
-                          soutenir l&apos;innovation et la croissance
-                          structurelle.
-                        </p>
-                        <p className="leading-relaxed">
-                          Notre conviction est que le Private Equity n&apos;est
-                          pas juste une alternative, mais le levier stratégique
-                          pour transformer ce potentiel en performance
-                          économique durable.
+                          {t(
+                            "servicesConseils.privateEquity.challengeDescription",
+                          )}
                         </p>
                       </div>
                     </div>
@@ -800,15 +803,13 @@ export default function ServicesConseilsPage() {
                             ✓
                           </span>
                         </div>
-                        Notre Solution
+                        {t("servicesConseils.privateEquity.solutionTitle")}
                       </h3>
                       <div className="pl-11">
                         <p className="text-lg text-gray-700 leading-relaxed">
-                          Nous sommes le pont entre les opportunités
-                          d&#39;investissement et les capitaux intelligents.{" "}
-                          Notre conviction est que le Private Equity est le
-                          levier stratégique pour transformer ce potentiel en
-                          performance économique durable.
+                          {t(
+                            "servicesConseils.privateEquity.solutionDescription",
+                          )}
                         </p>
                       </div>
                     </div>
@@ -821,10 +822,10 @@ export default function ServicesConseilsPage() {
             <motion.div className="space-y-8" {...fadeInUp}>
               <div className="text-center">
                 <h3 className="text-3xl lg:text-4xl font-bold text-[#095797] mb-4">
-                  Notre Approche Rigoureuse
+                  {t("servicesConseils.privateEquity.approachTitle")}
                 </h3>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  Trois étapes pour maximiser la valeur
+                  {t("servicesConseils.privateEquity.approachSubtitle")}
                 </p>
               </div>
 
@@ -840,12 +841,14 @@ export default function ServicesConseilsPage() {
                   </div>
                   <div className="space-y-4">
                     <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
-                      Diagnostic Stratégique & Viabilité
+                      {t(
+                        "servicesConseils.privateEquity.expertise.diagnostic.title",
+                      )}
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
-                      Analyse exhaustive du modèle économique pour identifier
-                      les véritables leviers de croissance et les risques
-                      cachés.
+                      {t(
+                        "servicesConseils.privateEquity.expertise.diagnostic.description",
+                      )}
                     </p>
                   </div>
                   <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -864,11 +867,14 @@ export default function ServicesConseilsPage() {
                   </div>
                   <div className="space-y-4">
                     <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
-                      Due Diligence Intégrale
+                      {t(
+                        "servicesConseils.privateEquity.expertise.dueDiligence.title",
+                      )}
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
-                      Vérification rigoureuse des aspects légaux, financiers et
-                      opérationnels pour sécuriser l&#39;investissement.
+                      {t(
+                        "servicesConseils.privateEquity.expertise.dueDiligence.description",
+                      )}
                     </p>
                   </div>
                   <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -887,11 +893,14 @@ export default function ServicesConseilsPage() {
                   </div>
                   <div className="space-y-4">
                     <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
-                      Validation par le Marché & les Experts
+                      {t(
+                        "servicesConseils.privateEquity.expertise.validation.title",
+                      )}
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
-                      Confrontation de la thèse d&#39;investissement à la
-                      réalité du terrain pour maximiser les chances de succès.
+                      {t(
+                        "servicesConseils.privateEquity.expertise.validation.description",
+                      )}
                     </p>
                   </div>
                   <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -904,32 +913,40 @@ export default function ServicesConseilsPage() {
               <motion.div className="mt-16" {...fadeInUp}>
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold text-[#095797] mb-4">
-                    Notre Double Expertise
+                    {t("servicesConseils.privateEquity.doubleExpertiseTitle")}
                   </h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className="bg-gradient-to-br from-[#095797]/10 to-[#095797]/5 p-6 rounded-2xl border border-[#095797]/20">
                     <h4 className="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
                       <div className="w-6 h-6 bg-[#095797] rounded-lg flex items-center justify-center">
-                        <span className="text-white text-xs font-bold">E</span>
+                        <span className="text-white text-xs font-bold">
+                          {t(
+                            "servicesConseils.privateEquity.entrepreneursAbbrev",
+                          )}
+                        </span>
                       </div>
-                      Pour les Entrepreneurs (E)
+                      {t("servicesConseils.privateEquity.forEntrepreneurs")}
                     </h4>
                     <p className="text-gray-600">
-                      Nous transformons votre vision en projet
-                      &quot;investissable&quot;.
+                      {t(
+                        "servicesConseils.privateEquity.forEntrepreneursDescription",
+                      )}
                     </p>
                   </div>
                   <div className="bg-gradient-to-br from-[#095797]/10 to-[#095797]/5 p-6 rounded-2xl border border-[#095797]/20">
                     <h4 className="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
                       <div className="w-6 h-6 bg-[#095797] rounded-lg flex items-center justify-center">
-                        <span className="text-white text-xs font-bold">I</span>
+                        <span className="text-white text-xs font-bold">
+                          {t("servicesConseils.privateEquity.investorsAbbrev")}
+                        </span>
                       </div>
-                      Pour les Investisseurs (I)
+                      {t("servicesConseils.privateEquity.forInvestors")}
                     </h4>
                     <p className="text-gray-600">
-                      Nous transformons l&#39;incertitude du marché en avantage
-                      compétitif.
+                      {t(
+                        "servicesConseils.privateEquity.forInvestorsDescription",
+                      )}
                     </p>
                   </div>
                 </div>
@@ -940,13 +957,13 @@ export default function ServicesConseilsPage() {
                 <div className="text-center mb-16">
                   <div className="inline-flex items-center gap-2 bg-[#095797]/10 text-gray-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
                     <Target className="w-4 h-4" />
-                    Solutions Interactives
+                    {t("servicesConseils.privateEquity.interactiveSolutions")}
                   </div>
                   <h3 className="text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
-                    Nos Solutions sur Mesure
+                    {t("servicesConseils.privateEquity.tailoredSolutions")}
                   </h3>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                    Nous connectons le capital à la croissance
+                    {t("servicesConseils.privateEquity.connectCapitalGrowth")}
                   </p>
                 </div>
 
@@ -970,12 +987,12 @@ export default function ServicesConseilsPage() {
                             tab2.classList.add("hidden");
                             btn1.classList.add(
                               "text-gray-700",
-                              "bg-[#095797]/5"
+                              "bg-[#095797]/5",
                             );
                             btn1.classList.remove("text-gray-600");
                             btn2.classList.remove(
                               "text-gray-800",
-                              "bg-[#095797]/5"
+                              "bg-[#095797]/5",
                             );
                             btn2.classList.add("text-gray-600");
                           }
@@ -985,13 +1002,21 @@ export default function ServicesConseilsPage() {
                         <div className="flex items-center justify-center gap-1.5 sm:gap-2 md:gap-3">
                           <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-[#095797] rounded-lg md:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
                             <span className="text-white text-xs sm:text-sm font-bold">
-                              E
+                              {t(
+                                "servicesConseils.privateEquity.entrepreneursAbbrev",
+                              )}
                             </span>
                           </div>
                           <span className="hidden sm:inline">
-                            Pour les Entreprises
+                            {t(
+                              "servicesConseils.privateEquity.enterprisesTab.title",
+                            )}
                           </span>
-                          <span className="sm:hidden">Entreprises</span>
+                          <span className="sm:hidden">
+                            {t(
+                              "servicesConseils.privateEquity.enterprisesTab.titleShort",
+                            )}
+                          </span>
                         </div>
                         <div className="absolute bottom-0 left-0 w-full h-1 bg-[#095797] scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
                       </button>
@@ -1011,12 +1036,12 @@ export default function ServicesConseilsPage() {
                             tab1.classList.add("hidden");
                             btn2.classList.add(
                               "text-gray-800",
-                              "bg-[#095797]/5"
+                              "bg-[#095797]/5",
                             );
                             btn2.classList.remove("text-gray-600");
                             btn1.classList.remove(
                               "text-gray-700",
-                              "bg-[#095797]/5"
+                              "bg-[#095797]/5",
                             );
                             btn1.classList.add("text-gray-600");
                           }
@@ -1026,13 +1051,21 @@ export default function ServicesConseilsPage() {
                         <div className="flex items-center justify-center gap-1.5 sm:gap-2 md:gap-3">
                           <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-[#095797] rounded-lg md:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
                             <span className="text-white text-xs sm:text-sm font-bold">
-                              I
+                              {t(
+                                "servicesConseils.privateEquity.investorsAbbrev",
+                              )}
                             </span>
                           </div>
                           <span className="hidden sm:inline">
-                            Pour les Investisseurs
+                            {t(
+                              "servicesConseils.privateEquity.investorsTab.title",
+                            )}
                           </span>
-                          <span className="sm:hidden">Investisseurs</span>
+                          <span className="sm:hidden">
+                            {t(
+                              "servicesConseils.privateEquity.investorsTab.titleShort",
+                            )}
+                          </span>
                         </div>
                         <div className="absolute bottom-0 left-0 w-full h-1 bg-[#095797] scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
                       </button>
@@ -1047,10 +1080,14 @@ export default function ServicesConseilsPage() {
                       >
                         <div className="text-center mb-8 md:mb-12">
                           <h4 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-3 md:mb-4 px-2">
-                            Devenez une évidence pour les investisseurs
+                            {t(
+                              "servicesConseils.privateEquity.enterprisesTab.becomeEvidentTitle",
+                            )}
                           </h4>
                           <p className="text-base sm:text-lg text-gray-600 px-2">
-                            Un accompagnement complet vers le financement réussi
+                            {t(
+                              "servicesConseils.privateEquity.enterprisesTab.completeSupportDescription",
+                            )}
                           </p>
                         </div>
 
@@ -1073,14 +1110,14 @@ export default function ServicesConseilsPage() {
                               </div>
                               <div className="flex-1 bg-gradient-to-r from-[#095797]/5 to-transparent rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 border-l-4 border-[#095797] group-hover:shadow-lg transition-shadow">
                                 <h5 className="text-lg sm:text-xl md:text-2xl font-bold text-[#095797] mb-2 md:mb-3 group-hover:text-gray-700 transition-colors">
-                                  Préparation stratégique (Investment readiness)
+                                  {t(
+                                    "servicesConseils.privateEquity.enterprisesTab.steps.1.title",
+                                  )}
                                 </h5>
                                 <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
-                                  Nous forgeons avec vous un dossier
-                                  d&#39;investissement irréprochable : business
-                                  plan affûté, stratégie clarifiée et états
-                                  financiers fiables pour capter l&#39;attention
-                                  et la confiance.
+                                  {t(
+                                    "servicesConseils.privateEquity.enterprisesTab.steps.1.description",
+                                  )}
                                 </p>
                               </div>
                             </motion.div>
@@ -1098,13 +1135,14 @@ export default function ServicesConseilsPage() {
                               </div>
                               <div className="flex-1 bg-gradient-to-r from-[#095797]/5 to-transparent rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 border-l-4 border-[#095797] group-hover:shadow-lg transition-shadow">
                                 <h5 className="text-lg sm:text-xl md:text-2xl font-bold text-[#095797] mb-2 md:mb-3 group-hover:text-gray-700 transition-colors">
-                                  Valorisation & Modélisation
+                                  {t(
+                                    "servicesConseils.privateEquity.enterprisesTab.steps.2.title",
+                                  )}
                                 </h5>
                                 <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
-                                  Nous objectivons la valeur de votre entreprise
-                                  et projetons son potentiel de croissance à
-                                  travers des modèles financiers robustes qui
-                                  justifient votre demande de financement.
+                                  {t(
+                                    "servicesConseils.privateEquity.enterprisesTab.steps.2.description",
+                                  )}
                                 </p>
                               </div>
                             </motion.div>
@@ -1122,13 +1160,14 @@ export default function ServicesConseilsPage() {
                               </div>
                               <div className="flex-1 bg-gradient-to-r from-[#095797]/5 to-transparent rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 border-l-4 border-[#095797] group-hover:shadow-lg transition-shadow">
                                 <h5 className="text-lg sm:text-xl md:text-2xl font-bold text-[#095797] mb-2 md:mb-3 group-hover:text-gray-700 transition-colors">
-                                  Accès Stratégique au Capital
+                                  {t(
+                                    "servicesConseils.privateEquity.enterprisesTab.steps.3.title",
+                                  )}
                                 </h5>
                                 <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
-                                  Nous activons notre réseau de fonds de Private
-                                  Equity et pilotons le processus de levée de
-                                  fonds, en négociant les termes qui servent au
-                                  mieux votre projet à long terme.
+                                  {t(
+                                    "servicesConseils.privateEquity.enterprisesTab.steps.3.description",
+                                  )}
                                 </p>
                               </div>
                             </motion.div>
@@ -1143,11 +1182,14 @@ export default function ServicesConseilsPage() {
                       >
                         <div className="text-center mb-8 md:mb-12">
                           <h4 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-3 md:mb-4 px-2">
-                            Déployez votre capital avec confiance et impact
+                            {t(
+                              "servicesConseils.privateEquity.investorsTab.deployCapitalTitle",
+                            )}
                           </h4>
                           <p className="text-base sm:text-lg text-gray-600 px-2">
-                            Un sourcing d&#39;opportunités d&#39;exception pour
-                            votre portefeuille
+                            {t(
+                              "servicesConseils.privateEquity.investorsTab.sourcingOpportunitiesDescription",
+                            )}
                           </p>
                         </div>
 
@@ -1170,13 +1212,14 @@ export default function ServicesConseilsPage() {
                               </div>
                               <div className="flex-1 bg-gradient-to-r md:bg-gradient-to-l from-[#095797]/5 to-transparent rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 border-l-4 md:border-l-0 md:border-r-4 border-[#095797] group-hover:shadow-lg transition-shadow md:order-1">
                                 <h5 className="text-lg sm:text-xl md:text-2xl font-bold text-[#095797] mb-2 md:mb-3 group-hover:text-gray-700 transition-colors">
-                                  Deal Flow Exclusif & Qualifié
+                                  {t(
+                                    "servicesConseils.privateEquity.investorsTab.steps.1.title",
+                                  )}
                                 </h5>
                                 <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
-                                  Notre ancrage local nous permet de sourcer des
-                                  opportunités à fort potentiel, souvent hors
-                                  des radars traditionnels, vous donnant un
-                                  accès prioritaire aux pépites de demain.
+                                  {t(
+                                    "servicesConseils.privateEquity.investorsTab.steps.1.description",
+                                  )}
                                 </p>
                               </div>
                             </motion.div>
@@ -1194,14 +1237,14 @@ export default function ServicesConseilsPage() {
                               </div>
                               <div className="flex-1 bg-gradient-to-r md:bg-gradient-to-l from-[#095797]/5 to-transparent rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 border-l-4 md:border-l-0 md:border-r-4 border-[#095797] group-hover:shadow-lg transition-shadow md:order-1">
                                 <h5 className="text-lg sm:text-xl md:text-2xl font-bold text-[#095797] mb-2 md:mb-3 group-hover:text-gray-700 transition-colors">
-                                  Due Diligence à 360°
+                                  {t(
+                                    "servicesConseils.privateEquity.investorsTab.steps.2.title",
+                                  )}
                                 </h5>
                                 <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
-                                  Nous menons des audits d&#39;acquisition
-                                  complets (stratégiques, financiers,
-                                  opérationnels) pour transformer le risque en
-                                  certitude et valider chaque thèse
-                                  d&#39;investissement.
+                                  {t(
+                                    "servicesConseils.privateEquity.investorsTab.steps.2.description",
+                                  )}
                                 </p>
                               </div>
                             </motion.div>
@@ -1219,14 +1262,14 @@ export default function ServicesConseilsPage() {
                               </div>
                               <div className="flex-1 bg-gradient-to-r md:bg-gradient-to-l from-[#095797]/5 to-transparent rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 border-l-4 md:border-l-0 md:border-r-4 border-[#095797] group-hover:shadow-lg transition-shadow md:order-1">
                                 <h5 className="text-lg sm:text-xl md:text-2xl font-bold text-[#095797] mb-2 md:mb-3 group-hover:text-gray-700 transition-colors">
-                                  Création de Valeur Active (Post-acquisition)
+                                  {t(
+                                    "servicesConseils.privateEquity.investorsTab.steps.3.title",
+                                  )}
                                 </h5>
                                 <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
-                                  Nous agissons comme votre partenaire
-                                  opérationnel sur le terrain pour piloter la
-                                  performance, mettre en œuvre les plans
-                                  stratégiques et accélérer la création de
-                                  valeur au sein de votre portefeuille.
+                                  {t(
+                                    "servicesConseils.privateEquity.investorsTab.steps.3.description",
+                                  )}
                                 </p>
                               </div>
                             </motion.div>
@@ -1261,13 +1304,13 @@ export default function ServicesConseilsPage() {
             <motion.div className="text-center mb-16" {...fadeInUp}>
               <div className="inline-flex items-center gap-2 bg-[#095797]/10 text-[#095797] px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Home className="w-4 h-4" />
-                Développement Immobilier
+                {t("servicesConseils.realEstateExpertise.badge")}
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
-                Expertise Immobilière
+                {t("servicesConseils.realEstateExpertise.title")}
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Immobilier & Développement : Maîtriser les opportunités du marché congolais
+                {t("servicesConseils.realEstateExpertise.description")}
               </p>
             </motion.div>
 
@@ -1282,7 +1325,7 @@ export default function ServicesConseilsPage() {
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full">
                     <Image
                       src="/ServiceImages/ExpertiseImmobiliere.png"
-                      alt="Expertise Immobilière"
+                      alt={t("servicesConseils.imageAlt.realEstateExpertise")}
                       width={700}
                       height={500}
                       className="w-full h-115 object-cover object-bottom"
@@ -1307,11 +1350,15 @@ export default function ServicesConseilsPage() {
                             !
                           </span>
                         </div>
-                        Le Défi
+                        {t(
+                          "servicesConseils.realEstateExpertise.challengeTitle",
+                        )}
                       </h3>
                       <div className="space-y-4 text-gray-700 pl-11">
                         <p className="leading-relaxed">
-                          Marché immobilier dynamique mais risqu&eacute; en RDC (r&eacute;glementations, titres fonciers, volatilit&eacute;).
+                          {t(
+                            "servicesConseils.realEstateExpertise.challengeDescription",
+                          )}
                         </p>
                       </div>
                     </div>
@@ -1324,11 +1371,15 @@ export default function ServicesConseilsPage() {
                             ✓
                           </span>
                         </div>
-                        Notre Solution
+                        {t(
+                          "servicesConseils.realEstateExpertise.solutionTitle",
+                        )}
                       </h3>
                       <div className="pl-11">
                         <p className="text-lg text-gray-700 leading-relaxed">
-                          Conseil en acquisition/valorisation/promotion, due diligence immobili&egrave;re, structuration financi&egrave;re de projets immobiliers, montage juridique/financier.
+                          {t(
+                            "servicesConseils.realEstateExpertise.solutionDescription",
+                          )}
                         </p>
                       </div>
                     </div>
@@ -1341,10 +1392,10 @@ export default function ServicesConseilsPage() {
             <motion.div className="space-y-8" {...fadeInUp}>
               <div className="text-center">
                 <h3 className="text-3xl lg:text-4xl font-bold text-[#095797] mb-4">
-                  Nos Expertises Immobilières
+                  {t("servicesConseils.realEstateExpertise.expertiseTitle")}
                 </h3>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  Trois piliers pour votre succès immobilier
+                  {t("servicesConseils.realEstateExpertise.expertiseSubtitle")}
                 </p>
               </div>
 
@@ -1360,10 +1411,14 @@ export default function ServicesConseilsPage() {
                   </div>
                   <div className="space-y-4">
                     <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
-                      Diagnostic foncier/marché
+                      {t(
+                        "servicesConseils.realEstateExpertise.expertise.marketLand.title",
+                      )}
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
-                      Analyse approfondie des opportunités foncières et des tendances du marché pour identifier les projets viables.
+                      {t(
+                        "servicesConseils.realEstateExpertise.expertise.marketLand.description",
+                      )}
                     </p>
                   </div>
                   <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -1382,10 +1437,14 @@ export default function ServicesConseilsPage() {
                   </div>
                   <div className="space-y-4">
                     <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
-                      Feuille de route projet
+                      {t(
+                        "servicesConseils.realEstateExpertise.expertise.projectRoadmap.title",
+                      )}
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
-                      Élaboration de stratégies complètes pour le développement, la vente ou la location de biens immobiliers.
+                      {t(
+                        "servicesConseils.realEstateExpertise.expertise.projectRoadmap.description",
+                      )}
                     </p>
                   </div>
                   <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -1404,10 +1463,14 @@ export default function ServicesConseilsPage() {
                   </div>
                   <div className="space-y-4">
                     <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-700 transition-colors">
-                      Alignement avec strat&eacute;gie d&apos;entreprise/investisseurs
+                      {t(
+                        "servicesConseils.realEstateExpertise.expertise.strategyAlignment.title",
+                      )}
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
-                      Int&eacute;gration des projets immobiliers dans la strat&eacute;gie globale de l&apos;entreprise ou des objectifs d&apos;investissement.
+                      {t(
+                        "servicesConseils.realEstateExpertise.expertise.strategyAlignment.description",
+                      )}
                     </p>
                   </div>
                   <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">

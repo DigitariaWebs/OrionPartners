@@ -169,8 +169,416 @@
     "retry": "Retry",
     "cancel": "Cancel"
   },
-  "admin": {
-    "dashboard": {
+  "comptabiliteCertification": {
+    "hero": {
+        "title": "Accounting & Certification",
+        "description": "Reliable financial information is the foundation of every decision. We guarantee the production of your financial statements and provide you with clear dashboards to manage your performance.",
+        "contactButton": "Contact Us",
+        "expertiseButton": "Discover Our Expertise"
+    },
+    "mission": "Our mission is to provide you with a financial image of absolute clarity and unwavering compliance, so that you can focus on what you do best: directing and developing your business.",
+    "strategicPartnership": {
+        "title": "More than accounting, a strategic partnership",
+        "blocks": {
+            "compliance": {
+                "title": "Unwavering Compliance: Your Peace of Mind",
+                "description": "Navigate with serenity in the Congolese regulatory and tax landscape (OHADA, DGI, CNSS, etc.). Our sharp expertise guarantees precise and timely declarations, protecting you from penalties and ensuring the sustainability of your operations."
+            },
+            "clarity": {
+                "title": "Strategic Clarity: Your Data at the Service of Your Decisions",
+                "description": "We transform your raw figures into business intelligence. Thanks to customized dashboards and relevant management reports, you no longer suffer from information: you use it to manage your performance, anticipate your cash flow needs, and make informed decisions that shape your future."
+            },
+            "efficiency": {
+                "title": "Efficiency and Time Savings: Your Energy at the Service of Your Core Business",
+                "description": "Delegate complexity, keep control. We optimize your accounting processes through rigorous methods and modern tools. Free up your teams from time-consuming tasks and reallocate their vital forces where they create the most value: serving your clients."
+            }
+        }
+    },
+    "services": {
+        "title": "Our Accounting Services",
+        "items": {
+            "completeAccounting": {
+                "title": "Complete Accounting Management",
+                "description": "Entry and processing of your operations monthly, quarterly or according to your needs."
+            },
+            "annualFinancialStatements": {
+                "title": "Preparation of Annual Financial Statements",
+                "description": "Establishment of the balance sheet, income statement and appendices in compliance with SYSCOHADA standards."
+            },
+            "taxSocialDeclarations": {
+                "title": "Management of Tax and Social Declarations",
+                "description": "Preparation and filing of all your declarations (VAT, IPR, IERE, etc.) for perfect compliance."
+            },
+            "managementReporting": {
+                "title": "Management Reporting and Dynamic Dashboards",
+                "description": "Design of customized reports to track your key performance indicators (KPIs)."
+            },
+            "cashFlowForecasts": {
+                "title": "Cash Flow Forecasts",
+                "description": "Modeling of your financial flows to anticipate and secure your liquidity."
+            },
+            "financialReporting": {
+                "title": "Financial Reporting and Performance Analysis",
+                "description": "In-depth analysis of your financial performance for informed decision-making."
+            }
+        }
+    },
+    "payroll": {
+        "badge": "HR Management",
+        "title": "Payroll Management",
+        "subtitle": "Secure your human capital and free up your strategic resources.",
+        "description1": "In the Democratic Republic of Congo, payroll management is much more than a simple monthly transaction. It is a critical function at the crossroads of the Labor Code, the requirements of social organizations (CNSS, INPP, ONEM) and employee satisfaction. Mistakes cost dearly, in penalties as well as loss of trust.",
+        "description2": "Our mission is to transform your payroll management from a complex administrative burden into a service of absolute reliability, guaranteeing you compliance, confidentiality and peace of mind.",
+        "servicesTitle": "Our Payroll Management Services",
+        "services": {
+            "salaryCalculation": {
+                "title": "Salary Calculation",
+                "description": "Precise processing of all elements (fixed, variable, benefits, absences)."
+            },
+            "paySlips": {
+                "title": "Pay Slips",
+                "description": "Establishment of clear and compliant slips for each employee."
+            },
+            "socialDeclarations": {
+                "title": "Social Declarations",
+                "description": "Monthly and quarterly management (CNSS, INPP, ONEM)."
+            },
+            "iprTaxes": {
+                "title": "IPR & Taxes",
+                "description": "Calculation and declaration of Professional Income Tax on Remuneration."
+            },
+            "hrAdministration": {
+                "title": "HR Administration",
+                "description": "Management of hiring and departure formalities, as well as settlement of all accounts."
+            },
+            "reportsStates": {
+                "title": "Reports & Statements",
+                "description": "Production of statements and reports for accounting and management control."
+            }
+        }
+    },
+    "taxCompliance": {
+        "badge": "Taxation",
+        "title": "Tax Compliance",
+        "description1": "In an environment where tax pressure is increasing and regulations are complex, compliance is not an option, it is a governance imperative. For companies operating in DRC, navigating the intricacies of the General Tax Directorate (DGI) requirements requires constant vigilance and expertise.",
+        "description2": "Our mission is to secure your business against this complexity, by transforming tax constraint into a controlled and optimized element of your financial strategy.",
+        "servicesTitle": "Our Complete Tax Services",
+        "heroServices": {
+            "taxDeclarations": {
+                "title": "Tax Declarations",
+                "subtitle": "Complete & Timely",
+                "description": "Preparation and filing of all your periodic and annual tax declarations (VAT, IPR, IERE, etc.) with absolute precision.",
+                "status": "Compliance Guaranteed"
+            },
+            "taxAudits": {
+                "title": "Tax Audits: Assistance & Representation",
+                "description": "Personalized support by our team of specialized experts during tax audits.",
+                "status": "Optimal Protection"
+            }
+        },
+        "additionalServices": {
+            "complianceReview": {
+                "title": "Compliance Review",
+                "description": "Complete diagnosis of your tax situation to identify and correct risks."
+            },
+            "taxAdvice": {
+                "title": "Tax Advice",
+                "description": "Ongoing advice on your current operations and strategic projects."
+            },
+            "vatOptimization": {
+                "title": "VAT Optimization",
+                "description": "Strategic management of Value Added Tax to optimize your cash flow."
+            },
+            "dgiRelations": {
+                "title": "DGI Relations",
+                "description": "Proactive management of your relations with the tax administration for smooth and effective collaboration."
+            },
+            "tailoredSupport": {
+                "title": "Tailored Support",
+                "description": "A team dedicated to your tax success",
+                "button": "Contact Us"
+            }
+        }
+    },
+    "imagesAlt": {
+        "accountingCertification": "Accounting & Certification",
+        "payrollManagement": "Payroll Management",
+        "taxCompliance": "Tax Compliance"
+    }
+},
+  "etudesDataIntelligence": {
+    "hero": {
+      "title": "Studies & Data Intelligence",
+      "description": "We conduct studies and research to provide you with clear and actionable analyses. By combining rigorous methodologies and market knowledge, we help you make informed decisions.",
+      "contactButton": "Contact Us",
+      "expertiseButton": "Discover Our Expertise"
+    },
+    "businessIntelligence": {
+      "title": "Business Intelligence (BI)",
+      "description": "We design interactive dashboards and custom reports to allow you to visualize your performance in real-time, track your key indicators (KPIs) and manage your business with unmatched precision. Our expertise on leading market platforms, such as Microsoft Power BI, Qlik and Tableau, guarantees powerful and perfectly integrated solutions in your environment.",
+      "examples": {
+        "recruitmentAnalysis": {
+          "title": "Recruitment Analysis",
+          "client": "Tech company in full growth seeking to optimize its recruitment processes.",
+          "problem": "Difficulty analyzing the effectiveness of recruitment channels and forecasting personnel needs.",
+          "solution": "Development of a Power BI dashboard integrating HR data, channel performance and recruitment forecasts."
+        },
+        "billingAnalysis": {
+          "title": "Billing Analysis",
+          "client": "Service company facing payment delays and tight cash flow.",
+          "problem": "Lack of visibility on payment deadlines and non-recovery risks.",
+          "solution": "Creation of an automated tracking system with predictive alerts on delay risks."
+        }
+      }
+    },
+    "dataScience": {
+      "title": "Data Science & Predictive Analysis",
+      "description": "Go beyond reports: transform your data into predictive advantage. Our data science expertise allows you to unlock the hidden value in your information to make proactive decisions.",
+      "customModels": {
+        "title": "Our Custom Models",
+        "features": {
+          "marketTrends": "Anticipate market trends and demand developments.",
+          "optimizeProcesses": "Optimize your operational, logistical and marketing processes.",
+          "customerBehavior": "Decrypt customer behaviors to improve retention and personalization.",
+          "riskManagement": "Master risks and identify new growth opportunities with a head start."
+        }
+      },
+      "competitiveAdvantages": {
+        "title": "Competitive Advantages",
+        "description": "Our approach combines advanced algorithms, machine learning and business expertise to transform your data into actionable insights. Each model is calibrated on your specific data to guarantee maximum accuracy.",
+        "stats": {
+          "predictiveAccuracy": "Predictive Accuracy",
+          "efficiencyGain": "Efficiency Gain"
+        }
+      }
+    },
+    "marketStudies": {
+      "title": "Market Studies & Strategic Monitoring",
+      "description": "We conduct in-depth qualitative and quantitative studies to give you a 360° understanding of your environment: competition analysis, customer expectations, market dynamics and growth opportunities.",
+      "studies": {
+        "digitalCommerce": {
+          "title": "Digital Commerce Study: Digital Transformation of the Retail Sector in Kinshasa",
+          "context": "The retail sector in Kinshasa is undergoing rapid digital transformation with the rise of marketplaces and mobile e-commerce.",
+          "approach": "Analysis of transactional data, consumer surveys, benchmarking of local and international digital practices.",
+          "results": "300% growth in e-commerce in 3 years, identification of the most active consumer segments (18-35 years old, urban middle class).",
+          "value": "Optimized omnichannel strategies, identification of investment opportunities in digital logistics and mobile payment."
+        },
+        "consumerBehavior": {
+          "title": "Consumer Behavior Study: Evolution of Generational Preferences in Kinshasa",
+          "context": "Kinshasa consumers are experiencing rapid changes in their purchasing behaviors influenced by digitization and socio-economic changes.",
+          "approach": "Quantitative survey of 1500 consumers, analysis of behavioral data, segmentation by generation and purchasing power.",
+          "results": "Clear segmentation: Generation Z prioritizes digital experience (85% mobile purchases), millennials seek quality/price, Generation X remains loyal to traditional circuits.",
+          "value": "Adaptation of marketing strategies, development of targeted products, optimization of digital and physical distribution channels."
+        }
+      }
+    }
+  },
+  "notreEquipe": {
+    "hero": {
+      "title": "Our Team",
+      "description": "Orion Conseil capitalizes on a team of experienced partners and consultants, united to carry out its missions. It is by uniting our complementary strengths that we offer the most value to our clients. Our rigor and team spirit make us a dynamic and avant-garde organization that stands out.",
+      "discoverTeamButton": "Discover the Team",
+      "contactButton": "Contact Us"
+    },
+    "introduction": {
+      "badge": "Consultant Profiles",
+      "title": "Our Team",
+      "description": "Orion Conseil capitalizes on a team of experienced partners and consultants, united by a common culture of excellence. It is by combining our complementary strengths, from diversified backgrounds in consulting and industry, that we create the most value for our clients. Our analytical rigor, collaborative spirit and total commitment make us much more than a service provider: a true partner in your success.",
+      "impactTitle": "Create real impact, shape your future.",
+      "impactDescription": "At Orion Conseil, our conviction is that only the excellence of our teams can guarantee high-performance solutions, adapted to your needs and compliant with the highest standards. This is why we mobilize a high-caliber team, combining world-class expertise and total commitment, to support you on your most complex challenges. Our unique objective: to transform your strategic, operational and financial challenges into concrete and measurable results."
+    },
+    "teamMembers": {
+      "title": "Our Experts",
+      "description": "Discover the profiles of our consultants and partners, each bringing their unique expertise to serve our clients.",
+      "emailTooltip": "Send email to {name}",
+      "learnMoreButton": "Learn More",
+      "profiles": {
+        "ferdinand-ntambwe": {
+          "title": "M.A.",
+          "subtitle": "Associate, Growth & Markets",
+          "briefDescription": "As Growth & Markets Associate, Ferdinand Ntambwe is the architect of bridges between our clients' challenges and Orion Conseil's solutions.",
+          "description": "As Growth & Markets Associate, Ferdinand Ntambwe is the architect of bridges between our clients' challenges and Orion Conseil's solutions. He identifies strategic opportunities and ensures our expertise constantly evolves to meet their ambitions. A true partner to our key clients, he leverages more than 5 years of experience to cultivate trust relationships and transform their objectives into shared successes. His business development leadership is the guarantee for our clients to have a partner who not only understands, but anticipates their future needs. Ferdinand holds a Bachelor's degree in Finance from Ibn Khaldoun University (Tunisia) and a Master's in Public Finance from Laval University (Canada).",
+          "expertise": "Business Development, Growth Strategy, Client Relations",
+          "education": "Bachelor's degree in Finance (Ibn Khaldoun University), Master's in Public Finance (Laval University)",
+          "university": "Ibn Khaldoun University (Bachelor's), Laval University (Master's)",
+          "country": "Tunisia, Canada",
+          "experience": "More than 5 years of experience in business development"
+        },
+        "gisele-kabwende": {
+          "title": "Lawyer",
+          "subtitle": "Associate, Director of Legal & Tax Division",
+          "briefDescription": "Leading our Legal & Tax Division, Ms. Gisèle Kabwende is a seasoned lawyer with 13 years of experience in corporate law and tax.",
+          "description": "Leading our Legal & Tax Division, Ms. Gisèle Kabwende is a seasoned lawyer with 13 years of experience in corporate law and tax. She advises our clients on critical issues such as regulatory compliance, tax optimization and transaction security (M&A, restructuring). Holder of a law degree from Kinshasa University, her mission is to transform legal constraints into strategic advantages for our clients.",
+          "expertise": "Corporate Law, Tax, Regulatory Compliance",
+          "education": "Law degree (Kinshasa University)",
+          "university": "Kinshasa University",
+          "country": "Democratic Republic of Congo",
+          "experience": "13 years of experience in corporate law and tax"
+        },
+        "jean-claude-gersone": {
+          "title": "",
+          "subtitle": "Associate, Performance & Operations",
+          "briefDescription": "With over 5 years of experience, Jean Claude Gersone is the guarantor of performance and good governance of our missions. He ensures that our resources and processes are perfectly aligned to guarantee our clients' success.",
+          "description": "With over 5 years of experience, Jean Claude Gersone is the guarantor of performance and good governance of our missions. He ensures that our resources and processes are perfectly aligned to guarantee our clients' success. Holder of an economics degree from the National Pedagogical University (DRC) and a Master's in Public Management from the prestigious ENA.",
+          "expertise": "Operational Performance, Governance, Public Management",
+          "education": "Economics degree (National Pedagogical University), Master's in Public Management (ENA)",
+          "university": "National Pedagogical University (Bachelor's), ENA (Master's)",
+          "country": "Democratic Republic of Congo, France",
+          "experience": "Over 5 years of experience in performance and operations"
+        },
+        "christian-mukeba": {
+          "title": "",
+          "subtitle": "Senior Consultant – Energy & Governance",
+          "briefDescription": "Christian Mukeba is a senior consultant and recognized energy sector expert, specializing in oil, gas and renewable energies, particularly photovoltaic solar.",
+          "description": "Christian Mukeba is a senior consultant and recognized energy sector expert, specializing in oil, gas and renewable energies, particularly photovoltaic solar. With over 10 years of experience, he accompanies public institutions, private companies and technical partners in the design, implementation and governance of energy and sustainable development projects. His expertise covers four major areas: (1) Energy and Industry: management of oil and gas projects, optimization of operations, evaluation and risk reduction of technical and strategic issues. (2) Renewable Energies: development and integration of photovoltaic solutions for sustainable electrification, with a focus on off-grid contexts and emerging markets. (3) Market and Financial Studies: analysis of energy supply and demand, identification of investment opportunities, and brief experience in the banking sector that enriches his understanding of financing mechanisms. (4) Environmental and Social Governance: expertise in social responsibility, environmental safeguards and support for governance reforms in the extractive sector. He holds an Engineer's degree in Oil and Gas from Kinshasa University (DRC), which forms the foundation of his technical credibility and ability to solve complex problems in demanding environments.",
+          "expertise": "Energy & Industry, Renewable Energies, Environmental Governance",
+          "education": "Engineer's degree in Oil and Gas (Kinshasa University)",
+          "university": "Kinshasa University",
+          "country": "Democratic Republic of Congo",
+          "experience": "Over 10 years of experience in the energy sector"
+        },
+        "nancy-besoke": {
+          "title": "MBA",
+          "subtitle": "Senior Consultant – Corporate Finance",
+          "briefDescription": "With over five years of experience, Nancy Besoke Bendo is a senior consultant specializing in transforming the financial function and strategic support for companies.",
+          "description": "With over five years of experience, Nancy Besoke Bendo is a senior consultant specializing in transforming the financial function and strategic support for companies. She intervenes with executives to optimize financial performance, strengthen decision-making and generate sustainable value. Her expertise covers financial modeling, investment evaluation and performance management (EPM), with an approach combining analytical rigor and fine understanding of operational realities. Holder of an MBA from the University of Ottawa (Canada), Nancy benefits from top-level training that gives her an integrated strategic vision of business issues. This academic background allows her to connect financial dimensions to the overall objectives of organizations, bringing concrete, agile and results-oriented solutions to clients.",
+          "expertise": "Corporate Finance, Financial Modeling, Performance Management (EPM)",
+          "education": "MBA (University of Ottawa, Canada)",
+          "university": "University of Ottawa",
+          "country": "Canada",
+          "experience": "Over 5 years of experience in corporate finance"
+        },
+        "philippe-emmanuel-amvenebe": {
+          "title": "",
+          "subtitle": "Senior Business Development Consultant",
+          "briefDescription": "Philippe Emmanuel is a senior consultant dedicated to accelerating his clients' growth. With over 10 years of experience, he designs and implements customized business development strategies.",
+          "description": "Philippe Emmanuel is a senior consultant dedicated to accelerating his clients' growth. With over 10 years of experience, he designs and implements customized business development strategies aimed at increasing revenues and conquering new markets. His pragmatic approach combines rigorous analysis and field execution to transform opportunities into concrete results. He accompanies companies in structuring their commercial approach, optimizing their sales and creating strategic partnerships. Philippe holds several business management certifications including some from Laval University (Canada).",
+          "expertise": "Business Development, Commercial Strategy, Strategic Partnerships",
+          "education": "Several business management certifications (Laval University)",
+          "university": "Laval University",
+          "country": "Canada",
+          "experience": "Over 10 years of experience in business development"
+        },
+        "christian-maheshe": {
+          "title": "",
+          "subtitle": "Consultant, Production and Animal Health",
+          "briefDescription": "With over 6 years of experience, Christian Maheshe is the consultant specialist in the agricultural and livestock sectors at Orion Conseil. He accompanies our clients operating in the agropastoral sector.",
+          "description": "With over 6 years of experience, Christian Maheshe is the consultant specialist in the agricultural and livestock sectors at Orion Conseil. He accompanies our clients operating in the agropastoral sector from the incubation phase of their projects to their sustainable intensification of production. His role is to translate strategic objectives into operational excellence on the ground. His approach combines cutting-edge scientific expertise and pragmatic vision of profitability. He intervenes in the implementation of prophylaxis plans, optimization of feed conversion indices, implementation of production and profitability strategies, engineering of strict biosecurity protocols. Christian thus helps companies, agripreneurs and breeders significantly reduce mortality rates, increase productivity and profitability, improve traceability and comply with the most demanding sanitary standards for valuing their production. Christian holds a Doctor of Veterinary Medicine degree from Kinshasa University (DRC). This high-level medical and scientific training is the foundation of his expertise, guaranteeing recommendations that combine economic performance and sanitary excellence.",
+          "expertise": "Agropastoral Production, Animal Health, Biosecurity",
+          "education": "Doctor of Veterinary Medicine (Kinshasa University)",
+          "university": "Kinshasa University",
+          "country": "Democratic Republic of Congo",
+          "experience": "Over 6 years of experience in the agropastoral sector"
+        },
+        "corine-kasongo": {
+          "title": "",
+          "subtitle": "Digital Strategy Consultant",
+          "briefDescription": "Corinne Kasongo is a digital strategist and economist by training, specializing in corporate financial management. She accompanies organizations in their digital transformation by aligning technological innovation, economic performance and sustainable impact.",
+          "description": "Corinne Kasongo is a digital strategist and economist by training, specializing in corporate financial management. She accompanies organizations in their digital transformation by aligning technological innovation, economic performance and sustainable impact. As a digital strategy consultant, she helps her clients increase their visibility, optimize their online presence and fully exploit the digital potential to stimulate their growth. Passionate about innovation and high-value-added solutions, Corinne designs digital marketing strategies based on data analysis, user experience improvement (UX) and conversion of technological opportunities into concrete competitive advantages. Her mastery of financial issues allows her to integrate budgetary rigor and strategic vision into each project. Holder of an economics degree from Kinshasa University (DRC), she embodies a multidisciplinary approach, combining financial expertise, digital intelligence and social impact awareness.",
+          "expertise": "Digital Strategy, Digital Marketing, Financial Management",
+          "education": "Economics degree (Kinshasa University)",
+          "university": "Kinshasa University",
+          "country": "Democratic Republic of Congo",
+          "experience": "Specialist in digital transformation and strategy"
+        },
+        "edith-elda-nsenkey": {
+          "title": "",
+          "subtitle": "Banking Sector Consultant",
+          "briefDescription": "Edith Elda Nsenkey is the consultant specialist in the banking sector at Orion Conseil. She accompanies financial institutions in navigating regulatory challenges, optimizing their operations and implementing their transformation strategies.",
+          "description": "Edith Elda Nsenkey is the consultant specialist in the banking sector at Orion Conseil. She accompanies financial institutions in navigating regulatory challenges, optimizing their operations and implementing their transformation strategies. Her expertise covers financial product analysis, risk management and customer experience improvement. She is dedicated to providing pragmatic solutions that strengthen our clients' competitiveness and profitability in a constantly evolving market. Elda holds a Bachelor's degree in Mathematical Economics and a Master's in Advanced Studies (DEA) from Kinshasa University (DRC). This training gives her a solid understanding of the mechanisms governing the financial sector, anchoring her practical expertise in robust analytical foundations.",
+          "expertise": "Banking Sector, Financial Products, Risk Management",
+          "education": "Bachelor's degree in Mathematical Economics and DEA (Kinshasa University)",
+          "university": "Kinshasa University",
+          "country": "Democratic Republic of Congo",
+          "experience": "Specialist in the banking sector and financial institutions"
+        },
+        "nonce-dede": {
+          "title": "LL.M.",
+          "subtitle": "Senior Legal Consultant",
+          "briefDescription": "With over 4 years of experience, Nonce Dede is Legal Consultant at Orion Conseil. He brings top-level expertise to secure our clients' business operations.",
+          "description": "With over 4 years of experience, Nonce Dede is Legal Consultant at Orion Conseil. He brings top-level expertise to secure our clients' business operations and investments on national and international stages. His practice focuses on international business law, investment law and dispute management. He is particularly specialized in drafting and analyzing complex contracts. Nonce holds a Master's in International Law from the University of Montreal (Canada) and a Bachelor's in Economic and Social Law from Kinshasa University.",
+          "expertise": "International Business Law, Investment Law, Contract Drafting",
+          "education": "Master's in International Law (University of Montreal), Bachelor's in Economic and Social Law (Kinshasa University)",
+          "university": "University of Montreal (Master's), Kinshasa University (Bachelor's)",
+          "country": "Canada, Democratic Republic of Congo",
+          "experience": "Over 4 years of experience in international business law"
+        },
+        "gracia-matala": {
+          "title": "",
+          "subtitle": "Associate Consultant, Energy",
+          "briefDescription": "Gracia Matala brings cutting-edge expertise in the energy sector to Orion Conseil. As an Analyst, he supports the team on complex mandates related to oil, gas and renewable energy industries.",
+          "description": "Gracia Matala brings cutting-edge expertise in the energy sector to Orion Conseil. As an Analyst, he supports the team on complex mandates related to oil, gas and renewable energy industries. Also working in the banking sector, he actively contributes to market analysis, regulatory monitoring and strategic data research for our clients in both sectors. His rigor and deep knowledge of energy issues and fine understanding of banking operations and customer relations are valuable assets for our missions. Gracia holds a Bachelor's degree in Petroleum, Gas and Renewable Energies.",
+          "expertise": "Renewable and non-renewable energy sectors, Market Analysis",
+          "education": "Bachelor's degree in Petroleum, Gas and Renewable Energies",
+          "university": "Kinshasa University",
+          "country": "Democratic Republic of Congo",
+          "experience": "Energy sector analyst and financial analyst"
+        },
+        "renedi-mubutshu": {
+          "title": "",
+          "subtitle": "Associate Consultant, Economic Analysis",
+          "briefDescription": "Renedi Mubutshu is an Analyst who strengthens Orion Conseil's economic and quantitative analysis capabilities. She plays a key role in supporting missions by providing rigorous analyses that illuminate our clients' strategic decisions.",
+          "description": "Renedi Mubutshu is an Analyst who strengthens Orion Conseil's economic and quantitative analysis capabilities. She plays a key role in supporting missions by providing rigorous analyses that illuminate our clients' strategic decisions. She actively participates in research, data modeling and report preparation. Her analytical mindset and ability to synthesize complex information are essential for evaluating project viability and identifying growth opportunities. Renedi holds a Bachelor's degree in Economics from Kinshasa University (DRC), anchoring her work in solid theoretical and practical foundations.",
+          "expertise": "Financial, Economic and Banking Sector",
+          "education": "Economics degree (Kinshasa University)",
+          "university": "Kinshasa University",
+          "country": "Democratic Republic of Congo",
+          "experience": "Financial Analyst"
+        },
+        "victoria-nkarha": {
+          "title": "",
+          "subtitle": "Associate Consultant, Communication & Brand Strategy",
+          "briefDescription": "Victoria Nkarha pilots digital communication and brand strategy at Orion Conseil. As an Analyst, she focuses on building and protecting organizations' digital identity.",
+          "description": "Victoria Nkarha pilots digital communication and brand strategy at Orion Conseil. As an Analyst, she focuses on building and protecting organizations' digital identity. She designs and deploys tailored strategies to strengthen brand image (branding), optimize online visibility and manage e-reputation to ensure coherent and impactful digital presence. Passionate about the digital ecosystem, Victoria excels in the art of translating a company's values into engaging narratives and memorable experiences for target audiences. Her dual competence in management and communication allows her to align every digital action with clients' strategic and commercial objectives, transforming online presence into a true growth lever. Victoria holds a Master's in Business Management from the National Pedagogical University (UPN) in DRC, a training that anchors her creative approach in a solid understanding of business issues.",
+          "expertise": "Digital Communication, Branding, E-reputation",
+          "education": "Master's in Business Management (National Pedagogical University)",
+          "university": "National Pedagogical University",
+          "country": "Democratic Republic of Congo",
+          "experience": "Digital communication and brand strategy analyst"
+        },
+        "osmarie-mabanga": {
+          "title": "",
+          "subtitle": "Associate Consultant, Accounting and Business Intelligence",
+          "briefDescription": "Osmarie Mabanga is an Associate Consultant and business analyst specializing in accounting and taxation at Orion Conseil.",
+          "description": "Osmarie Mabanga is an Associate Consultant and business analyst specializing in accounting and taxation at Orion Conseil. She brings her expertise in financial analysis, accounting management and tax compliance to help companies rigorously evaluate their performance. Osmarie plays a key role in optimizing accounting and tax processes, as well as implementing adapted financial strategies to meet our clients' growth objectives. Her mastery of regulatory issues and ability to structure financial information are major assets to ensure organizations' sustainability and compliance. Osmarie holds a Bachelor's degree in Economic Sciences and Business Administration from the Protestant University in Congo (UPC).",
+          "expertise": "Accounting, Financial Management, Taxation, Business Analysis",
+          "education": "Master's in Economic Sciences and Business Administration (Protestant University in Congo)",
+          "university": "Protestant University in Congo",
+          "country": "Democratic Republic of Congo",
+          "experience": "Business Analyst, Accountant and Tax Specialist"
+        }
+      }
+    },
+    "teamMember": {
+      "backToTeam": "Back to team",
+      "contact": "Contact",
+      "about": "About",
+      "expertise": "Expertise",
+      "education": "Education",
+      "university": "University:",
+      "country": "Country:",
+      "experience": "Professional Experience"
+    },
+    "growthStrategy": {
+      "title": "Consulting - Growth Strategy",
+      "description": "Our strategic approach to support your development",
+      "strategies": {
+        "operationalExcellence": {
+          "title": "Operational Excellence",
+          "description": "Transform challenges into strategic opportunities"
+        },
+        "continuousInnovation": {
+          "title": "Continuous Innovation",
+          "description": "Anticipate trends and innovate for our clients"
+        },
+        "lastingImpact": {
+          "title": "Lasting Impact",
+          "description": "Create long-term value for our clients"
+        }
+      }
+    }
+  },
+  "dashboard": {
       "title": "Dashboard",
       "welcome": "Welcome! Here's an overview of your blog.",
       "stats": {
@@ -331,6 +739,315 @@
             "deleteError": "Error during deletion",
             "summary": "Showing {count} of {total} articles"
         }
+    },
+    "servicesConseils": {
+        "hero": {
+            "title": "Consulting Services",
+            "description": "Strategic, operational and financial consulting to help businesses overcome their complex challenges.",
+            "contactButton": "Contact Us",
+            "expertiseButton": "Discover Our Expertise"
+        },
+        "imageAlt": {
+            "servicesConseil": "Consulting Services Background",
+            "strategyGrowth": "Strategy & Growth",
+            "representationSupport": "Representation & Operational Support",
+            "privateEquity": "Private Equity",
+            "realEstate": "Real Estate Expertise",
+            "realEstateExpertise": "Real Estate Expertise"
+        },
+        "strategyGrowth": {
+            "badge": "Vision & Leadership",
+            "title": "Strategy & Growth",
+            "subtitle": "From vision to market leadership",
+            "description": "We support you in defining and implementing your strategic vision, identifying growth opportunities and optimizing your business model.",
+            "services": {
+                "strategicPlanning": {
+                    "title": "Strategic Planning",
+                    "description": "Development of comprehensive strategic plans aligned with your objectives and market realities."
+                },
+                "marketAnalysis": {
+                    "title": "Market Analysis",
+                    "description": "In-depth analysis of market trends, competitive positioning and growth opportunities."
+                },
+                "businessModel": {
+                    "title": "Business Model Optimization",
+                    "description": "Review and optimization of your business model to maximize value creation."
+                }
+            },
+            "expertiseTitle": "Our Strategic Expertise",
+            "expertiseSubtitle": "Three fundamental pillars for your success",
+            "expertise": {
+                "diagnostic": {
+                    "title": "Precise Diagnosis",
+                    "description": "We dive deep into your market and organization to reveal the true growth drivers and hidden obstacles."
+                },
+                "roadmap": {
+                    "title": "Actionable Roadmap",
+                    "description": "We co-build a customized strategy with you, with clear objectives and prioritized initiatives for maximum impact."
+                },
+                "alignment": {
+                    "title": "Team Alignment",
+                    "description": "We ensure your strategy is understood and carried by your teams, transforming the plan into a true performance culture."
+                }
+            },
+            "challengeTitle": "The Challenge",
+            "challengeDescription": "We support you in defining and implementing your strategic vision, identifying growth opportunities and optimizing your business model.",
+            "solutionTitle": "Our Solution",
+            "solutionDescription": "We transform uncertainty into an action plan. We don't give you a theoretical report, but a clear roadmap to dominate your market."
+        },
+        "legalAdvice": {
+            "badge": "Legal Expertise",
+            "title": "Legal Consulting",
+            "subtitle": "Complete legal support to secure your projects and ensure compliance",
+            "services": {
+                "regulatoryCompliance": {
+                    "title": "Regulatory Compliance Assistance",
+                    "description": "We support you in ensuring compliance with all current regulations, allowing you to operate with complete peace of mind."
+                },
+                "legalProjectSetup": {
+                    "title": "Legal Project Structuring",
+                    "description": "Optimal legal structuring of your projects to maximize their effectiveness and legal protection from the design phase."
+                },
+                "technicalLitigation": {
+                    "title": "Technical Litigation Management",
+                    "description": "Expert technical support in project-related disputes, ensuring robust defense of your interests."
+                },
+                "administrativePermits": {
+                    "title": "Administrative Permits Management",
+                    "description": "Expert navigation through administrative procedures to obtain all necessary permits for your activities."
+                },
+                "tenderContracts": {
+                    "title": "Tender and Contract Drafting Assistance",
+                    "description": "Professional and secure drafting of your contractual documents and responses to tenders."
+                }
+            },
+            "cta": {
+                "title": "Need Legal Support?",
+                "description": "Our legal experts are at your disposal to secure your business activities.",
+                "button": "Contact Our Legal Team"
+            }
+        },
+        "representationSupport": {
+            "badge": "Local Expertise",
+            "title": "Representation & Operational Support",
+            "subtitle": "Orion Conseil is your trusted partner for successful establishment and expansion in DRC",
+            "description": "We provide comprehensive support for your establishment and development in the Democratic Republic of Congo, from administrative procedures to operational implementation.",
+            "challengeTitle": "The Challenge",
+            "challengeDescription": "Local complexity can paralyze the most promising projects. The DRC offers unique opportunities, but distance, cultural barriers and administrative complexity often transform ambition into obstacles.\n\nFor an investor or company without local anchoring, the risk of delays, overcosts and strategic errors is immense. You have the vision, but the terrain remains a mystery.",
+            "solutionTitle": "Our Solution",
+            "solutionDescription": "We are your eyes, ears and right arm on the ground. We transform local complexity into your strategic advantage.",
+            "servicesTitle": "Our field services",
+            "servicesSubtitle": "Three pillars for your operational success",
+            "services": {
+                "businessSetup": {
+                    "title": "Business Setup",
+                    "description": "Complete support for company incorporation and administrative procedures in DRC."
+                },
+                "localRepresentation": {
+                    "title": "Local Representation",
+                    "description": "Official representation and management of your interests in the Congolese market."
+                },
+                "operationalSupport": {
+                    "title": "Operational Support",
+                    "description": "Day-to-day operational support to facilitate your activities in DRC."
+                }
+            },
+            "expertiseTitle": "Our Local Services",
+            "expertise": {
+                "facilitator": {
+                    "title": "Business Facilitator",
+                    "description": "We master administrative and regulatory procedures to accelerate your establishment and secure your operations. No more blockages."
+                },
+                "projectManagement": {
+                    "title": "Delegated project management",
+                    "description": "We pilot your projects with rigor, ensuring the link between your strategic objectives and execution on the ground."
+                },
+                "interestDefense": {
+                    "title": "Defense of your Interests",
+                    "description": "We act with absolute loyalty to represent and defend your interests with local partners."
+                }
+            }
+        },
+        "privateEquity": {
+            "badge": "Growth",
+            "title": "Private Equity",
+            "subtitle": "We connect capital to growth",
+            "description": "We facilitate access to financing and investment for Congolese businesses, connecting entrepreneurs with investors and supporting growth projects.",
+            "services": {
+                "investmentReadiness": {
+                    "title": "Investment Readiness",
+                    "description": "Preparation of companies for investment rounds and fundraising."
+                },
+                "investorRelations": {
+                    "title": "Investor Relations",
+                    "description": "Management of relationships with investors and financial partners."
+                },
+                "growthFinancing": {
+                    "title": "Growth Financing",
+                    "description": "Identification and securing of financing solutions for business expansion."
+                }
+            },
+            "expertiseTitle": "Our Investment Services",
+            "expertise": {
+                "diagnostic": {
+                    "title": "Strategic Diagnosis & Viability",
+                    "description": "Comprehensive analysis of the economic model to identify true growth drivers and hidden risks."
+                },
+                "dueDiligence": {
+                    "title": "Integral Due Diligence",
+                    "description": "Rigorous verification of legal, financial and operational aspects to secure the investment."
+                },
+                "validation": {
+                    "title": "Market & Expert Validation",
+                    "description": "Confrontation of the investment thesis with ground reality to maximize success chances."
+                }
+            },
+            "challengeTitle": "The Challenge",
+            "challengeDescription": "The Congolese paradox: immense potential hampered by limited access to capital. Traditional financing sources are no longer sufficient to support innovation and structural growth.\n\nOur conviction is that Private Equity is not just an alternative, but the strategic lever to transform this potential into sustainable economic performance.",
+            "solutionTitle": "Our Solution",
+            "solutionDescription": "We are the bridge between investment opportunities and smart capital. Our conviction is that Private Equity is the strategic lever to transform this potential into sustainable economic performance.",
+            "approachTitle": "Our Rigorous Approach",
+            "approachSubtitle": "Three steps to maximize value",
+            "doubleExpertiseTitle": "Our Double Expertise",
+            "forEntrepreneurs": "For Entrepreneurs (E)",
+            "forEntrepreneursDescription": "We transform your vision into an 'investable' project.",
+            "forInvestors": "For Investors (I)",
+            "forInvestorsDescription": "We transform market uncertainty into competitive advantage.",
+            "interactiveSolutions": "Interactive Solutions",
+            "tailoredSolutions": "Our Tailored Solutions",
+            "connectCapitalGrowth": "We connect capital to growth",
+            "entrepreneursAbbrev": "E",
+            "investorsAbbrev": "I",
+            "enterprisesTab": {
+                "title": "For Enterprises",
+                "titleShort": "Enterprises",
+                "becomeEvidentTitle": "Become obvious to investors",
+                "completeSupportDescription": "Complete support towards successful financing",
+                "steps": {
+                    "1": {
+                        "title": "Strategic preparation (Investment readiness)",
+                        "description": "We forge with you an impeccable investment dossier: sharpened business plan, clarified strategy and reliable financial statements to capture attention and investor confidence."
+                    },
+                    "2": {
+                        "title": "Valuation & Modeling",
+                        "description": "We objectify your company's value and project its growth potential through robust financial models that justify your financing request."
+                    },
+                    "3": {
+                        "title": "Strategic Access to Capital",
+                        "description": "We activate our Private Equity fund network and pilot the fundraising process, negotiating terms that best serve your long-term project."
+                    }
+                }
+            },
+            "investorsTab": {
+                "title": "For Investors",
+                "titleShort": "Investors",
+                "deployCapitalTitle": "Deploy your capital with confidence and impact",
+                "sourcingOpportunitiesDescription": "Sourcing exceptional opportunities for your portfolio",
+                "steps": {
+                    "1": {
+                        "title": "Exclusive & Qualified Deal Flow",
+                        "description": "Our local anchoring allows us to source opportunities with high potential, often outside traditional radars, giving you priority access to tomorrow's gems."
+                    },
+                    "2": {
+                        "title": "360° Due Diligence",
+                        "description": "We conduct comprehensive acquisition audits (strategic, financial, operational) to transform risk into certainty and validate each investment thesis."
+                    },
+                    "3": {
+                        "title": "Active Value Creation (Post-acquisition)",
+                        "description": "We act as your operational partner on the ground to pilot performance, implement strategic plans and accelerate value creation within your portfolio."
+                    }
+                }
+            }
+        },
+        "portfolio": {
+            "title": "Our Portfolio",
+            "subtitle": "Success Stories",
+            "companies": {
+                "techStartup": {
+                    "name": "TechStartup DRC",
+                    "sector": "Technology",
+                    "investment": "$500K",
+                    "growth": "300% growth in 2 years",
+                    "description": "Supported this innovative startup in securing Series A funding and expanding its operations across Central Africa."
+                },
+                "manufacturing": {
+                    "name": "ManufacturePlus",
+                    "sector": "Manufacturing",
+                    "investment": "$2M",
+                    "growth": "150% increase in production capacity",
+                    "description": "Helped this manufacturing company secure growth capital to modernize its facilities and expand its market reach."
+                },
+                "agritech": {
+                    "name": "AgriTech Solutions",
+                    "sector": "AgriTech",
+                    "investment": "$750K",
+                    "growth": "400% increase in farmer network",
+                    "description": "Connected this agricultural technology company with impact investors to scale its digital farming platform."
+                }
+            }
+        },
+        "cta": {
+            "title": "Ready to Grow Your Business?",
+            "description": "Let us help you access the capital you need to achieve your growth objectives.",
+            "button": "Start Your Investment Journey"
+        }
+    },
+    "realEstateExpertise": {
+        "badge": "Real Estate",
+        "title": "Real Estate Expertise",
+        "subtitle": "Your trusted partner for real estate development and investment in DRC",
+        "description": "We provide comprehensive real estate consulting services, from market analysis to project management, to support your real estate initiatives in the Democratic Republic of Congo.",
+        "services": {
+            "marketAnalysis": {
+                "title": "Market Analysis",
+                "description": "In-depth analysis of real estate market trends and investment opportunities."
+            },
+            "feasibilityStudies": {
+                "title": "Feasibility Studies",
+                "description": "Technical and financial feasibility studies for real estate projects."
+            },
+            "projectManagement": {
+                "title": "Project Management",
+                "description": "End-to-end management of real estate development projects."
+            }
+        },
+        "servicesTitle": "Our Real Estate Services",
+        "expertise": {
+            "marketLand": {
+                "title": "Land/market diagnosis",
+                "description": "In-depth analysis of land opportunities and market trends to identify viable projects."
+            },
+            "projectRoadmap": {
+                "title": "Project roadmap",
+                "description": "Development of comprehensive strategies for real estate development, sale or rental."
+            },
+            "strategyAlignment": {
+                "title": "Alignment with company/investor strategy",
+                "description": "Integration of real estate projects into the company's overall strategy or investment objectives."
+            }
+        },
+        "challengeTitle": "The Challenge",
+        "challengeDescription": "Dynamic but risky real estate market in DRC (regulations, land titles, volatility).",
+        "solutionTitle": "Our Solution",
+        "solutionDescription": "Consulting in acquisition/valorization/promotion, real estate due diligence, financial structuring of real estate projects, legal/financial assembly.",
+        "expertiseTitle": "Our Real Estate Expertise",
+        "expertiseSubtitle": "Three pillars for your real estate success"
+    },
+    "loading": {
+        "general": "Loading...",
+        "service": "Loading service...",
+        "team": "Loading team...",
+        "blog": "Loading blog...",
+        "article": "Loading article...",
+        "articles": "Loading articles..."
+    },
+    "notFound": {
+        "title": "Page Not Found",
+        "description": "Sorry, the page you're looking for doesn't exist or has been moved.",
+        "backHome": "Back to Home",
+        "helpText": "Need help?",
+        "contactUs": "Contact Us"
     }
-  }
 }
+
+

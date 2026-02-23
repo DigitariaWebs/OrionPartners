@@ -8,10 +8,13 @@ import Image from "next/image";
 import Button from "@/components/ui/Button";
 import { useEffect, useState } from "react";
 import { Award, Target, Lightbulb, ChevronRight, Mail } from "lucide-react";
-import { teamMembers } from "./data";
+import { getTeamMembers } from "./data";
+import { useI18n } from "@/i18n/useI18n";
 
 export default function NotreEquipePage() {
+  const { t } = useI18n();
   const [isVisible, setIsVisible] = useState(false);
+  const teamMembers = getTeamMembers(t);
 
   useEffect(() => {
     setIsVisible(true);
@@ -61,18 +64,18 @@ export default function NotreEquipePage() {
   const strategies = [
     {
       icon: Target,
-      title: "Excellence Opérationnelle",
-      description: "Transformer les défis en opportunités stratégiques",
+      title: t("notreEquipe.growthStrategy.strategies.operationalExcellence.title"),
+      description: t("notreEquipe.growthStrategy.strategies.operationalExcellence.description"),
     },
     {
       icon: Lightbulb,
-      title: "Innovation Continue",
-      description: "Anticiper les tendances et innover pour nos clients",
+      title: t("notreEquipe.growthStrategy.strategies.continuousInnovation.title"),
+      description: t("notreEquipe.growthStrategy.strategies.continuousInnovation.description"),
     },
     {
       icon: Award,
-      title: "Impact Durable",
-      description: "Créer de la valeur à long terme pour nos clients",
+      title: t("notreEquipe.growthStrategy.strategies.lastingImpact.title"),
+      description: t("notreEquipe.growthStrategy.strategies.lastingImpact.description"),
     },
   ];
 
@@ -164,7 +167,7 @@ export default function NotreEquipePage() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Notre équipe
+                {t("notreEquipe.hero.title")}
               </motion.span>
             </motion.h1>
           </motion.div>
@@ -179,12 +182,7 @@ export default function NotreEquipePage() {
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.8 }}
             >
-              Orion Conseil capitalise sur une équipe d&apos;associés et de
-              consultants expérimentés, unis pour mener à bien ses missions.
-              C&apos;est en unissant nos forces complémentaires que nous offrons
-              le plus de valeur à nos clients. Notre rigueur et notre esprit
-              d&apos;équipe font de nous une organisation dynamique et
-              avant-gardiste qui se distingue.
+              {t("notreEquipe.hero.description")}
             </motion.p>
           </motion.div>
 
@@ -204,7 +202,7 @@ export default function NotreEquipePage() {
                   }
                 }}
               >
-                Découvrir l&apos;équipe
+                {t("notreEquipe.hero.discoverTeamButton")}
               </Button>
             </motion.div>
 
@@ -215,7 +213,7 @@ export default function NotreEquipePage() {
                   variant="outline"
                   className="min-w-[180px] w-full sm:w-auto border-2 border-[var(--color-white)] text-[var(--color-white)] hover:bg-[var(--color-white)] hover:text-black backdrop-blur-sm bg-[var(--color-white)]/10"
                 >
-                  Contactez-nous
+                  {t("notreEquipe.hero.contactButton")}
                 </Button>
               </Link>
             </motion.div>
@@ -237,13 +235,13 @@ export default function NotreEquipePage() {
               className="text-sm font-semibold tracking-wider text-[#095797] uppercase mb-4"
               variants={fadeInUp}
             >
-              Profils consultants
+              {t("notreEquipe.introduction.badge")}
             </motion.p>
             <motion.h2
               className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#095797] mb-8"
               variants={fadeInUp}
             >
-              Notre équipe
+              {t("notreEquipe.introduction.title")}
             </motion.h2>
           </motion.div>
 
@@ -258,14 +256,7 @@ export default function NotreEquipePage() {
               className="text-base md:text-lg leading-relaxed text-gray-700 text-center"
               variants={fadeInUp}
             >
-              Orion Conseil capitalise sur une équipe d&apos;associés et de
-              consultants expérimentés, unis par une même culture de
-              l&apos;excellence. C&apos;est en alliant nos forces
-              complémentaires, issues de parcours diversifiés dans le conseil et
-              l&apos;industrie, que nous créons le plus de valeur pour nos
-              clients. Notre rigueur analytique, notre esprit collaboratif et
-              notre engagement total font de nous bien plus qu&apos;un
-              prestataire : un véritable partenaire de votre succès.
+              {t("notreEquipe.introduction.description")}
             </motion.p>
 
             <motion.div
@@ -277,18 +268,10 @@ export default function NotreEquipePage() {
 
               <div className="relative z-10">
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
-                  Créer un impact réel, façonner votre avenir.
+                  {t("notreEquipe.introduction.impactTitle")}
                 </h3>
                 <p className="text-base md:text-lg leading-relaxed text-gray-100">
-                  Chez Orion Conseil, notre conviction est que seule
-                  l&apos;excellence de nos équipes peut garantir des solutions
-                  performantes, adaptées à vos besoins et conformes aux plus
-                  hauts standards. C&apos;est pourquoi nous mobilisons une
-                  équipe de haut calibre, alliant expertise de premier plan et
-                  engagement total, pour vous accompagner sur vos défis les plus
-                  complexes. Notre unique objectif : transformer vos enjeux
-                  stratégiques, opérationnels et financiers en résultats
-                  concrets et mesurables.
+                  {t("notreEquipe.introduction.impactDescription")}
                 </p>
               </div>
             </motion.div>
@@ -309,11 +292,10 @@ export default function NotreEquipePage() {
             variants={fadeInUp}
           >
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#095797] mb-6">
-              Nos experts
+              {t("notreEquipe.teamMembers.title")}
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Découvrez les profils de nos consultants et associés, chacun
-              apportant son expertise unique pour servir nos clients.
+              {t("notreEquipe.teamMembers.description")}
             </p>
           </motion.div>
 
@@ -354,7 +336,7 @@ export default function NotreEquipePage() {
                     <a
                       href={`mailto:${member.email}`}
                       className="w-8 h-8 bg-[#095797]/10 hover:bg-[#095797] rounded-full flex items-center justify-center transition-colors cursor-pointer group/icon"
-                      title={`Envoyer un email à ${member.name}`}
+                      title={t("notreEquipe.teamMembers.emailTooltip", { name: member.name })}
                     >
                       <Mail className="w-4 h-4 text-[#095797] group-hover/icon:text-white" />
                     </a>
@@ -372,7 +354,7 @@ export default function NotreEquipePage() {
                     href={`/notreequipe/${member.slug}`}
                     className="w-full bg-[#095797] hover:bg-[#0a5fa3] text-white py-3 px-6 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
                   >
-                    En savoir plus
+                    {t("notreEquipe.teamMembers.learnMoreButton")}
                     <ChevronRight className="w-4 h-4 hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
@@ -393,11 +375,10 @@ export default function NotreEquipePage() {
             variants={fadeInUp}
           >
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#095797] mb-6">
-              Nos équipes supports
+              {t("notreEquipe.supportTeam.title")}
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Découvrez nos consultants associés qui renforcent notre équipe
-              avec leur expertise spécialisée
+              {t("notreEquipe.supportTeam.description")}
             </p>
           </motion.div>
 
@@ -438,7 +419,7 @@ export default function NotreEquipePage() {
                     <a
                       href={`mailto:${member.email}`}
                       className="w-8 h-8 bg-[#095797]/10 hover:bg-[#095797] rounded-full flex items-center justify-center transition-colors cursor-pointer group/icon"
-                      title={`Envoyer un email à ${member.name}`}
+                      title={t("notreEquipe.teamMembers.emailTooltip", { name: member.name })}
                     >
                       <Mail className="w-4 h-4 text-[#095797] group-hover/icon:text-white" />
                     </a>
@@ -456,7 +437,7 @@ export default function NotreEquipePage() {
                     href={`/notreequipe/${member.slug}`}
                     className="w-full bg-[#095797] hover:bg-[#0a5fa3] text-white py-3 px-6 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
                   >
-                    En savoir plus
+                    {t("notreEquipe.teamMembers.learnMoreButton")}
                     <ChevronRight className="w-4 h-4 hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
@@ -476,10 +457,10 @@ export default function NotreEquipePage() {
             variants={fadeInUp}
           >
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#095797] mb-6">
-              Conseil - Stratégie de Croissance
+              {t("notreEquipe.growthStrategy.title")}
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Notre approche stratégique pour accompagner votre développement
+              {t("notreEquipe.growthStrategy.description")}
             </p>
           </motion.div>
 

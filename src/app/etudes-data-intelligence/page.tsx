@@ -6,8 +6,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BarChart3, TrendingUp, Brain, Lightbulb, Target, Zap, Users } from "lucide-react";
+import { useI18n } from "@/i18n/useI18n";
 
 export default function EtudesDataIntelligencePage() {
+  const { t } = useI18n();
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
     animate: { opacity: 1, y: 0 },
@@ -97,7 +99,7 @@ export default function EtudesDataIntelligencePage() {
                 marginBottom: "1rem",
               }}
             >
-              Études & Data Intelligence
+              {t("etudesDataIntelligence.hero.title")}
             </h1>
           </motion.div>
 
@@ -113,10 +115,7 @@ export default function EtudesDataIntelligencePage() {
               className="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-4xl leading-relaxed"
               style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5)" }}
             >
-              Nous réalisons des études et des recherches pour vous fournir des
-              analyses claires et exploitables. En combinant méthodologies
-              rigoureuses et connaissance du marché, nous vous aidons à prendre
-              des décisions éclairées.
+              {t("etudesDataIntelligence.hero.description")}
             </p>
           </motion.div>
 
@@ -128,13 +127,13 @@ export default function EtudesDataIntelligencePage() {
           >
             <Link href="/#contact" className="w-full sm:w-auto">
               <button className="w-full sm:w-auto group bg-[var(--color-accent)] hover:bg-[#8ab01e] text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-xl cursor-pointer">
-                Contactez-nous
+                {t("etudesDataIntelligence.hero.contactButton")}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
             <Link href="/#services" className="w-full sm:w-auto">
               <button className="w-full sm:w-auto border-2 border-[var(--color-white)] text-[var(--color-white)] hover:bg-[var(--color-white)] hover:text-black backdrop-blur-sm bg-[var(--color-white)]/10 px-8 py-4 rounded-xl font-semibold transition-all duration-300 cursor-pointer">
-                Découvrez nos expertises
+                {t("etudesDataIntelligence.hero.expertiseButton")}
               </button>
             </Link>
           </motion.div>
@@ -146,16 +145,10 @@ export default function EtudesDataIntelligencePage() {
         <div className="container mx-auto px-6">
           <motion.div className="text-center mb-16" {...fadeInUp}>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
-              Business Intelligence (BI)
+              {t("etudesDataIntelligence.businessIntelligence.title")}
             </h2>
             <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              Nous concevons des tableaux de bord interactifs et des rapports
-              sur mesure pour vous permettre de visualiser vos performances en
-              temps réel, de suivre vos indicateurs clés (KPIs) et de piloter
-              votre activité avec une précision inégalée. Notre expertise sur
-              les plateformes leaders du marché, telles que Microsoft Power BI,
-              Qlik et Tableau, garantit des solutions puissantes et parfaitement
-              intégrées à votre environnement.
+              {t("etudesDataIntelligence.businessIntelligence.description")}
             </p>
           </motion.div>
 
@@ -170,7 +163,7 @@ export default function EtudesDataIntelligencePage() {
                 <Users className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold mb-6">
-                Analyse du recrutement
+                {t("etudesDataIntelligence.businessIntelligence.examples.recruitmentAnalysis.title")}
               </h3>
               <div className="space-y-4">
                 <div>
@@ -178,8 +171,7 @@ export default function EtudesDataIntelligencePage() {
                     ⎯ The Client
                   </h4>
                   <p className="text-blue-100">
-                    Entreprise technologique en pleine croissance cherchant à
-                    optimiser ses processus de recrutement.
+                    {t("etudesDataIntelligence.businessIntelligence.examples.recruitmentAnalysis.client")}
                   </p>
                 </div>
                 <div>
@@ -187,8 +179,7 @@ export default function EtudesDataIntelligencePage() {
                     ⎯ Problème
                   </h4>
                   <p className="text-blue-100">
-                    Difficulté à analyser l&apos;efficacité des canaux de
-                    recrutement et à prévoir les besoins en personnel.
+                    {t("etudesDataIntelligence.businessIntelligence.examples.recruitmentAnalysis.problem")}
                   </p>
                 </div>
                 <div>
@@ -196,9 +187,7 @@ export default function EtudesDataIntelligencePage() {
                     ⎯ Notre Solution
                   </h4>
                   <p className="text-blue-100">
-                    Développement d&apos;un tableau de bord Power BI intégrant
-                    les données RH, les performances des canaux et les
-                    prévisions de recrutement.
+                    {t("etudesDataIntelligence.businessIntelligence.examples.recruitmentAnalysis.solution")}
                   </p>
                 </div>
               </div>
@@ -212,15 +201,16 @@ export default function EtudesDataIntelligencePage() {
               <div className="w-16 h-16 bg-[#095797] rounded-2xl flex items-center justify-center mb-6">
                 <BarChart3 className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-6">Analyse Facturation</h3>
+              <h3 className="text-2xl font-bold mb-6">
+                {t("etudesDataIntelligence.businessIntelligence.examples.billingAnalysis.title")}
+              </h3>
               <div className="space-y-4">
                 <div>
                   <h4 className="font-semibold text-[#095797] mb-2">
                     ⎯ The Client
                   </h4>
                   <p className="text-blue-100">
-                    Société de services confrontée à des retards de paiement et
-                    une trésorerie tendue.
+                    {t("etudesDataIntelligence.businessIntelligence.examples.billingAnalysis.client")}
                   </p>
                 </div>
                 <div>
@@ -228,8 +218,7 @@ export default function EtudesDataIntelligencePage() {
                     ⎯ Problème
                   </h4>
                   <p className="text-blue-100">
-                    Manque de visibilité sur les délais de paiement et les
-                    risques de non-recouvrement.
+                    {t("etudesDataIntelligence.businessIntelligence.examples.billingAnalysis.problem")}
                   </p>
                 </div>
                 <div>
@@ -237,8 +226,7 @@ export default function EtudesDataIntelligencePage() {
                     ⎯ Notre Solution
                   </h4>
                   <p className="text-blue-100">
-                    Création d&apos;un système de suivi automatisé avec alertes
-                    prédictives sur les risques de retard.
+                    {t("etudesDataIntelligence.businessIntelligence.examples.billingAnalysis.solution")}
                   </p>
                 </div>
               </div>
@@ -252,13 +240,10 @@ export default function EtudesDataIntelligencePage() {
         <div className="container mx-auto px-6">
           <motion.div className="text-center mb-16" {...fadeInUp}>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
-              Science des Données & Analyse Prédictive
+              {t("etudesDataIntelligence.dataScience.title")}
             </h2>
             <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed mb-8">
-              Allez au-delà des rapports : transformez vos données en avantage
-              prédictif. Notre expertise en science des données vous permet de
-              débloquer la valeur cachée dans vos informations pour prendre des
-              décisions proactives.
+              {t("etudesDataIntelligence.dataScience.description")}
             </p>
           </motion.div>
 
@@ -269,36 +254,31 @@ export default function EtudesDataIntelligencePage() {
                   <Brain className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-[#095797] mb-6">
-                  Nos Modèles Sur Mesure
+                  {t("etudesDataIntelligence.dataScience.customModels.title")}
                 </h3>
                 <ul className="space-y-4 text-gray-700">
                   <li className="flex items-start gap-3">
                     <TrendingUp className="w-6 h-6 text-[#095797] mt-1 flex-shrink-0" />
                     <span>
-                      Anticiper les tendances du marché et les évolutions de la
-                      demande.
+                      {t("etudesDataIntelligence.dataScience.customModels.features.marketTrends")}
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <Zap className="w-6 h-6 text-[#095797] mt-1 flex-shrink-0" />
                     <span>
-                      Optimiser vos processus opérationnels, logistiques et
-                      marketing.
+                      {t("etudesDataIntelligence.dataScience.customModels.features.optimizeProcesses")}
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <Target className="w-6 h-6 text-[#095797] mt-1 flex-shrink-0" />
                     <span>
-                      Décrypter les comportements clients pour améliorer la
-                      rétention et la personnalisation.
+                      {t("etudesDataIntelligence.dataScience.customModels.features.customerBehavior")}
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <Lightbulb className="w-6 h-6 text-[#095797] mt-1 flex-shrink-0" />
                     <span>
-                      Maîtriser les risques et identifier les nouvelles
-                      opportunités de croissance avec une longueur
-                      d&apos;avance.
+                      {t("etudesDataIntelligence.dataScience.customModels.features.riskManagement")}
                     </span>
                   </li>
                 </ul>
@@ -311,25 +291,22 @@ export default function EtudesDataIntelligencePage() {
                   <BarChart3 className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-[#095797] mb-6">
-                  Avantages Concurrentiels
+                  {t("etudesDataIntelligence.dataScience.competitiveAdvantages.title")}
                 </h3>
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Notre approche combine algorithmes avancés, machine learning
-                  et expertise métier pour transformer vos données en insights
-                  actionnables. Chaque modèle est calibré sur vos données
-                  spécifiques pour garantir une précision maximale.
+                  {t("etudesDataIntelligence.dataScience.competitiveAdvantages.description")}
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center p-4 bg-[#095797]/10 rounded-xl">
                     <div className="text-2xl font-bold text-[#095797]">95%</div>
                     <div className="text-sm text-gray-600">
-                      Précision prédictive
+                      {t("etudesDataIntelligence.dataScience.competitiveAdvantages.metrics.predictiveAccuracy")}
                     </div>
                   </div>
                   <div className="text-center p-4 bg-[#095797]/10 rounded-xl">
                     <div className="text-2xl font-bold text-[#095797]">30%</div>
                     <div className="text-sm text-gray-600">
-                      Gain d&apos;efficacité
+                      {t("etudesDataIntelligence.dataScience.competitiveAdvantages.metrics.efficiencyGain")}
                     </div>
                   </div>
                 </div>
@@ -344,13 +321,10 @@ export default function EtudesDataIntelligencePage() {
         <div className="container mx-auto px-6">
           <motion.div className="text-center mb-16" {...fadeInUp}>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#095797] mb-6">
-              Études de Marché & Veille Stratégique
+              {t("etudesDataIntelligence.marketStudies.title")}
             </h2>
             <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              Nous menons des études qualitatives et quantitatives approfondies
-              pour vous offrir une compréhension à 360° de votre environnement :
-              analyse de la concurrence, attentes des clients, dynamiques de
-              marché et opportunités de croissance.
+              {t("etudesDataIntelligence.marketStudies.description")}
             </p>
           </motion.div>
 
@@ -362,51 +336,42 @@ export default function EtudesDataIntelligencePage() {
               {...fadeInUp}
             >
               <h3 className="text-3xl font-bold text-[#095797] mb-8">
-                Étude du commerce numérique : transformation digitale du secteur
-                retail à Kinshasa
+                {t("etudesDataIntelligence.marketStudies.examples.digitalCommerce.title")}
               </h3>
               <div className="grid lg:grid-cols-2 gap-8">
                 <div className="space-y-6">
                   <div>
                     <h4 className="text-xl font-semibold text-[#095797] mb-3">
-                      Contexte
+                      {t("etudesDataIntelligence.marketStudies.examples.digitalCommerce.sections.context.title")}
                     </h4>
                     <p className="text-gray-700 leading-relaxed">
-                      Le secteur retail à Kinshasa connaît une transformation
-                      digitale rapide avec l&apos;essor des marketplaces et du
-                      e-commerce mobile.
+                      {t("etudesDataIntelligence.marketStudies.examples.digitalCommerce.sections.context.description")}
                     </p>
                   </div>
                   <div>
                     <h4 className="text-xl font-semibold text-[#095797] mb-3">
-                      Notre approche
+                      {t("etudesDataIntelligence.marketStudies.examples.digitalCommerce.sections.approach.title")}
                     </h4>
                     <p className="text-gray-700 leading-relaxed">
-                      Analyse des données transactionnelles, enquêtes
-                      consommateurs, benchmarking des pratiques digitales
-                      locales et internationales.
+                      {t("etudesDataIntelligence.marketStudies.examples.digitalCommerce.sections.approach.description")}
                     </p>
                   </div>
                 </div>
                 <div className="space-y-6">
                   <div>
                     <h4 className="text-xl font-semibold text-[#095797] mb-3">
-                      Nos résultats
+                      {t("etudesDataIntelligence.marketStudies.examples.digitalCommerce.sections.results.title")}
                     </h4>
                     <p className="text-gray-700 leading-relaxed">
-                      Croissance de 300% du e-commerce en 3 ans, identification
-                      des segments consommateurs les plus actifs (18-35 ans,
-                      classe moyenne urbaine).
+                      {t("etudesDataIntelligence.marketStudies.examples.digitalCommerce.sections.results.description")}
                     </p>
                   </div>
                   <div>
                     <h4 className="text-xl font-semibold text-[#095797] mb-3">
-                      La valeur pour notre client
+                      {t("etudesDataIntelligence.marketStudies.examples.digitalCommerce.sections.value.title")}
                     </h4>
                     <p className="text-gray-700 leading-relaxed">
-                      Stratégies omnicanal optimisées, identification
-                      d&apos;opportunités d&apos;investissement dans la
-                      logistique digitale et le paiement mobile.
+                      {t("etudesDataIntelligence.marketStudies.examples.digitalCommerce.sections.value.description")}
                     </p>
                   </div>
                 </div>
@@ -419,52 +384,42 @@ export default function EtudesDataIntelligencePage() {
               {...fadeInUp}
             >
               <h3 className="text-3xl font-bold text-[#095797] mb-8">
-                Étude du comportement du consommateur : évolution des
-                préférences générationnelles à Kinshasa
+                {t("etudesDataIntelligence.marketStudies.examples.consumerBehavior.title")}
               </h3>
               <div className="grid lg:grid-cols-2 gap-8">
                 <div className="space-y-6">
                   <div>
                     <h4 className="text-xl font-semibold text-[#095797] mb-3">
-                      Contexte
+                      {t("etudesDataIntelligence.marketStudies.examples.consumerBehavior.sections.context.title")}
                     </h4>
                     <p className="text-gray-700 leading-relaxed">
-                      Les consommateurs kinois connaissent une évolution rapide
-                      de leurs comportements d&apos;achat influencés par la
-                      digitalisation et les changements socio-économiques.
+                      {t("etudesDataIntelligence.marketStudies.examples.consumerBehavior.sections.context.description")}
                     </p>
                   </div>
                   <div>
                     <h4 className="text-xl font-semibold text-[#095797] mb-3">
-                      Notre approche
+                      {t("etudesDataIntelligence.marketStudies.examples.consumerBehavior.sections.approach.title")}
                     </h4>
                     <p className="text-gray-700 leading-relaxed">
-                      Enquête quantitative auprès de 1500 consommateurs, analyse
-                      des données comportementales, segmentation par génération
-                      et pouvoir d&apos;achat.
+                      {t("etudesDataIntelligence.marketStudies.examples.consumerBehavior.sections.approach.description")}
                     </p>
                   </div>
                 </div>
                 <div className="space-y-6">
                   <div>
                     <h4 className="text-xl font-semibold text-[#095797] mb-3">
-                      Nos résultats
+                      {t("etudesDataIntelligence.marketStudies.examples.consumerBehavior.sections.results.title")}
                     </h4>
                     <p className="text-gray-700 leading-relaxed">
-                      Segmentation claire : génération Z privilégie
-                      l&apos;expérience digitale (85% des achats mobiles),
-                      millennials recherchent qualité/prix, génération X reste
-                      fidèle aux circuits traditionnels.
+                      {t("etudesDataIntelligence.marketStudies.examples.consumerBehavior.sections.results.description")}
                     </p>
                   </div>
                   <div>
                     <h4 className="text-xl font-semibold text-[#095797] mb-3">
-                      La valeur pour notre client
+                      {t("etudesDataIntelligence.marketStudies.examples.consumerBehavior.sections.value.title")}
                     </h4>
                     <p className="text-gray-700 leading-relaxed">
-                      Adaptation des stratégies marketing, développement de
-                      produits ciblés, optimisation des canaux de distribution
-                      digitale et physique.
+                      {t("etudesDataIntelligence.marketStudies.examples.consumerBehavior.sections.value.description")}
                     </p>
                   </div>
                 </div>

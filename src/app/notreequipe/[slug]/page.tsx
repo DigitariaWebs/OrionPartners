@@ -7,7 +7,8 @@ import Link from "next/link";
 import { ArrowLeft, Mail } from "lucide-react";
 import { notFound } from "next/navigation";
 import { use } from "react";
-import { teamMembers } from "../data";
+import { getTeamMembers } from "../data";
+import { useI18n } from "@/i18n/useI18n";
 
 
 interface TeamMemberPageProps {
@@ -17,7 +18,9 @@ interface TeamMemberPageProps {
 }
 
 export default function TeamMemberPage({ params }: TeamMemberPageProps) {
+  const { t } = useI18n();
   const { slug } = use(params);
+  const teamMembers = getTeamMembers(t);
   const member = teamMembers.find((m) => m.slug === slug);
 
   if (!member) {
@@ -43,7 +46,7 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
               className="inline-flex items-center gap-2 text-[#095797] hover:text-[#0a5fa3] transition-colors cursor-pointer"
             >
               <ArrowLeft className="w-5 h-5" />
-              <span>Retour à l&apos;équipe</span>
+              <span>{t("notreEquipe.teamMember.backToTeam")}</span>
             </Link>
           </motion.div>
 
@@ -79,7 +82,7 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
                     className="inline-flex items-center gap-3 bg-[#095797] hover:bg-[#0a5fa3] text-white px-6 py-3 rounded-xl font-medium transition-colors cursor-pointer"
                   >
                     <Mail className="w-5 h-5" />
-                    <span>Contacter</span>
+                    <span>{t("notreEquipe.teamMember.contact")}</span>
                   </a>
                 </div>
               </div>
@@ -94,7 +97,7 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
                 {/* Description */}
                 <div>
                   <h2 className="text-2xl font-bold text-[#095797] mb-4">
-                    À propos
+                    {t("notreEquipe.teamMember.about")}
                   </h2>
                   <p className="text-gray-700 leading-relaxed text-justify">
                     {member.description}
@@ -104,7 +107,7 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
                 {/* Expertise */}
                 <div>
                   <h3 className="text-xl font-bold text-[#095797] mb-3">
-                    Expertise
+                    {t("notreEquipe.teamMember.expertise")}
                   </h3>
                   <p className="text-gray-600">{member.expertise}</p>
                 </div>
@@ -112,16 +115,16 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
                 {/* Education */}
                 <div>
                   <h3 className="text-xl font-bold text-[#095797] mb-3">
-                    Formation
+                    {t("notreEquipe.teamMember.education")}
                   </h3>
                   <p className="text-gray-600">{member.education}</p>
                   <div className="mt-3 space-y-1">
                     <p className="text-gray-700">
-                      <span className="font-semibold">Université:</span>{" "}
+                      <span className="font-semibold">{t("notreEquipe.teamMember.university")}</span>{" "}
                       {member.university}
                     </p>
                     <p className="text-gray-700">
-                      <span className="font-semibold">Pays:</span>{" "}
+                      <span className="font-semibold">{t("notreEquipe.teamMember.country")}</span>{" "}
                       {member.country}
                     </p>
                   </div>
@@ -130,7 +133,7 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
                 {/* Experience */}
                 <div>
                   <h3 className="text-xl font-bold text-[#095797] mb-3">
-                    Expérience professionnelle
+                    {t("notreEquipe.teamMember.experience")}
                   </h3>
                   <p className="text-gray-600">{member.experience}</p>
                 </div>
