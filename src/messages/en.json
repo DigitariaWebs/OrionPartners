@@ -124,7 +124,27 @@
     "read_more": "Read More",
     "published": "Published on",
     "author": "By",
-    "loading": "Loading articles..."
+    "loading": "Loading articles...",
+    "page": {
+        "title": "Our Blog",
+        "subtitle": "Discover our insights and analyses on digital transformation, accounting and data intelligence",
+        "loading": "Loading articles...",
+        "featuredTitle": "Featured Article",
+        "readArticle": "Read Article",
+        "allArticles": "All Articles",
+        "readMore": "Read More",
+        "readTime": "{time} min read"    },
+    "post": {
+      "loading": "Loading article...",
+      "backToBlog": "Back to blog",
+      "readTime": "{time} min read",
+      "aboutAuthor": "About the Author",
+      "tags": "Tags",
+      "share": "Share",
+      "shareOnFacebook": "Share on Facebook",
+      "shareOnTwitter": "Share on Twitter",
+      "shareOnLinkedIn": "Share on LinkedIn",
+      "shareText": "Check out this article: {title}"    }
   },
   "team": {
     "title": "Our Team",
@@ -148,5 +168,169 @@
     "error": "An error occurred",
     "retry": "Retry",
     "cancel": "Cancel"
+  },
+  "admin": {
+    "dashboard": {
+      "title": "Dashboard",
+      "welcome": "Welcome! Here's an overview of your blog.",
+      "stats": {
+        "totalArticles": "Total Articles",
+        "published": "Published",
+        "drafts": "Drafts",
+        "featured": "Featured",
+        "analytics": "Analytics",
+        "active": "Active",
+        "notConfigured": "Not configured"
+      },
+      "analytics": {
+        "title": "Google Analytics",
+        "subtitle": "Site traffic tracking",
+        "trackingStatus": "Tracking Status",
+        "activeConfigured": "Active - Tracking is configured",
+        "notConfiguredMissingId": "Not configured - Measurement ID missing",
+        "inactive": "Inactive",
+        "measurementId": "Measurement ID",
+        "viewAnalytics": "View Analytics"
+      },
+      "recentPosts": {
+        "title": "Recent Articles",
+        "subtitle": "Your latest publications",
+        "newArticle": "New Article",
+        "loading": "Loading...",
+        "noArticles": "No articles yet",
+        "startCreating": "Start by creating your first article!",
+        "published": "Published",
+        "draft": "Draft",
+        "featured": "Featured",
+        "edit": "Edit",
+        "viewAll": "View all articles"
+      }
+    },
+    "login": {
+        "title": "Admin Login",
+        "subtitle": "Sign in to manage your blog",
+        "emailLabel": "Email Address",
+        "emailPlaceholder": "admin@example.com",
+        "passwordLabel": "Password",
+        "passwordPlaceholder": "••••••••",
+        "signInButton": "Sign In",
+        "signingIn": "Signing in...",
+        "loginFailed": "Login failed. Please try again.",
+        "unexpectedError": "An unexpected error occurred",
+        "backToWebsite": "← Back to website"
+    },
+    "posts": {
+        "edit": {
+            "title": "Edit Article",
+            "subtitle": "Update the details below to edit this blog article",
+            "loading": "Loading...",
+            "postNotFound": "Article not found",
+            "fetchFailed": "Failed to fetch article",
+            "missingFields": "Required fields missing: {fields}",
+            "invalidDate": "Invalid date format. Please check the publish date.",
+            "slugTaken": "This slug is already taken. Please choose another.",
+            "validationError": "Validation error: {error}",
+            "updateFailed": "Failed to update. Please try again.",
+            "networkError": "Network error. Please check your connection and try again.",
+            "updating": "Updating...",
+            "sections": {
+                "basicInfo": "Basic Information",
+                "authorInfo": "Author Information",
+                "featuredImage": "Featured Image *",
+                "content": "Content *",
+                "publishingOptions": "Publishing Options"
+            },
+            "fields": {
+                "title": "Title *",
+                "slug": "Slug *",
+                "excerpt": "Excerpt *",
+                "category": "Category *",
+                "readTime": "Read Time *",
+                "tags": "Tags (comma-separated)",
+                "authorName": "Author Name *",
+                "authorRole": "Author Role *",
+                "authorBio": "Author Bio *",
+                "publishDate": "Publish Date & Time",
+                "published": "Published",
+                "featured": "Featured post"
+            },
+            "buttons": {
+                "cancel": "Cancel",
+                "update": "Update Article"
+            }
+        },
+        "new": {
+            "title": "Create New Article",
+            "subtitle": "Fill in the details below to create a new blog article",
+            "loading": "Loading...",
+            "missingFields": "Missing required fields: {fields}",
+            "invalidDate": "Invalid publish date format. Please use a valid date and time.",
+            "slugTaken": "This slug is already taken. Please choose another.",
+            "validationError": "Validation error: {error}",
+            "createFailed": "Failed to create. Please try again.",
+            "networkError": "Network error. Please check your connection and try again.",
+            "creating": "Creating...",
+            "sections": {
+                "basicInfo": "Basic Information",
+                "authorInfo": "Author Information",
+                "featuredImage": "Featured Image *",
+                "content": "Content *",
+                "publishingOptions": "Publishing Options"
+            },
+            "fields": {
+                "title": "Title *",
+                "slug": "Slug *",
+                "slugHelp": "URL-friendly version of the title",
+                "excerpt": "Excerpt *",
+                "category": "Category *",
+                "categoryPlaceholder": "e.g.: Taxation, Technology",
+                "readTime": "Read Time *",
+                "readTimePlaceholder": "e.g.: 5 min",
+                "tags": "Tags (comma-separated)",
+                "tagsPlaceholder": "tag1, tag2, tag3",
+                "authorName": "Author Name *",
+                "authorRole": "Author Role *",
+                "authorBio": "Author Bio *",
+                "publishDate": "Publish Date & Time",
+                "published": "Publish immediately",
+                "featured": "Featured article"
+            },
+            "buttons": {
+                "cancel": "Cancel",
+                "create": "Create Article"
+            }
+        },
+        "list": {
+            "title": "Blog Articles",
+            "subtitle": "Manage, create and edit your blog articles",
+            "createButton": "Create Article",
+            "searchPlaceholder": "Search for an article...",
+            "allCategories": "All Categories",
+            "loading": "Loading articles...",
+            "noResults": "No articles match your filters",
+            "noArticles": "No articles yet. Create your first article!",
+            "table": {
+                "article": "Article",
+                "category": "Category",
+                "status": "Status",
+                "date": "Date",
+                "actions": "Actions"
+            },
+            "status": {
+                "published": "Published",
+                "draft": "Draft",
+                "featured": "Featured Article"
+            },
+            "actions": {
+                "edit": "Edit",
+                "delete": "Delete"
+            },
+            "confirmDelete": "Are you sure you want to delete \"{title}\"?",
+            "deleteSuccess": "Article deleted successfully",
+            "deleteFailed": "Failed to delete",
+            "deleteError": "Error during deletion",
+            "summary": "Showing {count} of {total} articles"
+        }
+    }
   }
 }

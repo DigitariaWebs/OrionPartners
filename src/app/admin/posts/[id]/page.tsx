@@ -7,6 +7,7 @@ import RichTextEditor from "@/components/admin/RichTextEditor";
 import ImageUpload from "@/components/admin/ImageUpload";
 import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
+import { useI18n } from "@/i18n/useI18n";
 
 interface EditPostPageProps {
   params: Promise<{
@@ -17,6 +18,7 @@ interface EditPostPageProps {
 export default function EditPostPage({ params }: EditPostPageProps) {
   const { status } = useSession();
   const router = useRouter();
+  const { t } = useI18n();
   const { id } = use(params);
   const [loading, setLoading] = useState(false);
   const [fetching, setFetching] = useState(true);
@@ -62,16 +64,16 @@ export default function EditPostPage({ params }: EditPostPageProps) {
           publishDate: new Date(post.publishDate).toISOString().slice(0, 16),
         });
       } else {
-        alert("Article non trouvé");
+        alert(t("admin.posts.edit.postNotFound"));
         router.push("/admin/posts");
       }
     } catch (error) {
       console.error("Error fetching post:", error);
-      alert("Échec de la récupération de l'article");
+      alert(t("admin.posts.edit.fetchFailed"));
     } finally {
       setFetching(false);
     }
-  }, [id, router]);
+  }, [id, router, t]);
 
   useEffect(() => {
     if (status === "unauthenticated") {
@@ -90,7 +92,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="text-center">
           <div className="w-16 h-16 border-4 border-[#095797] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-gray-600">Chargement...</p>
+          <p className="text-gray-600">{t("admin.posts.edit.loading")}</p>
         </div>
       </div>
     );
@@ -142,7 +144,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
       const missingFields = requiredFields.filter(field => !formData[field as keyof typeof formData]);
 
       if (missingFields.length > 0) {
-        setError(`Champs requis manquants : ${missingFields.join(', ')}`);
+        setError(t("admin.posts.edit.missingFields", { fields: missingFields.join(', ') }));
         setLoading(false);
         return;
       }
@@ -156,7 +158,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
         }
         publishDate = date.toISOString();
       } catch {
-        setError("Format de date invalide. Veuillez vérifier la date de publication.");
+        setError(t("admin.posts.edit.invalidDate"));
         setLoading(false);
         return;
       }
@@ -186,21 +188,21 @@ export default function EditPostPage({ params }: EditPostPageProps) {
         // Enhanced error handling
         if (data.error) {
           if (data.error.includes('slug')) {
-            setError("Ce slug est déjà pris. Veuillez en choisir un autre.");
+            setError(t("admin.posts.edit.slugTaken"));
           } else if (data.error.includes('datetime')) {
-            setError("Format de date invalide. Veuillez vérifier la date de publication.");
+            setError(t("admin.posts.edit.invalidDate"));
           } else if (data.error.includes('validation')) {
-            setError(`Erreur de validation : ${data.error}`);
+            setError(t("admin.posts.edit.validationError", { error: data.error }));
           } else {
             setError(data.error);
           }
         } else {
-          setError("Échec de la mise à jour. Veuillez réessayer.");
+          setError(t("admin.posts.edit.updateFailed"));
         }
       }
     } catch (err) {
       console.error("Error updating post:", err);
-      setError("Erreur réseau. Veuillez vérifier votre connexion et réessayer.");
+      setError(t("admin.posts.edit.networkError"));
     } finally {
       setLoading(false);
     }
@@ -220,9 +222,9 @@ export default function EditPostPage({ params }: EditPostPageProps) {
     <AdminLayout>
       <div className="max-w-5xl">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Modifier l&apos;article</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">{t("admin.posts.edit.title")}</h1>
           <p className="text-gray-600">
-            Mettez à jour les détails ci-dessous pour modifier cet article de blog
+            {t("admin.posts.edit.subtitle")}
           </p>
         </div>
 
@@ -240,12 +242,12 @@ export default function EditPostPage({ params }: EditPostPageProps) {
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Title & Slug */}
           <div className="bg-white rounded-xl shadow-sm border p-6">
-            <h2 className="text-xl font-semibold mb-4">Informations de base</h2>
+            <h2 className="text-xl font-semibold mb-4">{t("admin.posts.edit.sections.basicInfo")}</h2>
 
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Title *
+                  {t("admin.posts.edit.fields.title")}
                 </label>
                 <input
                   type="text"
@@ -259,7 +261,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Slug *
+                  {t("admin.posts.edit.fields.slug")}
                 </label>
                 <input
                   type="text"
@@ -273,7 +275,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Excerpt *
+                  {t("admin.posts.edit.fields.excerpt")}
                 </label>
                 <textarea
                   name="excerpt"
@@ -288,7 +290,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Category *
+                    {t("admin.posts.edit.fields.category")}
                   </label>
                   <input
                     type="text"
@@ -302,7 +304,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Read Time *
+                    {t("admin.posts.edit.fields.readTime")}
                   </label>
                   <input
                     type="text"
@@ -317,7 +319,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Tags (comma-separated)
+                  {t("admin.posts.edit.fields.tags")}
                 </label>
                 <input
                   type="text"
@@ -332,12 +334,12 @@ export default function EditPostPage({ params }: EditPostPageProps) {
 
           {/* Author Information */}
           <div className="bg-white rounded-xl shadow-sm border p-6">
-            <h2 className="text-xl font-semibold mb-4">Author Information</h2>
+            <h2 className="text-xl font-semibold mb-4">{t("admin.posts.edit.sections.authorInfo")}</h2>
 
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Author Name *
+                  {t("admin.posts.edit.fields.authorName")}
                 </label>
                 <input
                   type="text"
@@ -351,7 +353,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Author Role *
+                  {t("admin.posts.edit.fields.authorRole")}
                 </label>
                 <input
                   type="text"
@@ -365,7 +367,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Author Bio *
+                  {t("admin.posts.edit.fields.authorBio")}
                 </label>
                 <textarea
                   name="authorBio"
@@ -381,7 +383,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
 
           {/* Featured Image */}
           <div className="bg-white rounded-xl shadow-sm border p-6">
-            <h2 className="text-xl font-semibold mb-4">Featured Image *</h2>
+            <h2 className="text-xl font-semibold mb-4">{t("admin.posts.edit.sections.featuredImage")}</h2>
             <ImageUpload
               value={formData.image}
               onChange={(url) => setFormData({ ...formData, image: url })}
@@ -391,7 +393,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
 
           {/* Content */}
           <div className="bg-white rounded-xl shadow-sm border p-6">
-            <h2 className="text-xl font-semibold mb-4">Content *</h2>
+            <h2 className="text-xl font-semibold mb-4">{t("admin.posts.edit.sections.content")}</h2>
             <RichTextEditor
               content={formData.content}
               onChange={(content) => setFormData({ ...formData, content })}
@@ -400,12 +402,12 @@ export default function EditPostPage({ params }: EditPostPageProps) {
 
           {/* Publishing Options */}
           <div className="bg-white rounded-xl shadow-sm border p-6">
-            <h2 className="text-xl font-semibold mb-4">Publishing Options</h2>
+            <h2 className="text-xl font-semibold mb-4">{t("admin.posts.edit.sections.publishingOptions")}</h2>
 
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Publish Date & Time
+                  {t("admin.posts.edit.fields.publishDate")}
                 </label>
                 <input
                   type="datetime-local"
@@ -427,7 +429,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
                     className="w-4 h-4 text-[#095797] border-gray-300 rounded focus:ring-[#095797]"
                   />
                   <span className="text-sm font-medium text-gray-700">
-                    Published
+                    {t("admin.posts.edit.fields.published")}
                   </span>
                 </label>
 
@@ -440,7 +442,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
                     className="w-4 h-4 text-[#095797] border-gray-300 rounded focus:ring-[#095797]"
                   />
                   <span className="text-sm font-medium text-gray-700">
-                    Featured post
+                    {t("admin.posts.edit.fields.featured")}
                   </span>
                 </label>
               </div>
@@ -455,7 +457,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
               className="px-6 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
               disabled={loading}
             >
-              Annuler
+              {t("admin.posts.edit.buttons.cancel")}
             </button>
             <button
               type="submit"
@@ -463,7 +465,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
               className="px-6 py-2 bg-[#095797] text-white rounded-lg hover:bg-[#074171] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
             >
               {loading && <Loader2 className="w-4 h-4 animate-spin" />}
-              {loading ? "Mise à jour..." : "Mettre à jour l'article"}
+              {loading ? t("admin.posts.edit.updating") : t("admin.posts.edit.buttons.update")}
             </button>
           </div>
         </form>

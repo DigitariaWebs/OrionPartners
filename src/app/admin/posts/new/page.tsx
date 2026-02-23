@@ -7,10 +7,12 @@ import RichTextEditor from "@/components/admin/RichTextEditor";
 import ImageUpload from "@/components/admin/ImageUpload";
 import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
+import { useI18n } from "@/i18n/useI18n";
 
 export default function NewPostPage() {
   const { status } = useSession();
   const router = useRouter();
+  const { t } = useI18n();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [formData, setFormData] = useState({
@@ -41,7 +43,7 @@ export default function NewPostPage() {
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="text-center">
           <div className="w-16 h-16 border-4 border-[#095797] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-gray-600">Chargement...</p>
+          <p className="text-gray-600">{t("admin.posts.new.loading")}</p>
         </div>
       </div>
     );
@@ -54,12 +56,13 @@ export default function NewPostPage() {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
     const { name, value, type } = e.target;
     const checked = (e.target as HTMLInputElement).checked;
 
-    let processedValue: string | boolean = type === "checkbox" ? checked : value;
+    let processedValue: string | boolean =
+      type === "checkbox" ? checked : value;
 
     // Handle datetime-local input
     if (name === "publishDate" && value) {
@@ -98,14 +101,28 @@ export default function NewPostPage() {
     try {
       // Validate required fields
       const requiredFields = [
-        'title', 'slug', 'excerpt', 'author', 'authorRole', 'authorBio',
-        'readTime', 'image', 'category', 'content'
+        "title",
+        "slug",
+        "excerpt",
+        "author",
+        "authorRole",
+        "authorBio",
+        "readTime",
+        "image",
+        "category",
+        "content",
       ];
 
-      const missingFields = requiredFields.filter(field => !formData[field as keyof typeof formData]);
+      const missingFields = requiredFields.filter(
+        (field) => !formData[field as keyof typeof formData],
+      );
 
       if (missingFields.length > 0) {
-        setError(`Missing required fields: ${missingFields.join(', ')}`);
+        setError(
+          t("admin.posts.new.missingFields", {
+            fields: missingFields.join(", "),
+          }),
+        );
         setLoading(false);
         return;
       }
@@ -115,11 +132,11 @@ export default function NewPostPage() {
       try {
         const date = new Date(formData.publishDate);
         if (isNaN(date.getTime())) {
-          throw new Error('Invalid date');
+          throw new Error("Invalid date");
         }
         publishDate = date.toISOString();
       } catch {
-        setError("Invalid publish date format. Please use a valid date and time.");
+        setError(t("admin.posts.new.invalidDate"));
         setLoading(false);
         return;
       }
@@ -148,22 +165,24 @@ export default function NewPostPage() {
       } else {
         // Enhanced error handling
         if (data.error) {
-          if (data.error.includes('slug')) {
-            setError("Ce slug est déjà pris. Veuillez en choisir un autre.");
-          } else if (data.error.includes('datetime')) {
-            setError("Format de date invalide. Veuillez vérifier la date de publication.");
-          } else if (data.error.includes('validation')) {
-            setError(`Erreur de validation : ${data.error}`);
+          if (data.error.includes("slug")) {
+            setError(t("admin.posts.new.slugTaken"));
+          } else if (data.error.includes("datetime")) {
+            setError(t("admin.posts.new.invalidDate"));
+          } else if (data.error.includes("validation")) {
+            setError(
+              t("admin.posts.new.validationError", { error: data.error }),
+            );
           } else {
             setError(data.error);
           }
         } else {
-          setError("Échec de la création. Veuillez réessayer.");
+          setError(t("admin.posts.new.createFailed"));
         }
       }
     } catch (err) {
       console.error("Error creating post:", err);
-      setError("Erreur réseau. Veuillez vérifier votre connexion et réessayer.");
+      setError(t("admin.posts.new.networkError"));
     } finally {
       setLoading(false);
     }
@@ -174,18 +193,24 @@ export default function NewPostPage() {
       <div className="max-w-5xl">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            Créer un nouvel article
+            {t("admin.posts.new.title")}
           </h1>
-          <p className="text-gray-600">
-            Remplissez les détails ci-dessous pour créer un nouvel article de blog
-          </p>
+          <p className="text-gray-600">{t("admin.posts.new.subtitle")}</p>
         </div>
 
         {error && (
           <div className="mb-6 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
             <div className="flex items-center">
-              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+              <svg
+                className="w-5 h-5 mr-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                  clipRule="evenodd"
+                />
               </svg>
               {error}
             </div>
@@ -195,12 +220,14 @@ export default function NewPostPage() {
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Title & Slug */}
           <div className="bg-white rounded-xl shadow-sm border p-6">
-            <h2 className="text-xl font-semibold mb-4">Informations de base</h2>
+            <h2 className="text-xl font-semibold mb-4">
+              {t("admin.posts.new.sections.basicInfo")}
+            </h2>
 
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Titre *
+                  {t("admin.posts.new.fields.title")}
                 </label>
                 <input
                   type="text"
@@ -215,7 +242,7 @@ export default function NewPostPage() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Slug *
+                  {t("admin.posts.new.fields.slug")}
                 </label>
                 <input
                   type="text"
@@ -226,13 +253,13 @@ export default function NewPostPage() {
                   required
                 />
                 <p className="mt-1 text-sm text-gray-500">
-                  Version adaptée aux URL du titre
+                  {t("admin.posts.new.fields.slugHelp")}
                 </p>
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Extrait *
+                  {t("admin.posts.new.fields.excerpt")}
                 </label>
                 <textarea
                   name="excerpt"
@@ -247,7 +274,7 @@ export default function NewPostPage() {
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Catégorie *
+                    {t("admin.posts.new.fields.category")}
                   </label>
                   <input
                     type="text"
@@ -256,13 +283,15 @@ export default function NewPostPage() {
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#095797] focus:border-transparent"
                     required
-                    placeholder="ex. : Fiscalité, Technologie"
+                    placeholder={t(
+                      "admin.posts.new.fields.categoryPlaceholder",
+                    )}
                   />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Temps de lecture *
+                    {t("admin.posts.new.fields.readTime")}
                   </label>
                   <input
                     type="text"
@@ -271,14 +300,16 @@ export default function NewPostPage() {
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#095797] focus:border-transparent"
                     required
-                    placeholder="ex. : 5 min"
+                    placeholder={t(
+                      "admin.posts.new.fields.readTimePlaceholder",
+                    )}
                   />
                 </div>
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Étiquettes (séparées par des virgules)
+                  {t("admin.posts.new.fields.tags")}
                 </label>
                 <input
                   type="text"
@@ -286,7 +317,7 @@ export default function NewPostPage() {
                   value={formData.tags}
                   onChange={handleChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#095797] focus:border-transparent"
-                  placeholder="étiquette1, étiquette2, étiquette3"
+                  placeholder={t("admin.posts.new.fields.tagsPlaceholder")}
                 />
               </div>
             </div>
@@ -294,12 +325,14 @@ export default function NewPostPage() {
 
           {/* Author Information */}
           <div className="bg-white rounded-xl shadow-sm border p-6">
-            <h2 className="text-xl font-semibold mb-4">Informations sur l&apos;auteur</h2>
+            <h2 className="text-xl font-semibold mb-4">
+              {t("admin.posts.new.sections.authorInfo")}
+            </h2>
 
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Nom de l&apos;auteur *
+                  {t("admin.posts.new.fields.authorName")}
                 </label>
                 <input
                   type="text"
@@ -313,7 +346,7 @@ export default function NewPostPage() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Rôle de l&apos;auteur *
+                  {t("admin.posts.new.fields.authorRole")}
                 </label>
                 <input
                   type="text"
@@ -327,7 +360,7 @@ export default function NewPostPage() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Biographie de l&apos;auteur *
+                  {t("admin.posts.new.fields.authorBio")}
                 </label>
                 <textarea
                   name="authorBio"
@@ -343,7 +376,9 @@ export default function NewPostPage() {
 
           {/* Featured Image */}
           <div className="bg-white rounded-xl shadow-sm border p-6">
-            <h2 className="text-xl font-semibold mb-4">Image principale *</h2>
+            <h2 className="text-xl font-semibold mb-4">
+              {t("admin.posts.new.sections.featuredImage")}
+            </h2>
             <ImageUpload
               value={formData.image}
               onChange={(url) => setFormData({ ...formData, image: url })}
@@ -353,7 +388,9 @@ export default function NewPostPage() {
 
           {/* Content */}
           <div className="bg-white rounded-xl shadow-sm border p-6">
-            <h2 className="text-xl font-semibold mb-4">Contenu *</h2>
+            <h2 className="text-xl font-semibold mb-4">
+              {t("admin.posts.new.sections.content")}
+            </h2>
             <RichTextEditor
               content={formData.content}
               onChange={(content) => setFormData({ ...formData, content })}
@@ -362,12 +399,14 @@ export default function NewPostPage() {
 
           {/* Publishing Options */}
           <div className="bg-white rounded-xl shadow-sm border p-6">
-            <h2 className="text-xl font-semibold mb-4">Options de publication</h2>
+            <h2 className="text-xl font-semibold mb-4">
+              {t("admin.posts.new.sections.publishingOptions")}
+            </h2>
 
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Date et heure de publication
+                  {t("admin.posts.new.fields.publishDate")}
                 </label>
                 <input
                   type="datetime-local"
@@ -389,7 +428,7 @@ export default function NewPostPage() {
                     className="w-4 h-4 text-[#095797] border-gray-300 rounded focus:ring-[#095797]"
                   />
                   <span className="text-sm font-medium text-gray-700">
-                    Publier immédiatement
+                    {t("admin.posts.new.fields.published")}
                   </span>
                 </label>
 
@@ -402,7 +441,7 @@ export default function NewPostPage() {
                     className="w-4 h-4 text-[#095797] border-gray-300 rounded focus:ring-[#095797]"
                   />
                   <span className="text-sm font-medium text-gray-700">
-                    Article à la une
+                    {t("admin.posts.new.fields.featured")}
                   </span>
                 </label>
               </div>
@@ -417,7 +456,7 @@ export default function NewPostPage() {
               className="px-6 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
               disabled={loading}
             >
-              Annuler
+              {t("admin.posts.new.buttons.cancel")}
             </button>
             <button
               type="submit"
@@ -425,7 +464,9 @@ export default function NewPostPage() {
               className="px-6 py-2 bg-[#095797] text-white rounded-lg hover:bg-[#074171] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
             >
               {loading && <Loader2 className="w-4 h-4 animate-spin" />}
-              {loading ? "Création..." : "Créer l'article"}
+              {loading
+                ? t("admin.posts.new.creating")
+                : t("admin.posts.new.buttons.create")}
             </button>
           </div>
         </form>

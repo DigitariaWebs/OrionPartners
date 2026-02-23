@@ -9,6 +9,7 @@ import { Calendar, User, ArrowLeft, Facebook, Twitter, Linkedin } from "lucide-r
 import { notFound } from "next/navigation";
 import { use, useEffect, useState, useCallback } from "react";
 import { sanitizeHtml } from "@/lib/sanitize";
+import { useI18n } from "@/i18n/useI18n";
 
 interface BlogPost {
   _id: string;
@@ -36,6 +37,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = use(params);
   const [post, setPost] = useState<BlogPost | null>(null);
   const [loading, setLoading] = useState(true);
+  const { t } = useI18n();
 
   const fetchPost = useCallback(async () => {
     try {
@@ -65,7 +67,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         <div className="flex items-center justify-center min-h-[400px]">
           <div className="text-center">
             <div className="w-16 h-16 border-4 border-[#095797] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-            <p className="text-gray-600">Chargement de l&apos;article...</p>
+            <p className="text-gray-600">{t("blog.post.loading")}</p>
           </div>
         </div>
         <Footer />
@@ -78,7 +80,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   const shareUrl = typeof window !== "undefined" ? window.location.href : "";
-  const shareText = `Découvrez cet article : ${post.title}`;
+  const shareText = t("blog.post.shareText", { title: post.title });
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
@@ -100,7 +102,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors duration-300 mb-6"
             >
               <ArrowLeft className="w-4 h-4" />
-              Retour au blog
+              {t("blog.post.backToBlog")}
             </Link>
 
             {/* Category */}
@@ -129,7 +131,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                   })}
                 </span>
               </div>
-              <span>{post.readTime} de lecture</span>
+              <span>{t("blog.post.readTime", { time: post.readTime })}</span>
             </div>
           </motion.div>
         </div>
@@ -182,7 +184,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                     className="text-xl font-bold mb-6"
                     style={{ color: "var(--color-primary)" }}
                   >
-                    À propos de l&apos;auteur
+                    {t("blog.post.aboutAuthor")}
                   </h3>
                   <div className="flex items-start gap-4 mb-6">
                     <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
@@ -218,7 +220,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                   transition={{ duration: 0.6, delay: 0.8 }}
                   className="bg-white rounded-xl shadow-lg p-6 mb-6"
                 >
-                  <h3 className="text-lg font-bold text-dark mb-4">Tags</h3>
+                  <h3 className="text-lg font-bold text-dark mb-4">{t("blog.post.tags")}</h3>
                   <div className="flex flex-wrap gap-2">
                     {post.tags.map((tag, index) => (
                       <span
@@ -238,7 +240,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                   transition={{ duration: 0.6, delay: 1 }}
                   className="bg-white rounded-xl shadow-lg p-6"
                 >
-                  <h3 className="text-lg font-bold text-dark mb-4">Partager</h3>
+                  <h3 className="text-lg font-bold text-dark mb-4">{t("blog.post.share")}</h3>
                   <div className="flex gap-3">
                     <button
                       onClick={() =>
@@ -250,7 +252,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                         )
                       }
                       className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300"
-                      aria-label="Partager sur Facebook"
+                      aria-label={t("blog.post.shareOnFacebook")}
                     >
                       <Facebook className="w-4 h-4" />
                     </button>
@@ -264,7 +266,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                         )
                       }
                       className="p-2 bg-blue-400 text-white rounded-lg hover:bg-blue-500 transition-colors duration-300"
-                      aria-label="Partager sur Twitter"
+                      aria-label={t("blog.post.shareOnTwitter")}
                     >
                       <Twitter className="w-4 h-4" />
                     </button>
@@ -278,7 +280,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                         )
                       }
                       className="p-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-colors duration-300"
-                      aria-label="Partager sur LinkedIn"
+                      aria-label={t("blog.post.shareOnLinkedIn")}
                     >
                       <Linkedin className="w-4 h-4" />
                     </button>

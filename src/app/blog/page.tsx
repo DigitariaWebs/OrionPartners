@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Calendar, User, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useI18n } from "@/i18n/useI18n";
 
 interface BlogPost {
   _id: string;
@@ -23,6 +24,7 @@ interface BlogPost {
 }
 
 export default function BlogPage() {
+  const { t } = useI18n();
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -68,7 +70,7 @@ export default function BlogPage() {
         <div className="flex items-center justify-center min-h-[400px]">
           <div className="text-center">
             <div className="w-16 h-16 border-4 border-[#095797] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-            <p className="text-gray-600">Chargement des articles...</p>
+            <p className="text-gray-600">{t("blog.page.loading")}</p>
           </div>
         </div>
         <Footer />
@@ -91,11 +93,10 @@ export default function BlogPage() {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-              Notre Blog
+              {t("blog.page.title")}
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-white/90 leading-relaxed">
-              Découvrez nos insights et analyses sur la transformation digitale,
-              la comptabilité et l&apos;intelligence des données
+              {t("blog.page.subtitle")}
             </p>
           </motion.div>
         </div>
@@ -115,7 +116,7 @@ export default function BlogPage() {
                 className="text-3xl font-bold mb-2"
                 style={{ color: "var(--color-primary)" }}
               >
-                Article à la une
+                {t("blog.page.featuredTitle")}
               </h2>
               <div className="w-20 h-1 bg-accent"></div>
             </motion.div>
@@ -151,7 +152,7 @@ export default function BlogPage() {
 
                   <div className="flex items-center gap-4 mb-4">
                     <span className="text-sm text-dark/60">
-                      {featuredPost.readTime} de lecture
+                      {t("blog.page.readTime", { time: featuredPost.readTime })}
                     </span>
                   </div>
 
@@ -195,13 +196,13 @@ export default function BlogPage() {
                             year: "numeric",
                             month: "long",
                             day: "numeric",
-                          }
+                          },
                         )}
                       </span>
                     </div>
 
                     <div className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-lg font-medium">
-                      Lire l&apos;article
+                      {t("blog.page.readArticle")}
                       <ArrowRight className="w-4 h-4" />
                     </div>
                   </div>
@@ -225,7 +226,7 @@ export default function BlogPage() {
               className="text-3xl font-bold mb-2"
               style={{ color: "var(--color-primary)" }}
             >
-              Tous les articles
+              {t("blog.page.allArticles")}
             </h2>
             <div className="w-20 h-1 bg-accent"></div>
           </motion.div>
@@ -306,7 +307,7 @@ export default function BlogPage() {
                           {
                             month: "short",
                             day: "numeric",
-                          }
+                          },
                         )}
                       </span>
                     </div>
@@ -316,7 +317,7 @@ export default function BlogPage() {
                       className="inline-flex items-center gap-2 px-4 py-2 bg-accent text-white rounded-lg font-medium text-sm transition-all duration-300 flex-shrink-0 hover:bg-accent-hover hover:shadow-md transform hover:scale-105"
                       style={{ backgroundColor: "var(--color-accent)" }}
                     >
-                      Lire la suite
+                      {t("blog.page.readMore")}
                       <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>

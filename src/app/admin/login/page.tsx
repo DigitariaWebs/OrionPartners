@@ -5,9 +5,11 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useI18n } from "@/i18n/useI18n";
 
 export default function AdminLoginPage() {
   const router = useRouter();
+  const { t } = useI18n();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -59,7 +61,7 @@ export default function AdminLoginPage() {
       console.log("[LOGIN] SignIn result:", result);
 
       // Check for actual errors (not the string 'undefined')
-      if (result?.error && result.error !== 'undefined') {
+      if (result?.error && result.error !== "undefined") {
         console.error("[LOGIN] Error:", result.error);
         setError(result.error);
       } else if (result?.ok) {
@@ -68,11 +70,11 @@ export default function AdminLoginPage() {
         router.refresh();
       } else {
         console.error("[LOGIN] Unexpected result:", result);
-        setError("Échec de la connexion. Veuillez réessayer.");
+        setError(t("admin.login.loginFailed"));
       }
     } catch (err) {
       console.error("[LOGIN] Exception:", err);
-      setError("Une erreur inattendue s'est produite");
+      setError(t("admin.login.unexpectedError"));
     } finally {
       setLoading(false);
     }
@@ -88,9 +90,9 @@ export default function AdminLoginPage() {
       >
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-[#095797] mb-2">
-            Connexion administrateur
+            {t("admin.login.title")}
           </h1>
-          <p className="text-gray-600">Connectez-vous pour gérer votre blog</p>
+          <p className="text-gray-600">{t("admin.login.subtitle")}</p>
         </div>
 
         {error && (
@@ -109,7 +111,7 @@ export default function AdminLoginPage() {
               htmlFor="email"
               className="block text-sm font-medium text-gray-700 mb-2"
             >
-              Adresse e-mail
+              {t("admin.login.emailLabel")}
             </label>
             <input
               type="email"
@@ -117,7 +119,7 @@ export default function AdminLoginPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#095797] focus:border-transparent transition-all"
-              placeholder="admin@example.com"
+              placeholder={t("admin.login.emailPlaceholder")}
               required
               disabled={loading}
             />
@@ -128,7 +130,7 @@ export default function AdminLoginPage() {
               htmlFor="password"
               className="block text-sm font-medium text-gray-700 mb-2"
             >
-              Mot de passe
+              {t("admin.login.passwordLabel")}
             </label>
             <input
               type="password"
@@ -136,7 +138,7 @@ export default function AdminLoginPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#095797] focus:border-transparent transition-all"
-              placeholder="••••••••"
+              placeholder={t("admin.login.passwordPlaceholder")}
               required
               disabled={loading}
             />
@@ -147,13 +149,15 @@ export default function AdminLoginPage() {
             disabled={loading}
             className="w-full bg-[#095797] hover:bg-[#074171] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {loading ? "Connexion en cours..." : "Se connecter"}
+            {loading
+              ? t("admin.login.signingIn")
+              : t("admin.login.signInButton")}
           </button>
         </form>
 
         <div className="mt-6 text-center">
           <Link href="/" className="text-sm text-[#095797] hover:underline">
-            ← Back to website
+            {t("admin.login.backToWebsite")}
           </Link>
         </div>
       </motion.div>

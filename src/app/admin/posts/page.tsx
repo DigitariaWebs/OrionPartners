@@ -7,10 +7,12 @@ import AdminLayout from "@/components/admin/AdminLayout";
 import Link from "next/link";
 import { Pencil, Trash2, Search, FileText } from "lucide-react";
 import { motion } from "framer-motion";
+import { useI18n } from "@/i18n/useI18n";
 
 export default function AdminPostsPage() {
   const { status } = useSession();
   const router = useRouter();
+  const { t } = useI18n();
   const [posts, setPosts] = useState<
     {
       _id: string;
@@ -53,7 +55,7 @@ export default function AdminPostsPage() {
   }, [status]);
 
   const handleDelete = async (id: string, title: string) => {
-    if (!confirm(`Êtes-vous sûr de vouloir supprimer "${title}" ?`)) {
+    if (!confirm(t("admin.posts.list.confirmDelete", { title }))) {
       return;
     }
 
@@ -64,13 +66,13 @@ export default function AdminPostsPage() {
 
       if (response.ok) {
         setPosts(posts.filter((post) => post._id !== id));
-        alert("Article supprimé avec succès");
+        alert(t("admin.posts.list.deleteSuccess"));
       } else {
-        alert("Échec de la suppression");
+        alert(t("admin.posts.list.deleteFailed"));
       }
     } catch (error) {
       console.error("Error deleting post:", error);
-      alert("Erreur lors de la suppression");
+      alert(t("admin.posts.list.deleteError"));
     }
   };
 
@@ -91,10 +93,10 @@ export default function AdminPostsPage() {
         <div className="mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <h1 className="text-3xl font-bold text-[var(--color-primary)] mb-2">
-              Articles de Blog
+              {t("admin.posts.list.title")}
             </h1>
             <p className="text-gray-600">
-              Gérez, créez et modifiez vos articles de blog
+              {t("admin.posts.list.subtitle")}
             </p>
           </div>
           <Link
@@ -114,7 +116,7 @@ export default function AdminPostsPage() {
                 d="M12 4v16m8-8H4"
               />
             </svg>
-            Créer un article
+            {t("admin.posts.list.createButton")}
           </Link>
         </div>
 
@@ -125,7 +127,7 @@ export default function AdminPostsPage() {
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
               <input
                 type="text"
-                placeholder="Rechercher un article..."
+                placeholder={t("admin.posts.list.searchPlaceholder")}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent transition-all bg-gray-50 focus:bg-white"
@@ -136,7 +138,7 @@ export default function AdminPostsPage() {
               onChange={(e) => setFilterCategory(e.target.value)}
               className="px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent transition-all bg-gray-50 focus:bg-white cursor-pointer"
             >
-              <option value="all">Toutes les catégories</option>
+              <option value="all">{t("admin.posts.list.allCategories")}</option>
               {categories.map((category) => (
                 <option key={category} value={category}>
                   {category}
@@ -151,7 +153,7 @@ export default function AdminPostsPage() {
           {loading ? (
             <div className="p-12 text-center text-gray-500">
               <div className="w-12 h-12 border-4 border-[var(--color-primary)] border-t-transparent rounded-full animate-spin mx-auto mb-4 opacity-50"></div>
-              Chargement des articles...
+              {t("admin.posts.list.loading")}
             </div>
           ) : filteredPosts.length === 0 ? (
             <div className="p-12 text-center text-gray-500 bg-gray-50/30">
@@ -160,8 +162,8 @@ export default function AdminPostsPage() {
               </div>
               <p className="text-lg font-medium text-gray-600">
                 {searchTerm || filterCategory !== "all"
-                  ? "Aucun article ne correspond à vos filtres"
-                  : "Aucun article pour le moment. Créez votre premier article !"}
+                  ? t("admin.posts.list.noResults")
+                  : t("admin.posts.list.noArticles")}
               </p>
             </div>
           ) : (
@@ -170,19 +172,19 @@ export default function AdminPostsPage() {
                 <thead className="bg-gray-50/80 border-b border-gray-100">
                   <tr>
                     <th className="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                      Article
+                      {t("admin.posts.list.table.article")}
                     </th>
                     <th className="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                      Catégorie
+                      {t("admin.posts.list.table.category")}
                     </th>
                     <th className="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                      Statut
+                      {t("admin.posts.list.table.status")}
                     </th>
                     <th className="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                      Date
+                      {t("admin.posts.list.table.date")}
                     </th>
                     <th className="px-6 py-4 text-right text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                      Actions
+                      {t("admin.posts.list.table.actions")}
                     </th>
                   </tr>
                 </thead>
@@ -229,15 +231,15 @@ export default function AdminPostsPage() {
                               }`}
                             ></span>
                             {post.published ? (
-                              <span>Publié</span>
+                              <span>{t("admin.posts.list.status.published")}</span>
                             ) : (
-                              <span>Brouillon</span>
+                              <span>{t("admin.posts.list.status.draft")}</span>
                             )}
                           </span>
                           {post.featured && (
                             <span
                               className="px-2 py-1 text-xs font-semibold bg-purple-100 text-purple-700 rounded-full border border-purple-200"
-                              title="Article à la une"
+                              title={t("admin.posts.list.status.featured")}
                             >
                               ★
                             </span>
@@ -255,14 +257,14 @@ export default function AdminPostsPage() {
                           <Link
                             href={`/admin/posts/${post._id}`}
                             className="p-2 text-gray-400 hover:text-[var(--color-primary)] hover:bg-blue-50 rounded-lg transition-all"
-                            title="Modifier"
+                            title={t("admin.posts.list.actions.edit")}
                           >
                             <Pencil className="w-5 h-5" />
                           </Link>
                           <button
                             onClick={() => handleDelete(post._id, post.title)}
                             className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-all"
-                            title="Supprimer"
+                            title={t("admin.posts.list.actions.delete")}
                           >
                             <Trash2 className="w-5 h-5" />
                           </button>
@@ -279,7 +281,7 @@ export default function AdminPostsPage() {
         {/* Summary */}
         {!loading && filteredPosts.length > 0 && (
           <div className="mt-6 text-sm text-gray-500 text-center font-medium">
-            Affichage de {filteredPosts.length} sur {posts.length} articles
+            {t("admin.posts.list.summary", { count: filteredPosts.length, total: posts.length })}
           </div>
         )}
       </div>

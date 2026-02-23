@@ -124,7 +124,27 @@
     "read_more": "Lire Plus",
     "published": "Publié le",
     "author": "Par",
-    "loading": "Chargement des articles..."
+    "loading": "Chargement des articles...",
+    "page": {
+        "title": "Notre Blog",
+        "subtitle": "Découvrez nos insights et analyses sur la transformation digitale, la comptabilité et l'intelligence des données",
+        "loading": "Chargement des articles...",
+        "featuredTitle": "Article à la une",
+        "readArticle": "Lire l'article",
+        "allArticles": "Tous les articles",
+        "readMore": "Lire la suite",
+        "readTime": "{time} min de lecture"    },
+    "post": {
+      "loading": "Chargement de l'article...",
+      "backToBlog": "Retour au blog",
+      "readTime": "{time} min de lecture",
+      "aboutAuthor": "À propos de l'auteur",
+      "tags": "Tags",
+      "share": "Partager",
+      "shareOnFacebook": "Partager sur Facebook",
+      "shareOnTwitter": "Partager sur Twitter",
+      "shareOnLinkedIn": "Partager sur LinkedIn",
+      "shareText": "Découvrez cet article : {title}"    }
   },
   "team": {
     "title": "Notre Équipe",
@@ -148,5 +168,169 @@
     "error": "Une erreur est survenue",
     "retry": "Réessayer",
     "cancel": "Annuler"
+  },
+  "admin": {
+    "dashboard": {
+      "title": "Tableau de bord",
+      "welcome": "Bienvenue ! Voici un aperçu de votre blog.",
+      "stats": {
+        "totalArticles": "Articles totaux",
+        "published": "Publiés",
+        "drafts": "Brouillons",
+        "featured": "À la une",
+        "analytics": "Analytics",
+        "active": "Actif",
+        "notConfigured": "Non configuré"
+      },
+      "analytics": {
+        "title": "Google Analytics",
+        "subtitle": "Suivi du trafic du site",
+        "trackingStatus": "Statut du suivi",
+        "activeConfigured": "Actif - Le suivi est configuré",
+        "notConfiguredMissingId": "Non configuré - ID de mesure manquant",
+        "inactive": "Inactif",
+        "measurementId": "ID de mesure",
+        "viewAnalytics": "Voir Analytics"
+      },
+      "recentPosts": {
+        "title": "Articles Récents",
+        "subtitle": "Vos dernières publications",
+        "newArticle": "Nouveau Article",
+        "loading": "Chargement...",
+        "noArticles": "Aucun article pour le moment",
+        "startCreating": "Commencez par créer votre premier article !",
+        "published": "Publié",
+        "draft": "Brouillon",
+        "featured": "À la une",
+        "edit": "Éditer",
+        "viewAll": "Voir tous les articles"
+      }
+    },
+    "login": {
+        "title": "Connexion administrateur",
+        "subtitle": "Connectez-vous pour gérer votre blog",
+        "emailLabel": "Adresse e-mail",
+        "emailPlaceholder": "admin@example.com",
+        "passwordLabel": "Mot de passe",
+        "passwordPlaceholder": "••••••••",
+        "signInButton": "Se connecter",
+        "signingIn": "Connexion en cours...",
+        "loginFailed": "Échec de la connexion. Veuillez réessayer.",
+        "unexpectedError": "Une erreur inattendue s'est produite",
+        "backToWebsite": "← Retour au site web"
+    },
+    "posts": {
+        "edit": {
+            "title": "Modifier l'article",
+            "subtitle": "Mettez à jour les détails ci-dessous pour modifier cet article de blog",
+            "loading": "Chargement...",
+            "postNotFound": "Article non trouvé",
+            "fetchFailed": "Échec de la récupération de l'article",
+            "missingFields": "Champs requis manquants : {fields}",
+            "invalidDate": "Format de date invalide. Veuillez vérifier la date de publication.",
+            "slugTaken": "Ce slug est déjà pris. Veuillez en choisir un autre.",
+            "validationError": "Erreur de validation : {error}",
+            "updateFailed": "Échec de la mise à jour. Veuillez réessayer.",
+            "networkError": "Erreur réseau. Veuillez vérifier votre connexion et réessayer.",
+            "updating": "Mise à jour...",
+            "sections": {
+                "basicInfo": "Informations de base",
+                "authorInfo": "Informations sur l'auteur",
+                "featuredImage": "Image à la une *",
+                "content": "Contenu *",
+                "publishingOptions": "Options de publication"
+            },
+            "fields": {
+                "title": "Titre *",
+                "slug": "Slug *",
+                "excerpt": "Extrait *",
+                "category": "Catégorie *",
+                "readTime": "Temps de lecture *",
+                "tags": "Tags (séparés par des virgules)",
+                "authorName": "Nom de l'auteur *",
+                "authorRole": "Rôle de l'auteur *",
+                "authorBio": "Biographie de l'auteur *",
+                "publishDate": "Date et heure de publication",
+                "published": "Publié",
+                "featured": "Article à la une"
+            },
+            "buttons": {
+                "cancel": "Annuler",
+                "update": "Mettre à jour l'article"
+            }
+        },
+        "new": {
+            "title": "Créer un nouvel article",
+            "subtitle": "Remplissez les détails ci-dessous pour créer un nouvel article de blog",
+            "loading": "Chargement...",
+            "missingFields": "Champs requis manquants : {fields}",
+            "invalidDate": "Format de date invalide. Veuillez vérifier la date de publication.",
+            "slugTaken": "Ce slug est déjà pris. Veuillez en choisir un autre.",
+            "validationError": "Erreur de validation : {error}",
+            "createFailed": "Échec de la création. Veuillez réessayer.",
+            "networkError": "Erreur réseau. Veuillez vérifier votre connexion et réessayer.",
+            "creating": "Création...",
+            "sections": {
+                "basicInfo": "Informations de base",
+                "authorInfo": "Informations sur l'auteur",
+                "featuredImage": "Image principale *",
+                "content": "Contenu *",
+                "publishingOptions": "Options de publication"
+            },
+            "fields": {
+                "title": "Titre *",
+                "slug": "Slug *",
+                "slugHelp": "Version adaptée aux URL du titre",
+                "excerpt": "Extrait *",
+                "category": "Catégorie *",
+                "categoryPlaceholder": "ex. : Fiscalité, Technologie",
+                "readTime": "Temps de lecture *",
+                "readTimePlaceholder": "ex. : 5 min",
+                "tags": "Étiquettes (séparées par des virgules)",
+                "tagsPlaceholder": "étiquette1, étiquette2, étiquette3",
+                "authorName": "Nom de l'auteur *",
+                "authorRole": "Rôle de l'auteur *",
+                "authorBio": "Biographie de l'auteur *",
+                "publishDate": "Date et heure de publication",
+                "published": "Publier immédiatement",
+                "featured": "Article à la une"
+            },
+            "buttons": {
+                "cancel": "Annuler",
+                "create": "Créer l'article"
+            }
+        },
+        "list": {
+            "title": "Articles de Blog",
+            "subtitle": "Gérez, créez et modifiez vos articles de blog",
+            "createButton": "Créer un article",
+            "searchPlaceholder": "Rechercher un article...",
+            "allCategories": "Toutes les catégories",
+            "loading": "Chargement des articles...",
+            "noResults": "Aucun article ne correspond à vos filtres",
+            "noArticles": "Aucun article pour le moment. Créez votre premier article !",
+            "table": {
+                "article": "Article",
+                "category": "Catégorie",
+                "status": "Statut",
+                "date": "Date",
+                "actions": "Actions"
+            },
+            "status": {
+                "published": "Publié",
+                "draft": "Brouillon",
+                "featured": "Article à la une"
+            },
+            "actions": {
+                "edit": "Modifier",
+                "delete": "Supprimer"
+            },
+            "confirmDelete": "Êtes-vous sûr de vouloir supprimer \"{title}\"?",
+            "deleteSuccess": "Article supprimé avec succès",
+            "deleteFailed": "Échec de la suppression",
+            "deleteError": "Erreur lors de la suppression",
+            "summary": "Affichage de {count} sur {total} articles"
+        }
+    }
   }
 }

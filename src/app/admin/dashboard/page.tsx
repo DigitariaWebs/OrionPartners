@@ -7,6 +7,7 @@ import AdminLayout from "@/components/admin/AdminLayout";
 import { FileText, Eye, TrendingUp, Clock } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useI18n } from "@/i18n/useI18n";
 
 interface Stats {
   totalPosts: number;
@@ -18,6 +19,7 @@ interface Stats {
 export default function AdminDashboard() {
   const { status } = useSession();
   const router = useRouter();
+  const { t } = useI18n();
 
   useEffect(() => {
     if (status === "unauthenticated") {
@@ -80,34 +82,42 @@ export default function AdminDashboard() {
 
   const statCards = [
     {
-      title: "Articles totaux",
+      title: t("admin.dashboard.stats.totalArticles"),
       value: stats.totalPosts,
       icon: FileText,
       color: "bg-blue-500",
     },
     {
-      title: "Publiés",
+      title: t("admin.dashboard.stats.published"),
       value: stats.publishedPosts,
       icon: Eye,
       color: "bg-green-500",
     },
     {
-      title: "Brouillons",
+      title: t("admin.dashboard.stats.drafts"),
       value: stats.draftPosts,
       icon: Clock,
       color: "bg-yellow-500",
     },
     {
-      title: "À la une",
+      title: t("admin.dashboard.stats.featured"),
       value: stats.featuredPosts,
       icon: TrendingUp,
       color: "bg-purple-500",
     },
     {
-      title: "Analytics",
-      value: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID !== 'GA_MEASUREMENT_ID' ? "Actif" : "Non configuré",
+      title: t("admin.dashboard.stats.analytics"),
+      value:
+        process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID &&
+        process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID !== "GA_MEASUREMENT_ID"
+          ? t("admin.dashboard.stats.active")
+          : t("admin.dashboard.stats.notConfigured"),
       icon: TrendingUp,
-      color: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID !== 'GA_MEASUREMENT_ID' ? "bg-green-500" : "bg-red-500",
+      color:
+        process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID &&
+        process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID !== "GA_MEASUREMENT_ID"
+          ? "bg-green-500"
+          : "bg-red-500",
       isText: true,
     },
   ];
@@ -117,11 +127,9 @@ export default function AdminDashboard() {
       <div>
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            Tableau de bord
+            {t("admin.dashboard.title")}
           </h1>
-          <p className="text-gray-600">
-            Bienvenue ! Voici un aperçu de votre blog.
-          </p>
+          <p className="text-gray-600">{t("admin.dashboard.welcome")}</p>
         </div>
 
         {/* Stats Grid */}
@@ -150,12 +158,12 @@ export default function AdminDashboard() {
                       stat.color === "bg-blue-500"
                         ? "bg-blue-500 shadow-blue-200"
                         : stat.color === "bg-green-500"
-                        ? "bg-green-500 shadow-green-200"
-                        : stat.color === "bg-yellow-500"
-                        ? "bg-yellow-500 shadow-yellow-200"
-                        : stat.color === "bg-red-500"
-                        ? "bg-red-500 shadow-red-200"
-                        : "bg-purple-500 shadow-purple-200"
+                          ? "bg-green-500 shadow-green-200"
+                          : stat.color === "bg-yellow-500"
+                            ? "bg-yellow-500 shadow-yellow-200"
+                            : stat.color === "bg-red-500"
+                              ? "bg-red-500 shadow-red-200"
+                              : "bg-purple-500 shadow-purple-200"
                     }`}
                   >
                     <Icon className="w-6 h-6 text-white" />
@@ -172,10 +180,10 @@ export default function AdminDashboard() {
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-xl font-bold text-[var(--color-primary)]">
-                  Google Analytics
+                  {t("admin.dashboard.analytics.title")}
                 </h2>
                 <p className="text-sm text-gray-500 mt-1">
-                  Suivi du trafic du site
+                  {t("admin.dashboard.analytics.subtitle")}
                 </p>
               </div>
             </div>
@@ -184,39 +192,55 @@ export default function AdminDashboard() {
             <div className="space-y-4">
               <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
                 <div>
-                  <p className="font-medium text-gray-900">Statut du suivi</p>
+                  <p className="font-medium text-gray-900">
+                    {t("admin.dashboard.analytics.trackingStatus")}
+                  </p>
                   <p className="text-sm text-gray-500">
-                    {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID !== 'GA_MEASUREMENT_ID'
-                      ? 'Actif - Le suivi est configuré'
-                      : 'Non configuré - ID de mesure manquant'}
+                    {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID &&
+                    process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID !==
+                      "GA_MEASUREMENT_ID"
+                      ? t("admin.dashboard.analytics.activeConfigured")
+                      : t("admin.dashboard.analytics.notConfiguredMissingId")}
                   </p>
                 </div>
-                <div className={`px-3 py-1 rounded-full text-sm font-medium ${
-                  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID !== 'GA_MEASUREMENT_ID'
-                    ? 'bg-green-100 text-green-800'
-                    : 'bg-red-100 text-red-800'
-                }`}>
-                  {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID !== 'GA_MEASUREMENT_ID' ? 'Actif' : 'Inactif'}
+                <div
+                  className={`px-3 py-1 rounded-full text-sm font-medium ${
+                    process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID &&
+                    process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID !==
+                      "GA_MEASUREMENT_ID"
+                      ? "bg-green-100 text-green-800"
+                      : "bg-red-100 text-red-800"
+                  }`}
+                >
+                  {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID &&
+                  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID !==
+                    "GA_MEASUREMENT_ID"
+                    ? t("admin.dashboard.analytics.active")
+                    : t("admin.dashboard.analytics.inactive")}
                 </div>
               </div>
-              {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID !== 'GA_MEASUREMENT_ID' && (
-                <div className="flex items-center justify-between p-4 bg-blue-50 rounded-lg">
-                  <div>
-                    <p className="font-medium text-gray-900">ID de mesure</p>
-                    <p className="text-sm text-gray-500 font-mono">
-                      {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}
-                    </p>
+              {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID &&
+                process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID !==
+                  "GA_MEASUREMENT_ID" && (
+                  <div className="flex items-center justify-between p-4 bg-blue-50 rounded-lg">
+                    <div>
+                      <p className="font-medium text-gray-900">
+                        {t("admin.dashboard.analytics.measurementId")}
+                      </p>
+                      <p className="text-sm text-gray-500 font-mono">
+                        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}
+                      </p>
+                    </div>
+                    <a
+                      href={`https://analytics.google.com/analytics/web/?hl=fr&pli=1#/p${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.replace("G-", "")}/reports/intelligenthome`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition-colors"
+                    >
+                      {t("admin.dashboard.analytics.viewAnalytics")}
+                    </a>
                   </div>
-                  <a
-                    href={`https://analytics.google.com/analytics/web/?hl=fr&pli=1#/p${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.replace('G-', '')}/reports/intelligenthome`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition-colors"
-                  >
-                    Voir Analytics
-                  </a>
-                </div>
-              )}
+                )}
             </div>
           </div>
         </div>
@@ -227,10 +251,10 @@ export default function AdminDashboard() {
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-xl font-bold text-[var(--color-primary)]">
-                  Articles Récents
+                  {t("admin.dashboard.recentPosts.title")}
                 </h2>
                 <p className="text-sm text-gray-500 mt-1">
-                  Vos dernières publications
+                  {t("admin.dashboard.recentPosts.subtitle")}
                 </p>
               </div>
               <Link
@@ -250,7 +274,7 @@ export default function AdminDashboard() {
                     d="M12 4v16m8-8H4"
                   />
                 </svg>
-                Nouveau Article
+                {t("admin.dashboard.recentPosts.newArticle")}
               </Link>
             </div>
           </div>
@@ -259,7 +283,7 @@ export default function AdminDashboard() {
             {loading ? (
               <div className="p-12 text-center text-gray-500">
                 <div className="w-10 h-10 border-4 border-[var(--color-primary)] border-t-transparent rounded-full animate-spin mx-auto mb-4 opacity-50"></div>
-                Chargement...
+                {t("admin.dashboard.recentPosts.loading")}
               </div>
             ) : recentPosts.length === 0 ? (
               <div className="p-12 text-center text-gray-500 bg-gray-50/30">
@@ -267,10 +291,10 @@ export default function AdminDashboard() {
                   <FileText className="w-16 h-16 mx-auto" />
                 </div>
                 <p className="text-lg font-medium text-gray-600">
-                  Aucun article pour le moment
+                  {t("admin.dashboard.recentPosts.noArticles")}
                 </p>
                 <p className="text-sm mt-2">
-                  Commencez par créer votre premier article !
+                  {t("admin.dashboard.recentPosts.startCreating")}
                 </p>
               </div>
             ) : (
@@ -293,7 +317,7 @@ export default function AdminDashboard() {
                           <Clock className="w-3.5 h-3.5" />
                           {new Date(post.publishDate).toLocaleDateString(
                             "fr-FR",
-                            { day: "numeric", month: "long", year: "numeric" }
+                            { day: "numeric", month: "long", year: "numeric" },
                           )}
                         </span>
                         <span
@@ -308,11 +332,14 @@ export default function AdminDashboard() {
                               post.published ? "bg-green-500" : "bg-yellow-500"
                             }`}
                           ></span>
-                          {post.published ? "Publié" : "Brouillon"}
+                          {post.published
+                            ? t("admin.dashboard.recentPosts.published")
+                            : t("admin.dashboard.recentPosts.draft")}
                         </span>
                         {post.featured && (
                           <span className="px-2.5 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold flex items-center gap-1.5">
-                            <TrendingUp className="w-3 h-3" />À la une
+                            <TrendingUp className="w-3 h-3" />
+                            {t("admin.dashboard.recentPosts.featured")}
                           </span>
                         )}
                       </div>
@@ -321,7 +348,7 @@ export default function AdminDashboard() {
                       href={`/admin/posts/${post._id}`}
                       className="px-4 py-2 text-sm font-medium text-[var(--color-primary)] bg-blue-50 hover:bg-blue-100 hover:text-[var(--color-primary-hover)] rounded-lg transition-colors flex items-center gap-2"
                     >
-                      Éditer
+                      {t("admin.dashboard.recentPosts.edit")}
                       <svg
                         className="w-4 h-4"
                         fill="none"
@@ -348,7 +375,7 @@ export default function AdminDashboard() {
                 href="/admin/posts"
                 className="text-[var(--color-primary)] hover:text-[var(--color-primary-hover)] hover:underline font-medium text-sm inline-flex items-center gap-1"
               >
-                Voir tous les articles
+                {t("admin.dashboard.recentPosts.viewAll")}
                 <svg
                   className="w-4 h-4"
                   fill="none"
