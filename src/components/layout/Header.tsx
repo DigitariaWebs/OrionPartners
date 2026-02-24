@@ -258,7 +258,7 @@ const Header = () => {
                 >
                   {item.name}
                 </Link>
-              )
+              ),
             )}
           </div>
 
@@ -268,7 +268,7 @@ const Header = () => {
             <Button
               variant="primary"
               size="md"
-              className="font-medium"
+              className="font-medium min-w-[140px]"
               onClick={() => openModal("consultation")}
             >
               {t("header.contact_us")}
@@ -356,7 +356,7 @@ const Header = () => {
                   >
                     {item.name}
                   </Link>
-                )
+                ),
               )}
 
               {/* Mobile Contact Button */}

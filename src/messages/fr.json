@@ -457,7 +457,7 @@
       "competitiveAdvantages": {
         "title": "Avantages Concurrentiels",
         "description": "Notre approche combine algorithmes avancés, machine learning et expertise métier pour transformer vos données en insights actionnables. Chaque modèle est calibré sur vos données spécifiques pour garantir une précision maximale.",
-        "stats": {
+        "metrics": {
           "predictiveAccuracy": "Précision prédictive",
           "efficiencyGain": "Gain d'efficacité"
         }
@@ -466,20 +466,48 @@
     "marketStudies": {
       "title": "Études de Marché & Veille Stratégique",
       "description": "Nous menons des études qualitatives et quantitatives approfondies pour vous offrir une compréhension à 360° de votre environnement : analyse de la concurrence, attentes des clients, dynamiques de marché et opportunités de croissance.",
-      "studies": {
+    "examples": {
         "digitalCommerce": {
           "title": "Étude du commerce numérique : transformation digitale du secteur retail à Kinshasa",
-          "context": "Le secteur retail à Kinshasa connaît une transformation digitale rapide avec l'essor des marketplaces et du e-commerce mobile.",
-          "approach": "Analyse des données transactionnelles, enquêtes consommateurs, benchmarking des pratiques digitales locales et internationales.",
-          "results": "Croissance de 300% du e-commerce en 3 ans, identification des segments consommateurs les plus actifs (18-35 ans, classe moyenne urbaine).",
-          "value": "Stratégies omnicanal optimisées, identification d'opportunités d'investissement dans la logistique digitale et le paiement mobile."
-        },
+        "sections": {
+            "context": {
+                "title": "Contexte",
+                "description": "Le secteur retail à Kinshasa connaît une transformation digitale rapide avec l'essor des marketplaces et du e-commerce mobile."
+            },
+            "approach": {
+                "title": "Approche",
+                "description": "Analyse des données transactionnelles, enquêtes consommateurs, benchmarking des pratiques digitales locales et internationales."
+            },
+            "results": {
+                "title": "Résultats",
+                "description": "Croissance de 300% du e-commerce en 3 ans, identification des segments consommateurs les plus actifs (18-35 ans, classe moyenne urbaine)."
+            },
+            "value": {
+                "title": "Valeur",
+                "description": "Stratégies omnicanal optimisées, identification d'opportunités d'investissement dans la logistique digitale et le paiement mobile."
+            }
+        }
+    },
         "consumerBehavior": {
           "title": "Étude du comportement du consommateur : évolution des préférences générationnelles à Kinshasa",
-          "context": "Les consommateurs kinois connaissent une évolution rapide de leurs comportements d'achat influencés par la digitalisation et les changements socio-économiques.",
-          "approach": "Enquête quantitative auprès de 1500 consommateurs, analyse des données comportementales, segmentation par génération et pouvoir d'achat.",
-          "results": "Segmentation claire : génération Z privilégie l'expérience digitale (85% des achats mobiles), millennials recherchent qualité/prix, génération X reste fidèle aux circuits traditionnels.",
-          "value": "Adaptation des stratégies marketing, développement de produits ciblés, optimisation des canaux de distribution digitale et physique."
+        "sections": {
+            "context": {
+                "title": "Contexte",
+                "description": "Les consommateurs kinois connaissent une évolution rapide de leurs comportements d'achat influencés par la digitalisation et les changements socio-économiques."
+            },
+            "approach": {
+                "title": "Approche",
+                "description": "Enquête quantitative auprès de 1500 consommateurs, analyse des données comportementales, segmentation par génération et pouvoir d'achat."
+            },
+            "results": {
+                "title": "Résultats",
+                "description": "Segmentation claire : génération Z privilégie l'expérience digitale (85% des achats mobiles), millennials recherchent qualité/prix, génération X reste fidèle aux circuits traditionnels."
+            },
+            "value": {
+                "title": "Valeur",
+                "description": "Adaptation des stratégies marketing, développement de produits ciblés, optimisation des canaux de distribution digitale et physique."
+            }
+        }
         }
       }
     }
@@ -661,7 +689,7 @@
       }
     },
     "supportTeam": {
-      "title": "Nos équipes supports",
+    "title": "Nos équipes de support",
       "description": "Découvrez nos consultants associés qui renforcent notre équipe avec leur expertise spécialisée"
     },
     "teamMember": {
@@ -1105,16 +1133,8 @@
                 "title": "Prêt à Faire Croître Votre Entreprise ?",
                 "description": "Laissez-nous vous aider à accéder au capital dont vous avez besoin pour atteindre vos objectifs de croissance.",
                 "button": "Commencer Votre Parcours d'Investissement"
-            }
-        },
-        "imageAlt": {
-            "servicesConseil": "Services de Conseil Background",
-            "strategyGrowth": "Stratégie & Croissance",
-            "representationSupport": "Représentation & Support Opérationnel",
-            "privateEquity": "Private Equity",
-            "realEstate": "Expertise Immobilière"
-        },
-        "realEstateExpertise": {
+            },
+            "realEstateExpertise": {
             "badge": "Immobilier",
             "title": "Expertise Immobilière",
             "subtitle": "Votre partenaire de confiance pour le développement et l'investissement immobilier en RDC",
@@ -1154,8 +1174,17 @@
             "solutionDescription": "Conseil en acquisition/valorisation/promotion, due diligence immobilière, structuration financière de projets immobiliers, montage juridique/financier.",
             "expertiseTitle": "Nos Expertises Immobilières",
             "expertiseSubtitle": "Trois piliers pour votre succès immobilier"
+            }
         },
-        "loading": {
+        "imageAlt": {
+            "servicesConseil": "Services de Conseil Background",
+            "strategyGrowth": "Stratégie & Croissance",
+            "representationSupport": "Représentation & Support Opérationnel",
+            "privateEquity": "Private Equity",
+            "realEstate": "Expertise Immobilière",
+            "realEstateExpertise": "Expertise Immobilière"
+        },
+    "loading": {
             "general": "Chargement...",
             "service": "Chargement du service...",
             "team": "Chargement de l'équipe...",
@@ -1312,6 +1341,7 @@
         }
     }
 }
+
 
 
 

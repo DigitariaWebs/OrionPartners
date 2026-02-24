@@ -457,7 +457,7 @@
       "competitiveAdvantages": {
         "title": "Competitive Advantages",
         "description": "Our approach combines advanced algorithms, machine learning and business expertise to transform your data into actionable insights. Each model is calibrated on your specific data to guarantee maximum accuracy.",
-        "stats": {
+        "metrics": {
           "predictiveAccuracy": "Predictive Accuracy",
           "efficiencyGain": "Efficiency Gain"
         }
@@ -466,20 +466,48 @@
     "marketStudies": {
       "title": "Market Studies & Strategic Monitoring",
       "description": "We conduct in-depth qualitative and quantitative studies to give you a 360° understanding of your environment: competition analysis, customer expectations, market dynamics and growth opportunities.",
-      "studies": {
+    "examples": {
         "digitalCommerce": {
           "title": "Digital Commerce Study: Digital Transformation of the Retail Sector in Kinshasa",
-          "context": "The retail sector in Kinshasa is undergoing rapid digital transformation with the rise of marketplaces and mobile e-commerce.",
-          "approach": "Analysis of transactional data, consumer surveys, benchmarking of local and international digital practices.",
-          "results": "300% growth in e-commerce in 3 years, identification of the most active consumer segments (18-35 years old, urban middle class).",
-          "value": "Optimized omnichannel strategies, identification of investment opportunities in digital logistics and mobile payment."
-        },
+        "sections": {
+            "context": {
+                "title": "Context",
+                "description": "The retail sector in Kinshasa is undergoing rapid digital transformation with the rise of marketplaces and mobile e-commerce."
+            },
+            "approach": {
+                "title": "Approach",
+                "description": "Analysis of transactional data, consumer surveys, benchmarking of local and international digital practices."
+            },
+            "results": {
+                "title": "Results",
+                "description": "300% growth in e-commerce in 3 years, identification of the most active consumer segments (18-35 years old, urban middle class)."
+            },
+            "value": {
+                "title": "Value",
+                "description": "Optimized omnichannel strategies, identification of investment opportunities in digital logistics and mobile payment."
+            }
+        }
+    },
         "consumerBehavior": {
           "title": "Consumer Behavior Study: Evolution of Generational Preferences in Kinshasa",
-          "context": "Kinshasa consumers are experiencing rapid changes in their purchasing behaviors influenced by digitization and socio-economic changes.",
-          "approach": "Quantitative survey of 1500 consumers, analysis of behavioral data, segmentation by generation and purchasing power.",
-          "results": "Clear segmentation: Generation Z prioritizes digital experience (85% mobile purchases), millennials seek quality/price, Generation X remains loyal to traditional circuits.",
-          "value": "Adaptation of marketing strategies, development of targeted products, optimization of digital and physical distribution channels."
+        "sections": {
+            "context": {
+                "title": "Context",
+                "description": "Kinshasa consumers are experiencing rapid changes in their purchasing behaviors influenced by digitization and socio-economic changes."
+            },
+            "approach": {
+                "title": "Approach",
+                "description": "Quantitative survey of 1500 consumers, analysis of behavioral data, segmentation by generation and purchasing power."
+            },
+            "results": {
+                "title": "Results",
+                "description": "Clear segmentation: Generation Z prioritizes digital experience (85% mobile purchases), millennials seek quality/price, Generation X remains loyal to traditional circuits."
+            },
+            "value": {
+                "title": "Value",
+                "description": "Adaptation of marketing strategies, development of targeted products, optimization of digital and physical distribution channels."
+            }
+        }
         }
       }
     }
@@ -659,6 +687,10 @@
           "experience": "Business Analyst, Accountant and Tax Specialist"
         }
       }
+    },
+    "supportTeam": {
+        "title": "Our Support Team",
+        "description": "Discover our associated consultants who strengthen our team with their specialized expertise"
     },
     "teamMember": {
       "backToTeam": "Back to team",
@@ -1101,48 +1133,48 @@
             "title": "Ready to Grow Your Business?",
             "description": "Let us help you access the capital you need to achieve your growth objectives.",
             "button": "Start Your Investment Journey"
+        },
+        "realEstateExpertise": {
+            "badge": "Real Estate",
+            "title": "Real Estate Expertise",
+            "subtitle": "Your trusted partner for real estate development and investment in DRC",
+            "description": "We provide comprehensive real estate consulting services, from market analysis to project management, to support your real estate initiatives in the Democratic Republic of Congo.",
+            "services": {
+                "marketAnalysis": {
+                    "title": "Market Analysis",
+                    "description": "In-depth analysis of real estate market trends and investment opportunities."
+                },
+                "feasibilityStudies": {
+                    "title": "Feasibility Studies",
+                    "description": "Technical and financial feasibility studies for real estate projects."
+                },
+                "projectManagement": {
+                    "title": "Project Management",
+                    "description": "End-to-end management of real estate development projects."
+                }
+            },
+            "servicesTitle": "Our Real Estate Services",
+            "expertise": {
+                "marketLand": {
+                    "title": "Land/market diagnosis",
+                    "description": "In-depth analysis of land opportunities and market trends to identify viable projects."
+                },
+                "projectRoadmap": {
+                    "title": "Project roadmap",
+                    "description": "Development of comprehensive strategies for real estate development, sale or rental."
+                },
+                "strategyAlignment": {
+                    "title": "Alignment with company/investor strategy",
+                    "description": "Integration of real estate projects into the company's overall strategy or investment objectives."
+                }
+            },
+            "challengeTitle": "The Challenge",
+            "challengeDescription": "Dynamic but risky real estate market in DRC (regulations, land titles, volatility).",
+            "solutionTitle": "Our Solution",
+            "solutionDescription": "Consulting in acquisition/valorization/promotion, real estate due diligence, financial structuring of real estate projects, legal/financial assembly.",
+            "expertiseTitle": "Our Real Estate Expertise",
+            "expertiseSubtitle": "Three pillars for your real estate success"
         }
-    },
-    "realEstateExpertise": {
-        "badge": "Real Estate",
-        "title": "Real Estate Expertise",
-        "subtitle": "Your trusted partner for real estate development and investment in DRC",
-        "description": "We provide comprehensive real estate consulting services, from market analysis to project management, to support your real estate initiatives in the Democratic Republic of Congo.",
-        "services": {
-            "marketAnalysis": {
-                "title": "Market Analysis",
-                "description": "In-depth analysis of real estate market trends and investment opportunities."
-            },
-            "feasibilityStudies": {
-                "title": "Feasibility Studies",
-                "description": "Technical and financial feasibility studies for real estate projects."
-            },
-            "projectManagement": {
-                "title": "Project Management",
-                "description": "End-to-end management of real estate development projects."
-            }
-        },
-        "servicesTitle": "Our Real Estate Services",
-        "expertise": {
-            "marketLand": {
-                "title": "Land/market diagnosis",
-                "description": "In-depth analysis of land opportunities and market trends to identify viable projects."
-            },
-            "projectRoadmap": {
-                "title": "Project roadmap",
-                "description": "Development of comprehensive strategies for real estate development, sale or rental."
-            },
-            "strategyAlignment": {
-                "title": "Alignment with company/investor strategy",
-                "description": "Integration of real estate projects into the company's overall strategy or investment objectives."
-            }
-        },
-        "challengeTitle": "The Challenge",
-        "challengeDescription": "Dynamic but risky real estate market in DRC (regulations, land titles, volatility).",
-        "solutionTitle": "Our Solution",
-        "solutionDescription": "Consulting in acquisition/valorization/promotion, real estate due diligence, financial structuring of real estate projects, legal/financial assembly.",
-        "expertiseTitle": "Our Real Estate Expertise",
-        "expertiseSubtitle": "Three pillars for your real estate success"
     },
     "loading": {
         "general": "Loading...",
